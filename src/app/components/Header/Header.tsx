@@ -1,5 +1,6 @@
 import style from './Header.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 // import '@globals.css';
 export default function Header() {
   const navigation = [
@@ -63,6 +64,9 @@ export default function Header() {
         <Link href="" className={style.header__button}>
           Подобрать психолога
         </Link>
+        <button className={style.header__burger}>
+          <Image src="/burger.svg" alt="burger" width="24" height="24" />
+        </button>
       </div>
     </div>
   );

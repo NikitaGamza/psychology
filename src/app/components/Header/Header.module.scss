@@ -61,4 +61,27 @@
       color: #fff;
     }
   }
+  &__burger {
+    border: none;
+    background-color: #fff;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    padding: 8px 16px;
+    &__container {
+      width: auto;
+    }
+    &__nav {
+      display: none;
+    }
+    &__button {
+      display: none;
+    }
+    &__burger {
+      display: inline-block;
+    }
+  }
 }
