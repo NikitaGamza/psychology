@@ -1,0 +1,103 @@
+@font-face {
+  font-family: Gilroy;
+  src: url('../../public/fonts/Gilroy-Light.otf');
+}
+
+$green: #4e855c;
+$green_75: #7aa485;
+$green_light: #cdd9d2;
+$black: #041f0f;
+$grey: #cbcbcb;
+
+@mixin button {
+  padding: 18px 32px 18px 32px;
+  border-radius: 32px;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  width: fit-content;
+}
+@mixin button_sheer {
+  padding: 20px 24px 20px 24px;
+  border-radius: 30px;
+  border: 1px solid $grey;
+  background-color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  // line-height: 28px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: black;
+  font-family: Gilroy;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 1232px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+.flex_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex_wrap_align-center {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.flex_wrap_spacebetween {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gap-104 {
+  gap: 104px;
+}
+.gap-16 {
+  gap: 16px;
+}
+.gap-8 {
+  gap: 8px;
+}
+.gap-4 {
+  gap: 4px;
+}
+
+.button {
+  &_green {
+    @include button;
+    background-color: $green;
+  }
+  &_sheer {
+    @include button_sheer;
+    &_active {
+      @include button_sheer;
+      background-color: $green_light;
+      border: 2px solid $green;
+    }
+  }
+}
+.margin-0-auto {
+  margin: 0 auto;
+}

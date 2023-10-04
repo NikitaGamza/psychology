@@ -1,0 +1,48 @@
+$blue_75: #6899ca;
+@mixin banner {
+  padding: 72px 72px 0 72px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 1232px;
+  margin: 0 auto;
+}
+.banner {
+  @include banner;
+  background-color: #4e855c;
+  &_blue {
+    @include banner;
+    background-color: $blue_75;
+  }
+  &__info {
+    margin-bottom: 40px;
+    &__head {
+      color: #fff;
+      margin-bottom: 24px;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px; /* 116.667% */
+    }
+    &__text {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px; /* 150% */
+    }
+  }
+  &__btn {
+    padding: 18px 32px;
+    border-radius: 32px;
+    background: #fff;
+    border: none;
+    color: #4e855c;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 120% */
+  }
+  &__wrap {
+    margin-bottom: 72px;
+    width: 642px;
+  }
+}
