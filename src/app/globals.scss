@@ -26,6 +26,10 @@ $grey: #cbcbcb;
   background-color: #fff;
   font-size: 20px;
   font-weight: 500;
+  @media screen and (max-width: 1232px) {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
   // line-height: 28px;
 }
 
@@ -100,4 +104,10 @@ a {
 }
 .margin-0-auto {
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1232px) {
+  .container {
+    width: 100%;
+  }
 }

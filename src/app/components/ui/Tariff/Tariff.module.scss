@@ -59,3 +59,32 @@ $yellow: #dd8e53;
     }
   }
 }
+
+@media screen and (max-width: 1232px) {
+  .tariff {
+    &__cart {
+      width: 156px;
+      padding: 20px;
+      &__quantity {
+        font-size: 20px;
+        margin-bottom: 36px;
+        &_sale {
+          font-size: 20px;
+          margin-bottom: 16px;
+        }
+      }
+      &__types {
+        font-size: 12px;
+      }
+      &__sale {
+        width: 48px;
+        height: 48px;
+        bottom: 150px;
+        left: 95px;
+        &__info {
+          top: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,43 +1,10 @@
 'use client';
 import style from './page.module.scss';
 import PsychoSlider from '@/app/components/PsychoSlider/PsychoSlider';
+import TariffPageComponent from '@/app/components/pages/main/Tariff/TariffPageComponent';
 import Banner from '@/app/components/ui/Banner/Banner';
-import Tariff from '@/app/components/ui/Tariff/Tariff';
-// import pic1 from '../../public/Group.png';
 
 export default function Home() {
-  const tariffList = [
-    {
-      personal: '1 на 1',
-      type: 'Очно',
-      quantity: 1,
-      price: 2500,
-    },
-    {
-      personal: '1 на 1',
-      type: 'Очно',
-      quantity: 4,
-      price: 2500,
-      sale: 5,
-      priceOne: 2350,
-    },
-    {
-      personal: '1 на 1',
-      type: 'Очно',
-      quantity: 8,
-      price: 2500,
-      sale: 7,
-      priceOne: 2350,
-    },
-    {
-      personal: '1 на 1',
-      type: 'Очно',
-      quantity: 12,
-      price: 2500,
-      sale: 12,
-      priceOne: 2350,
-    },
-  ];
   return (
     <main className={style.main}>
       <div>
@@ -125,59 +92,20 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className={style.tariff}>
-            <div className={style.container}>
-              <div className={style.section}>
-                <div className={style.section__head}>
-                  <h2 className={style.section__head__title}>Тарифы</h2>
-                </div>
-                <div className={style.tariff__container}>
-                  <div className={style.tariff__container__options}>
-                    <div className={style.tariff__container__options__list}>
-                      <button className="button_sheer_active">
-                        Один на один
-                      </button>
-                      <button className="button_sheer">Семейный</button>
-                      <button className="button_sheer">С ребёнком</button>
-                    </div>
-                    <div className={style.tariff__container__options__list}>
-                      <button className="button_sheer">Очно</button>
-                      <button className="button_sheer">Онлайн</button>
-                      <button className="button_sheer_active">Переписка</button>
-                    </div>
-                  </div>
-                </div>
-                <div className={style.tariff__list}>
-                  {tariffList.map((item: any, index) => (
-                    <Tariff
-                      key={index}
-                      personal={item.personal}
-                      type={item.type}
-                      price={item.price}
-                      priceOne={item.priceOne}
-                      quantity={item.quantity}
-                      sale={item.sale}
-                    />
-                  ))}
-                </div>
-
-                <button className="button_green">Все тарифы</button>
-              </div>
-            </div>
-          </section>
+          <TariffPageComponent />
           <Banner
             head={'Не знаете, как выбрать?'}
             text={
               'Оставьте заявку на подбор. Мы подберём Вам опытного специалиста по вашей проблеме'
             }
-            imgUrl={'/Group.png'}
+            imgUrl={'/brain.png'}
           />
           <Banner
             head={'Готовы начать менять себя и свою жизнь к лучшему с нами?'}
             text={
               'Не переживайте, отсутствие уверенности и решительности на все 100% — это нормально.'
             }
-            imgUrl={'/Group.png'}
+            imgUrl={'/brain.png'}
             bgColor={'blue'}
           />
         </div>
@@ -185,3 +113,8 @@ export default function Home() {
     </main>
   );
 }
+
+//интерфейсы для item в циклах
+//swiper down version
+//Psychologist.join в отдельную фунцию
+//секции в отдельные компоненты
