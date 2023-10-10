@@ -1,8 +1,8 @@
 'use client';
 import style from './page.module.scss';
-import PsychoSlider from '@/app/components/PsychoSlider/PsychoSlider';
 import TariffPageComponent from '@/app/components/pages/main/Tariff/TariffPageComponent';
 import TeamPageComponent from '@/app/components/pages/main/Team/TeamPageComponent';
+import GuaranteePageComponent from '@/app/components/pages/main/Guarantee/GuaranteePageComponent';
 import Banner from '@/app/components/ui/Banner/Banner';
 
 export default function Home() {
@@ -43,36 +43,7 @@ export default function Home() {
           </div>
         </section>
         <div className={style.main_flex}>
-          <section className={style.guarantee}>
-            <div className={style.container}>
-              <div className={style.flex_wrap_spacearound}>
-                <div className={style.guarantee__item}>
-                  <h3 className={style.guarantee__item__num}>85</h3>
-                  <p className={style.guarantee__item__text}>
-                    специалистов в нашей команде
-                  </p>
-                </div>
-                <div className={style.guarantee__item}>
-                  <h3 className={style.guarantee__item__num_blue}>1024</h3>
-                  <p className={style.guarantee__item__text}>
-                    людей изменили жизнь к лучшему с нами
-                  </p>
-                </div>
-                <div className={style.guarantee__item}>
-                  <h3 className={style.guarantee__item__num_yellow}>8 лет</h3>
-                  <p className={style.guarantee__item__text}>
-                    средний опыт работы специалистов
-                  </p>
-                </div>
-                <div className={style.guarantee__item}>
-                  <h3 className={style.guarantee__item__num_pink}>100%</h3>
-                  <p className={style.guarantee__item__text}>
-                    конфеденциальность при обращении
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
+          <GuaranteePageComponent />
           <TeamPageComponent />
           <TariffPageComponent />
           <Banner

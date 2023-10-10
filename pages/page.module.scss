@@ -111,69 +111,6 @@
     }
   }
 }
-.guarantee {
-  &__item {
-    width: 290px;
-    text-align: center;
-    &__num {
-      font-size: 40px;
-      font-weight: 700;
-      line-height: 48px;
-      background-color: #cadace;
-      border: 20px solid #edf3ef;
-      border-radius: 80px;
-      padding: 12px 0px 12px 0px;
-      text-align: center;
-      width: 160px;
-      margin: 0 auto;
-      &_blue {
-        font-size: 40px;
-        font-weight: 700;
-        line-height: 48px;
-        background-color: #c3d6ea;
-        border: 20px solid #ebf1f8;
-        border-radius: 80px;
-        padding: 12px 0px 12px 0px;
-        text-align: center;
-        width: 160px;
-        margin: 0 auto;
-      }
-      &_yellow {
-        font-size: 40px;
-        font-weight: 700;
-        line-height: 48px;
-        background-color: #ffe8d4;
-        border: 20px solid #fff6eb;
-        border-radius: 80px;
-        padding: 12px 0px 12px 0px;
-        text-align: center;
-        width: 160px;
-        margin: 0 auto;
-      }
-      &_pink {
-        font-size: 40px;
-        font-weight: 700;
-        line-height: 48px;
-        background-color: #f4cbcd;
-        border: 20px solid #fbeeee;
-        border-radius: 80px;
-        padding: 12px 0px 12px 0px;
-        text-align: center;
-        width: 160px;
-        margin: 0 auto;
-      }
-    }
-    &__text {
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 28px;
-      text-align: center;
-      color: #041f0f;
-      width: 260px;
-      margin: 0 auto;
-    }
-  }
-}
 
 @media screen and (max-width: 1232px) {
   .main {
