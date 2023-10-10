@@ -6,10 +6,16 @@ $blue_75: #6899ca;
   justify-content: space-between;
   width: 1232px;
   margin: 0 auto;
+  @media screen and (max-width: 1232px) {
+    width: 100%;
+    padding: 40px 20px;
+  }
 }
 .banner {
-  @include banner;
-  background-color: #4e855c;
+  &_green {
+    @include banner;
+    background-color: #4e855c;
+  }
   &_blue {
     @include banner;
     background-color: $blue_75;
@@ -44,5 +50,27 @@ $blue_75: #6899ca;
   &__wrap {
     margin-bottom: 72px;
     width: 642px;
+  }
+}
+@media screen and (max-width: 1232px) {
+  .banner {
+    &__info {
+      &__head {
+        font-size: 24px;
+        line-height: 28px;
+      }
+      &__text {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &__img {
+      display: none;
+    }
+    &__wrap {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0;
+    }
   }
 }

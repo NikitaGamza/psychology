@@ -8,6 +8,7 @@ $green_75: #7aa485;
 $green_light: #cdd9d2;
 $black: #041f0f;
 $grey: #cbcbcb;
+$blue_75: #6899ca;
 
 @mixin button {
   padding: 18px 32px 18px 32px;
@@ -16,25 +17,12 @@ $grey: #cbcbcb;
   color: #fff;
   font-size: 20px;
   font-weight: 700;
-  // line-height: 24px;
   width: fit-content;
   @media screen and (max-width: 1232px) {
     width: 100%;
-  }
-}
-@mixin button_sheer {
-  padding: 20px 24px 20px 24px;
-  border-radius: 30px;
-  border: 1px solid $grey;
-  background-color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  @media screen and (max-width: 1232px) {
-    padding: 8px 12px;
     font-size: 16px;
   }
 }
-
 @mixin button-hover-tg {
   padding: 10px 32px 10px 13px;
   border-radius: 32px;
@@ -53,6 +41,33 @@ $grey: #cbcbcb;
   @media screen and (max-width: 1232px) {
     width: auto;
     justify-content: center;
+    font-size: 16px;
+  }
+}
+@mixin button-white {
+  padding: 18px 32px;
+  border-radius: 32px;
+  background: #fff;
+  border: none;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  @media screen and (max-width: 1232px) {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+@mixin button_sheer {
+  padding: 20px 24px 20px 24px;
+  border-radius: 30px;
+  border: 1px solid $grey;
+  background-color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  @media screen and (max-width: 1232px) {
+    padding: 8px 12px;
+    font-size: 16px;
   }
 }
 
@@ -146,6 +161,24 @@ a {
       @include button_sheer;
       background-color: $green_light;
       border: 2px solid $green;
+    }
+  }
+  &_white {
+    &_green {
+      @include button-white();
+      color: $green;
+      &:hover {
+        background-color: $green;
+        color: #fff;
+      }
+    }
+    &_blue {
+      @include button-white();
+      color: $blue_75;
+      &:hover {
+        background-color: $blue_75;
+        color: #fff;
+      }
     }
   }
 }
