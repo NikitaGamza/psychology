@@ -73,13 +73,13 @@ export default function Home() {
             </div>
           </section>
           <section className={style.team}>
-            <div className={style.container}>
-              <div className={style.section}>
-                <div className={style.section__head}>
-                  <h2 className={style.section__head__title}>
+            <div className="container">
+              <div className="section">
+                <div className="section__head">
+                  <h2 className="section__head__title">
                     Наша команда профессионалов
                   </h2>
-                  <p className={style.section__head__subtitle}>
+                  <p className="section__head__subtitle">
                     Обратитесь за квалифицированной помощью
                   </p>
                 </div>

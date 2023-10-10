@@ -56,6 +56,25 @@ a {
   width: 1232px;
   margin: 0 auto;
 }
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  &__head {
+    &__title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+      text-align: center;
+    }
+    &__subtitle {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+      text-align: center;
+    }
+  }
+}
 
 .flex {
   display: flex;
@@ -109,5 +128,18 @@ a {
 @media screen and (max-width: 1232px) {
   .container {
     width: 100%;
+  }
+  .section {
+    gap: 24px;
+    &__head {
+      &__title {
+        font-size: 24px;
+        line-height: 28px;
+      }
+      &__subtitle {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
   }
 }

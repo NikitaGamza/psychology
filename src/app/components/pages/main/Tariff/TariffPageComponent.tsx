@@ -37,9 +37,9 @@ export default function TariffPageComponent() {
   return (
     <section className={style.tariff}>
       <div className="container">
-        <div className={style.section}>
-          <div className={style.section__head}>
-            <h2 className={style.section__head__title}>Тарифы</h2>
+        <div className="section">
+          <div className="section__head">
+            <h2 className="section__head__title">Тарифы</h2>
           </div>
           <div className={style.tariff__container}>
             <div className={style.tariff__container__options}>
