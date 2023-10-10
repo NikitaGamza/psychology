@@ -100,8 +100,9 @@ export default function PsychoSlider() {
   ];
   return (
     <div className="flex_wrap_spacebetween">
-      {psychoList.map((item: any) => (
+      {psychoList.map((item: any, index) => (
         <Psychologist
+          key={index}
           firstName={item.firstName}
           lastName={item.lastName}
           fields={item.fields}

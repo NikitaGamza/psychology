@@ -16,8 +16,11 @@ $grey: #cbcbcb;
   color: #fff;
   font-size: 20px;
   font-weight: 700;
-  line-height: 24px;
+  // line-height: 24px;
   width: fit-content;
+  @media screen and (max-width: 1232px) {
+    width: 100%;
+  }
 }
 @mixin button_sheer {
   padding: 20px 24px 20px 24px;
@@ -30,7 +33,27 @@ $grey: #cbcbcb;
     padding: 8px 12px;
     font-size: 16px;
   }
-  // line-height: 28px;
+}
+
+@mixin button-hover-tg {
+  padding: 10px 32px 10px 13px;
+  border-radius: 32px;
+  border: 2px solid $green;
+  background-color: #fff;
+  color: $green;
+  font-size: 20px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  &:hover {
+    background-color: $green;
+    color: #fff;
+  }
+  @media screen and (max-width: 1232px) {
+    width: auto;
+    justify-content: center;
+  }
 }
 
 * {
@@ -111,6 +134,11 @@ a {
   &_green {
     @include button;
     background-color: $green;
+  }
+  &_hover {
+    &_tg {
+      @include button-hover-tg();
+    }
   }
   &_sheer {
     @include button_sheer;

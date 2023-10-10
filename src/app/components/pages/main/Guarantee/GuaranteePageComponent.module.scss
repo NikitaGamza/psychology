@@ -8,12 +8,14 @@
   width: 160px;
   margin: 0 auto;
   border: 20px solid;
+  margin-bottom: 28px;
   @media screen and (max-width: 1232px) {
     font-size: 32px;
     // width: 120px;
     line-height: 36px;
     padding: 12px 16px 12px 16px;
     border: 8px solid;
+    margin-bottom: 16px;
   }
 }
 .guarantee {
@@ -76,6 +78,11 @@
           &_pink {
             border-color: #fbeeee;
           }
+        }
+        &__text {
+          font-size: 14px;
+          line-height: 20px;
+          width: 156px;
         }
       }
     }
