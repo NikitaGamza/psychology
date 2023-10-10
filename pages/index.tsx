@@ -2,6 +2,7 @@
 import style from './page.module.scss';
 import PsychoSlider from '@/app/components/PsychoSlider/PsychoSlider';
 import TariffPageComponent from '@/app/components/pages/main/Tariff/TariffPageComponent';
+import TeamPageComponent from '@/app/components/pages/main/Team/TeamPageComponent';
 import Banner from '@/app/components/ui/Banner/Banner';
 
 export default function Home() {
@@ -72,26 +73,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className={style.team}>
-            <div className="container">
-              <div className="section">
-                <div className="section__head">
-                  <h2 className="section__head__title">
-                    Наша команда профессионалов
-                  </h2>
-                  <p className="section__head__subtitle">
-                    Обратитесь за квалифицированной помощью
-                  </p>
-                </div>
-                <PsychoSlider />
-                <div className={style.team__center}>
-                  <button className="button_green margin-0-auto">
-                    Посмотреть всех
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
+          <TeamPageComponent />
           <TariffPageComponent />
           <Banner
             head={'Не знаете, как выбрать?'}

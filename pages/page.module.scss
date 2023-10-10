@@ -175,17 +175,6 @@
   }
 }
 
-.team {
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  &__center {
-    text-align: center;
-  }
-}
-
 @media screen and (max-width: 1232px) {
   .main {
     padding-left: 16px;
