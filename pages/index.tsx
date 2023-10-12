@@ -7,7 +7,7 @@ import Banner from '@/app/components/ui/Banner/Banner';
 import IntroductionPageComponent from '@/app/components/pages/main/Introduction/IntroductionPageComponent';
 import HowWorkPageComponent from '@/app/components/pages/main/HowWork/HowWorkPageComponent';
 import WeHelpPageComponent from '@/app/components/pages/main/WeHelp/WeHelpPageComponent';
-
+import Link from 'next/link';
 export default function Home() {
   return (
     <main className={style.main}>
@@ -35,6 +35,15 @@ export default function Home() {
             imgUrl={'/brain.png'}
             bgColor={'blue'}
           />
+          <div className={style.main__banner}>
+            <h2 className={style.main__banner__text}>
+              98% наших клиентов уверены, что помощь психолога помогает решить
+              проблему и улучшить качество жизни
+            </h2>
+            <Link href={'/cources'} className={style.main__banner__link}>
+              Смотреть все курсы
+            </Link>
+          </div>
         </div>
       </div>
     </main>

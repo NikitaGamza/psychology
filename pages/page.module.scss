@@ -1,9 +1,36 @@
 //global
+$beige: #d49261;
+$white: #fff;
 .main {
   &_flex {
     display: flex;
     flex-direction: column;
     gap: 160px;
+  }
+  &__banner {
+    padding: 72px 121px;
+    background-color: $beige;
+    width: 1232px;
+    margin: 0 auto;
+    border-radius: 20px;
+    text-align: center;
+    &__text {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+      text-align: center;
+      color: $white;
+      margin-bottom: 40px;
+    }
+    &__link {
+      color: $beige;
+      background-color: $white;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      padding: 18px 32px;
+      border-radius: 32px;
+    }
   }
 }
 .container {
@@ -83,6 +110,20 @@
     padding-right: 16px;
     &_flex {
       gap: 60px;
+    }
+    &__banner {
+      padding: 40px 20px;
+      width: auto;
+      &__text {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 24px;
+      }
+      &__link {
+        padding: 16px 0px;
+        display: block;
+        width: 100%;
+      }
     }
   }
   .section {
