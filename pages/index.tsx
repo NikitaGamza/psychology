@@ -6,6 +6,7 @@ import GuaranteePageComponent from '@/app/components/pages/main/Guarantee/Guaran
 import Banner from '@/app/components/ui/Banner/Banner';
 import IntroductionPageComponent from '@/app/components/pages/main/Introduction/IntroductionPageComponent';
 import HowWorkPageComponent from '@/app/components/pages/main/HowWork/HowWorkPageComponent';
+import WeHelpPageComponent from '@/app/components/pages/main/WeHelp/WeHelpPageComponent';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
             imgUrl={'/brain.png'}
             bgColor={'green'}
           />
+          <WeHelpPageComponent />
           <Banner
             head={'Готовы начать менять себя и свою жизнь к лучшему с нами?'}
             text={
