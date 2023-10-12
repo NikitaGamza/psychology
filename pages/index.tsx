@@ -5,6 +5,7 @@ import TeamPageComponent from '@/app/components/pages/main/Team/TeamPageComponen
 import GuaranteePageComponent from '@/app/components/pages/main/Guarantee/GuaranteePageComponent';
 import Banner from '@/app/components/ui/Banner/Banner';
 import IntroductionPageComponent from '@/app/components/pages/main/Introduction/IntroductionPageComponent';
+import HowWorkPageComponent from '@/app/components/pages/main/HowWork/HowWorkPageComponent';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
           <GuaranteePageComponent />
           <TeamPageComponent />
           <TariffPageComponent />
+          <HowWorkPageComponent />
           <Banner
             head={'Не знаете, как выбрать?'}
             text={
