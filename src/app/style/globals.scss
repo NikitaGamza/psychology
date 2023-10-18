@@ -1,14 +1,9 @@
+@import 'colors.scss';
+
 @font-face {
   font-family: Gilroy;
-  src: url('../../public/fonts/Gilroy-Light.otf');
+  src: url('../../../public/fonts/Gilroy-Light.otf');
 }
-
-$green: #4e855c;
-$green_75: #7aa485;
-$green_light: #cdd9d2;
-$black: #041f0f;
-$grey: #cbcbcb;
-$blue_75: #6899ca;
 
 @mixin button {
   padding: 18px 32px 18px 32px;
@@ -90,6 +85,11 @@ a {
   text-decoration: none;
 }
 
+.warning {
+  background-color: red;
+  color: #fff;
+}
+
 .container {
   width: 1232px;
   margin: 0 auto;
@@ -130,19 +130,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.gap-104 {
-  gap: 104px;
-}
-.gap-16 {
-  gap: 16px;
-}
-.gap-8 {
-  gap: 8px;
-}
-.gap-4 {
-  gap: 4px;
 }
 
 .button {

@@ -1,6 +1,5 @@
 //global
-$beige: #d49261;
-$white: #fff;
+@import '../src/app/style/colors.scss';
 .main {
   &_flex {
     display: flex;

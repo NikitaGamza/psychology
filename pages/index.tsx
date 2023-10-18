@@ -8,7 +8,7 @@ import IntroductionPageComponent from '@/app/components/pages/main/Introduction/
 import HowWorkPageComponent from '@/app/components/pages/main/HowWork/HowWorkPageComponent';
 import WeHelpPageComponent from '@/app/components/pages/main/WeHelp/WeHelpPageComponent';
 import Link from 'next/link';
-import QuestionsPageComponent from '@/app/components/pages/main/Questions/QuestionsPageComponent';
+import Questions from '@/app/components/pages/main/Questions/Questions';
 export default function Home() {
   return (
     <>
@@ -50,7 +50,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <QuestionsPageComponent />
+      <Questions />
     </>
   );
 }
