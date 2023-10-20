@@ -106,10 +106,13 @@
 @media screen and (max-width: 1232px) {
   .question {
     padding: 60px 0;
+    padding-left: 16px;
+    padding-right: 16px;
     &__content {
       text-align: center;
       flex-direction: column;
       gap: 60px;
+
       &__info {
         gap: 24px;
         align-items: center;
@@ -138,6 +141,7 @@
       &__form {
         padding: 40px 20px;
         gap: 16px;
+        width: 100%;
         &__head {
           text-align: left;
           margin-bottom: 8px;
@@ -149,7 +153,7 @@
         &__inputs {
           &__text {
             padding: 12px 16px;
-            width: 288px;
+            width: 100%;
           }
           &__checkwrap {
             display: flex;
