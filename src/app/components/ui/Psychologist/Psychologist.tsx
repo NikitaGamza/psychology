@@ -23,7 +23,7 @@ export default function Psychologist(props: any) {
     (!sex && isMarried && 'Замужем') ||
     'Не замужем';
   return (
-    <div>
+    <>
       {inDetail ? (
         <div className={style.psychologist_full}>
           <img src={imageUrl} alt={imageUrl} />
@@ -67,7 +67,7 @@ export default function Psychologist(props: any) {
           </div>
         </div>
       ) : (
-        <div className={style.psychologist_min}>
+        <div className={`keen-slider__slide ${style.psychologist_min}`}>
           <img src={imageUrl} alt={imageUrl} srcSet="" />
           <h5 className={style.psychologist__fullname}>
             {firstName} {lastName}
@@ -75,6 +75,6 @@ export default function Psychologist(props: any) {
           <p className={style.psychologist__fields}>{fields.join(', ')}</p>
         </div>
       )}
-    </div>
+    </>
   );
 }

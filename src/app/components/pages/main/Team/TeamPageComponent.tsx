@@ -1,5 +1,5 @@
 import style from './TeamPageComponent.module.scss';
-import PsychoSlider from '@/app/components/PsychoSlider/PsychoSlider';
+import PsychoSlider from '@/app/components/pages/main/Team/extra/PsychoSlider/PsychoSlider';
 
 export default function TeamPageComponent() {
   return (

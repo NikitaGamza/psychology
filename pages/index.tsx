@@ -9,6 +9,8 @@ import HowWorkPageComponent from '@/app/components/pages/main/HowWork/HowWorkPag
 import WeHelpPageComponent from '@/app/components/pages/main/WeHelp/WeHelpPageComponent';
 import Link from 'next/link';
 import Questions from '@/app/components/pages/main/Questions/Questions';
+import Blog from '@/app/components/pages/main/Blog/Blog';
+import Courses from '@/app/components/pages/main/Courses/Courses';
 export default function Home() {
   return (
     <>
@@ -37,6 +39,8 @@ export default function Home() {
               imgUrl={'/brain.png'}
               bgColor={'blue'}
             />
+            <Blog />
+            <Courses />
             <div className={style.main__banner}>
               <h2 className={style.main__banner__text}>
                 98% наших клиентов уверены, что помощь психолога помогает решить
