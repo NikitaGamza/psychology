@@ -1,3 +1,4 @@
+@import '../../../../style/colors.scss';
 .help {
   &__flex {
     display: flex;
@@ -20,5 +21,57 @@
         width: 330px;
       }
     }
+  }
+}
+.slider {
+  display: none;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  &__item {
+    background-color: $green_30;
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 5px;
+    &_active {
+      background-color: $green;
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .help {
+    &__content {
+      justify-content: space-around;
+    }
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .help {
+    &__content {
+      display: none;
+      &__item {
+        width: 100%;
+        text-align: center;
+        &__img {
+          width: 200px;
+          height: 200px;
+          margin-bottom: 16px;
+        }
+        &__text {
+          width: auto;
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+  .slider {
+    display: block;
   }
 }

@@ -1,7 +1,63 @@
 import style from './WeHelpPageComponent.module.scss';
 import Image from 'next/image';
+import 'keen-slider/keen-slider.min.css';
+import { useKeenSlider } from 'keen-slider/react';
+import { useState } from 'react';
 
 export default function WeHelpPageComponent() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
+    },
+    slides: {
+      perView: 1,
+      spacing: 20,
+    },
+    created() {
+      setLoaded(true);
+    },
+  });
+  const helpList = [
+    {
+      imgUrl: '/WeHelp/survive.jpg',
+      text: 'Пережить психологические травмы и обрести смысл жизни',
+    },
+    {
+      imgUrl: '/WeHelp/serve.jpg',
+      text: 'Решить проблемную ситуацию и справиться со стрессом',
+    },
+    {
+      imgUrl: '/WeHelp/back.jpg',
+      text: 'Вернуть хорошее настроение и уверенность в себе',
+    },
+    {
+      imgUrl: '/WeHelp/understand.jpg',
+      text: 'Разобраться в себе и в своих отношениях с окружающими',
+    },
+    {
+      imgUrl: '/WeHelp/turn.jpg',
+      text: 'Стать более эффективными в межличностном взаимодействии',
+    },
+    {
+      imgUrl: '/WeHelp/master.jpg',
+      text: 'Освоить навыки эмоциональной саморегуляции',
+    },
+    {
+      imgUrl: '/WeHelp/overcome.jpg',
+      text: 'Побороть тревогу, страхи, депрессию',
+    },
+    {
+      imgUrl: '/WeHelp/activate.jpg',
+      text: 'Активизировать внутренние ресурсы',
+    },
+    {
+      imgUrl: '/WeHelp/b.jpg',
+      text: 'Повысить продуктивность и добиться карьерного роста',
+    },
+  ];
   return (
     <section className={style.help}>
       <div className="container">
@@ -13,114 +69,65 @@ export default function WeHelpPageComponent() {
             </p>
           </div>
           <div className={style.help__content}>
-            <div className={style.help__content__item}>
-              <Image
-                src={'/WeHelp/survive.jpg'}
-                alt="img"
-                width={330}
-                height={330}
-                className={style.help__content__item__img}
-              />
-              <p className={style.help__content__item__text}>
-                Пережить психологические травмы и обрести смысл жизни
-              </p>
+            {helpList.map((item, idx) => (
+              <div key={idx} className={style.help__content__item}>
+                <Image
+                  src={item.imgUrl}
+                  alt={item.imgUrl}
+                  width={330}
+                  height={330}
+                  className={style.help__content__item__img}
+                />
+                <p className={style.help__content__item__text}>{item.text}</p>
+              </div>
+            ))}
+          </div>
+          {/* SLIDE */}
+          <div className={`navigation-wrapper ${style.slider}`}>
+            <div
+              ref={sliderRef}
+              className={`keen-slider ${style.slider__wrap}`}
+            >
+              {helpList.map((item, idx) => (
+                <div
+                  key={idx}
+                  className={`keen-slider__slide ${style.help__content__item}`}
+                >
+                  <Image
+                    src={item.imgUrl}
+                    alt={item.imgUrl}
+                    width={330}
+                    height={330}
+                    className={style.help__content__item__img}
+                  />
+                  <p className={style.help__content__item__text}>{item.text}</p>
+                </div>
+              ))}
             </div>
-            <div className={style.help__content__item}>
-              <Image
-                src={'/WeHelp/serve.jpg'}
-                alt="img"
-                width={330}
-                height={330}
-                className={style.help__content__item__img}
-              />
-              <p className={style.help__content__item__text}>
-                Решить проблемную ситуацию и справиться со стрессом
-              </p>
-            </div>
-            <div className={style.help__content__item}>
-              <Image
-                src={'/WeHelp/back.jpg'}
-                alt="img"
-                width={330}
-                height={330}
-                className={style.help__content__item__img}
-              />
-              <p className={style.help__content__item__text}>
-                Вернуть хорошее настроение и уверенность в себе
-              </p>
-            </div>
-            <div className={style.help__content__item}>
-              <Image
-                src={'/WeHelp/understand.jpg'}
-                alt="img"
-                width={330}
-                height={330}
-                className={style.help__content__item__img}
-              />
-              <p className={style.help__content__item__text}>
-                Разобраться в себе и в своих отношениях с окружающими
-              </p>
-            </div>
-            <div className={style.help__content__item}>
-              <Image
-                src={'/WeHelp/turn.jpg'}
-                alt="img"
-                width={330}
-                height={330}
-                className={style.help__content__item__img}
-              />
-              <p className={style.help__content__item__text}>
-                Стать более эффективными в межличностном взаимодействии
-              </p>
-            </div>
-            <div className={style.help__content__item}>
-              <Image
-                src={'/WeHelp/master.jpg'}
-                alt="img"
-                width={330}
-                height={330}
-                className={style.help__content__item__img}
-              />
-              <p className={style.help__content__item__text}>
-                Освоить навыки эмоциональной саморегуляции
-              </p>
-            </div>
-            <div className={style.help__content__item}>
-              <Image
-                src={'/WeHelp/overcome.jpg'}
-                alt="img"
-                width={330}
-                height={330}
-                className={style.help__content__item__img}
-              />
-              <p className={style.help__content__item__text}>
-                Побороть тревогу, страхи, депрессию
-              </p>
-            </div>
-            <div className={style.help__content__item}>
-              <Image
-                src={'/WeHelp/activate.jpg'}
-                alt="img"
-                width={330}
-                height={330}
-                className={style.help__content__item__img}
-              />
-              <p className={style.help__content__item__text}>
-                Активизировать внутренние ресурсы
-              </p>
-            </div>
-            <div className={style.help__content__item}>
-              <Image
-                src={'/WeHelp/b.jpg'}
-                alt="img"
-                width={330}
-                height={330}
-                className={style.help__content__item__img}
-              />
-              <p className={style.help__content__item__text}>
-                Повысить продуктивность и добиться карьерного роста
-              </p>
-            </div>
+            {loaded && instanceRef.current && (
+              <div className={style.dots}>
+                {[
+                  ...Array(
+                    instanceRef.current.track.details.slides.length
+                  ).keys(),
+                ].map((idx) => {
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        instanceRef.current?.moveToIdx(idx);
+                      }}
+                      className={
+                        style.dots__item +
+                        (currentSlide === idx
+                          ? ` ${style.dots__item_active}`
+                          : '')
+                      }
+                    ></button>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </div>
