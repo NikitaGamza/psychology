@@ -1,0 +1,51 @@
+@import '../../../style/colors.scss';
+.cart {
+  width: 395px;
+  &__img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  &__topics {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    &__item {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 24px;
+      border: 1px solid $green;
+      border-radius: 50px;
+      padding: 0 12px;
+    }
+  }
+  &__head {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+}
+@media screen and (max-width: 1225px) {
+  .cart {
+    &__head {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+    &:last-child {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 826px) {
+  .cart {
+    &:last-child {
+      display: none;
+    }
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+}

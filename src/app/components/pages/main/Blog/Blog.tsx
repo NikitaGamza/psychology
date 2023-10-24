@@ -1,6 +1,8 @@
 import style from './Blog.module.scss';
 import Link from 'next/link';
 import Question from './Question/Question';
+import Image from 'next/image';
+import ArticleCart from '@/app/components/ui/ArticleCart/ArticleCart';
 
 export default function Blog() {
   const questionList = [
@@ -13,6 +15,23 @@ export default function Blog() {
       head: 'Как правильно налаживать свою жизнь?',
       topics: ['Отношения', 'Семья'],
       text: 'Мне уже 28 лет, но я до их пор ничего не сделал толкового в жизни. В жизни вceгдa ecть выбop. Чeгo бы oн ни кacaлcя: выбopa шкaфoв, тoгo, c кeм вы пpoвoдитe cвoё вpeмя, кaкиe пoдapки дapитe, вo чтo вepитe и нa кaких мыcлях фoкycиpyeтecь. Хaoc — этo выбop. Гнeв — этo выбop. Для мужчины главное понимать, что ты его любишь и что ты ему верна. Чeгo бы oн ни кacaлcя...',
+    },
+  ];
+  const suggestList = [
+    {
+      imgUrl: '/img/pages/main/Suggest/img2.png',
+      topics: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+    {
+      imgUrl: '/img/pages/main/Suggest/img2.png',
+      topics: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+    {
+      imgUrl: '/img/pages/main/Suggest/img2.png',
+      topics: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
     },
   ];
   return (
@@ -56,7 +75,11 @@ export default function Blog() {
                   Все советы
                 </Link>
               </div>
-              <p>texttext</p>
+              <div className={style.blog__content__part__main}>
+                {suggestList.map((item) => (
+                  <ArticleCart item={item} />
+                ))}
+              </div>
             </div>
             <div className={style.blog__content__part}>
               <div className={style.blog__content__part__head}>
