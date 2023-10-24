@@ -1,8 +1,8 @@
 import style from './Blog.module.scss';
 import Link from 'next/link';
 import Question from './Question/Question';
-import Image from 'next/image';
 import ArticleCart from '@/app/components/ui/ArticleCart/ArticleCart';
+import { VideoHTMLAttributes } from 'react';
 
 export default function Blog() {
   const questionList = [
@@ -30,6 +30,23 @@ export default function Blog() {
     },
     {
       imgUrl: '/img/pages/main/Suggest/img2.png',
+      topics: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+  ];
+  const videoList = [
+    {
+      videoUrl: '/video/koala.mp4',
+      topics: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+    {
+      videoUrl: '/video/koala.mp4',
+      topics: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+    {
+      videoUrl: '/video/koala.mp4',
       topics: ['Отношения', 'Семья'],
       head: 'На что обращать внимание при знакомстве?',
     },
@@ -93,10 +110,16 @@ export default function Blog() {
                   Все видео
                 </Link>
               </div>
-              <p>texttext</p>
+              <div className={style.blog__content__part__main}>
+                {videoList.map((item) => (
+                  <ArticleCart item={item} />
+                ))}
+              </div>
             </div>
           </div>
-          <button className="button_green">Перейти в блог</button>
+          <button className={`button_green ${style.blog__all}`}>
+            Перейти в блог
+          </button>
         </div>
       </div>
     </section>
