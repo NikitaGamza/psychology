@@ -11,6 +11,7 @@ import Link from 'next/link';
 import Questions from '@/app/components/pages/main/Questions/Questions';
 import Blog from '@/app/components/pages/main/Blog/Blog';
 import Courses from '@/app/components/pages/main/Courses/Courses';
+import Organizations from '@/app/components/pages/main/Organizations/Organizations';
 export default function Home() {
   return (
     <>
@@ -50,6 +51,7 @@ export default function Home() {
                 Смотреть все курсы
               </Link>
             </div>
+            <Organizations />
             <div></div>
           </div>
         </div>
