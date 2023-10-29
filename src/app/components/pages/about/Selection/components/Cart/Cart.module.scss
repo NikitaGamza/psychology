@@ -1,0 +1,43 @@
+.cart {
+  display: flex;
+  gap: 24px;
+  &__img {
+    width: 56px;
+    height: 56px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    &__head {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+    &__text {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+    }
+  }
+}
+@media screen and (max-width: 1232px) {
+  .cart {
+    gap: 16px;
+    &__img {
+      width: 20px;
+      height: 20px;
+    }
+    &__info {
+      gap: 4px;
+      &__head {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      &__text {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}

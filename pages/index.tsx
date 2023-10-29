@@ -8,7 +8,7 @@ import IntroductionPageComponent from '@/app/components/pages/main/Introduction/
 import HowWorkPageComponent from '@/app/components/pages/main/HowWork/HowWorkPageComponent';
 import WeHelpPageComponent from '@/app/components/pages/main/WeHelp/WeHelpPageComponent';
 import Link from 'next/link';
-import Questions from '@/app/components/pages/main/Questions/Questions';
+import Questions from '@/app/components/Questions/Questions';
 import Blog from '@/app/components/pages/main/Blog/Blog';
 import Courses from '@/app/components/pages/main/Courses/Courses';
 import Organizations from '@/app/components/pages/main/Organizations/Organizations';

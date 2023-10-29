@@ -2,7 +2,6 @@ import style from './Blog.module.scss';
 import Link from 'next/link';
 import Question from './Question/Question';
 import ArticleCart from '@/app/components/ui/ArticleCart/ArticleCart';
-import { VideoHTMLAttributes } from 'react';
 
 export default function Blog() {
   const questionList = [

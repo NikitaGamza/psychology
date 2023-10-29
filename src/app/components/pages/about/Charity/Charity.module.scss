@@ -1,0 +1,19 @@
+@import '@/style/colors.scss';
+.char {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 1232px) {
+  .char {
+    padding: 0 16px;
+  }
+}
+@media screen and (max-width: 840px) {
+  .char {
+    &__content {
+      display: none;
+    }
+  }
+}

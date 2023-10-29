@@ -1,0 +1,40 @@
+.cart {
+  width: 395px;
+  &__img {
+    width: 395px;
+    height: 222px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  &__head {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 8px;
+  }
+  &__text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 1232px) {
+  .cart {
+    &:last-child {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .cart {
+    &:last-child {
+      display: block;
+    }
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

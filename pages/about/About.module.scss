@@ -1,0 +1,11 @@
+.about {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+}
+@media screen and (max-width: 1232px) {
+  .about {
+    gap: 60px;
+  }
+}

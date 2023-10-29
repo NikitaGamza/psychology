@@ -1,0 +1,43 @@
+@import '../../../../style/colors.scss';
+
+.intro {
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 1030px;
+    &__title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+    }
+    &__text {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+    }
+  }
+  &__video {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    border: none;
+  }
+}
+@media screen and (max-width: 1232px) {
+  .intro {
+    padding: 0 16px;
+    &__head {
+      gap: 16px;
+      width: auto;
+      &__title {
+        font-size: 32px;
+        line-height: 36px;
+      }
+      &__text {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}
