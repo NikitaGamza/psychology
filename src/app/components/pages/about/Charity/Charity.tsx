@@ -14,8 +14,8 @@ export default function Charity() {
             </h2>
           </div>
           <div className={style.char__content}>
-            {charList.map((item) => (
-              <Cart props={item} />
+            {charList.map((item, idx) => (
+              <Cart props={item} key={idx} />
             ))}
           </div>
           <Slider />

@@ -35,8 +35,8 @@ export default function Selection() {
             Мы уделяем внимание
           </h4>
           <div className={style.selection__content__info__list}>
-            {selectList.map((item) => (
-              <Cart props={item} />
+            {selectList.map((item, idx) => (
+              <Cart props={item} key={idx} />
             ))}
           </div>
         </div>
