@@ -2,10 +2,33 @@ import style from './List.module.scss';
 import Psychologist from '@/app/components/ui/Psychologist/Psychologist';
 import { psychoList } from './psychoList';
 
-export default function List() {
+interface Filter {
+  workType: string;
+}
+
+interface IPsychologist {
+  imageUrl: string;
+  firstName: string;
+  lastName: string;
+  workType: Array<string>;
+  fields: Array<string>;
+  feedbacks: Array<string>;
+  experience: number;
+  age: number;
+  sex: boolean;
+  isMarried: boolean;
+  locations: Array<string>;
+  tags: Array<string>;
+  inDetail: boolean;
+}
+
+export default function List({ workType }: Filter) {
+  const result = psychoList.filter((item: any) =>
+    item.workType.includes(workType)
+  );
   return (
     <div className={style.list}>
-      {psychoList.map((item, idx) => (
+      {result.map((item, idx) => (
         <Psychologist
           key={idx}
           imageUrl={item.imageUrl}
