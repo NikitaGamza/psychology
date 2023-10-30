@@ -4,5 +4,8 @@
   &__main {
     display: flex;
     justify-content: space-between;
+    &__content {
+      margin-bottom: 40px;
+    }
   }
 }
