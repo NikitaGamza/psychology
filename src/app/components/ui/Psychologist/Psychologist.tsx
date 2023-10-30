@@ -28,42 +28,72 @@ export default function Psychologist(props: any) {
         <div className={style.psychologist_full}>
           <img src={imageUrl} alt={imageUrl} />
           <div className={style.psychologist_full__info}>
-            <div className="flex_wrap_align-center gap-16">
-              <h5 className={style.psychologist__fullname}>
+            <div className={style.psychologist_full__info__head}>
+              <h5 className={style.psychologist_full__info__head__fullname}>
                 {firstName} {lastName}
               </h5>
-              <div className="flex_wrap gap-4">
-                {workType.map((item: any) => (
-                  <span className={style.psychologist_full__worktype}>
-                    {/* разноцвет */}
+              <div className={style.psychologist_full__info__head__types}>
+                {workType.map((item: string) => (
+                  <span
+                    className={
+                      item == 'Очно'
+                        ? style.psychologist_full__info__head__types__item_offline
+                        : item == 'Онлайн'
+                        ? style.psychologist_full__info__head__types__item_online
+                        : style.psychologist_full__info__head__types__item_text
+                    }
+                  >
                     {item}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="flex_wrap_align-center gap-16">
-              <span className={style.psychologist__fields}>
+            <div className={style.psychologist_full__info__feedbacks}>
+              <span
+                className={style.psychologist_full__info__feedbacks__fields}
+              >
                 {fields.join(', ')}
               </span>
-              <span className={style.psychologist__fields}>
+              <span
+                className={style.psychologist_full__info__feedbacks__fields}
+              >
                 {feedbacks.length} отзыва
               </span>
             </div>
             <div>
-              <span className={style.psychologist_full__experience}>
+              <span className={style.psychologist_full__info__experience}>
                 Стаж {experience} лет • {age} лет • {marriedResult}
               </span>
             </div>
-            <div>
-              <span className={style.psychologist_full__locations}>
-                {locations.join(' • ')}
-              </span>
-            </div>
-            <div className="flex_wrap gap-4">
-              {tags.map((item: any) => (
-                <span className={style.psychologist_full__tag}>{item}</span>
+            <div className={style.psychologist_full__info__locations}>
+              {locations.map((item: string, idx: number) => (
+                <>
+                  <span
+                    key={idx}
+                    className={style.psychologist_full__info__locations__item}
+                  >
+                    {item}
+                  </span>
+                  {idx !== locations.length - 1 && (
+                    <span
+                      className={
+                        style.psychologist_full__info__locations__separate
+                      }
+                    >
+                      •
+                    </span>
+                  )}
+                </>
               ))}
             </div>
+            <div className={style.psychologist_full__info__tags}>
+              {tags.map((item: string) => (
+                <span className={style.psychologist_full__info__tags__item}>
+                  {item}
+                </span>
+              ))}
+            </div>
+            <button className="button_green">Записаться</button>
           </div>
         </div>
       ) : (
