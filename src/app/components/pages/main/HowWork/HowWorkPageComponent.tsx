@@ -4,7 +4,7 @@ import style from './HowWorkPageComponent.module.scss';
 import WorkInfo from './WorkInfo';
 
 export default function HowWorkPageComponent() {
-  const workType = [
+  const format = [
     {
       type: 'ochno',
       url: '/how-ochno.jpg',
@@ -39,7 +39,7 @@ export default function HowWorkPageComponent() {
       ],
     },
   ];
-  const [howWork, setHowWork] = useState(workType[0]);
+  const [howWork, setHowWork] = useState(format[0]);
   return (
     <section className={style.how}>
       <div className="container">
@@ -49,7 +49,7 @@ export default function HowWorkPageComponent() {
           </div>
           <div className={style.how__options}>
             <button
-              onClick={() => setHowWork(workType[0])}
+              onClick={() => setHowWork(format[0])}
               className={
                 howWork.type === 'ochno'
                   ? 'button_sheer_active'
@@ -59,7 +59,7 @@ export default function HowWorkPageComponent() {
               Очно
             </button>
             <button
-              onClick={() => setHowWork(workType[1])}
+              onClick={() => setHowWork(format[1])}
               className={
                 howWork.type === 'online'
                   ? 'button_sheer_active'
@@ -69,7 +69,7 @@ export default function HowWorkPageComponent() {
               Онлайн
             </button>
             <button
-              onClick={() => setHowWork(workType[2])}
+              onClick={() => setHowWork(format[2])}
               className={
                 howWork.type === 'texting'
                   ? 'button_sheer_active'

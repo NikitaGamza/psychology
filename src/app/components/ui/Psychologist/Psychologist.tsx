@@ -6,14 +6,14 @@ export default function Psychologist(props: any) {
     imageUrl,
     firstName,
     lastName,
-    workType,
+    format,
     fields,
     feedbacks,
     experience,
     age,
     sex,
     isMarried,
-    locations,
+    city,
     tags,
     inDetail,
   } = props;
@@ -33,7 +33,7 @@ export default function Psychologist(props: any) {
                 {firstName} {lastName}
               </h5>
               <div className={style.psychologist_full__info__head__types}>
-                {workType.map((item: string) => (
+                {format.map((item: string) => (
                   <span
                     className={
                       item == 'Очно'
@@ -66,7 +66,7 @@ export default function Psychologist(props: any) {
               </span>
             </div>
             <div className={style.psychologist_full__info__locations}>
-              {locations.map((item: string, idx: number) => (
+              {city.map((item: string, idx: number) => (
                 <>
                   <span
                     key={idx}
@@ -74,7 +74,7 @@ export default function Psychologist(props: any) {
                   >
                     {item}
                   </span>
-                  {idx !== locations.length - 1 && (
+                  {idx !== city.length - 1 && (
                     <span
                       className={
                         style.psychologist_full__info__locations__separate

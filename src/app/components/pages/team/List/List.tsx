@@ -3,14 +3,14 @@ import Psychologist from '@/app/components/ui/Psychologist/Psychologist';
 import { psychoList } from './psychoList';
 
 interface Filter {
-  workType: string;
+  format: string;
 }
 
 interface IPsychologist {
   imageUrl: string;
   firstName: string;
   lastName: string;
-  workType: Array<string>;
+  format: Array<string>;
   fields: Array<string>;
   feedbacks: Array<string>;
   experience: number;
@@ -22,9 +22,12 @@ interface IPsychologist {
   inDetail: boolean;
 }
 
-export default function List({ workType }: Filter) {
-  const result = psychoList.filter((item: any) =>
-    item.workType.includes(workType)
+export default function List({ format, parameters }: any) {
+  const result = psychoList.filter(
+    (item: any) =>
+      item.format.includes(format) &&
+      item.city.includes(parameters.city) &&
+      item.experience >= parameters.experience
   );
   return (
     <div className={style.list}>
@@ -34,14 +37,14 @@ export default function List({ workType }: Filter) {
           imageUrl={item.imageUrl}
           firstName={item.firstName}
           lastName={item.lastName}
-          workType={item.workType}
+          format={item.format}
           fields={item.fields}
           feedbacks={item.feedbacks}
           experience={item.experience}
           age={item.age}
           sex={item.sex}
           isMarried={item.isMarried}
-          locations={item.locations}
+          city={item.city}
           tags={item.tags}
           inDetail={true}
         />

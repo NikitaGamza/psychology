@@ -2,31 +2,29 @@ import style from './Selectors.module.scss';
 import React, { useEffect, useState, FC } from 'react';
 
 interface ChildProps {
-  workType: string;
-  setWorkType: React.Dispatch<React.SetStateAction<string>>;
+  format: string;
+  setFormat: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function Selectors({ workType, setWorkType }: ChildProps) {
+export default function Selectors({ format, setFormat }: ChildProps) {
   return (
     <div className={style.selectors}>
       <button
-        onClick={() => setWorkType('Очно')}
-        className={workType === 'Очно' ? 'button_sheer_active' : 'button_sheer'}
+        onClick={() => setFormat('Очно')}
+        className={format === 'Очно' ? 'button_sheer_active' : 'button_sheer'}
       >
         Очно
       </button>
       <button
-        onClick={() => setWorkType('Онлайн')}
-        className={
-          workType === 'Онлайн' ? 'button_sheer_active' : 'button_sheer'
-        }
+        onClick={() => setFormat('Онлайн')}
+        className={format === 'Онлайн' ? 'button_sheer_active' : 'button_sheer'}
       >
         Онлайн
       </button>
       <button
-        onClick={() => setWorkType('Переписка')}
+        onClick={() => setFormat('Переписка')}
         className={
-          workType === 'Переписка' ? 'button_sheer_active' : 'button_sheer'
+          format === 'Переписка' ? 'button_sheer_active' : 'button_sheer'
         }
       >
         Переписка
