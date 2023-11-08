@@ -125,9 +125,9 @@ export default function Courses() {
                 ref={sliderRef}
                 className={`keen-slider ${style.slider__wrap}`}
               >
-                {courseList.map((item: any, index) => (
+                {courseList.map((item: any, idx) => (
                   // <p className="keen-slider__slide">hi</p>
-                  <Cart item={item} />
+                  <Cart key={idx} item={item} />
                 ))}
               </div>
               {loaded && instanceRef.current && (

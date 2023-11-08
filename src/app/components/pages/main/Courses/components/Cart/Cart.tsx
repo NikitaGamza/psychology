@@ -28,8 +28,11 @@ export default function Cart(item: any) {
         <div className={style.slide__content__info}>
           <div className={style.slide__content__info__wrap}>
             <div className={style.slide__content__info__topics}>
-              {topics.map((item: string) => (
-                <span className={style.slide__content__info__topics__item}>
+              {topics.map((item: string, idx: number) => (
+                <span
+                  key={idx}
+                  className={style.slide__content__info__topics__item}
+                >
                   {item}
                 </span>
               ))}

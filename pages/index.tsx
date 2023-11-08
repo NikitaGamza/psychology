@@ -14,6 +14,13 @@ import Courses from '@/app/components/pages/main/Courses/Courses';
 import Organizations from '@/app/components/pages/main/Organizations/Organizations';
 export default function Home() {
   return (
+    //выставить отстыпы в слайдере
+    //закрыть репозиторий и github pages
+    //главная смтраница переход на первой секции
+    //круги на тарифах в зависимости от количества сессий
+    //главная страница тарифы расстояние, скролл
+    //главная переход на "как это работает"
+    //abou feedback form
     <>
       <main className={style.main}>
         <div>

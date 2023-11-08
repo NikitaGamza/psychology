@@ -27,8 +27,10 @@ export default function ArticleCart(item: any) {
         </video>
       )}
       <div className={style.cart__topics}>
-        {topics.map((topic: string) => (
-          <span className={style.cart__topics__item}>{topic}</span>
+        {topics.map((topic: string, idx: number) => (
+          <span key={idx} className={style.cart__topics__item}>
+            {topic}
+          </span>
         ))}
       </div>
       <h5 className={style.cart__head}>{head}</h5>
