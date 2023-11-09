@@ -1,5 +1,6 @@
 import style from './Banner.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 export default function Banner(props: any) {
   const { head, text, imgUrl, bgColor } = props;
   return (
@@ -17,7 +18,8 @@ export default function Banner(props: any) {
           <h2 className={style.banner__info__head}>{head}</h2>
           <p className={style.banner__info__text}>{text}</p>
         </div>
-        <button
+        <Link
+          href={'/team'}
           className={
             bgColor === 'blue'
               ? 'button_white_blue'
@@ -27,7 +29,7 @@ export default function Banner(props: any) {
           }
         >
           Подобрать психолога
-        </button>
+        </Link>
       </div>
 
       <div className={style.banner__img}>

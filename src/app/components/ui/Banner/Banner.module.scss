@@ -1,6 +1,5 @@
 $blue_75: #6899ca;
 @mixin banner {
-  padding: 72px 72px 0 72px;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
@@ -14,10 +13,12 @@ $blue_75: #6899ca;
 .banner {
   &_green {
     @include banner;
+    padding: 72px 72px 0 72px;
     background-color: #4e855c;
   }
   &_blue {
     @include banner;
+    padding: 72px 0px 0px 72px;
     background-color: $blue_75;
   }
   &__info {

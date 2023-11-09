@@ -35,7 +35,7 @@ export default function Home() {
               text={
                 'Оставьте заявку на подбор. Мы подберём Вам опытного специалиста по вашей проблеме'
               }
-              imgUrl={'/brain.png'}
+              imgUrl={'/img/ui/Banner/brain.png'}
               bgColor={'green'}
             />
             <WeHelpPageComponent />
@@ -44,7 +44,7 @@ export default function Home() {
               text={
                 'Не переживайте, отсутствие уверенности и решительности на все 100% — это нормально.'
               }
-              imgUrl={'/brain.png'}
+              imgUrl={'/img/ui/Banner/flover.svg'}
               bgColor={'blue'}
             />
             <Blog />

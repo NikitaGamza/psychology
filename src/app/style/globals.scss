@@ -48,6 +48,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
+  display: block;
+  width: fit-content;
   @media screen and (max-width: 1232px) {
     width: 100%;
     font-size: 16px;
