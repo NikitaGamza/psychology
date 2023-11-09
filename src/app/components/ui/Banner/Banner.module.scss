@@ -21,6 +21,16 @@ $blue_75: #6899ca;
     padding: 72px 0px 0px 72px;
     background-color: $blue_75;
   }
+  &_req {
+    @include banner;
+    padding: 72px 0px 0px 72px;
+    background-color: $blue_75;
+  }
+  &__img {
+    &_req {
+      margin-top: -60px;
+    }
+  }
   &__info {
     margin-bottom: 40px;
     &__head {
@@ -67,6 +77,9 @@ $blue_75: #6899ca;
     }
     &__img {
       display: none;
+      &_req {
+        display: none;
+      }
     }
     &__wrap {
       width: 100%;

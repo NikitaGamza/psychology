@@ -10,7 +10,7 @@ export default function Banner(props: any) {
           ? style.banner_blue
           : bgColor === 'green'
           ? style.banner_green
-          : style.banner
+          : style.banner_req
       }
     >
       <div className={style.banner__wrap}>
@@ -19,9 +19,9 @@ export default function Banner(props: any) {
           <p className={style.banner__info__text}>{text}</p>
         </div>
         <Link
-          href={'/team'}
+          href={bgColor === 'blue_req' ? '/request-psychologist' : '/team'}
           className={
-            bgColor === 'blue'
+            bgColor === 'blue' || bgColor === 'blue_req'
               ? 'button_white_blue'
               : bgColor === 'green'
               ? 'button_white_green'
@@ -32,7 +32,11 @@ export default function Banner(props: any) {
         </Link>
       </div>
 
-      <div className={style.banner__img}>
+      <div
+        className={
+          bgColor === 'blue_req' ? style.banner__img_req : style.banner__img
+        }
+      >
         <Image src={imgUrl} alt={imgUrl} width="334" height="393" />
       </div>
     </div>
