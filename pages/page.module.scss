@@ -1,6 +1,9 @@
 //global
 @import '../src/app/style/colors.scss';
 .main {
+  background-image: url('../public/img/pages/main/bg.png');
+  background-repeat: no-repeat;
+  background-position: right top;
   &_flex {
     display: flex;
     flex-direction: column;
@@ -107,6 +110,7 @@
   .main {
     padding-left: 16px;
     padding-right: 16px;
+    background-image: none;
     &_flex {
       gap: 60px;
     }

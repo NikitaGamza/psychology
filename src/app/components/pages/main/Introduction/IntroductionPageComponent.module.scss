@@ -1,6 +1,6 @@
 .introduction {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 160px;
+  padding-bottom: 230px;
   &__wrapper {
     width: 1232px;
     margin: 0 auto;
@@ -10,6 +10,9 @@
     display: inline-flex;
     flex-direction: column;
     gap: 60px;
+    &__bg {
+      display: none;
+    }
     &__head {
       font-size: 56px;
       font-weight: 700;
@@ -36,9 +39,17 @@
 }
 @media screen and (max-width: 1232px) {
   .introduction {
+    padding-top: 80px;
+    padding-bottom: 70px;
     &__container {
       width: auto;
       gap: 32px;
+      &__bg {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 29px;
+      }
       &__head {
         width: 270px;
         font-size: 32px;

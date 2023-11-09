@@ -7,6 +7,13 @@ export default function IntroductionPageComponent() {
     <section className={style.introduction}>
       <div className="container">
         <div className={style.introduction__container}>
+          <Image
+            src={'/img/pages/main/Introduction/bg-mobile.png'}
+            alt="bg"
+            width={100}
+            height={100}
+            className={style.introduction__container__bg}
+          />
           <div>
             <h1 className={style.introduction__container__head}>
               Поможем найти{' '}
