@@ -34,6 +34,7 @@ export default function List({ format, parameters }: any) {
       {result.map((item, idx) => (
         <Psychologist
           key={idx}
+          id={item.id}
           imageUrl={item.imageUrl}
           firstName={item.firstName}
           lastName={item.lastName}

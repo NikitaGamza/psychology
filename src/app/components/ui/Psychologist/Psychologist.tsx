@@ -1,8 +1,10 @@
 import React from 'react';
 import style from './Psychologist.module.scss';
+import Link from 'next/link';
 
 export default function Psychologist(props: any) {
   const {
+    id,
     imageUrl,
     firstName,
     lastName,
@@ -93,7 +95,9 @@ export default function Psychologist(props: any) {
                 </span>
               ))}
             </div>
-            <button className="button_green">Записаться</button>
+            <Link href={`team/${id}`} className="button_green">
+              Записаться
+            </Link>
           </div>
         </div>
       ) : (

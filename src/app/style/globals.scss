@@ -138,6 +138,7 @@ a {
   &_green {
     @include button;
     background-color: $green;
+    display: block;
   }
   &_hover {
     &_tg {

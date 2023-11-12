@@ -10,35 +10,35 @@ export default function Header() {
     },
     {
       title: 'О нас',
-      linkTo: './about',
+      linkTo: '/about',
     },
     {
       title: 'Психологи',
-      linkTo: './team',
+      linkTo: '/team',
     },
     {
       title: 'Тарифы',
-      linkTo: './about',
+      linkTo: '/about',
     },
     {
       title: 'Курсы',
-      linkTo: './about',
+      linkTo: '/about',
     },
     {
       title: 'Организациям',
-      linkTo: './about',
+      linkTo: '/about',
     },
     {
       title: 'Психологам',
-      linkTo: './about',
+      linkTo: '/about',
     },
     {
       title: 'Блог',
-      linkTo: './about',
+      linkTo: '/about',
     },
     {
       title: 'FAQ',
-      linkTo: './about',
+      linkTo: '/about',
     },
   ];
   return (

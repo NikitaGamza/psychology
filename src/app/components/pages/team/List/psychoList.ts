@@ -1,5 +1,6 @@
 export const psychoList = [
   {
+    id: 0,
     imageUrl: '/img/Psychologist/blank.svg',
     firstName: 'Игорь',
     lastName: 'Батамиров',
@@ -14,6 +15,7 @@ export const psychoList = [
     tags: ['Дети', 'Семья', 'Карьера'],
   },
   {
+    id: 1,
     imageUrl: '/img/Psychologist/blank.svg',
     firstName: 'Наталья',
     lastName: 'Петрова',
@@ -35,6 +37,7 @@ export const psychoList = [
     ],
   },
   {
+    id: 2,
     imageUrl: '/img/Psychologist/blank.svg',
     firstName: 'Элина',
     lastName: 'Кроповницкая',
@@ -49,6 +52,7 @@ export const psychoList = [
     tags: ['Дети', 'Семья', 'Карьера'],
   },
   {
+    id: 3,
     imageUrl: '/img/Psychologist/blank.svg',
     firstName: 'Любовь',
     lastName: 'Иваненко',
@@ -63,6 +67,7 @@ export const psychoList = [
     tags: ['Дети', 'Семья', 'Карьера'],
   },
   {
+    id: 4,
     imageUrl: '/img/Psychologist/blank.svg',
     firstName: 'Анна',
     lastName: 'Костина',
@@ -77,6 +82,7 @@ export const psychoList = [
     tags: ['Дети', 'Семья', 'Карьера'],
   },
   {
+    id: 5,
     imageUrl: '/img/Psychologist/blank.svg',
     firstName: 'Леонид',
     lastName: 'Матвеев',
