@@ -1,15 +1,22 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import style from './Team.module.scss';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+import { psychoList } from './psychologist';
+import Cover from '@/app/components/pages/team/dynamic/Cover/Cover';
 
 export default function Page() {
   const router = useRouter();
-  const test = 6;
+  const [psychologist, setPsychologist] = useState(
+    psychoList.find((item: any) => item.id == router.query.id)
+  );
+  useEffect(() => {
+    setPsychologist(psychoList.find((item: any) => item.id == router.query.id));
+  }, [router.query.id]);
   return (
-    <div className={style.about}>
-      <h1>parameter is: {router.query.id}</h1>
-      <Link href={`/team/${router.query.id}/${test}`}>Link</Link>
+    <div className={style.dynamic}>
+      <div className={style.dynamic__container}>
+        <Cover props={psychologist} />
+      </div>
     </div>
   );
 }

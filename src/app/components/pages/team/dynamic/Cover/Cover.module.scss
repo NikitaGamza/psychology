@@ -1,0 +1,121 @@
+@import '@/style/colors.scss';
+@mixin button {
+  padding: 12px 32px 12px 32px;
+  border-radius: 32px;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  width: fit-content;
+  //   @media screen and (max-width: 1232px) {
+  //     width: 100%;
+  //     font-size: 16px;
+  //   }
+}
+.cover {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    &__contact {
+      display: flex;
+      gap: 8px;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    &__fio {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 36px;
+    }
+    &__fields {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      color: $grey_dark;
+    }
+    &__params {
+      display: flex;
+      &__item {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+    }
+    &__city {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+    &__location {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+    &__btns {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 8px;
+      row-gap: 16px;
+      &__rec {
+        @include button();
+        background-color: $green;
+        display: block;
+      }
+      &__tg {
+        padding: 5px 32px 5px 13px;
+        border-radius: 32px;
+        border: 2px solid $green;
+        background-color: #fff;
+        color: $green;
+        font-size: 20px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        &:hover {
+          background-color: $green;
+          color: #fff;
+          .cover__info__btns__tg__icon {
+            background-image: url('/tg-hover.svg');
+          }
+        }
+        &__icon {
+          width: 32px;
+          height: 32px;
+          background-image: url('/telegram-white.svg');
+          background-size: 32px;
+        }
+      }
+      &__love {
+        padding: 10px 14px;
+        border-radius: 32px;
+        background: #fff;
+        border: none;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        display: block;
+        width: fit-content;
+        border: 2px solid $green;
+        &__heart {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

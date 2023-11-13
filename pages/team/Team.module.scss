@@ -10,6 +10,13 @@
     }
   }
 }
+.dynamic {
+  padding-top: 140px;
+  &__container {
+    width: 812px;
+    margin: 0 auto;
+  }
+}
 @media screen and (max-width: 1232px) {
   .about {
     padding-top: 105px;
