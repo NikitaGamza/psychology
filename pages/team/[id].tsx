@@ -3,6 +3,7 @@ import style from './Team.module.scss';
 import { useRouter } from 'next/router';
 import { psychoList } from './psychologist';
 import Cover from '@/app/components/pages/team/dynamic/Cover/Cover';
+import Education from '@/app/components/pages/team/dynamic/Education/Education';
 
 export default function Page() {
   const router = useRouter();
@@ -16,6 +17,10 @@ export default function Page() {
     <div className={style.dynamic}>
       <div className={style.dynamic__container}>
         <Cover props={psychologist} />
+        <h4 className={style.dynamic__container__head}>О психологе</h4>
+        <div className={style.dynamic__container__about}>
+          <Education props={psychologist?.education} />
+        </div>
       </div>
     </div>
   );

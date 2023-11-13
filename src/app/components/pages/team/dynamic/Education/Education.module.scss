@@ -1,0 +1,36 @@
+@import '@/style/colors.scss';
+
+.edu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  &__head {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    &__item {
+      list-style: outside;
+      margin-left: 16px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      list-style: none;
+      list-style-type: none;
+      &::before {
+        list-style: none;
+        list-style-type: none;
+        content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        color: $green; /* Change the color */
+        font-weight: bold; /* If you want it to be bold */
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 1em; /* Also needed for space (tweak if needed) */
+        margin-left: -1em; /* Also needed for space (tweak if needed) */
+      }
+    }
+  }
+}
