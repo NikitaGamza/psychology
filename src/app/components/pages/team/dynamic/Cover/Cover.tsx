@@ -59,8 +59,10 @@ export default function Cover(props: any) {
           </h4>
           <div>
             <div className={style.cover__info__fields}>
-              {fields.map((item: string) => (
-                <span className={style.cover__info__fields__item}>{item} </span>
+              {fields.map((item: string, idx: number) => (
+                <span key={idx} className={style.cover__info__fields__item}>
+                  {item}{' '}
+                </span>
               ))}
               <span className={style.cover__info__fields__item}>
                 {feedbacks.length} отзыва
@@ -77,21 +79,44 @@ export default function Cover(props: any) {
             </div>
           </div>
           <div>
-            <p className={style.cover__info__city}>{city}</p>
-            <p className={style.cover__info__location}>
-              {address}
-              {metro}
-            </p>
+            <p className={style.cover__info__city}>{city} </p>
+            <div className={style.cover__info__location}>
+              <p className={style.cover__info__location__address}>{address} </p>
+              {metro && (
+                <p className={style.cover__info__location__metro}>{metro}</p>
+              )}
+            </div>
           </div>
         </div>
-
+        <div className={style.cover__wrap__contact_mobile}>
+          {links.youtube && (
+            <Link href={links.youtube}>
+              <Image
+                src={'/img/pages/team/yt.svg'}
+                alt="youtube"
+                width={32}
+                height={32}
+              />
+            </Link>
+          )}
+          {links.vk && (
+            <Link href={links.vk}>
+              <Image
+                src={'/img/pages/team/vk.svg'}
+                alt="youtube"
+                width={32}
+                height={32}
+              />
+            </Link>
+          )}
+        </div>
         <div className={style.cover__info__btns}>
           <Link href={'#'} className={style.cover__info__btns__rec}>
             Записаться
           </Link>
           <Link href={'#'} className={style.cover__info__btns__tg}>
             <span className={style.cover__info__btns__tg__icon}></span>
-            Задать вопрос
+            <span>Задать вопрос</span>
           </Link>
           <Link href={'#'} className={style.cover__info__btns__love}>
             <Image

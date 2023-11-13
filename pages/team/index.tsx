@@ -12,11 +12,11 @@ export default function Team() {
     console.log(parameters);
   }, [parameters]);
   return (
-    <div className={style.about}>
+    <div className={style.team}>
       <div className="container">
-        <div className={style.about__main}>
-          <div className={style.about__main__content}>
-            <h1 className={style.about__main__content__head}>
+        <div className={style.team__main}>
+          <div className={style.team__main__content}>
+            <h1 className={style.team__main__content__head}>
               Подобрать психолога
             </h1>
             <Selectors format={format} setFormat={setFormat} />

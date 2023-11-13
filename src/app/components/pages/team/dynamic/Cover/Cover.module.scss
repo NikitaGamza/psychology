@@ -1,17 +1,4 @@
 @import '@/style/colors.scss';
-@mixin button {
-  padding: 12px 32px 12px 32px;
-  border-radius: 32px;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  width: fit-content;
-  //   @media screen and (max-width: 1232px) {
-  //     width: 100%;
-  //     font-size: 16px;
-  //   }
-}
 .cover {
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +11,9 @@
     &__contact {
       display: flex;
       gap: 8px;
+      &_mobile {
+        display: none;
+      }
     }
   }
   &__info {
@@ -41,13 +31,16 @@
       line-height: 36px;
     }
     &__fields {
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 24px;
-      color: $grey_dark;
+      &__item {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: $grey_dark;
+      }
     }
     &__params {
       display: flex;
+      flex-wrap: wrap;
       &__item {
         font-size: 16px;
         font-weight: 500;
@@ -60,19 +53,38 @@
       line-height: 24px;
     }
     &__location {
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 24px;
+      display: flex;
+      flex-wrap: wrap;
+
+      &__address {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+      &__metro {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+      }
     }
+
     &__btns {
       display: flex;
       justify-content: space-between;
       column-gap: 8px;
       row-gap: 16px;
+      flex-wrap: wrap;
       &__rec {
-        @include button();
+        padding: 12px 32px 12px 32px;
+        border-radius: 32px;
+        border: none;
+        color: #fff;
+        width: fit-content;
         background-color: $green;
         display: block;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
       }
       &__tg {
         padding: 5px 32px 5px 13px;
@@ -80,10 +92,11 @@
         border: 2px solid $green;
         background-color: #fff;
         color: $green;
-        font-size: 20px;
-        font-weight: 700;
-        display: inline-flex;
+        display: flex;
         align-items: center;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
         gap: 16px;
         &:hover {
           background-color: $green;
@@ -114,6 +127,63 @@
         &__heart {
           width: 20px;
           height: 20px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 844px) {
+  .cover {
+    flex-direction: column;
+    align-items: center;
+    &__wrap {
+      &__img {
+        margin-bottom: 24px;
+      }
+      &__contact {
+        display: none;
+        &_mobile {
+          display: flex;
+          gap: 8px;
+          justify-content: center;
+          margin-top: 24px;
+          margin-bottom: 24px;
+        }
+      }
+    }
+    &__info {
+      &__wrap {
+        gap: 8px;
+        align-items: center;
+      }
+      &__fio {
+        font-size: 24px;
+        line-height: 28px;
+      }
+      &__fields {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+      }
+      &__params {
+        justify-content: center;
+      }
+      &__city {
+        text-align: center;
+      }
+      &__location {
+        justify-content: center;
+      }
+      &__btns {
+        &__rec {
+          width: 100%;
+          text-align: center;
+        }
+        &__tg {
+          justify-content: center;
+          gap: 12px;
+          width: 79%;
         }
       }
     }
