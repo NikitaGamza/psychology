@@ -8,6 +8,7 @@ import Experience from '@/app/components/pages/team/dynamic/Experience/Experienc
 import Specialization from '@/app/components/pages/team/dynamic/Specialization/Specialization';
 import Methods from '@/app/components/pages/team/dynamic/Methods/Methods';
 import About from '@/app/components/pages/team/dynamic/About/About';
+import Diploma from '@/app/components/pages/team/dynamic/Diploma/Diploma';
 export default function Page() {
   const router = useRouter();
   const [psychologist, setPsychologist] = useState(
@@ -31,6 +32,7 @@ export default function Page() {
           <Specialization props={psychologist?.tags} />
           <Methods props={psychologist?.methods} />
           <About props={psychologist?.about} />
+          <Diploma props={psychologist?.diploma} />
         </div>
       </div>
     </div>
