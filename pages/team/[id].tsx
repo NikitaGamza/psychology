@@ -7,7 +7,7 @@ import Education from '@/app/components/pages/team/dynamic/Education/Education';
 import Experience from '@/app/components/pages/team/dynamic/Experience/Experience';
 import Specialization from '@/app/components/pages/team/dynamic/Specialization/Specialization';
 import Methods from '@/app/components/pages/team/dynamic/Methods/Methods';
-
+import About from '@/app/components/pages/team/dynamic/About/About';
 export default function Page() {
   const router = useRouter();
   const [psychologist, setPsychologist] = useState(
@@ -30,6 +30,7 @@ export default function Page() {
           <Experience props={psychologist?.workExperience} />
           <Specialization props={psychologist?.tags} />
           <Methods props={psychologist?.methods} />
+          <About props={psychologist?.about} />
         </div>
       </div>
     </div>

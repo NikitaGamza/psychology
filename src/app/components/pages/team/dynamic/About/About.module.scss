@@ -1,0 +1,45 @@
+@import '@/style/colors.scss';
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  &__head {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    &__quote {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      &__text {
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 500;
+        line-height: 20px;
+        text-align: justify;
+      }
+    }
+    &__text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+  }
+}
+@media screen and (max-width: 844px) {
+  .about {
+    gap: 16px;
+    &__head {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &__content {
+      gap: 16px;
+    }
+  }
+}
