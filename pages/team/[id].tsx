@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { psychoList } from './psychologist';
 import Cover from '@/app/components/pages/team/dynamic/Cover/Cover';
 import Education from '@/app/components/pages/team/dynamic/Education/Education';
-
+import Experience from '@/app/components/pages/team/dynamic/Experience/Experience';
 export default function Page() {
   const router = useRouter();
   const [psychologist, setPsychologist] = useState(
@@ -20,6 +20,7 @@ export default function Page() {
         <h4 className={style.dynamic__container__head}>О психологе</h4>
         <div className={style.dynamic__container__about}>
           <Education props={psychologist?.education} />
+          <Experience props={psychologist?.workExperience} />
         </div>
       </div>
     </div>

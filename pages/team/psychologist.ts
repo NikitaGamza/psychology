@@ -40,6 +40,20 @@ export const psychoList = [
         year: 2012,
       },
     ],
+    workExperience: [
+      {
+        place: 'Центр системной семейной терапии',
+        title: 'Психолог',
+        startYear: 2021,
+        endYear: 2022,
+      },
+      {
+        place: 'Школа',
+        title: 'Школьный психолог',
+        startYear: 2016,
+        endYear: 2021,
+      },
+    ],
   },
   {
     id: 1,
@@ -89,6 +103,20 @@ export const psychoList = [
         year: 2012,
       },
     ],
+    workExperience: [
+      {
+        place: 'Центр системной семейной терапии',
+        title: 'Психолог',
+        startYear: 2021,
+        endYear: 2022,
+      },
+      {
+        place: 'Школа',
+        title: 'Школьный психолог',
+        startYear: 2016,
+        endYear: 2021,
+      },
+    ],
   },
   {
     id: 2,
@@ -129,6 +157,20 @@ export const psychoList = [
         university: 'Челябинский государственный педагогический университет',
         title: 'Степень бакалавра педагогики по направлению педагогика',
         year: 2012,
+      },
+    ],
+    workExperience: [
+      {
+        place: 'Центр системной семейной терапии',
+        title: 'Психолог',
+        startYear: 2021,
+        endYear: 2022,
+      },
+      {
+        place: 'Школа',
+        title: 'Школьный психолог',
+        startYear: 2016,
+        endYear: 2021,
       },
     ],
   },
@@ -173,6 +215,20 @@ export const psychoList = [
         year: 2012,
       },
     ],
+    workExperience: [
+      {
+        place: 'Центр системной семейной терапии',
+        title: 'Психолог',
+        startYear: 2021,
+        endYear: 2022,
+      },
+      {
+        place: 'Школа',
+        title: 'Школьный психолог',
+        startYear: 2016,
+        endYear: 2021,
+      },
+    ],
   },
   {
     id: 4,
@@ -214,6 +270,20 @@ export const psychoList = [
         year: 2012,
       },
     ],
+    workExperience: [
+      {
+        place: 'Центр системной семейной терапии',
+        title: 'Психолог',
+        startYear: 2021,
+        endYear: 2022,
+      },
+      {
+        place: 'Школа',
+        title: 'Школьный психолог',
+        startYear: 2016,
+        endYear: 2021,
+      },
+    ],
   },
   {
     id: 5,
@@ -253,6 +323,20 @@ export const psychoList = [
         university: 'Челябинский государственный педагогический университет',
         title: 'Степень бакалавра педагогики по направлению педагогика',
         year: 2012,
+      },
+    ],
+    workExperience: [
+      {
+        place: 'Центр системной семейной терапии',
+        title: 'Психолог',
+        startYear: 2021,
+        endYear: 2022,
+      },
+      {
+        place: 'Школа',
+        title: 'Школьный психолог',
+        startYear: 2016,
+        endYear: 2021,
       },
     ],
   },
