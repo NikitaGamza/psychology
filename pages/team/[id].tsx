@@ -5,11 +5,18 @@ import { psychoList } from './psychologist';
 import Cover from '@/app/components/pages/team/dynamic/Cover/Cover';
 import Education from '@/app/components/pages/team/dynamic/Education/Education';
 import Experience from '@/app/components/pages/team/dynamic/Experience/Experience';
+import Specialization from '@/app/components/pages/team/dynamic/Specialization/Specialization';
+import Methods from '@/app/components/pages/team/dynamic/Methods/Methods';
+
 export default function Page() {
   const router = useRouter();
   const [psychologist, setPsychologist] = useState(
     psychoList.find((item: any) => item.id == router.query.id)
   );
+  useEffect(() => {
+    console.log(router.query.id);
+    console.log(psychologist);
+  });
   useEffect(() => {
     setPsychologist(psychoList.find((item: any) => item.id == router.query.id));
   }, [router.query.id]);
@@ -21,6 +28,8 @@ export default function Page() {
         <div className={style.dynamic__container__about}>
           <Education props={psychologist?.education} />
           <Experience props={psychologist?.workExperience} />
+          <Specialization props={psychologist?.tags} />
+          <Methods props={psychologist?.methods} />
         </div>
       </div>
     </div>
