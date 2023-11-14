@@ -9,6 +9,8 @@ import Specialization from '@/app/components/pages/team/dynamic/Specialization/S
 import Methods from '@/app/components/pages/team/dynamic/Methods/Methods';
 import About from '@/app/components/pages/team/dynamic/About/About';
 import Diploma from '@/app/components/pages/team/dynamic/Diploma/Diploma';
+import Popular from '@/app/components/pages/team/dynamic/Popular/Popular';
+
 export default function Page() {
   const router = useRouter();
   const [psychologist, setPsychologist] = useState(
@@ -33,6 +35,7 @@ export default function Page() {
           <Methods props={psychologist?.methods} />
           <About props={psychologist?.about} />
           <Diploma props={psychologist?.diploma} />
+          <Popular />
         </div>
       </div>
     </div>

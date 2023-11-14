@@ -62,6 +62,11 @@
 
 @media screen and (max-width: 844px) {
   .dipl {
+    gap: 16px;
+    &__head {
+      font-size: 16px;
+      line-height: 24px;
+    }
     &__content {
       &__arrows {
         display: none;
