@@ -35,6 +35,7 @@ export default function Page() {
           <Methods props={psychologist?.methods} />
           <About props={psychologist?.about} />
           <Diploma props={psychologist?.diploma} />
+          {/* Нужно доваить комментарии */}
           <Popular />
         </div>
       </div>
