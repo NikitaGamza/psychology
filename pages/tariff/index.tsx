@@ -18,6 +18,7 @@ export default function Tariff() {
       </div>
       <Certificate />
       <Questions />
+      {/* сделать модальный окна */}
     </div>
   );
 }
