@@ -1,0 +1,17 @@
+@import '@/style/colors.scss';
+.quest {
+  background-color: $grey_light_bg;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  &__head {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    margin-bottom: 40px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
