@@ -1,0 +1,89 @@
+@import '@/style/colors.scss';
+.certificate {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $green;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &__info {
+      width: 509px;
+      &__head {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 56px;
+        color: $white;
+        margin-bottom: 32px;
+      }
+      &__text {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 36px;
+        color: $white;
+        margin-bottom: 40px;
+      }
+      &__btn {
+        background-color: $white;
+        color: $green;
+        border-radius: 50px;
+        border: none;
+        padding: 12px 32px;
+
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+    &__cart {
+      padding: 40px;
+      background-color: $white;
+      border-radius: 20px;
+      background-image: url('/img/pages/tariff/cart-bg.png');
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      width: 604px;
+      &__head {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        &__title {
+          font-size: 40px;
+          font-weight: 700;
+          line-height: 48px;
+        }
+      }
+      &__price {
+        color: $green;
+
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 56px;
+      }
+      &__sessions {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 36px;
+        margin-bottom: 70px;
+      }
+      &__promo {
+        display: flex;
+        gap: 16px;
+        &__title {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 36px;
+        }
+        &__code {
+          border: none;
+          background-color: $green_2_bg;
+          border-radius: 10px;
+          padding: 4px 12px;
+          width: 144px;
+          font-size: 24px;
+          font-weight: 500;
+          letter-spacing: 0.04em;
+        }
+      }
+    }
+  }
+}
