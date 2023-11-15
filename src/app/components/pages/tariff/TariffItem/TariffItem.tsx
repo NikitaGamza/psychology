@@ -55,6 +55,9 @@ export default function TariffItem(tariffFilter: any) {
             )
         )}
       </div>
+      <button className={style.tariff__info__req_mobile}>
+        Оставить заявку
+      </button>
     </div>
   );
 }

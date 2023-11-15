@@ -6,6 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  column-gap: 24px;
   &:last-child {
     border-bottom: none;
   }
@@ -72,6 +73,9 @@
       width: fit-content;
       border-radius: 50px;
       padding: 12px 59px;
+      &_mobile {
+        display: none;
+      }
     }
   }
   &__carts {
@@ -80,5 +84,72 @@
     column-gap: 24px;
     row-gap: 48px;
     max-width: 604px;
+  }
+}
+@media screen and (max-width: 1232px) {
+  .tariff {
+    &__carts {
+      max-width: 340px;
+    }
+  }
+}
+@media screen and (max-width: 845px) {
+  .tariff {
+    flex-direction: column;
+    align-items: center;
+    &__info {
+      gap: 16px;
+      &__head {
+        font-size: 24px;
+        line-height: 28px;
+      }
+      &__bullet {
+        gap: 12px;
+        &__item {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+      &__btns {
+        &__item {
+          font-size: 16px;
+          padding: 8px 12px;
+          &_active {
+            font-size: 16px;
+            padding: 8px 12px;
+          }
+        }
+      }
+      &__req {
+        display: none;
+        &_mobile {
+          display: block;
+          margin-top: 24px;
+
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 24px;
+          color: $white;
+
+          border: none;
+          background-color: $green;
+          width: fit-content;
+          border-radius: 50px;
+          padding: 12px 59px;
+        }
+      }
+    }
+    &__carts {
+      margin-top: 36px;
+    }
+  }
+}
+@media screen and (max-width: 380px) {
+  .tariff {
+    &__carts {
+      column-gap: 16px;
+      row-gap: 36px;
+      justify-content: space-around;
+    }
   }
 }
