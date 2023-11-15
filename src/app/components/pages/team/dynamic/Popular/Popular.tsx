@@ -123,16 +123,10 @@ export default function Popular() {
       setCurrentSlide(slider.track.details.rel);
     },
     slides: {
-      perView: 4,
+      perView: 3,
       spacing: 20,
     },
     breakpoints: {
-      '(max-width: 1232px)': {
-        slides: {
-          perView: 3,
-          spacing: 20,
-        },
-      },
       '(max-width: 1000px)': {
         slides: {
           perView: 2,
