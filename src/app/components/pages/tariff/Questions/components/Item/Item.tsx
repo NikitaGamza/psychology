@@ -7,7 +7,7 @@ export default function Item({ props }: any) {
   return (
     <div className={style.item}>
       <div className={style.item__head}>
-        <h1 className={style.item__head__title}>{head}</h1>
+        <span className={style.item__head__title}>{head}</span>
         <button
           onClick={() => setVisible(!visible)}
           className={

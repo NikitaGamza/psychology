@@ -45,3 +45,34 @@
     max-width: 1088px;
   }
 }
+@media screen and (max-width: 1248px) {
+  .item {
+    padding: 20px;
+    &__head {
+      &__title {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      &__btn {
+        &_visible {
+          width: 32px !important;
+          height: 32px;
+          font-size: 48px;
+          padding-left: 3px;
+          padding-right: 5px;
+        }
+        &_invisible {
+          width: 32px;
+          height: 32px;
+          font-size: 48px;
+          padding-left: 2px;
+          padding-right: 3px;
+        }
+      }
+    }
+    &__description {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
