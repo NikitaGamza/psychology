@@ -1,0 +1,15 @@
+@import '@/style/colors.scss';
+.tariff {
+  padding-top: 140px;
+  &__head {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    margin-bottom: 8px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+}

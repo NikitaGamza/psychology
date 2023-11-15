@@ -1,0 +1,84 @@
+@import '@/style/colors.scss';
+.tariff {
+  padding-top: 20px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid $green_light;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &:last-child {
+    border-bottom: none;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    &__head {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+    }
+    &__btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      &__item {
+        font-size: 20px;
+        font-weight: 500;
+        padding: 12px 24px;
+        background-color: $white;
+        border-radius: 30px;
+        border: 1px solid $grey;
+        &_active {
+          font-size: 20px;
+          font-weight: 500;
+          padding: 12px 24px;
+          background-color: $green_light;
+          border-radius: 30px;
+          border: 2px solid $green;
+        }
+      }
+    }
+    &__bullet {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      &__item {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+        list-style: outside;
+        list-style: none;
+        list-style-type: none;
+        &::before {
+          list-style: none;
+          list-style-type: none;
+          content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+          color: $green; /* Change the color */
+          font-weight: bold; /* If you want it to be bold */
+          display: inline-block; /* Needed to add space between the bullet and the text */
+          width: 1em; /* Also needed for space (tweak if needed) */
+        }
+      }
+    }
+    &__req {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      color: $white;
+
+      border: none;
+      background-color: $green;
+      width: fit-content;
+      border-radius: 50px;
+      padding: 12px 59px;
+    }
+  }
+  &__carts {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 48px;
+    max-width: 604px;
+  }
+}
