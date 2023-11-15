@@ -32,6 +32,9 @@
 
         font-size: 20px;
         font-weight: 700;
+        &_mobile {
+          display: none;
+        }
       }
     }
     &__cart {
@@ -42,6 +45,9 @@
       background-repeat: no-repeat;
       background-position: right bottom;
       width: 604px;
+      &__mobile {
+        display: none;
+      }
       &__head {
         display: flex;
         justify-content: space-between;
@@ -82,6 +88,109 @@
           font-size: 24px;
           font-weight: 500;
           letter-spacing: 0.04em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .certificate {
+    &__content {
+      flex-direction: column;
+      align-items: center;
+      &__info {
+        width: auto;
+        text-align: center;
+        &__btn {
+          display: none;
+          &_mobile {
+            display: block;
+            background-color: $white;
+            color: $green;
+            border-radius: 50px;
+            border: none;
+            padding: 12px 32px;
+
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 auto;
+            margin-top: 32px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 655px) {
+  .certificate {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &__content {
+      &__info {
+        &__head {
+          font-size: 32px;
+          font-weight: 700;
+          line-height: 36px;
+          margin-bottom: 24px;
+        }
+        &__text {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          margin-bottom: 32px;
+        }
+        &__btn {
+          &_mobile {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+          }
+        }
+      }
+      &__cart {
+        width: auto;
+        padding: 25px;
+        background-size: 30%;
+        &__head {
+          &__title {
+            font-size: 36px;
+            line-height: 36px;
+          }
+        }
+        &__price {
+          font-size: 36px;
+          line-height: 40px;
+        }
+        &__sessions {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 60px;
+        }
+        &__promo {
+          &__title {
+            font-size: 16px;
+          }
+          &__code {
+            font-size: 16px;
+            width: 104px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .certificate {
+    &__content {
+      &__cart {
+        display: none;
+        &__mobile {
+          display: block;
+          width: 100%;
+          height: auto;
         }
       }
     }

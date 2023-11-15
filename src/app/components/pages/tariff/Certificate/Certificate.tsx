@@ -25,7 +25,13 @@ export default function Certificate() {
               <h3 className={style.certificate__content__cart__head__title}>
                 Подарочный сертификат
               </h3>
-              <Image src={'/logo.svg'} alt="logo" width={148} height={58} />
+              <Image
+                src={'/logo.svg'}
+                alt="logo"
+                width={148}
+                height={58}
+                className={style.certificate__content__cart__head__logo}
+              />
             </div>
             <h2 className={style.certificate__content__cart__price}>2 500 ₽</h2>
             <p className={style.certificate__content__cart__sessions}>
@@ -45,6 +51,16 @@ export default function Certificate() {
             </div>
           </div>
         </div>
+        <Image
+          src={'/img/pages/tariff/cart.png'}
+          alt="cart"
+          width={320}
+          height={217}
+          className={style.certificate__content__cart__mobile}
+        />
+        <button className={style.certificate__content__info__btn_mobile}>
+          Заказать сертификат
+        </button>
       </div>
     </div>
   );
