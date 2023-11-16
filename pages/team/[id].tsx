@@ -519,20 +519,22 @@ export default function Page() {
   }, [router.query.id]);
   return (
     <div className={style.dynamic}>
-      <div className={style.dynamic__container}>
-        <Cover props={psychologist} />
-        <h4 className={style.dynamic__container__head}>О психологе</h4>
-        <div className={style.dynamic__container__about}>
-          <Education props={psychologist?.education} />
-          <Experience props={psychologist?.workExperience} />
-          <Specialization props={psychologist?.tags} />
-          <Methods props={psychologist?.methods} />
-          <About props={psychologist?.about} />
-          <Diploma props={psychologist?.diploma} />
-          {/* Нужно доваить комментарии пагинация*/}
-          <Popular />
+      {(psychologist?.id === 0 || psychologist?.id) && (
+        <div className={style.dynamic__container}>
+          <Cover props={psychologist} />
+          <h4 className={style.dynamic__container__head}>О психологе</h4>
+          <div className={style.dynamic__container__about}>
+            <Education props={psychologist?.education} />
+            <Experience props={psychologist?.workExperience} />
+            <Specialization props={psychologist?.tags} />
+            <Methods props={psychologist?.methods} />
+            <About props={psychologist?.about} />
+            <Diploma props={psychologist?.diploma} />
+            {/* Нужно доваить комментарии пагинация*/}
+            <Popular />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

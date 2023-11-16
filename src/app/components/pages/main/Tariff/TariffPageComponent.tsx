@@ -3,6 +3,7 @@ import Tariff from '@/app/components/ui/Tariff/Tariff';
 import { tariffList } from './tariffList';
 import { tariffFilter } from './tariffFilter';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function TariffPageComponent() {
   const [tariffPlan, setTariffPlan] = useState(tariffFilter[0]);
@@ -67,7 +68,9 @@ export default function TariffPageComponent() {
             )}
           </div>
           <div className={style.tariff__container__btn}>
-            <button className="button_green">Все тарифы</button>
+            <Link href={'/tariff'} className="button_green">
+              Все тарифы
+            </Link>
           </div>
         </div>
       </div>

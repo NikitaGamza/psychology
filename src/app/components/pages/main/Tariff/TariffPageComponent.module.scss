@@ -1,8 +1,12 @@
 .tariff {
+  background-image: url('/img/pages/main/Tariff/wave.png');
+  background-repeat: no-repeat;
+  background-position: center;
   &__container {
     display: flex;
     flex-direction: column;
     gap: 48px;
+    margin-bottom: 20px;
     &__options {
       display: flex;
       gap: 60px;
@@ -15,6 +19,8 @@
     }
     &__btn {
       text-align: center;
+      width: fit-content;
+      margin: 0 auto;
     }
   }
   &__list {
@@ -25,6 +31,7 @@
 }
 @media screen and (max-width: 1232px) {
   .tariff {
+    background-image: none;
     &__container {
       &__options {
         flex-direction: column;

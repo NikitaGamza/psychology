@@ -18,7 +18,7 @@ export default function Header() {
     },
     {
       title: 'Тарифы',
-      linkTo: '/about',
+      linkTo: '/tariff',
     },
     {
       title: 'Курсы',
@@ -38,7 +38,7 @@ export default function Header() {
     },
     {
       title: 'FAQ',
-      linkTo: '/about',
+      linkTo: '/faq',
     },
   ];
   return (
