@@ -55,8 +55,12 @@ export default function Header() {
           </div>
         </div>
         <nav className={style.header__nav}>
-          {navigation.map((item) => (
-            <Link className={style.header__nav__link} href={item.linkTo}>
+          {navigation.map((item: any, idx: number) => (
+            <Link
+              key={idx}
+              className={style.header__nav__link}
+              href={item.linkTo}
+            >
               {item.title}
             </Link>
           ))}

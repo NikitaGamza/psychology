@@ -148,7 +148,7 @@ export default function Popular() {
       <h5 className={style.popular__head}>Популярные психологи</h5>
       <div className={`navigation-wrapper ${style.slider}`}>
         <div ref={sliderRef} className={`keen-slider ${style.slider__wrap}`}>
-          {psychoList.map((item: any, index) => (
+          {psychoList.map((item: any, index: number) => (
             <Psychologist
               key={index}
               imageUrl={item.imageUrl}

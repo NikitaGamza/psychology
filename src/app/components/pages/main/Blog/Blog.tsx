@@ -74,7 +74,7 @@ export default function Blog() {
                 </Link>
               </div>
               <div className={style.blog__content__part__questions}>
-                {questionList.map((item: any, idx) => (
+                {questionList.map((item: any, idx: number) => (
                   <Question item={item} key={idx} />
                 ))}
               </div>
@@ -92,7 +92,7 @@ export default function Blog() {
                 </Link>
               </div>
               <div className={style.blog__content__part__main}>
-                {suggestList.map((item: any, idx) => (
+                {suggestList.map((item: any, idx: number) => (
                   <ArticleCart key={idx} item={item} />
                 ))}
               </div>
@@ -110,7 +110,7 @@ export default function Blog() {
                 </Link>
               </div>
               <div className={style.blog__content__part__main}>
-                {videoList.map((item: any, idx) => (
+                {videoList.map((item: any, idx: number) => (
                   <ArticleCart key={idx} item={item} />
                 ))}
               </div>

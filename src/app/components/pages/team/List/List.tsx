@@ -31,7 +31,7 @@ export default function List({ format, parameters }: any) {
   );
   return (
     <div className={style.list}>
-      {result.map((item, idx) => (
+      {result.map((item: any, idx: number) => (
         <Psychologist
           key={idx}
           id={item.id}

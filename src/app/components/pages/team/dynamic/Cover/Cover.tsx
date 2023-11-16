@@ -19,6 +19,11 @@ export default function Cover(props: any) {
     metro,
     links,
   } = props.props;
+  const marriedResult =
+    (sex && isMarried && 'Женат') ||
+    (sex && !isMarried && 'Не женат') ||
+    (!sex && isMarried && 'Замужем') ||
+    'Не замужем';
   return (
     <div className={style.cover}>
       <div className={style.cover__wrap}>
@@ -74,7 +79,11 @@ export default function Cover(props: any) {
               </span>
               <span className={style.cover__info__params__item}>
                 {' '}
-                {age} лет
+                {age} лет •{' '}
+              </span>
+              <span className={style.cover__info__params__item}>
+                {' '}
+                {marriedResult}
               </span>
             </div>
           </div>

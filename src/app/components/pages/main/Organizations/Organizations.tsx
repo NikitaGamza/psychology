@@ -94,7 +94,7 @@ export default function Organizations() {
                 ref={sliderRef}
                 className={`keen-slider ${style.org__slider__wrap}`}
               >
-                {orgList.map((item: any, idx) => (
+                {orgList.map((item: any, idx: number) => (
                   <Cart key={idx} item={item} />
                 ))}
               </div>

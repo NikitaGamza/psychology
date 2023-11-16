@@ -14,7 +14,7 @@ export default function Charity() {
             </h2>
           </div>
           <div className={style.char__content}>
-            {charList.map((item, idx) => (
+            {charList.map((item: any, idx: number) => (
               <Cart props={item} key={idx} />
             ))}
           </div>

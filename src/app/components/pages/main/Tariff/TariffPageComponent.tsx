@@ -20,7 +20,7 @@ export default function TariffPageComponent() {
           <div className={style.tariff__container}>
             <div className={style.tariff__container__options}>
               <div className={style.tariff__container__options__list}>
-                {tariffFilter.map((item: any, idx) => (
+                {tariffFilter.map((item: any, idx: number) => (
                   <button
                     key={idx}
                     className={
@@ -35,7 +35,7 @@ export default function TariffPageComponent() {
                 ))}
               </div>
               <div className={style.tariff__container__options__list}>
-                {tariffPlan.format.map((item: any, idx) => (
+                {tariffPlan.format.map((item: any, idx: number) => (
                   <button
                     key={idx}
                     className={
@@ -51,7 +51,7 @@ export default function TariffPageComponent() {
           </div>
           <div className={style.tariff__list}>
             {tariffList.map(
-              (item: any, index) =>
+              (item: any, index: number) =>
                 item.format === format &&
                 item.tariffPlan === tariffPlan.therapyName && (
                   <Tariff

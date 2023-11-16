@@ -44,7 +44,7 @@ export default function Complaints() {
         </div>
       )}
       <div className={style.wrap__complains}>
-        {complains.map((item: string, idx) => (
+        {complains.map((item: string, idx: number) => (
           <button key={idx} className={style.wrap__complains__item}>
             {item}
           </button>

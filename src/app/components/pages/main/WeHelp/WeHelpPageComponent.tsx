@@ -69,7 +69,7 @@ export default function WeHelpPageComponent() {
             </p>
           </div>
           <div className={style.help__content}>
-            {helpList.map((item, idx) => (
+            {helpList.map((item: any, idx: number) => (
               <div key={idx} className={style.help__content__item}>
                 <Image
                   src={item.imgUrl}
@@ -88,7 +88,7 @@ export default function WeHelpPageComponent() {
               ref={sliderRef}
               className={`keen-slider ${style.slider__wrap}`}
             >
-              {helpList.map((item, idx) => (
+              {helpList.map((item: any, idx: number) => (
                 <div
                   key={idx}
                   className={`keen-slider__slide ${style.help__content__item}`}

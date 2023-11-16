@@ -20,6 +20,7 @@ export default function Parameters({ parameters, setParameters }: any) {
       <div className={style.params__set}>
         {params.map((item: IParameter, idx: number) => (
           <Item
+            key={idx}
             item={item}
             parameters={parameters}
             setParameters={setParameters}

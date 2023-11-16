@@ -35,8 +35,9 @@ export default function Psychologist(props: any) {
                 {firstName} {lastName}
               </h5>
               <div className={style.psychologist_full__info__head__types}>
-                {format.map((item: string) => (
+                {format.map((item: string, idx: number) => (
                   <span
+                    key={idx}
                     className={
                       item == 'Очно'
                         ? style.psychologist_full__info__head__types__item_offline
@@ -89,8 +90,11 @@ export default function Psychologist(props: any) {
               ))}
             </div>
             <div className={style.psychologist_full__info__tags}>
-              {tags.map((item: string) => (
-                <span className={style.psychologist_full__info__tags__item}>
+              {tags.map((item: string, idx: number) => (
+                <span
+                  key={idx}
+                  className={style.psychologist_full__info__tags__item}
+                >
                   {item}
                 </span>
               ))}

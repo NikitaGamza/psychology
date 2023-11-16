@@ -23,7 +23,7 @@ export default function Slider() {
   return (
     <div className={`navigation-wrapper ${style.slider}`}>
       <div ref={sliderRef} className={`keen-slider ${style.slider__wrap}`}>
-        {charList.map((item, idx) => (
+        {charList.map((item: any, idx: number) => (
           <Cart props={item} key={idx} />
         ))}
       </div>

@@ -42,7 +42,7 @@ export default function Values() {
             <h2 className="section__head__title">Наши ценности</h2>
           </div>
           <div className={style.val__content}>
-            {valList.map((item, idx) => (
+            {valList.map((item: any, idx: number) => (
               <Cart props={item} key={idx} />
             ))}
           </div>
