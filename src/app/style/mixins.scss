@@ -1,0 +1,13 @@
+@import 'colors.scss';
+@mixin link-green {
+  padding: 18px 32px;
+  border-radius: 32px;
+  border: none;
+  color: $white;
+  font-size: 20px;
+  font-weight: 700;
+  width: fit-content;
+  display: block;
+  background-color: $green;
+  text-align: center;
+}

@@ -1,0 +1,78 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+.cover {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  &__info {
+    width: 495px;
+    &__head {
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 64px;
+      margin-bottom: 40px;
+      &_green {
+        color: $green;
+      }
+    }
+    &__text {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+      margin-bottom: 60px;
+    }
+    &__req {
+      @include link-green;
+      &_mobile {
+        @include link-green;
+        display: none;
+      }
+    }
+  }
+  &__img {
+    width: 656px;
+    height: 675px;
+  }
+}
+@media screen and (max-width: 1185px) {
+  .cover {
+    flex-direction: column;
+    &__info {
+      &__req {
+        display: none;
+        &_mobile {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 690px) {
+  .cover {
+    &__info {
+      width: auto;
+      &__head {
+        font-size: 32px;
+        line-height: 32px;
+        margin-bottom: 16px;
+      }
+      &__text {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 24px;
+      }
+      &__req {
+        &_mobile {
+          font-size: 16px;
+          padding: 16px;
+        }
+      }
+    }
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

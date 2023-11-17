@@ -30,7 +30,7 @@ export default function Header() {
     },
     {
       title: 'Психологам',
-      linkTo: '/about',
+      linkTo: '/for-psychologists',
     },
     {
       title: 'Блог',
