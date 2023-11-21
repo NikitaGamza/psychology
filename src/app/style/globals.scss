@@ -4,6 +4,10 @@
   font-family: Gilroy;
   src: url('../../../public/fonts/Gilroy-Light.otf');
 }
+@font-face {
+  font-family: Gilroy-ExtraBold;
+  src: url('../../../public/fonts/Gilroy-ExtraBold.otf');
+}
 
 @mixin button {
   padding: 12px 32px 12px 32px;

@@ -24,7 +24,7 @@ function Arrow(props: {
 export default function PsychoSlider() {
   const psychoList = [
     {
-      imageUrl: 'Типо картинка',
+      imageUrl: '/img/Psychologist/blank.svg',
       firstName: 'Игорь',
       lastName: 'Батамиров',
       format: ['очно', 'онлайн', 'переписка'],
@@ -38,7 +38,7 @@ export default function PsychoSlider() {
       tags: ['Дети', 'Семья', 'Карьера'],
     },
     {
-      imageUrl: 'Типо картинка',
+      imageUrl: '/img/Psychologist/blank.svg',
       firstName: 'Наталья',
       lastName: 'Петрова',
       format: ['очно', 'онлайн'],
@@ -59,7 +59,7 @@ export default function PsychoSlider() {
       ],
     },
     {
-      imageUrl: 'Типо картинка',
+      imageUrl: '/img/Psychologist/blank.svg',
       firstName: 'Элина',
       lastName: 'Кроповницкая',
       format: ['онлайн', 'переписка'],
@@ -73,7 +73,7 @@ export default function PsychoSlider() {
       tags: ['Дети', 'Семья', 'Карьера'],
     },
     {
-      imageUrl: 'Типо картинка',
+      imageUrl: '/img/Psychologist/blank.svg',
       firstName: 'Любовь',
       lastName: 'Иваненко',
       format: ['онлайн', 'переписка'],
@@ -87,7 +87,7 @@ export default function PsychoSlider() {
       tags: ['Дети', 'Семья', 'Карьера'],
     },
     {
-      imageUrl: 'Типо картинка',
+      imageUrl: '/img/Psychologist/blank.svg',
       firstName: 'Анна',
       lastName: 'Костина',
       format: ['онлайн', 'переписка'],
@@ -101,7 +101,7 @@ export default function PsychoSlider() {
       tags: ['Дети', 'Семья', 'Карьера'],
     },
     {
-      imageUrl: 'Типо картинка',
+      imageUrl: '/img/Psychologist/blank.svg',
       firstName: 'Леонид',
       lastName: 'Матвеев',
       format: ['онлайн', 'переписка'],
@@ -157,6 +157,7 @@ export default function PsychoSlider() {
           {psychoList.map((item: any, index: number) => (
             <Psychologist
               key={index}
+              imageUrl={item.imageUrl}
               firstName={item.firstName}
               lastName={item.lastName}
               fields={item.fields}

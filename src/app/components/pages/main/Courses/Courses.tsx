@@ -123,7 +123,7 @@ export default function Courses() {
             <div className={`navigation-wrapper ${style.courses__slider}`}>
               <div
                 ref={sliderRef}
-                className={`keen-slider ${style.slider__wrap}`}
+                className={`keen-slider ${style.courses__slider__wrap}`}
               >
                 {courseList.map((item: any, idx: number) => (
                   // <p className="keen-slider__slide">hi</p>

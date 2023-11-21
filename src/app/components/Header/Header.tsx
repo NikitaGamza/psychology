@@ -4,10 +4,10 @@ import Image from 'next/image';
 // import '@globals.css';
 export default function Header() {
   const navigation = [
-    {
-      title: 'Главная',
-      linkTo: '/',
-    },
+    // {
+    //   title: 'Главная',
+    //   linkTo: '/',
+    // },
     {
       title: 'О нас',
       linkTo: '/about',

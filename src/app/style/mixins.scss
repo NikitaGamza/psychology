@@ -11,3 +11,16 @@
   background-color: $green;
   text-align: center;
 }
+@mixin link-sheer-green {
+  border-radius: 32px;
+  padding: 9px 24px;
+  border: 2px solid $green;
+  color: $green;
+  font-size: 16px;
+  font-weight: 900;
+  font-family: Gilroy-ExtraBold;
+  &:hover {
+    background-color: $green;
+    color: $white;
+  }
+}

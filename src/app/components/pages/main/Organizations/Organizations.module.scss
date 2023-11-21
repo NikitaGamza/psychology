@@ -15,6 +15,10 @@
 .org {
   &__slider {
     position: relative;
+    &__wrap {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
   }
   &__arrows {
     display: flex;

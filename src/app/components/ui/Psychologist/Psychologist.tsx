@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Psychologist.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Psychologist(props: any) {
   const {
