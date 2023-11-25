@@ -26,8 +26,8 @@ export default function TariffPageComponent() {
                     key={idx}
                     className={
                       item.therapyName === tariffPlan.therapyName
-                        ? 'button_sheer_active'
-                        : 'button_sheer'
+                        ? style.tariff__container__options__list__item_active
+                        : style.tariff__container__options__list__item
                     }
                     onClick={() => setTariffPlan(item)}
                   >
@@ -40,7 +40,9 @@ export default function TariffPageComponent() {
                   <button
                     key={idx}
                     className={
-                      format === item ? 'button_sheer_active' : 'button_sheer'
+                      format === item
+                        ? style.tariff__container__options__list__item_active
+                        : style.tariff__container__options__list__item
                     }
                     onClick={() => setFormat(item)}
                   >
@@ -67,11 +69,10 @@ export default function TariffPageComponent() {
                 )
             )}
           </div>
-          <div className={style.tariff__container__btn}>
-            <Link href={'/tariff'} className="button_green">
-              Все тарифы
-            </Link>
-          </div>
+
+          <Link href={'/tariff'} className={style.tariff__btn}>
+            Все тарифы
+          </Link>
         </div>
       </div>
     </section>

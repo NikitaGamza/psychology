@@ -7,7 +7,7 @@ $white: #fff;
     position: relative;
     padding: 32px;
     box-shadow: 0px 0px 5px 0px #1d304e26;
-    border-radius: 10px;
+    border-radius: 20px;
     width: 290px;
     // overflow: hidden;
     &__types {
@@ -21,6 +21,8 @@ $white: #fff;
       font-weight: 700;
       line-height: 36px;
       margin-bottom: 76px;
+      font-family: Gilroy-ExtraBold;
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -29,6 +31,7 @@ $white: #fff;
         font-weight: 700;
         line-height: 36px;
         margin-bottom: 52px;
+        font-family: Gilroy-ExtraBold;
         &:last-child {
           margin-bottom: 0;
         }
@@ -37,7 +40,7 @@ $white: #fff;
     &__sale {
       position: absolute;
       z-index: 3;
-      left: 210px;
+      left: 201px;
       bottom: 205px;
       background-color: $yellow;
       width: 64px;
@@ -46,10 +49,11 @@ $white: #fff;
       text-align: center;
       &__info {
         position: relative;
-        top: 22px;
-        color: #fff;
-        font-weight: bold;
-        font-size: 16px;
+        top: 20px;
+        color: $white;
+        font-weight: 500;
+        font-size: 18px;
+        font-family: Gilroy-ExtraBold;
       }
     }
     &__circle {

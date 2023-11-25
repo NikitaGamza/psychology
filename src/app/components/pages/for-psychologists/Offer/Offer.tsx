@@ -21,44 +21,110 @@ export default function Offer() {
           <h4 className={style.offer__list__item__title}>Гарантируем</h4>
           <ul className={style.offer__list__item__bullet}>
             <li className={style.offer__list__item__bullet__el}>
-              Быстрые выплаты за проведённые сессии
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Быстрые выплаты за проведённые сессии
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Оплату в случае отмены клиентом встречи менее, чем за 2 часа
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                {' '}
+                Оплату в случае отмены клиентом встречи менее, чем за 2 часа
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Оплату за активность в Сообществе (ответы на вопросы
-              пользователей, публикация статей, видеоэфиры)
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+
+              <span className={style.offer__list__item__bullet__el__text}>
+                Оплату за активность в Сообществе (ответы на вопросы
+                пользователей, публикация статей, видеоэфиры)
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Бонусы от сервиса лучшему психотерапевту по результатам месяца
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Бонусы от сервиса лучшему психотерапевту по результатам месяца
+              </span>
             </li>
           </ul>
         </div>
-        <div className={style.offer__list__item}>
+        <div className={style.offer__list__item_right}>
           <Image
             src={'/img/pages/for-psychologists/Offer/2.png'}
             alt="pic"
             width={64}
             height={64}
-            className={style.offer__list__item__img}
+            className={style.offer__list__item__img_exep}
           />
           <h4 className={style.offer__list__item__title}>Берем на себя</h4>
           <ul className={style.offer__list__item__bullet}>
             <li className={style.offer__list__item__bullet__el}>
-              Все организационные вопросы
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+
+              <span className={style.offer__list__item__bullet__el__text}>
+                Все организационные вопросы
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Продвижение на сервисе и поиск клиентов
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Продвижение на сервисе и поиск клиентов
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Работу с клиентом до и после сессии
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Работу с клиентом до и после сессии
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Прокачку личного бренда (частично)
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Прокачку личного бренда (частично)
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Организацию семинаров, конференций и тренингов
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Организацию семинаров, конференций и тренингов
+              </span>
             </li>
           </ul>
         </div>
@@ -73,24 +139,59 @@ export default function Offer() {
           <h4 className={style.offer__list__item__title}>Обеспечиваем</h4>
           <ul className={style.offer__list__item__bullet}>
             <li className={style.offer__list__item__bullet__el}>
-              Свободный график
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Свободный график
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Регулярные ревизии
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Регулярные ревизии
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Профессиональное развитие и обмен опытом
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Профессиональное развитие и обмен опытом
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Регулярные встречи: семинары, вебинары, тренинги, конференции,
-              дискуссии
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Регулярные встречи: семинары, вебинары, тренинги, конференции,
+                дискуссии
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Участие в исследованиях
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Участие в исследованиях
+              </span>
             </li>
           </ul>
         </div>
-        <div className={style.offer__list__item}>
+        <div className={style.offer__list__item_right}>
           <Image
             src={'/img/pages/for-psychologists/Offer/4.svg'}
             alt="pic"
@@ -101,16 +202,44 @@ export default function Offer() {
           <h4 className={style.offer__list__item__title}>А ещё</h4>
           <ul className={style.offer__list__item__bullet}>
             <li className={style.offer__list__item__bullet__el}>
-              2 недели в ТОПе и на главной странице в начале сотрудничества
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                2 недели в ТОПе и на главной странице в начале сотрудничества
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Реализацию Ваших даже самых “безбашенных идей”:)
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Реализацию Ваших даже самых “безбашенных идей”:)
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Сотрудничество в работе с организациями
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Сотрудничество в работе с организациями
+              </span>
             </li>
             <li className={style.offer__list__item__bullet__el}>
-              Неформальные встречи и общение
+              <span className={style.offer__list__item__bullet__el__point_wrap}>
+                <span
+                  className={style.offer__list__item__bullet__el__point}
+                ></span>
+              </span>
+              <span className={style.offer__list__item__bullet__el__text}>
+                Неформальные встречи и общение
+              </span>
             </li>
           </ul>
         </div>

@@ -25,10 +25,10 @@ export default function PsychoSlider() {
   const psychoList = [
     {
       imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Игорь',
-      lastName: 'Батамиров',
+      firstName: 'Любовь',
+      lastName: 'Иваненко',
       format: ['очно', 'онлайн', 'переписка'],
-      fields: ['Психолог', 'семейный психолог', 'к.п.н'],
+      fields: ['Психолог', 'психотерапевт'],
       feedbacks: ['первый отзыв', 'второй отзыв'],
       experience: 10,
       age: 35,
@@ -186,7 +186,7 @@ export default function PsychoSlider() {
           </div>
         )}
       </div>
-      {loaded && instanceRef.current && (
+      {/* {loaded && instanceRef.current && (
         <div className={style.dots}>
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
@@ -205,7 +205,7 @@ export default function PsychoSlider() {
             );
           })}
         </div>
-      )}
+      )} */}
     </>
   );
 }

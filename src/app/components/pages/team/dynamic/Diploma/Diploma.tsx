@@ -85,7 +85,7 @@ export default function Diploma({ props }: any) {
               </div>
             )}
           </div>
-          {loaded && instanceRef.current && (
+          {/* {loaded && instanceRef.current && (
             <div className={style.dots}>
               {[
                 ...Array(
@@ -108,7 +108,7 @@ export default function Diploma({ props }: any) {
                 );
               })}
             </div>
-          )}
+          )} */}
         </>
       </div>
     </div>

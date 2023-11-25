@@ -1,3 +1,5 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
 .tariff {
   background-image: url('/img/pages/main/Tariff/wave.png');
   background-repeat: no-repeat;
@@ -15,18 +17,23 @@
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 8px;
+        &__item {
+          @include button-sheer;
+          &_active {
+            @include button-sheer-active;
+          }
+        }
       }
-    }
-    &__btn {
-      text-align: center;
-      width: fit-content;
-      margin: 0 auto;
     }
   }
   &__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+  &__btn {
+    @include link-green;
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 1232px) {

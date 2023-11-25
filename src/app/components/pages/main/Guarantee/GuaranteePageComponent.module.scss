@@ -3,12 +3,13 @@
   font-weight: 700;
   line-height: 48px;
   border-radius: 80px;
-  padding: 12px 0px 12px 0px;
+  padding: 30px 0px 30px 0px;
   text-align: center;
-  width: 160px;
+  width: 70%;
   margin: 0 auto;
   border: 20px solid;
-  margin-bottom: 28px;
+  margin-bottom: 35px;
+  font-family: Gilroy-ExtraBold;
   @media screen and (max-width: 1232px) {
     font-size: 32px;
     // width: 120px;
@@ -22,7 +23,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     row-gap: 32px;
     &__item {
       width: 290px;
@@ -55,8 +56,9 @@
         line-height: 28px;
         text-align: center;
         color: #041f0f;
-        width: 260px;
+        width: 240px;
         margin: 0 auto;
+        font-family: Gilroy-ExtraBold;
       }
     }
   }

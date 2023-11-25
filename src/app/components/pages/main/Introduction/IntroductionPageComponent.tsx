@@ -32,15 +32,10 @@ export default function IntroductionPageComponent() {
           </div>
 
           <div className={style.introduction__container__buttons}>
-            <button className="button_green">Подобрать психолога</button>
-            <button className="button_hover_tg">
-              <Image
-                src="/telegram-white.svg"
-                alt="tg"
-                width={40}
-                height={40}
-              />
-              Задать вопрос
+            <button className={style.btn_green}>Подобрать психолога</button>
+            <button className={style.btn_tg}>
+              <span className={style.btn_tg__icon}></span>
+              <span className={style.btn_tg__text}>Задать вопрос</span>
             </button>
           </div>
         </div>

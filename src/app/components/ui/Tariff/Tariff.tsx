@@ -19,7 +19,8 @@ export default function Tariff(props: any) {
             : style.tariff__cart__quantity
         }
       >
-        {quantity}
+        {quantity}{' '}
+        {quantity === 1 ? 'сессия' : quantity === 4 ? 'сессии' : 'сессий'}
       </h4>
       {sale && (
         <p className={style.tariff__cart__types}>{priceOne}₽ за сеанс</p>

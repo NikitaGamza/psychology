@@ -31,10 +31,9 @@ export default function Home() {
             <TariffPageComponent />
             <HowWorkPageComponent />
             <Banner
-              head={'Не знаете, как выбрать?'}
-              text={
-                'Оставьте заявку на подбор. Мы подберём Вам опытного специалиста по вашей проблеме'
-              }
+              head={'Не знаете как выбрать?'}
+              text={'Оставьте заявку на подбор.'}
+              text2={'Мы подберём Вам опытного специалиста по вашей проблеме'}
               imgUrl={'/img/ui/Banner/brain.png'}
               bgColor={'green'}
             />

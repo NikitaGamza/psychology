@@ -1,12 +1,20 @@
 @import 'colors.scss';
 
 @font-face {
-  font-family: Gilroy;
+  font-family: 'Gilroy';
   src: url('../../../public/fonts/Gilroy-Light.otf');
 }
 @font-face {
-  font-family: Gilroy-ExtraBold;
+  font-family: 'Gilroy-ExtraBold';
   src: url('../../../public/fonts/Gilroy-ExtraBold.otf');
+}
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('/fonts/gilroy-regular.ttf');
+}
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: url('/fonts/gilroy-bold.ttf');
 }
 
 @mixin button {
@@ -76,8 +84,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  color: black;
-  font-family: Gilroy;
+  color: $black;
+  font-family: 'Gilroy-Regular';
 }
 
 html,
@@ -97,7 +105,7 @@ a {
 }
 
 .container {
-  width: 1232px;
+  width: 1255px;
   margin: 0 auto;
   padding-left: 16px;
   padding-right: 16px;
@@ -112,10 +120,14 @@ a {
       font-weight: 700;
       line-height: 56px;
       text-align: center;
+      font-family: Gilroy-ExtraBold;
+      width: 940px;
+      margin: 0 auto;
+      margin-bottom: 10px;
     }
     &__subtitle {
       font-size: 24px;
-      font-weight: 500;
+      font-weight: 900;
       line-height: 36px;
       text-align: center;
     }

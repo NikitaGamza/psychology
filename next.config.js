@@ -5,7 +5,13 @@ const nextConfig = {
     // Dangerously allow production builds to successfully complete even if
     // your project has type errors.
     // !! WARN !!
-    ignoreBuildErrors: true,
+    // ignoreBuildErrors: true,
+
+    //for production
+    // trailingSlash: true,
+    reactStrictMode: true,
+    distDir: 'docs',
+    output: 'export',
   },
 };
 

@@ -104,7 +104,7 @@ export default function WeHelpPageComponent() {
                 </div>
               ))}
             </div>
-            {loaded && instanceRef.current && (
+            {/* {loaded && instanceRef.current && (
               <div className={style.dots}>
                 {[
                   ...Array(
@@ -127,7 +127,7 @@ export default function WeHelpPageComponent() {
                   );
                 })}
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>

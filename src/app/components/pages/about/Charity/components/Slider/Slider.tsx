@@ -27,7 +27,7 @@ export default function Slider() {
           <Cart props={item} key={idx} />
         ))}
       </div>
-      {loaded && instanceRef.current && (
+      {/* {loaded && instanceRef.current && (
         <div className={style.dots}>
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
@@ -46,7 +46,7 @@ export default function Slider() {
             );
           })}
         </div>
-      )}
+      )} */}
     </div>
   );
 }

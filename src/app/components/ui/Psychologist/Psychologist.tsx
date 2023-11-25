@@ -29,7 +29,13 @@ export default function Psychologist(props: any) {
     <>
       {inDetail ? (
         <div className={style.psychologist_full}>
-          <img src={imageUrl} alt={imageUrl} />
+          <Image
+            src={imageUrl}
+            alt={imageUrl}
+            width={300}
+            height={300}
+            className={style.psychologist_full__info__img}
+          />
           <div className={style.psychologist_full__info}>
             <div className={style.psychologist_full__info__head}>
               <h5 className={style.psychologist_full__info__head__fullname}>
@@ -107,11 +113,16 @@ export default function Psychologist(props: any) {
         </div>
       ) : (
         <div className={`keen-slider__slide ${style.psychologist_min}`}>
-          <img src={imageUrl} alt={imageUrl} srcSet="" />
-          <h5 className={style.psychologist__fullname}>
-            {firstName} {lastName}
-          </h5>
-          <p className={style.psychologist__fields}>{fields.join(', ')}</p>
+          <Image
+            src={imageUrl}
+            alt={imageUrl}
+            width={200}
+            height={200}
+            className={style.psychologist_min__img}
+          />
+          <h5 className={style.psychologist_min__fullname}>{firstName}</h5>
+          <h5 className={style.psychologist_min__fullname}>{lastName}</h5>
+          <p className={style.psychologist_min__fields}>{fields.join(', ')}</p>
         </div>
       )}
     </>

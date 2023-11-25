@@ -87,9 +87,7 @@ export default function Cart(item: any) {
           </div>
 
           <div className={style.slide__content__info__record}>
-            <button
-              className={`button_green ${style.slide__content__info__record__btn}`}
-            >
+            <button className={style.slide__content__info__record__btn}>
               Записаться
             </button>
             <h5 className={style.slide__content__info__record__price}>

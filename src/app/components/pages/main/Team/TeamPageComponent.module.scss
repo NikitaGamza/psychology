@@ -1,3 +1,5 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
 .team {
   &__list {
     display: flex;
@@ -6,5 +8,9 @@
   }
   &__center {
     text-align: center;
+  }
+  &__all {
+    @include link-green;
+    margin: 0 auto;
   }
 }

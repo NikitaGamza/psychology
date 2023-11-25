@@ -82,11 +82,12 @@ export default function Organizations() {
         <div className="section">
           <div className="section__head">
             <h2 className="section__head__title">
-              Наша команда профессионалов
+              Организации, с которыми сотрудничают наши психологи и
+              психотерапевты
             </h2>
-            <p className="section__head__subtitle">
+            {/* <p className="section__head__subtitle">
               Обратитесь за квалифицированной помощью
-            </p>
+            </p> */}
           </div>
           <>
             <div className={`navigation-wrapper ${style.org__slider}`}>
@@ -121,7 +122,7 @@ export default function Organizations() {
             </div>
             {loaded && instanceRef.current && (
               <div className={style.dots}>
-                {[
+                {/* {[
                   ...Array(
                     instanceRef.current.track.details.slides.length
                   ).keys(),
@@ -140,7 +141,7 @@ export default function Organizations() {
                       }
                     ></button>
                   );
-                })}
+                })} */}
               </div>
             )}
           </>

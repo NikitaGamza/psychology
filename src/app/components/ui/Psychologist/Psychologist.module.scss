@@ -14,6 +14,8 @@
     gap: 36px;
     padding: 40px 0 40px 32px;
     &__info {
+      &__img {
+      }
       &__head {
         display: flex;
         align-items: center;
@@ -104,5 +106,18 @@
     padding: 32px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px #1d304e26;
+    &__img {
+      width: 190px;
+      height: 190px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+    &__fullname {
+      font-family: Gilroy-ExtraBold;
+      font-size: 25px;
+    }
+    &__fields {
+      margin-top: 10px;
+    }
   }
 }

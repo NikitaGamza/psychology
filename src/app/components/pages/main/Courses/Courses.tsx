@@ -153,7 +153,7 @@ export default function Courses() {
             </div>
             {loaded && instanceRef.current && (
               <div className={style.dots}>
-                {[
+                {/* {[
                   ...Array(
                     instanceRef.current.track.details.slides.length
                   ).keys(),
@@ -172,13 +172,11 @@ export default function Courses() {
                       }
                     ></button>
                   );
-                })}
+                })} */}
               </div>
             )}
           </>
-          <button className={`button_green ${style.courses__all}`}>
-            Смотреть все курсы
-          </button>
+          <button className={style.courses__all}>Смотреть все курсы</button>
         </div>
       </div>
     </section>

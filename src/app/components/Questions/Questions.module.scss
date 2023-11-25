@@ -1,4 +1,5 @@
-@import '../../style/colors.scss';
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
 .question {
   padding: 100px 0px;
   background-color: $green;
@@ -17,6 +18,7 @@
         font-size: 48px;
         font-weight: 700;
         line-height: 56px;
+        font-family: Gilroy-ExtraBold;
       }
       &__contact {
         &__head {
@@ -62,6 +64,7 @@
         font-weight: 700;
         line-height: 36px;
         width: 325px;
+        font-family: Gilroy-ExtraBold;
       }
       &__inputs {
         display: flex;
@@ -81,7 +84,7 @@
         }
         &__label {
           font-size: 16px;
-          font-weight: 500;
+          font-weight: 900;
           line-height: 24px;
         }
         &__privacy {

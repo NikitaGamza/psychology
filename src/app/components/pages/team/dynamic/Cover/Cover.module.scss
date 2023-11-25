@@ -87,22 +87,27 @@
         line-height: 24px;
       }
       &__tg {
-        padding: 5px 32px 5px 13px;
+        padding: 5px 32px 5px 10px;
         border-radius: 32px;
         border: 2px solid $green;
-        background-color: #fff;
-        color: $green;
+        background-color: $white;
         display: flex;
         align-items: center;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 24px;
         gap: 16px;
+        &__text {
+          color: $green;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 24px;
+        }
         &:hover {
           background-color: $green;
-          color: #fff;
+          color: $white;
           .cover__info__btns__tg__icon {
             background-image: url('/tg-hover.svg');
+          }
+          .cover__info__btns__tg__text {
+            color: $white;
           }
         }
         &__icon {

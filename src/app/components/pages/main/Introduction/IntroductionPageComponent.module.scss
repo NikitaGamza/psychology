@@ -1,13 +1,15 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
 .introduction {
-  padding-top: 160px;
-  padding-bottom: 230px;
+  padding-top: 215px;
+  padding-bottom: 220px;
   &__wrapper {
     width: 1232px;
     margin: 0 auto;
   }
   &__container {
     width: 765px;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     gap: 60px;
     &__bg {
@@ -17,23 +19,46 @@
       font-size: 56px;
       font-weight: 900;
       line-height: 64px;
-      color: #041f0f;
       width: 570px;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
+      font-family: Gilroy-ExtraBold;
       &_green {
-        color: #4e855c;
+        color: $green;
+        font-family: Gilroy-ExtraBold;
       }
     }
     &__description {
       font-size: 20px;
-      font-weight: 500;
+      font-weight: 900;
       line-height: 28px;
-      color: #041f0f;
-      width: 670px;
+      width: 750px;
+      // font-family: Gilroy-ExtraBold;
     }
     &__buttons {
-      display: inline-flex;
-      gap: 60px;
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+.btn {
+  &_green {
+    @include link-green;
+  }
+  &_tg {
+    @include link-tg-green;
+    &:hover {
+      .btn_tg__icon {
+        background-image: url('/tg-hover.svg');
+      }
+      .btn_tg__text {
+        color: $white;
+      }
+    }
+    &__icon {
+      @include link-tg-icon;
+    }
+    &__text {
+      @include link-tg-text;
     }
   }
 }

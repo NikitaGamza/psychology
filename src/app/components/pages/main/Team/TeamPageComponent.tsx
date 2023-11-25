@@ -1,6 +1,6 @@
 import style from './TeamPageComponent.module.scss';
 import PsychoSlider from '@/app/components/pages/main/Team/extra/PsychoSlider/PsychoSlider';
-
+import Link from 'next/link';
 export default function TeamPageComponent() {
   return (
     <section className={style.team}>
@@ -15,11 +15,10 @@ export default function TeamPageComponent() {
             </p>
           </div>
           <PsychoSlider />
-          <div className={style.team__center}>
-            <button className="button_green margin-0-auto">
-              Посмотреть всех
-            </button>
-          </div>
+
+          <Link href={'/team'} className={style.team__all}>
+            Посмотреть всех
+          </Link>
         </div>
       </div>
     </section>

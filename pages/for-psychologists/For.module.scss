@@ -1,8 +1,13 @@
 @import '@/style/colors.scss';
 .for {
-  padding-top: 120px;
+  padding-top: 135px;
   padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   gap: 160px;
+}
+@media screen and (max-width: 500px) {
+  .for {
+    gap: 60px;
+  }
 }

@@ -180,7 +180,7 @@ export default function Popular() {
           </div>
         )}
       </div>
-      {loaded && instanceRef.current && (
+      {/* {loaded && instanceRef.current && (
         <div className={style.dots}>
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
@@ -199,7 +199,7 @@ export default function Popular() {
             );
           })}
         </div>
-      )}
+      )} */}
     </div>
   );
 }

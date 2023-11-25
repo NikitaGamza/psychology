@@ -1,4 +1,5 @@
-@import '../../../../../../style/colors.scss';
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
 .slide {
   padding: 32px;
   box-shadow: 0px 0px 5px 0px #1d304e26;
@@ -25,8 +26,8 @@
           border-radius: 50px;
           font-size: 12px;
           font-weight: 500;
-          line-height: 24px;
-          padding: 0 12px;
+          line-height: 22px;
+          padding: 0 11px;
         }
       }
       &__img {
@@ -37,6 +38,7 @@
         font-weight: 700;
         line-height: 28px;
         margin-bottom: 24px;
+        font-family: Gilroy-ExtraBold;
       }
       &__time {
         display: flex;
@@ -67,7 +69,7 @@
           font-size: 16px;
           font-weight: 500;
           line-height: 24px;
-          color: $grey;
+          color: $grey_dark;
         }
       }
       &__record {
@@ -78,6 +80,12 @@
           font-size: 24px;
           font-weight: 700;
           line-height: 28px;
+          font-family: Gilroy-ExtraBold;
+        }
+        &__btn {
+          @include link-green;
+          font-size: 14px;
+          padding: 10px 40px;
         }
       }
     }

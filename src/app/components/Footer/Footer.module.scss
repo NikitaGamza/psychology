@@ -1,4 +1,5 @@
-@import '../../style/colors.scss';
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
 .footer {
   padding-top: 56px;
   padding-bottom: 32px;
@@ -29,8 +30,9 @@
         gap: 16px;
         &__head {
           font-size: 16px;
-          font-weight: 700;
+          font-weight: 900;
           line-height: 24px;
+          font-family: Gilroy-ExtraBold;
         }
         &__display {
           display: flex;
@@ -109,7 +111,7 @@
     }
     &__text {
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 900;
       line-height: 24px;
     }
   }

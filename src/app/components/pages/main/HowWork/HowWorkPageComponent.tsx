@@ -52,8 +52,8 @@ export default function HowWorkPageComponent() {
               onClick={() => setHowWork(format[0])}
               className={
                 howWork.type === 'ochno'
-                  ? 'button_sheer_active'
-                  : 'button_sheer'
+                  ? style.how__options__item_active
+                  : style.how__options__item
               }
             >
               Очно
@@ -62,8 +62,8 @@ export default function HowWorkPageComponent() {
               onClick={() => setHowWork(format[1])}
               className={
                 howWork.type === 'online'
-                  ? 'button_sheer_active'
-                  : 'button_sheer'
+                  ? style.how__options__item_active
+                  : style.how__options__item
               }
             >
               Онлайн
@@ -72,8 +72,8 @@ export default function HowWorkPageComponent() {
               onClick={() => setHowWork(format[2])}
               className={
                 howWork.type === 'texting'
-                  ? 'button_sheer_active'
-                  : 'button_sheer'
+                  ? style.how__options__item_active
+                  : style.how__options__item
               }
             >
               Переписка

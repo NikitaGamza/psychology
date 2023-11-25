@@ -125,7 +125,9 @@ export default function Cover(props: any) {
           </Link>
           <Link href={'#'} className={style.cover__info__btns__tg}>
             <span className={style.cover__info__btns__tg__icon}></span>
-            <span>Задать вопрос</span>
+            <span className={style.cover__info__btns__tg__text}>
+              Задать вопрос
+            </span>
           </Link>
           <Link href={'#'} className={style.cover__info__btns__love}>
             <Image

@@ -38,7 +38,7 @@ export default function Slider() {
       </div>
       {loaded && instanceRef.current && (
         <div className={style.dots}>
-          {[
+          {/* {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
           ].map((idx) => {
             return (
@@ -53,7 +53,7 @@ export default function Slider() {
                 }
               ></button>
             );
-          })}
+          })} */}
         </div>
       )}
     </div>

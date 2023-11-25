@@ -1,3 +1,5 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
 $blue_75: #6899ca;
 @mixin banner {
   border-radius: 20px;
@@ -30,6 +32,17 @@ $blue_75: #6899ca;
     &_req {
       margin-top: -60px;
     }
+    &_green {
+      margin-top: -30px;
+      margin-right: 30px;
+      width: 334px;
+      height: 380px;
+    }
+    &_blue {
+      margin-top: -30px;
+      width: 334px;
+      height: 380px;
+    }
   }
   &__info {
     margin-bottom: 40px;
@@ -39,12 +52,34 @@ $blue_75: #6899ca;
       font-size: 48px;
       font-weight: 700;
       line-height: 56px; /* 116.667% */
+      width: 710px;
     }
     &__text {
       color: #fff;
       font-size: 24px;
       font-weight: 500;
       line-height: 36px; /* 150% */
+    }
+    &__btn {
+      &_green {
+        @include link-sheer-green;
+        padding: 15px 31px;
+        font-size: 20px;
+        font-weight: 900;
+        font-family: Gilroy-ExtraBold;
+      }
+      &_blue {
+        @include link-sheer-green;
+        border: none;
+        color: $blue;
+        padding: 15px 31px;
+        font-size: 20px;
+        font-weight: 900;
+        font-family: Gilroy-ExtraBold;
+        &:hover {
+          background-color: $blue_75;
+        }
+      }
     }
   }
   &__btn {
@@ -61,6 +96,10 @@ $blue_75: #6899ca;
   &__wrap {
     margin-bottom: 72px;
     width: 642px;
+    &_blue {
+      margin-bottom: 60px;
+      width: 642px;
+    }
   }
 }
 @media screen and (max-width: 1232px) {
