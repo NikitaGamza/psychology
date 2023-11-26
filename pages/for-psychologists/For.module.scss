@@ -6,8 +6,10 @@
   flex-direction: column;
   gap: 160px;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 690px) {
   .for {
     gap: 60px;
+    padding-top: 80px;
+    padding-bottom: 60px;
   }
 }
