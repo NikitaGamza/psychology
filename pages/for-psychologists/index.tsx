@@ -3,13 +3,15 @@ import style from './For.module.scss';
 import Cover from '@/app/components/pages/for-psychologists/Cover/Cover';
 import Offer from '@/app/components/pages/for-psychologists/Offer/Offer';
 import HowWork from '@/app/components/pages/for-psychologists/HowWork/HowWork';
+import Requirements from '@/app/components/pages/for-psychologists/Requirements/Requirements';
 export default function ForPsychologists() {
   return (
     <div className="container">
       <div className={style.for}>
-        {/* <Cover /> */}
-        {/* <Offer /> */}
+        <Cover />
+        <Offer />
         <HowWork />
+        <Requirements />
       </div>
     </div>
   );

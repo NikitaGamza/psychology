@@ -69,6 +69,6 @@
 }
 @mixin button-sheer-active {
   @include button_sheer;
-  background-color: $green_light;
+  background-color: $green_10;
   border: 2px solid $green;
 }

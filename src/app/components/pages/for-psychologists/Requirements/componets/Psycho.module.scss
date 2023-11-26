@@ -1,0 +1,46 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+
+.psycho {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  &__img {
+    width: 500px;
+    height: 500px;
+    border-radius: 250px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 592px;
+    &__item {
+      display: flex;
+      &__wrap {
+        width: fit-content;
+        display: block;
+        margin-right: 24px;
+        &__num {
+          width: 56px;
+          height: 56px;
+          border-radius: 40px;
+          text-align: center;
+          background-color: $green;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 16px;
+          color: $white;
+          display: block;
+          padding-top: 20px;
+        }
+      }
+      &__text {
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 36px;
+      }
+    }
+  }
+}
