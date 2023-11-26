@@ -1,0 +1,48 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+.ban {
+  background-color: $green;
+  border-radius: 20px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  text-align: center;
+  background-image: url('/img/pages/for-psychologists/Requirements/backban.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  &__head {
+    color: $white;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-align: center;
+  }
+  &__link {
+    @include link-sheer-green;
+    padding: 17px 32px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+
+    margin: 0 auto;
+    margin-top: 96px;
+  }
+}
+@media screen and (max-width: 690px) {
+  .ban {
+    background-image: none;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding: 40px 20px;
+    &__head {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    &__link {
+      margin-top: 24px;
+      width: 100%;
+      padding: 16px 0;
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+}
