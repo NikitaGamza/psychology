@@ -26,7 +26,7 @@ export default function Cover() {
         height={675}
         className={style.cover__img}
       />
-      <Link href={'/hr'} className={style.cover__info__req_mobile}>
+      <Link href={'/interview'} className={style.cover__info__req_mobile}>
         Оставить заявку
       </Link>
     </div>
