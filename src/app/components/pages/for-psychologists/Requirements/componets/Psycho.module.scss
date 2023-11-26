@@ -44,3 +44,38 @@
     }
   }
 }
+@media screen and (max-width: 1150px) {
+  .psycho {
+    flex-direction: column;
+    &__img {
+      margin-bottom: 24px;
+    }
+  }
+}
+@media screen and (max-width: 690px) {
+  .psycho {
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+    &__list {
+      gap: 24px;
+      width: auto;
+      &__item {
+        &__wrap {
+          margin-right: 16px;
+          &__num {
+            width: 32px;
+            height: 32px;
+            font-size: 16px;
+            padding-top: 10px;
+          }
+        }
+        &__text {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
