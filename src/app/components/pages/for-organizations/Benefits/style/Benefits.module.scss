@@ -77,3 +77,51 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .ben {
+    &__head {
+      margin-bottom: 24px;
+      font-size: 24px;
+      line-height: 24px;
+      width: 100%;
+    }
+    &__list {
+      gap: 60px;
+      &__item {
+        &__img {
+          width: 100%;
+          height: auto;
+          &_480 {
+            width: 100%;
+            height: auto;
+          }
+        }
+        &__info {
+          width: 100%;
+          &__head {
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 24px;
+          }
+          &__subhead {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 16px;
+          }
+          &__bullet {
+            &__el {
+              &__point {
+                margin-top: 8px;
+              }
+              &__text {
+                font-size: 16px;
+                line-height: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

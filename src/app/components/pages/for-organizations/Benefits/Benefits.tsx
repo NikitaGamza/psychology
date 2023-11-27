@@ -250,8 +250,8 @@ export default function Benefits() {
             src={'/img/pages/for-organizations/Benefit/3.png'}
             alt="1"
             width={604}
-            height={530}
-            className={style.ben__list__item__img}
+            height={480}
+            className={style.ben__list__item__img_480}
           />
         </div>
         <div className={style.ben__list__item}>
@@ -259,8 +259,8 @@ export default function Benefits() {
             src={'/img/pages/for-organizations/Benefit/4.png'}
             alt="1"
             width={604}
-            height={530}
-            className={style.ben__list__item__img}
+            height={480}
+            className={style.ben__list__item__img_480}
           />
           <div className={style.ben__list__item__info}>
             <h4 className={style.ben__list__item__info__head}>

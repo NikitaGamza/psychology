@@ -1,0 +1,27 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+.slide {
+  box-shadow: 0px 0px 5px 0px #1d304e26;
+  border-radius: 20px;
+  text-align: center;
+  padding-bottom: 22px;
+  &__frame {
+    height: 150px;
+    &__img {
+      width: auto;
+      height: auto;
+      position: relative;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+  &__hr {
+    width: 242px;
+    margin: 0 auto;
+    color: $grey_line;
+    background-color: $grey_line;
+    border: none;
+    height: 1px;
+    margin-bottom: 15px;
+  }
+}
