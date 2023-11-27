@@ -1,0 +1,69 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+.req {
+  width: 812px;
+  margin: 0 auto;
+  &__head {
+    margin-bottom: 40px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-align: center;
+    font-family: 'Gilroy-ExtraBold';
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    &__row {
+      display: flex;
+      flex-direction: column;
+      &_multi {
+        display: flex;
+        justify-content: space-between;
+      }
+      gap: 8px;
+      &__head {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        text-transform: uppercase;
+      }
+      &__inp {
+        @include input;
+        width: 100%;
+        &_spec {
+          @include input;
+          width: 538px;
+        }
+        &_year {
+          @include input;
+          width: 262px;
+        }
+      }
+    }
+    &__send {
+      @include link-green;
+      padding: 14px 59px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 844px) {
+  .req {
+    width: 100%;
+    &__head {
+      font-size: 32px;
+      line-height: 36px;
+      margin-bottom: 24px;
+    }
+    &__form {
+      gap: 24px;
+      &__send {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

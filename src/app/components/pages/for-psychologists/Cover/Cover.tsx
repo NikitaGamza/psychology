@@ -15,7 +15,7 @@ export default function Cover() {
           Если помощь людям - твоё призвание, мы всегда будем рады видеть тебя в
           команде!
         </p>
-        <Link href={'/hr'} className={style.cover__info__req}>
+        <Link href={'/interview'} className={style.cover__info__req}>
           Оставить заявку
         </Link>
       </div>

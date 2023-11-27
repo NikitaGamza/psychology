@@ -1,0 +1,182 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+.row {
+  display: flex;
+  flex-direction: column;
+  &_multi {
+    display: flex;
+    justify-content: space-between;
+  }
+  gap: 8px;
+  &__head {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: uppercase;
+    &_radio {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    &_edu {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      &__add {
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+        background-color: $green;
+        border: none;
+        color: $white;
+        font-size: 20px;
+        font-weight: 900;
+      }
+    }
+  }
+  &__inp {
+    @include input;
+    width: 100%;
+    &_spec {
+      @include input;
+      width: 538px;
+    }
+    &_year {
+      @include input;
+      width: 262px;
+    }
+  }
+  &__list {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    &_degree {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      max-width: 610px;
+    }
+
+    &__switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      &__radio {
+      }
+      &__label {
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 24px;
+      }
+    }
+  }
+  &__uploader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px dashed $yellow;
+    padding-top: 39px;
+    padding-bottom: 39px;
+    border-radius: 10px;
+    &:hover {
+      background-color: $grey_light_bg;
+    }
+    &__btn {
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      background-color: $green;
+      border: none;
+      color: $white;
+      font-size: 20px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    &__text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+      color: $green;
+      cursor: pointer;
+    }
+  }
+  &__work {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    &__main {
+      border-radius: 8px;
+      border: 1px solid $grey;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 16px;
+      &__inp {
+        @include input;
+        width: 90%;
+        border: none;
+        border-radius: 8px 0px 0px 8px;
+      }
+      &__del {
+        cursor: pointer;
+      }
+    }
+    &__fields {
+      display: flex;
+      justify-content: space-between;
+      &__position {
+        @include input;
+        width: 388px;
+      }
+      &__year {
+        @include input;
+        width: 200px;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 844px) {
+  .row {
+    &_multi {
+      flex-direction: column;
+      gap: 24px;
+    }
+    &__inp {
+      &_spec {
+        width: 100%;
+      }
+      &_year {
+        width: 100%;
+      }
+    }
+    &__list {
+      &_degree {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+    &__work {
+      &__fields {
+        flex-direction: column;
+        gap: 8px;
+        &__position {
+          width: 100%;
+        }
+        &__year {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

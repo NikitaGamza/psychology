@@ -1,3 +1,29 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
 .inter {
-  padding-top: 135px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  &__back {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: $green;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+    &__arrow {
+      width: 10px;
+      height: 15px;
+    }
+  }
+}
+@media screen and (max-width: 844px) {
+  .inter {
+    padding-bottom: 60px;
+    &__back {
+      margin-bottom: 24px;
+    }
+  }
 }

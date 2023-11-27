@@ -72,3 +72,11 @@
   background-color: $green_10;
   border: 2px solid $green;
 }
+@mixin input {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid $grey;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
