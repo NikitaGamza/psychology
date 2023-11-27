@@ -1,0 +1,55 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+.cover {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  &__info {
+    width: 495px;
+    &__head {
+      font-family: 'Gilroy-Bold';
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 64px;
+      margin-bottom: 45px;
+      &_deco {
+        font-family: 'Gilroy-Bold';
+        color: $green;
+      }
+    }
+    &__text {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+      margin-bottom: 60px;
+    }
+    &__link {
+      @include link-green;
+    }
+  }
+  &__img {
+    &_mobile {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 1232px) {
+  .cover {
+    justify-content: space-around;
+    &__info {
+      &__link {
+        margin: 0 auto;
+      }
+    }
+    &__img {
+      display: none;
+      &_mobile {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
