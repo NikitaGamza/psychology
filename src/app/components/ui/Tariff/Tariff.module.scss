@@ -93,6 +93,18 @@ $white: #fff;
     &__cart {
       width: 156px;
       padding: 20px;
+      &_1 {
+        background-position: 125% 125%;
+      }
+      &_4 {
+        background-position: 105% 105%;
+      }
+      &_8 {
+        background-position: 105% 105%;
+      }
+      &_12 {
+        background-position: 105% 105%;
+      }
       &__quantity {
         font-size: 20px;
         margin-bottom: 36px;
