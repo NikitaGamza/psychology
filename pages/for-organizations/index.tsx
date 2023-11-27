@@ -3,6 +3,7 @@ import style from './style/ForOrganizations.module.scss';
 import Cover from '@/app/components/pages/for-organizations/Cover/Cover';
 import Benefits from '@/app/components/pages/for-organizations/Benefits/Benefits';
 import Organizations from '@/app/components/ui/Organizations/Organizations';
+import StartWork from '@/app/components/pages/for-organizations/StartWork/StartWork';
 
 export default function ForOrganizations() {
   return (
@@ -12,6 +13,7 @@ export default function ForOrganizations() {
           <Cover />
           <Benefits />
           <Organizations />
+          <StartWork />
         </div>
       </div>
     </div>

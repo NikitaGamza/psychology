@@ -1,0 +1,56 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+.start {
+  &__head {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    font-family: 'Gilroy-Bold';
+    margin: 0 auto;
+    margin-bottom: 60px;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // background-image: url('/img/pages/for-psychologists/HowWork/lines.png');
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    // background-size: 65%;
+    &__line {
+      display: none;
+    }
+    &__item {
+      width: 278px;
+      text-align: center;
+      &__idx {
+        background-color: $green;
+        font-size: 32px;
+        font-weight: 900;
+        text-align: center;
+        color: $white;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        width: 72px;
+        height: 72px;
+        padding-top: 17px;
+        border-radius: 36px;
+        font-family: 'Gilroy-Bold';
+      }
+      &__title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        margin-bottom: 8px;
+        font-family: 'Gilroy-Bold';
+      }
+      &__text {
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 24px;
+      }
+    }
+  }
+}
