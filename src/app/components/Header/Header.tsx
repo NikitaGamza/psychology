@@ -26,7 +26,7 @@ export default function Header() {
     },
     {
       title: 'Организациям',
-      linkTo: '/about',
+      linkTo: '/for-organizations',
     },
     {
       title: 'Психологам',
