@@ -9,7 +9,29 @@ $white: #fff;
     box-shadow: 0px 0px 5px 0px #1d304e26;
     border-radius: 20px;
     width: 290px;
+
+    background-repeat: no-repeat;
+    background-position: 110% 115%;
     // overflow: hidden;
+    &_1 {
+      background-image: url('/img/pages/ui/Tariff/elgreen.svg'),
+        url('/img/pages/ui/Tariff/ellightgreen.svg');
+    }
+    &_4 {
+      background-image: url('/img/pages/ui/Tariff/elblue.svg'),
+        url('/img/pages/ui/Tariff/ellightblue.svg');
+      background-position: 105% 105%;
+    }
+    &_8 {
+      background-image: url('/img/pages/ui/Tariff/elyellow.svg'),
+        url('/img/pages/ui/Tariff/ellightyellow.svg');
+      background-position: 105% 105%;
+    }
+    &_12 {
+      background-image: url('/img/pages/ui/Tariff/elpink.svg'),
+        url('/img/pages/ui/Tariff/ellightpink.svg');
+      background-position: 105% 105%;
+    }
     &__types {
       font-size: 16px;
       font-weight: 500;

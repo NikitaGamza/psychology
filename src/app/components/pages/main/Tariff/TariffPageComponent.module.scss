@@ -1,9 +1,10 @@
 @import '@/style/colors.scss';
 @import '@/style/mixins.scss';
 .tariff {
-  background-image: url('/img/pages/main/Tariff/wave.png');
+  background-image: url('/img/pages/main/Tariff/wavenew.png');
   background-repeat: no-repeat;
   background-position: center;
+  background-size: auto 75%;
   &__container {
     display: flex;
     flex-direction: column;
