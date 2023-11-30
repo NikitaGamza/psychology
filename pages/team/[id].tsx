@@ -10,6 +10,7 @@ import Methods from '@/app/components/pages/team/dynamic/Methods/Methods';
 import About from '@/app/components/pages/team/dynamic/About/About';
 import Diploma from '@/app/components/pages/team/dynamic/Diploma/Diploma';
 import Popular from '@/app/components/pages/team/dynamic/Popular/Popular';
+import NotFoundPage from '@/app/not-found';
 
 const psychoList = [
   {
@@ -519,6 +520,7 @@ export default function Page() {
   }, [router.query.id]);
   return (
     <div className={style.dynamic}>
+      {psychologist === undefined && <NotFoundPage />}
       {(psychologist?.id === 0 || psychologist?.id) && (
         <div className={style.dynamic__container}>
           <Cover props={psychologist} />

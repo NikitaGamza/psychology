@@ -8,10 +8,13 @@ const nextConfig = {
     // ignoreBuildErrors: true,
 
     //for production
-    // trailingSlash: true,
+    trailingSlash: true,
     reactStrictMode: true,
-    distDir: 'docs',
-    output: 'export',
+    // distDir: 'docs',
+    // output: 'export',
+    // images: {
+    //   unoptimized: true,
+    // },
   },
 };
 

@@ -8,7 +8,7 @@ export default function WorkInfo(howWork: any) {
     <div className={style.how__content}>
       <Image
         src={type.url}
-        alt={howWork.url}
+        alt="work"
         width={510}
         height={510}
         className={style.how__content__img}

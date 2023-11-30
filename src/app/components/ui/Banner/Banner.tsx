@@ -47,6 +47,8 @@ export default function Banner(props: any) {
         alt={imgUrl}
         width={334}
         height={393}
+        placeholder="blur"
+        blurDataURL={imgUrl}
         className={
           bgColor === 'green'
             ? style.banner__img_green

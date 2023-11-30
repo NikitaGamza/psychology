@@ -29,7 +29,7 @@ export default function Psychologist(props: any) {
     <>
       {inDetail ? (
         <div className={style.psychologist_full}>
-          <img src={imageUrl} alt={imageUrl} />
+          <Image src={imageUrl} alt={imageUrl} width={100} height={100} />
           <div className={style.psychologist_full__info}>
             <div className={style.psychologist_full__info__head}>
               <h5 className={style.psychologist_full__info__head__fullname}>
