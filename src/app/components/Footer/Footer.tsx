@@ -13,14 +13,11 @@ export default function Footer() {
             >
               О нас
             </Link>
-            <Link
-              href={'/about'}
-              className={style.footer__content__links__item}
-            >
+            <Link href={'/team'} className={style.footer__content__links__item}>
               Психологи
             </Link>
             <Link
-              href={'/about'}
+              href={'/tariff'}
               className={style.footer__content__links__item}
             >
               Тарифы
@@ -32,13 +29,13 @@ export default function Footer() {
               Курсы
             </Link>
             <Link
-              href={'/about'}
+              href={'/for-organizations'}
               className={style.footer__content__links__item}
             >
               Организациям
             </Link>
             <Link
-              href={'/about'}
+              href={'/for-psychologists'}
               className={style.footer__content__links__item}
             >
               Психологам
@@ -49,10 +46,7 @@ export default function Footer() {
             >
               Блог
             </Link>
-            <Link
-              href={'/about'}
-              className={style.footer__content__links__item}
-            >
+            <Link href={'/faq'} className={style.footer__content__links__item}>
               FAQ
             </Link>
           </div>
@@ -165,9 +159,9 @@ export default function Footer() {
           <span className={style.footer__down__quote}>
             © Твой Психолог, 2023
           </span>
-          <span className={style.footer__down__text}>
+          <Link href={'/docs/privacy'} className={style.footer__down__text}>
             Юридические документы
-          </span>
+          </Link>
           <span className={style.footer__down__text}>Способы оплаты</span>
         </div>
       </div>
