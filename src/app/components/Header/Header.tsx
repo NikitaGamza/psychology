@@ -44,7 +44,7 @@ export default function Header() {
   return (
     <div className={style.header}>
       <div className={style.header__container}>
-        <div className={style.header__logo}>
+        {/* <div className={style.header__logo}>
           <div className={style.header__logo__main}>
             <h6 className={style.header__logo__main__head}>Твой</h6>
           </div>
@@ -53,7 +53,21 @@ export default function Header() {
             <h6 className={style.header__logo__title}>психолог</h6>
             <p className={style.header__logo__subtitle}>помощь очно и онлайн</p>
           </div>
-        </div>
+        </div> */}
+        <Image
+          src={'/logo-head.svg'}
+          alt="logo"
+          width={200}
+          height={56}
+          className={style.header__logoimg}
+        />
+        <Image
+          src={'/logo-head-mob.svg'}
+          alt="logo"
+          width={200}
+          height={56}
+          className={style.header__logoimg_mob}
+        />
         <nav className={style.header__nav}>
           {navigation.map((item: any, idx: number) => (
             <Link

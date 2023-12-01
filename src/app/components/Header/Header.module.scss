@@ -17,6 +17,13 @@
     width: 1232px;
     margin: 0 auto;
   }
+  &__logoimg {
+    width: 200px;
+    height: 56px;
+    &_mob {
+      display: none;
+    }
+  }
   &__logo {
     display: inline-flex;
     align-items: center;
@@ -85,6 +92,20 @@
     }
     &__burger {
       display: inline-block;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    &__logoimg {
+      display: none;
+      &_mob {
+        display: inline-block;
+        width: 98px;
+        height: 40px;
+      }
     }
   }
 }
