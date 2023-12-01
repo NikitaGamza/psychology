@@ -1,0 +1,43 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+
+.doc {
+  padding-top: 101px;
+  padding-bottom: 250px;
+  &__back {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: $green;
+    margin-bottom: 40px;
+    display: block;
+    &__arrow {
+      margin-right: 8px;
+      height: 8px;
+    }
+  }
+  &__content {
+    width: 812px;
+    margin: 0 auto;
+    &__head {
+      font-family: 'Gilroy-Bold';
+      font-size: 48px;
+      line-height: 56px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      &__item {
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 28px;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+  }
+}
