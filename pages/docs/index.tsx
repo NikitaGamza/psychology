@@ -27,7 +27,10 @@ export default function Docs() {
               Лицензионное соглашение об условиях использования
               пользовательского контента
             </Link>
-            <Link href={'/'} className={style.doc__content__list__item}>
+            <Link
+              href={'/docs/privacy'}
+              className={style.doc__content__list__item}
+            >
               Политика конфиденциальности и обработки персональных данных
             </Link>
           </div>
