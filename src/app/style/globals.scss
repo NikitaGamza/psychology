@@ -143,6 +143,15 @@ input[type='radio']:checked {
   border: 0.1em solid $yellow;
 }
 
+ol {
+  list-style: none;
+  counter-reset: li;
+}
+li:before {
+  counter-increment: li;
+  content: counters(li, '.') '. ';
+}
+
 .warning {
   background-color: red;
   color: #fff;

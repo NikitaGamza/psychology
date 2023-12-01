@@ -1,0 +1,55 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+
+.pr {
+  padding-top: 101px;
+  padding-bottom: 125px;
+  background-color: $grey_light_bg;
+  &__back {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: $green;
+    margin-bottom: 35px;
+    display: block;
+    &__arrow {
+      margin-right: 8px;
+      height: 8px;
+    }
+  }
+  &__content {
+    width: 812px;
+    margin: 0 auto;
+    &__head {
+      font-family: 'Gilroy-Bold';
+      font-size: 48px;
+      line-height: 56px;
+      margin-bottom: 40px;
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      &__part {
+        &__title {
+          font-family: 'Gilroy-Bold';
+          font-size: 24px;
+          line-height: 24px;
+          margin-bottom: 24px;
+        }
+        &__list {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          &__item {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: 0.01em;
+          }
+        }
+      }
+    }
+  }
+}
