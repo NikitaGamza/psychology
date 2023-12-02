@@ -162,7 +162,9 @@ export default function Footer() {
           <Link href={'/docs/privacy'} className={style.footer__down__text}>
             Юридические документы
           </Link>
-          <span className={style.footer__down__text}>Способы оплаты</span>
+          <Link href={'/payment'} className={style.footer__down__text}>
+            Способы оплаты
+          </Link>
         </div>
       </div>
     </footer>
