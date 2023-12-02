@@ -12,7 +12,10 @@ export default function General() {
         </p>
         <ol className={style.gen__info__ol}>
           <li className={style.gen__info__ol__li}>
-            <Link href={'/'} className={style.gen__info__ol__li_link}>
+            <Link
+              href={'/request-psychologist'}
+              className={style.gen__info__ol__li_link}
+            >
               Заполните анкету
             </Link>{' '}
             на подбор психолога у нас на сайте

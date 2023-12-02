@@ -3,6 +3,7 @@ import style from './Payment.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import General from '@/app/components/pages/payment/General/General';
+import RuCart from '@/app/components/pages/payment/RuCart/RuCart';
 
 export default function Payment() {
   return (
@@ -22,6 +23,7 @@ export default function Payment() {
           <h2 className={style.pay__content__head}>Способы оплаты</h2>
           <div className={style.pay__content__info}>
             <General />
+            <RuCart />
           </div>
         </div>
       </div>
