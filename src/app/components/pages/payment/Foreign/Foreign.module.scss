@@ -27,4 +27,25 @@
 }
 
 @media screen and (max-width: 768px) {
+  .foreign {
+    &__head {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+    &__subhead {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 8px;
+    }
+    &__text {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+    &__img {
+      width: 247px;
+      height: 273px;
+    }
+  }
 }
