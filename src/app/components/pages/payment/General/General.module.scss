@@ -30,3 +30,29 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .gen {
+    &__head {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+    &__info {
+      gap: 25px;
+      &__text {
+        font-size: 14px;
+        line-height: 24px;
+      }
+      &__ol {
+        &__li {
+          font-size: 14px;
+          line-height: 24px;
+          &_link {
+            text-underline-offset: 3px;
+          }
+        }
+      }
+    }
+  }
+}

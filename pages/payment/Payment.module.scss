@@ -35,3 +35,20 @@
     }
   }
 }
+@media screen and (max-width: 768px) {
+  .pay {
+    padding-top: 83px;
+    padding-bottom: 60px;
+    &__back {
+      margin-bottom: 28px;
+    }
+    &__content {
+      width: 100%;
+      &__head {
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
