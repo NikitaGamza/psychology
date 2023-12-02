@@ -10,7 +10,7 @@ export default function Payment() {
   return (
     <div className={style.pay}>
       <div className="container">
-        <Link href={'/docs'} className={style.pay__back}>
+        <Link href={'/'} className={style.pay__back}>
           <Image
             src={'/img/icons/arrows/arrow-left-green.svg'}
             alt="back"
