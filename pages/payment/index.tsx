@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import General from '@/app/components/pages/payment/General/General';
 import RuCart from '@/app/components/pages/payment/RuCart/RuCart';
+import Foreign from '@/app/components/pages/payment/Foreign/Foreign';
 
 export default function Payment() {
   return (
@@ -24,6 +25,7 @@ export default function Payment() {
           <div className={style.pay__content__info}>
             <General />
             <RuCart />
+            <Foreign />
           </div>
         </div>
       </div>
