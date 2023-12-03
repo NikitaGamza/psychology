@@ -1,0 +1,82 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+.cart {
+  display: flex;
+  padding: 32px;
+  box-shadow: 0px 0px 5px 0px #1d304e26;
+  background-color: $white;
+  border-radius: 20px;
+  column-gap: 20px;
+  &__img {
+    width: 160px;
+    height: 300px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__wrap {
+      &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+        &__item {
+          padding: 0 12px 0 12px;
+          border-radius: 50px;
+          border: 1px solid $green;
+          font-size: 12px;
+          font-weight: 900;
+          line-height: 22px;
+        }
+      }
+      &__head {
+        font-family: 'Gilroy-Bold';
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 24px;
+      }
+      &__details {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 10px;
+        &__item {
+          font-size: 16px;
+          font-weight: 900;
+          line-height: 24px;
+          letter-spacing: 0.02em;
+        }
+      }
+      &__address {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        &__text {
+          font-size: 16px;
+          font-weight: 900;
+          line-height: 24px;
+          letter-spacing: 0.02em;
+          color: $grey_dark;
+        }
+      }
+    }
+    &__rest {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      &__link {
+        @include link-green;
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        padding: 12px 39px;
+      }
+      &__price {
+        font-family: 'Gilroy-Bold';
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+}

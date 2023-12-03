@@ -1,0 +1,14 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  &__load {
+    @include link-sheer-green;
+    margin: 0 auto;
+    padding: 12px 66px;
+    background-color: inherit;
+  }
+}
