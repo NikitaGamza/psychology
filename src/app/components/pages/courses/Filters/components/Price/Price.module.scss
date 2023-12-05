@@ -1,0 +1,44 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+
+.price {
+  &__head {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    &__title {
+      font-family: 'Gilroy-Bold';
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+  &__range {
+    display: block;
+    padding-top: 38px;
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      &__item {
+        border: 1px solid $yellow_75;
+        width: 116px;
+        text-align: center;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 50px;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 900;
+      }
+      &__line {
+        width: 16px;
+        height: 1px;
+        background-color: $black;
+      }
+    }
+  }
+  &__notrange {
+    display: none;
+  }
+}
