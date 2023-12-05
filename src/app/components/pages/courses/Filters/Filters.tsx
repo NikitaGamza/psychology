@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Filters.module.scss';
 import Price from './components/Price/Price';
 import Format from './components/Format/Format';
+import Specialization from './components/Specialization/Specialization';
 
 export default function Filters() {
   return (
@@ -10,6 +11,7 @@ export default function Filters() {
       <div className={style.filt__list}>
         <Price />
         <Format />
+        <Specialization />
       </div>
     </div>
   );
