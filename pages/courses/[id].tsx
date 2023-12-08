@@ -5,23 +5,7 @@ import { courseList } from './courseList';
 import Cover from '@/app/components/pages/courses/dynamic/Cover/Cover';
 import About from '@/app/components/pages/courses/dynamic/About/About';
 import FitFor from '@/app/components/pages/courses/dynamic/FitFor/FitFor';
-interface ICover {
-  imgUrl: string;
-  lessonType: string;
-  specialization: Array<string>;
-  name: string;
-  description: string;
-  format: string;
-  startDate: string;
-  duralation: number;
-  weekDay: string;
-  time: string;
-  address?: string;
-}
-interface IAbout {
-  aboutText: Array<string>;
-  aboutVideo: string;
-}
+import Learn from '@/app/components/pages/courses/dynamic/Learn/Learn';
 
 export default function Page() {
   const router = useRouter();
@@ -91,6 +75,7 @@ export default function Page() {
             />
             <div className={style.dynamic__content}>
               <FitFor fitFor={course.fitFor} />
+              <Learn learn={course.learn} />
             </div>
           </>
         )}
