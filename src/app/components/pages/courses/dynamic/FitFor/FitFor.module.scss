@@ -1,0 +1,13 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+
+.for {
+  &__head {
+    font-family: 'Gilroy-Bold';
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: 0.01em;
+    text-align: center;
+  }
+}

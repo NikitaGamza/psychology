@@ -16,3 +16,9 @@
     gap: 32px;
   }
 }
+
+@media screen and (max-width: 1170px) {
+  .filt {
+    display: none;
+  }
+}

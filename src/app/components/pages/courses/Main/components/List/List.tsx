@@ -4,7 +4,9 @@ import { courseList } from './courseList';
 import Cart from './components/Cart/Cart';
 
 interface ICart {
+  id: number;
   imgUrl: string;
+  imgUrlMobile: string;
   lessonType: string;
   specialization: Array<string>;
   name: string;
@@ -23,6 +25,7 @@ export default function List() {
       {courseList.map((item: ICart, idx: number) => (
         <Cart
           key={idx}
+          id={item.id}
           imgUrl={item.imgUrl}
           lessonType={item.lessonType}
           specialization={item.specialization}
@@ -34,6 +37,7 @@ export default function List() {
           format={item.format}
           address={item.address}
           price={item.price}
+          imgUrlMobile={item.imgUrlMobile}
         />
       ))}
       <button className={style.list__load}>Показать еще</button>

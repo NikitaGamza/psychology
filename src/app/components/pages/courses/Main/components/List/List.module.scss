@@ -12,3 +12,8 @@
     background-color: inherit;
   }
 }
+@media screen and (max-width: 768px) {
+  .list {
+    gap: 32px;
+  }
+}

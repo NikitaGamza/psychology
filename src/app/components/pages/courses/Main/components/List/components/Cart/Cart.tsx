@@ -5,7 +5,9 @@ import { monthList } from './monthList';
 import Link from 'next/link';
 
 interface ICart {
+  id: number;
   imgUrl: string;
+  imgUrlMobile: string;
   lessonType: string;
   specialization: Array<string>;
   name: string;
@@ -42,6 +44,13 @@ export default function Cart(props: ICart) {
               </div>
             ))}
           </div>
+          <Image
+            src={props.imgUrlMobile}
+            alt="pic"
+            width={160}
+            height={300}
+            className={style.cart__info__img}
+          />
           <h2 className={style.cart__info__wrap__head}>{props.name}</h2>
           <div className={style.cart__info__wrap__details}>
             <p className={style.cart__info__wrap__details__item}>
@@ -61,6 +70,7 @@ export default function Cart(props: ICart) {
               alt="bullet"
               width={4}
               height={4}
+              className={style.cart__info__wrap__details__middle}
             />
             <p className={style.cart__info__wrap__details__item}>
               {props.weekDay} в {props.time}
@@ -88,7 +98,10 @@ export default function Cart(props: ICart) {
           </div>
         </div>
         <div className={style.cart__info__rest}>
-          <Link href={'/'} className={style.cart__info__rest__link}>
+          <Link
+            href={`/courses/${props.id}`}
+            className={style.cart__info__rest__link}
+          >
             Записаться
           </Link>
           <h2 className={style.cart__info__rest__price}>{props.price} ₽</h2>

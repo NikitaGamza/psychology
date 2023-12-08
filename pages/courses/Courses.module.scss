@@ -10,3 +10,19 @@
     justify-content: space-between;
   }
 }
+
+.dynamic {
+  padding-top: 120px;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .course {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+}

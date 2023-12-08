@@ -2,6 +2,7 @@ export const courseList = [
   {
     id: 0,
     imgUrl: '/img/pages/courses/pic.png',
+    imgUrlMobile: '/img/pages/courses/imgMobile.png',
     lessonType: 'Курс',
     specialization: ['Отношения'],
     name: 'Искусство быть вместе. Большой практический курс о партнёрских отношениях',
@@ -155,6 +156,7 @@ export const courseList = [
   {
     id: 1,
     imgUrl: '/img/pages/courses/pic.png',
+    imgUrlMobile: '/img/pages/courses/imgMobile.png',
     lessonType: 'Курс',
     specialization: ['Отношения'],
     name: 'Искусство быть вместе. Большой практический курс о партнёрских отношениях',
@@ -308,6 +310,7 @@ export const courseList = [
   {
     id: 1,
     imgUrl: '/img/pages/courses/pic.png',
+    imgUrlMobile: '/img/pages/courses/imgMobile.png',
     lessonType: 'Курс',
     specialization: ['Отношения'],
     name: 'Искусство быть вместе. Большой практический курс о партнёрских отношениях',
@@ -461,6 +464,7 @@ export const courseList = [
   {
     id: 1,
     imgUrl: '/img/pages/courses/pic.png',
+    imgUrlMobile: '/img/pages/courses/imgMobile.png',
     lessonType: 'Курс',
     specialization: ['Отношения'],
     name: 'Искусство быть вместе. Большой практический курс о партнёрских отношениях',
@@ -614,6 +618,7 @@ export const courseList = [
   {
     id: 1,
     imgUrl: '/img/pages/courses/pic.png',
+    imgUrlMobile: '/img/pages/courses/imgMobile.png',
     lessonType: 'Курс',
     specialization: ['Отношения'],
     name: 'Искусство быть вместе. Большой практический курс о партнёрских отношениях',
