@@ -43,6 +43,23 @@ export default function Page() {
       'На нашем курсе вы научитесь спокойнее проходить через эти и другие сложные моменты партнёрских отношений. Поймёте, как построить крепкий союз на основе безопасной привязанности и сблизиться с партнёром.',
     ],
     aboutVideo: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
+    fitFot: [
+      {
+        imgUrl: '',
+        head: 'Тем, кто недоволен текущими отношениями',
+        text: 'Осознаете причины проблем в вашей паре и научитесь их решать. Поймёте, как улучшить отношения или закончить их безболезненно.',
+      },
+      {
+        imgUrl: '',
+        head: 'Тем, у кого не выходит строить отношения',
+        text: 'Узнаете, почему ваши прошлые отношения развивались по сценарию, который вас не устраивал. Поймёте, как построить здоровые отношения.',
+      },
+      {
+        imgUrl: '',
+        head: 'Тем, кто хочет сделать хорошие отношения ещё лучше',
+        text: 'Научитесь глубже понимать свои потребности и принимать непохожесть с партнёром. Поймёте, как сохранить ваше «мы» во время ссор.',
+      },
+    ],
   });
   useEffect(() => {
     setCourse(courseList.find((item: any) => item.id == router.query.id));
@@ -53,23 +70,30 @@ export default function Page() {
   return (
     <div className={style.dynamic}>
       <div className="container">
-        <Cover
-          imgUrl={course.imgUrl}
-          lessonType={course.lessonType}
-          specialization={course.specialization}
-          name={course.name}
-          description={course.description}
-          format={course.format}
-          startDate={course.startDate}
-          duralation={course.duralation}
-          weekDay={course.weekDay}
-          time={course.time}
-          address={course.address}
-        />
-        <About aboutText={course.aboutText} aboutVideo={course.aboutVideo} />
-        <div className={style.dynamic__content}>
-          <FitFor />
-        </div>
+        {(course?.id === 0 || course?.id) && (
+          <>
+            <Cover
+              imgUrl={course.imgUrl}
+              lessonType={course.lessonType}
+              specialization={course.specialization}
+              name={course.name}
+              description={course.description}
+              format={course.format}
+              startDate={course.startDate}
+              duralation={course.duralation}
+              weekDay={course.weekDay}
+              time={course.time}
+              address={course.address}
+            />
+            <About
+              aboutText={course.aboutText}
+              aboutVideo={course.aboutVideo}
+            />
+            <div className={style.dynamic__content}>
+              <FitFor fitFor={course.fitFor} />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
