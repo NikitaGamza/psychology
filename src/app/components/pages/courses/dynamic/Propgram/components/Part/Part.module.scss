@@ -1,0 +1,35 @@
+@import '@/style/colors.scss';
+
+.part {
+  padding: 32px;
+  border-radius: 20px;
+  background-color: $grey-bg;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__title {
+      font-family: 'Gilroy-Bold';
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: 0em;
+      &_idx {
+        font-family: inherit;
+        font-size: inherit;
+        margin-right: 6px;
+      }
+    }
+  }
+  &__description {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 32px;
+    width: 1088px;
+    &_none {
+      display: none;
+    }
+  }
+}

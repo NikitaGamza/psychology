@@ -6,6 +6,7 @@ import Cover from '@/app/components/pages/courses/dynamic/Cover/Cover';
 import About from '@/app/components/pages/courses/dynamic/About/About';
 import FitFor from '@/app/components/pages/courses/dynamic/FitFor/FitFor';
 import Learn from '@/app/components/pages/courses/dynamic/Learn/Learn';
+import Program from '@/app/components/pages/courses/dynamic/Propgram/Program';
 
 export default function Page() {
   const router = useRouter();
@@ -44,6 +45,37 @@ export default function Page() {
         text: 'Научитесь глубже понимать свои потребности и принимать непохожесть с партнёром. Поймёте, как сохранить ваше «мы» во время ссор.',
       },
     ],
+    programList: [
+      {
+        head: 'Я как часть пары: краткий психологический обзор',
+        description:
+          'Познакомитесь с современными исследованиями в области психологии отношений и поймёте, как близость с другим человеком влияет на долголетие, уровень тревоги, удовлетворённость жизнью. Разберётесь, чем отличаются «я + ты» и «мы» подходы к отношениям. Узнаете, как соблюдать баланс между потребностями партнёров.',
+      },
+      {
+        head: 'Мои потребности в отношениях',
+        description: 'Descriprion',
+      },
+      {
+        head: 'Мои прошлые отношения',
+        description: 'Descriprion',
+      },
+      {
+        head: 'Мои границы',
+        description: 'Descriprion',
+      },
+      {
+        head: 'Хорошие отношения: особенности взаимодействия партнёров',
+        description: 'Descriprion',
+      },
+      {
+        head: 'Искусство понимания партнёра',
+        description: 'Descriprion',
+      },
+      {
+        head: 'Развитие безопасной привязанности в отношениях',
+        description: 'Descriprion',
+      },
+    ],
   });
   useEffect(() => {
     setCourse(courseList.find((item: any) => item.id == router.query.id));
@@ -76,6 +108,10 @@ export default function Page() {
             <div className={style.dynamic__content}>
               <FitFor fitFor={course.fitFor} />
               <Learn learn={course.learn} />
+              <Program
+                duralation={course.duralation}
+                programList={course.programList}
+              />
             </div>
           </>
         )}

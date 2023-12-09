@@ -1,0 +1,26 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+
+.prog {
+  &__head {
+    font-family: 'Gilroy-Bold';
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 45px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  &__duralation {
+    font-family: 'Gilroy-Bold';
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: $green;
+    margin-bottom: 60px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
