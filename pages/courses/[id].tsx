@@ -7,6 +7,7 @@ import About from '@/app/components/pages/courses/dynamic/About/About';
 import FitFor from '@/app/components/pages/courses/dynamic/FitFor/FitFor';
 import Learn from '@/app/components/pages/courses/dynamic/Learn/Learn';
 import Program from '@/app/components/pages/courses/dynamic/Propgram/Program';
+import Speakers from '@/app/components/pages/courses/dynamic/Speakers/Speakers';
 
 export default function Page() {
   const router = useRouter();
@@ -76,6 +77,88 @@ export default function Page() {
         description: 'Descriprion',
       },
     ],
+    speakers: [
+      {
+        imgUrl: '',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+    ],
   });
   useEffect(() => {
     setCourse(courseList.find((item: any) => item.id == router.query.id));
@@ -112,6 +195,7 @@ export default function Page() {
                 duralation={course.duralation}
                 programList={course.programList}
               />
+              <Speakers speakers={course.speakers} />
             </div>
           </>
         )}

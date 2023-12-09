@@ -74,5 +74,85 @@ export const courseList = [
         description: 'Descriprion',
       },
     ],
+    speakers: [
+      {
+        imgUrl: '/img/pages/courses/dynamic/speaker.png',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '/img/pages/courses/dynamic/speaker.png',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '/img/pages/courses/dynamic/speaker.png',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '/img/pages/courses/dynamic/speaker.png',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '/img/pages/courses/dynamic/speaker.png',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог Международной лаборатории позитивной психологии личности и мотивации',
+        ],
+      },
+      {
+        imgUrl: '/img/pages/courses/dynamic/speaker.png',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '/img/pages/courses/dynamic/speaker.png',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+      {
+        imgUrl: '/img/pages/courses/dynamic/speaker.png',
+        firstName: 'Елена',
+        lastName: 'Станковская',
+        achievements: [
+          'Психолог-консультант',
+          'Кандидат психологических наук',
+          'Доцент НИУ ВШЭ',
+        ],
+      },
+    ],
   },
 ];

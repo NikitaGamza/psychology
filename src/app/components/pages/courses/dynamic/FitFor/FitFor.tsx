@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import style from './FitFor.module.scss';
 import Image from 'next/image';
 
@@ -10,9 +10,6 @@ interface IFit {
 
 export default function FitFor(props: Array<IFit>) {
   const { fitFor } = props;
-  useEffect(() => {
-    console.log(fitFor);
-  });
   return (
     <div className={style.for}>
       <h2 className={style.for__head}>Кому подойдёт этот курс</h2>
