@@ -1,0 +1,46 @@
+@import '@/style/colors.scss';
+.slide {
+  border-radius: 20px;
+  background-color: $grey-bg;
+  padding: 72px;
+  &__content {
+    display: flex;
+    column-gap: 40px;
+    &__info {
+      width: 100%;
+      &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        &__wrap {
+          display: flex;
+          align-items: center;
+          column-gap: 16px;
+          &__name {
+            font-family: 'Gilroy-Bold';
+            font-size: 24px;
+            line-height: 24px;
+            letter-spacing: 0.02em;
+          }
+        }
+        &__public {
+          font-size: 20px;
+          font-weight: 900;
+          line-height: 24px;
+          opacity: 30%;
+        }
+      }
+      &__comment {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        &__text {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+}

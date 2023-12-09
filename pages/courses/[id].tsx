@@ -8,7 +8,7 @@ import FitFor from '@/app/components/pages/courses/dynamic/FitFor/FitFor';
 import Learn from '@/app/components/pages/courses/dynamic/Learn/Learn';
 import Program from '@/app/components/pages/courses/dynamic/Propgram/Program';
 import Speakers from '@/app/components/pages/courses/dynamic/Speakers/Speakers';
-
+import Feedbacks from '@/app/components/pages/courses/dynamic/Feedbacks/Feedbacks';
 export default function Page() {
   const router = useRouter();
   const [course, setCourse] = useState<any>({
@@ -159,6 +159,28 @@ export default function Page() {
         ],
       },
     ],
+    feedbacks: [
+      {
+        imgUrl: '',
+        name: 'Елена',
+        starts: 5,
+        publicDate: '2024-04-15',
+        text: [
+          'Курс очень полезный. Как для тех, кто хочет разобраться в себе, так и для тех, кому нужен аналитический подход для ознакомления с психологией других людей. Хорошо сделанные занятия не дадут заскучать, а кураторы курса всегда помогут с любыми возникающими вопросами. За что им отдельное спасибо. ',
+          'Курс максимально практический, все полученные знания начинаешь немедленно применять на практике, и думать «как же я раньше без этого жил». Также очень живое обсуждение присутствует в чате курса — очень приятно взаимодействовать с единомышленниками. В целом, спасибо авторам курса и кураторам за проделанную работу, курс очень крутой, полезный, нужный для всех, кто хочет знать кто он или она, и чего вы хотите.',
+        ],
+      },
+      {
+        imgUrl: '',
+        name: 'Михаил',
+        starts: 5,
+        publicDate: '2024-04-15',
+        text: [
+          'Курс очень полезный. Как для тех, кто хочет разобраться в себе, так и для тех, кому нужен аналитический подход для ознакомления с психологией других людей. Хорошо сделанные занятия не дадут заскучать, а кураторы курса всегда помогут с любыми возникающими вопросами. За что им отдельное спасибо. ',
+          'Курс максимально практический, все полученные знания начинаешь немедленно применять на практике, и думать «как же я раньше без этого жил». Также очень живое обсуждение присутствует в чате курса — очень приятно взаимодействовать с единомышленниками. В целом, спасибо авторам курса и кураторам за проделанную работу, курс очень крутой, полезный, нужный для всех, кто хочет знать кто он или она, и чего вы хотите.',
+        ],
+      },
+    ],
   });
   useEffect(() => {
     setCourse(courseList.find((item: any) => item.id == router.query.id));
@@ -196,6 +218,7 @@ export default function Page() {
                 programList={course.programList}
               />
               <Speakers speakers={course.speakers} />
+              <Feedbacks feedbacks={course.feedbacks} />
             </div>
           </>
         )}
