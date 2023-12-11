@@ -1,0 +1,131 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+
+.pay {
+  background-color: $green;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  margin-top: 120px;
+  &__content {
+    margin: 0 auto;
+    width: 1232px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &__left {
+      padding: 72px;
+      border-radius: 20px 0 0 20px;
+      background-color: $grey-bg;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &__head {
+        font-family: 'Gilroy-Bold';
+        font-size: 48px;
+        line-height: 48px;
+        margin-bottom: 24px;
+      }
+      &__text {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0.01em;
+      }
+      &__price {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        color: $grey_dark;
+        margin-bottom: 1px;
+      }
+      &__pricefull {
+        font-family: 'Gilroy-Bold';
+        font-size: 48px;
+        line-height: 48px;
+        color: $green;
+        margin-bottom: 30px;
+      }
+      &__pricemonth {
+        font-family: 'Gilroy-Bold';
+        font-size: 80px;
+        font-weight: 700;
+        line-height: 86px;
+        // margin-bottom: 5px;
+        &_idx {
+          font-family: 'Gilroy-Bold';
+          font-size: 40px;
+          font-weight: 700;
+          line-height: 0;
+        }
+      }
+    }
+    &__right {
+      padding: 72px;
+      border-radius: 0 20px 20px 0;
+      background-color: $white;
+      &__row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+        &__start {
+          border: 1px solid $yellow;
+          border-radius: 20px;
+          background-color: $yellow_10;
+          padding: 8px 16px;
+          color: $yellow;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 16px;
+          letter-spacing: 0.4px;
+        }
+        &__place {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 16px;
+          letter-spacing: 0.4px;
+          color: $grey_dark;
+        }
+      }
+      &__head {
+        font-family: 'Gilroy-Bold';
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 32px;
+      }
+      &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: start;
+        margin-bottom: 32px;
+        &__inp {
+          @include input;
+          width: 100%;
+          padding: 15px 18px;
+        }
+        &__agree {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          &__check {
+            width: 20px;
+            height: 20px;
+          }
+          &__label {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 16px;
+            letter-spacing: 0.03em;
+            &__link {
+              color: $green;
+            }
+          }
+        }
+      }
+      &__btn {
+        @include link-green;
+      }
+    }
+  }
+}

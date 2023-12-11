@@ -9,6 +9,7 @@ import Learn from '@/app/components/pages/courses/dynamic/Learn/Learn';
 import Program from '@/app/components/pages/courses/dynamic/Propgram/Program';
 import Speakers from '@/app/components/pages/courses/dynamic/Speakers/Speakers';
 import Feedbacks from '@/app/components/pages/courses/dynamic/Feedbacks/Feedbacks';
+import Payment from '@/app/components/pages/courses/dynamic/Payment/Payment';
 export default function Page() {
   const router = useRouter();
   const [course, setCourse] = useState<any>({
@@ -223,6 +224,12 @@ export default function Page() {
           </>
         )}
       </div>
+      <Payment
+        priceFull={course.priceFull}
+        priceMonth={course.priceMonth}
+        place={course.place}
+        startDate={course.startDate}
+      />
     </div>
   );
 }
