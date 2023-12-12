@@ -22,7 +22,7 @@ export default function Header() {
     },
     {
       title: 'Курсы',
-      linkTo: '/about',
+      linkTo: '/courses',
     },
     {
       title: 'Организациям',
@@ -34,7 +34,7 @@ export default function Header() {
     },
     {
       title: 'Блог',
-      linkTo: '/about',
+      linkTo: '/blog',
     },
     {
       title: 'FAQ',
