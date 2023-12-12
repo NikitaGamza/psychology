@@ -33,3 +33,30 @@
     }
   }
 }
+@media screen and (max-width: 1140px) {
+  .part {
+    &__description {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .part {
+    padding: 20px;
+    gap: 16px;
+    &__head {
+      &__title {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      &__img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    &__description {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
