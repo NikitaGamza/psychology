@@ -8,9 +8,24 @@ interface IPay {
   startDate: string;
   place: number;
 }
+const monthList = [
+  'января',
+  'февраля',
+  'марта',
+  'апреля',
+  'мая',
+  'июня',
+  'июля',
+  'августа',
+  'сентября',
+  'октября',
+  'ноября',
+  'декабря',
+];
 
 export default function Payment(props: IPay) {
   const { priceFull, priceMonth, startDate, place } = props;
+  const startDay = new Date(startDate);
   return (
     <div className={style.pay}>
       <div className={style.pay__content}>
@@ -38,10 +53,14 @@ export default function Payment(props: IPay) {
         <div className={style.pay__content__right}>
           <div className={style.pay__content__right__row}>
             <span className={style.pay__content__right__row__start}>
-              Начало обучения: {startDate}
+              Начало обучения: {startDay.getDate()}{' '}
+              {monthList[startDay.getMonth()]}
             </span>
             <span className={style.pay__content__right__row__place}>
               Осталось мест: {place}
+            </span>
+            <span className={style.pay__content__right__row__place_mob}>
+              Мест: {place}
             </span>
           </div>
           <h4 className={style.pay__content__right__head}>
@@ -71,12 +90,15 @@ export default function Payment(props: IPay) {
             />
 
             <div className={style.pay__content__right__form__agree}>
-              <input
-                className={style.pay__content__right__form__agree__check}
-                type="checkbox"
-                name=""
-                id="checkbox"
-              />
+              <span>
+                <input
+                  className={style.pay__content__right__form__agree__check}
+                  type="checkbox"
+                  name=""
+                  id="checkbox"
+                />
+              </span>
+
               <label
                 className={style.pay__content__right__form__agree__label}
                 htmlFor="checkbox"

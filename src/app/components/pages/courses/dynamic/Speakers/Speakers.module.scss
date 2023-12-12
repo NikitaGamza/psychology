@@ -44,6 +44,9 @@
     }
   }
 }
+.slider {
+  display: none;
+}
 .dots {
   display: none;
   &__item {
@@ -92,6 +95,9 @@
         }
       }
     }
+  }
+  .slider {
+    display: block;
   }
   .dots {
     display: flex;

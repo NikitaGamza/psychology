@@ -85,6 +85,9 @@
           line-height: 16px;
           letter-spacing: 0.4px;
           color: $grey_dark;
+          &_mob {
+            display: none;
+          }
         }
       }
       &__head {
@@ -114,7 +117,7 @@
           }
           &__label {
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 900;
             line-height: 16px;
             letter-spacing: 0.03em;
             &__link {
@@ -125,6 +128,118 @@
       }
       &__btn {
         @include link-green;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1264px) {
+  .pay {
+    padding-left: 16px;
+    padding-right: 16px;
+    &__content {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pay {
+    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+    &__content {
+      width: 100%;
+      grid-template-columns: 1fr;
+      &__left {
+        padding: 40px 20px;
+        border-radius: 20px 20px 0 0;
+        &__head {
+          font-size: 24px;
+          line-height: 24px;
+          margin-bottom: 16px;
+        }
+        &__text {
+          font-size: 16px;
+          line-height: 20px;
+          letter-spacing: 0.01em;
+          margin-bottom: 24px;
+        }
+        &__price {
+          font-size: 14px;
+          line-height: 14px;
+          letter-spacing: 0.01em;
+          margin-bottom: 4px;
+        }
+        &__pricefull {
+          font-size: 24px;
+          line-height: 24px;
+          margin-bottom: 16px;
+        }
+        &__pricemonth {
+          font-size: 32px;
+          line-height: 48px;
+          &_idx {
+            font-size: 20px;
+          }
+        }
+      }
+      &__right {
+        padding: 40px 20px;
+        border-radius: 0 0 20px 20px;
+        &__row {
+          margin-bottom: 16px;
+          justify-content: space-between;
+          gap: 0;
+          &__start {
+            font-size: 14px;
+            line-height: 16px;
+            padding: 7px 15px;
+            letter-spacing: 0;
+          }
+          &__place {
+            font-size: 14px;
+            line-height: 16px;
+            display: none;
+            &_mob {
+              display: block;
+              font-size: 14px;
+              line-height: 16px;
+              letter-spacing: 0;
+              color: $grey_dark;
+            }
+          }
+        }
+        &__head {
+          font-size: 20px;
+          line-height: 24px;
+          margin-bottom: 24px;
+        }
+        &__form {
+          gap: 8px;
+          margin-bottom: 16px;
+          &__inp {
+            padding: 11px 16px;
+          }
+          &__agree {
+            align-items: start;
+            margin-top: 8px;
+            &__label {
+              font-size: 14px;
+              line-height: 16px;
+              letter-spacing: 0.03em;
+            }
+          }
+        }
+        &__btn {
+          width: 100%;
+          font-size: 16px;
+          line-height: 16px;
+          letter-spacing: 0.02em;
+          text-align: center;
+        }
       }
     }
   }
