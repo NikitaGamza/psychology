@@ -2,6 +2,7 @@ export const courseList = [
   {
     id: 0,
     imgUrl: '/img/pages/courses/pic.png',
+    imgUrlMob: '/img/pages/courses/dynamic/covmob.png',
     lessonType: 'Курс',
     specialization: ['Отношения'],
     name: 'Искусство быть вместе. Курс о партнёрских отношениях',

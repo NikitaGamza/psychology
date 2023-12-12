@@ -55,6 +55,9 @@
       width: 420px;
       height: 640px;
       border-radius: 20px;
+      &_mob {
+        display: none;
+      }
     }
   }
   &__detail {
@@ -74,6 +77,83 @@
         font-size: 20px;
         font-weight: 700;
         line-height: 28px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .cover {
+    &__main {
+      flex-direction: column;
+      &__info {
+        width: 100%;
+        &__link {
+          width: 100%;
+        }
+      }
+      &__img {
+        display: none;
+        &_mob {
+          display: block;
+          width: 100%;
+          height: auto;
+          margin-bottom: 32px;
+        }
+      }
+    }
+    &__detail {
+      flex-wrap: wrap;
+      row-gap: 17px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cover {
+    gap: 32px;
+    &__main {
+      &__info {
+        &__tags {
+          margin-bottom: 16px;
+          &__item {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 22px;
+            padding: 0 12px;
+          }
+        }
+        &__head {
+          font-size: 24px;
+          line-height: 32px;
+          margin-bottom: 16px;
+        }
+        &__description {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 32px;
+        }
+        &__link {
+          font-size: 16px;
+          line-height: 16px;
+          letter-spacing: 0.03em;
+        }
+      }
+    }
+    &__detail {
+      &__item {
+        width: 152px;
+        &__title {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          margin-bottom: 6px;
+        }
+        &__info {
+          font-size: 16px;
+          line-height: 20px;
+        }
       }
     }
   }

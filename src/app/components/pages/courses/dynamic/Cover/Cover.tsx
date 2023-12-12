@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 interface ICover {
   imgUrl: string;
+  imgUrlMob: string;
   lessonType: string;
   specialization: Array<string>;
   name: string;
@@ -33,6 +34,13 @@ export default function Cover(props: ICover) {
           <p className={style.cover__main__info__description}>
             {props.description}
           </p>
+          <Image
+            src={props.imgUrlMob}
+            alt="img"
+            width={328}
+            height={184}
+            className={style.cover__main__img_mob}
+          />
           <Link className={style.cover__main__info__link} href={'/'}>
             Оставить заявку
           </Link>

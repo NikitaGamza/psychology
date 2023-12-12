@@ -196,6 +196,7 @@ export default function Page() {
           <>
             <Cover
               imgUrl={course.imgUrl}
+              imgUrlMob={course.imgUrlMob}
               lessonType={course.lessonType}
               specialization={course.specialization}
               name={course.name}
