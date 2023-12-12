@@ -7,8 +7,11 @@ interface IFit {
   head: string;
   text: string;
 }
+interface IList {
+  fitFor: Array<IFit>;
+}
 
-export default function FitFor(props: Array<IFit>) {
+export default function FitFor(props: IList) {
   const { fitFor } = props;
   return (
     <div className={style.for}>

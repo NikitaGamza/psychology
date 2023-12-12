@@ -225,12 +225,12 @@ export default function Page() {
           </>
         )}
       </div>
-      <Payment
+      {/* <Payment
         priceFull={course.priceFull}
         priceMonth={course.priceMonth}
         place={course.place}
         startDate={course.startDate}
-      />
+      /> */}
     </div>
   );
 }
