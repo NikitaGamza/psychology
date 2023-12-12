@@ -14,6 +14,7 @@ export default function Page() {
   const router = useRouter();
   const [course, setCourse] = useState<any>({
     id: 0,
+
     lessonType: 'Курс',
     specialization: ['Отношения'],
     name: 'Искусство быть вместе. Курс о партнёрских отношениях',
@@ -182,6 +183,7 @@ export default function Page() {
         ],
       },
     ],
+    priceFull: 15676,
   });
   useEffect(() => {
     setCourse(courseList.find((item: any) => item.id == router.query.id));
@@ -225,11 +227,12 @@ export default function Page() {
           </>
         )}
       </div>
+      {/* Что с прайсом? */}
       <Payment
-        priceFull={course.priceFull}
-        priceMonth={course.priceMonth}
-        place={course.place}
-        startDate={course.startDate}
+        priceFull={course?.priceFull}
+        priceMonth={course?.priceMonth}
+        place={course?.place}
+        startDate={course?.startDate}
       />
     </div>
   );
