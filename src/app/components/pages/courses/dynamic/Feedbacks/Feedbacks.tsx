@@ -89,6 +89,26 @@ export default function Feedbacks(props: IList) {
           </div>
         )}
       </div>
+      {loaded && instanceRef.current && (
+        <div className={style.dots}>
+          {[
+            ...Array(instanceRef.current.track.details.slides.length).keys(),
+          ].map((idx) => {
+            return (
+              <button
+                key={idx}
+                onClick={() => {
+                  instanceRef.current?.moveToIdx(idx);
+                }}
+                className={
+                  style.dots__item +
+                  (currentSlide === idx ? ` ${style.dots__item_active}` : '')
+                }
+              ></button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

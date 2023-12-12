@@ -30,6 +30,9 @@
           line-height: 24px;
           opacity: 30%;
         }
+        &__mobile {
+          display: none;
+        }
       }
       &__comment {
         display: flex;
@@ -39,6 +42,59 @@
           font-size: 20px;
           font-weight: 500;
           line-height: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slide {
+    padding: 40px 20px;
+    &__content {
+      flex-direction: column;
+      &__img {
+        margin: 0 auto;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 16px;
+      }
+      &__info {
+        &__head {
+          flex-direction: column;
+          &__wrap {
+            &__name {
+              font-size: 20px;
+              line-height: 20px;
+              letter-spacing: 0.02em;
+              text-align: center;
+              margin-bottom: 24px;
+            }
+            &__stars {
+              display: none;
+            }
+          }
+          &__public {
+            display: none;
+          }
+          &__mobile {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            &__public {
+              font-weight: 900;
+              opacity: 30%;
+              font-size: 16px;
+              line-height: 20px;
+            }
+          }
+        }
+        &__comment {
+          &__text {
+            font-size: 16px;
+            line-height: 20px;
+          }
         }
       }
     }

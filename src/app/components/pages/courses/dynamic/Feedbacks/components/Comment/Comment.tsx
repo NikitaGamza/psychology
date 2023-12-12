@@ -36,6 +36,16 @@ export default function Comment(item: IFeed) {
             <span className={style.slide__content__info__head__public}>
               {item.publicDate}
             </span>
+            <div className={style.slide__content__info__head__mobile}>
+              <span className={style.slide__content__info__head__mobile__stars}>
+                {item.stars}
+              </span>
+              <span
+                className={style.slide__content__info__head__mobile__public}
+              >
+                {item.publicDate}
+              </span>
+            </div>
           </div>
           <div className={style.slide__content__info__comment}>
             {item.text.map((text: string, idxText: number) => (
