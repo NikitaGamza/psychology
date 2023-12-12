@@ -2,7 +2,11 @@ import React from 'react';
 import style from './Learn.module.scss';
 import Image from 'next/image';
 
-export default function Learn(props: Array<string>) {
+interface IList {
+  learn: Array<string>;
+}
+
+export default function Learn(props: IList) {
   const { learn } = props;
   return (
     <div className={style.learn}>

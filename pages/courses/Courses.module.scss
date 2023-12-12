@@ -25,4 +25,10 @@
     padding-top: 80px;
     padding-bottom: 60px;
   }
+  .dynamic {
+    padding-top: 80px;
+    &__content {
+      gap: 60px;
+    }
+  }
 }
