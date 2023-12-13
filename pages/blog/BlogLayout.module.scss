@@ -1,0 +1,71 @@
+@import '@/style/colors.scss';
+.lay {
+  padding-top: 80px;
+
+  &__header {
+    background-color: $green;
+    &__content {
+      width: 1232px;
+      margin: 0 auto;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      &__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__nav {
+          display: flex;
+          column-gap: 20px;
+          &__link {
+            font-family: 'Gilroy-Bold';
+            font-size: 16px;
+            line-height: 16px;
+            letter-spacing: 0.04em;
+            color: $white;
+          }
+        }
+        &__search {
+          background-color: $green_75;
+          border: none;
+          padding: 14px 16px;
+          border-radius: 10px;
+          color: $white;
+          width: 400px;
+          height: 48px;
+          &::placeholder {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  &__content {
+    width: 1233px;
+    margin: 0 auto;
+    padding-top: 36px;
+  }
+}
+@media screen and (max-width: 1264px) {
+  .lay {
+    &__header {
+      &__content {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+    &__content {
+      width: 100%;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .lay {
+    &__content {
+      padding-top: 28px;
+    }
+  }
+}

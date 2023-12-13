@@ -1,0 +1,49 @@
+@import '@/style/colors.scss';
+.que {
+  &__head {
+    font-family: 'Gilroy-Bold';
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 40px;
+  }
+  &__order {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    border-bottom: 1px solid $grey_line;
+    margin-bottom: 32px;
+    &__btn {
+      font-family: 'Gilroy-Bold';
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background-color: $white;
+      border: none;
+      color: $grey_no_active;
+      padding-bottom: 7px;
+    }
+  }
+  &__themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 40px;
+    &__btn {
+      padding: 4px 20px;
+      border-radius: 50px;
+      background-color: $white;
+      border: 1px solid $grey_line;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 24px;
+    }
+  }
+  &__content {
+    // display: grid;
+    // grid-template-columns: 2fr 1fr;
+    // padding-block: 32px;
+    // column-gap: 24px;
+    // row-gap: 60px;
+  }
+}
