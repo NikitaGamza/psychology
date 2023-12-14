@@ -1,5 +1,25 @@
 @import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+@mixin cart($bg, $wh, $bc: #abaeee) {
+  background-color: $bg;
+  padding-top: 32px;
+  padding-bottom: 31px;
+  padding-left: 32px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 0px #1d304e26;
+  width: $wh;
+  div {
+    span {
+      border: 1px solid $bc;
+    }
+  }
+  @media screen and (max-width: 1264px) {
+    width: 100%;
+    padding: 24px 20px 23px 20px;
+  }
+}
 .que {
+  padding-bottom: 100px;
   &__head {
     font-family: 'Gilroy-Bold';
     font-size: 48px;
@@ -40,10 +60,123 @@
     }
   }
   &__content {
-    // display: grid;
-    // grid-template-columns: 2fr 1fr;
-    // padding-block: 32px;
-    // column-gap: 24px;
-    // row-gap: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 60px;
+    column-gap: 24px;
+    margin-bottom: 65px;
+    &__item {
+      &_1 {
+        @include cart($green_10, 813px, $green);
+        padding-right: 48px;
+      }
+      &_2 {
+        @include cart($blue_10, 395px, $blue);
+        padding-right: 35px;
+      }
+      &_3 {
+        @include cart($yellow_10, 395px, $yellow_75);
+        padding-right: 35px;
+      }
+      &_4 {
+        @include cart(#f5f6f0, 395px, $green);
+        padding-right: 35px;
+      }
+      &_5 {
+        @include cart($green_10, 395px, $green);
+        padding-right: 35px;
+      }
+      &_6 {
+        @include cart($blue_10, 395px, $blue);
+        padding-right: 35px;
+      }
+      &_7 {
+        @include cart($pink_10, 813px, $pink_75);
+        padding-right: 48px;
+      }
+      &__themes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+        &__item {
+          padding: 0 12px;
+          border-radius: 50px;
+          font-size: 12px;
+          font-weight: 900;
+          line-height: 24px;
+          border: 1px solid #000;
+        }
+      }
+      &__head {
+        font-family: 'Gilroy-Bold';
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 24px;
+      }
+      &__answer {
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 24px;
+      }
+      &__link {
+        font-family: 'Gilroy-Bold';
+        font-size: 16px;
+        line-height: 24px;
+        color: $green;
+      }
+    }
+  }
+  &__more {
+    @include link-sheer-green;
+    padding: 12px 65px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .que {
+    padding-bottom: 60px;
+    &__head {
+      font-size: 24px;
+      line-height: 24px;
+      margin-bottom: 28px;
+    }
+    &__order {
+      margin-bottom: 24px;
+      &__btn {
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.04em;
+      }
+    }
+    &__themes {
+      margin-bottom: 24px;
+      &__btn {
+        padding: 6px 16px;
+        font-size: 12px;
+        line-height: 12px;
+      }
+    }
+    &__content {
+      row-gap: 32px;
+      &__item {
+        &__themes {
+          margin-bottom: 12px;
+        }
+        &__head {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 8px;
+        }
+        &__answer {
+          font-size: 14px;
+          line-height: 20px;
+        }
+        &__link {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
   }
 }

@@ -64,6 +64,25 @@
 
 @media screen and (max-width: 768px) {
   .lay {
+    padding-top: 58px;
+    &__header {
+      &__content {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        &__wrap {
+          &__nav {
+            &__link {
+              font-size: 14px;
+              line-height: 16px;
+              letter-spacing: 0.04em;
+            }
+          }
+          &__search {
+            display: none;
+          }
+        }
+      }
+    }
     &__content {
       padding-top: 28px;
     }
