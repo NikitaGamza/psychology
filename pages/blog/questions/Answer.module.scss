@@ -1,0 +1,204 @@
+@import '@/style/colors.scss';
+.ans {
+  padding-top: 22px;
+  padding-bottom: 100px;
+  width: 814px;
+  margin: 0 auto;
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+    &__text {
+      font-family: 'Gilroy-Bold';
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      color: $green;
+    }
+  }
+  &__themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 22px;
+    &__item {
+      padding: 7px 16px;
+      border-radius: 50px;
+      border: 1px solid $green;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 24px;
+    }
+  }
+  &__head {
+    font-family: 'Gilroy-Bold';
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 42px;
+  }
+  &__client {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    &__img {
+      border-radius: 32px;
+    }
+    &__shortcut {
+      display: flex;
+      flex-direction: column;
+      &__name {
+        font-family: 'Gilroy-Bold';
+        font-size: 20px;
+        line-height: 24px;
+      }
+      &__status {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: $grey_dark;
+      }
+    }
+  }
+  &__question {
+    background-color: $grey-bg;
+    padding: 46px 51px 44px 46px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    margin-bottom: 60px;
+    &__text {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+  }
+  &__answer {
+    display: flex;
+    gap: 18px;
+    &__img {
+      border-radius: 32px;
+    }
+    &__info {
+      &__fio {
+        display: flex;
+        column-gap: 5px;
+        &__name {
+          font-family: 'Gilroy-Bold';
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.02em;
+        }
+      }
+      &__status {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 0.4px;
+        color: $grey_dark;
+        margin-bottom: 8px;
+      }
+      &__text {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        &__open {
+          color: $green;
+          font-size: 16px;
+          font-weight: 900;
+          line-height: 24px;
+          background-color: $white;
+          border: none;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 830px) {
+  .ans {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .ans {
+    padding-top: 16px;
+    padding-bottom: 60px;
+    &__back {
+      margin-bottom: 24px;
+      &__text {
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+      }
+    }
+    &__themes {
+      margin-bottom: 16px;
+      gap: 8px;
+      &__item {
+        padding: 0 12px;
+        font-size: 12px;
+        line-height: 24px;
+      }
+    }
+    &__head {
+      font-size: 24px;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+    &__client {
+      margin-bottom: 12px;
+      &__img {
+        width: 48px;
+        height: 48px;
+      }
+      &__shortcut {
+        &__name {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        &__status {
+          font-size: 14px;
+          line-height: 16px;
+          letter-spacing: 0.4px;
+        }
+      }
+    }
+    &__question {
+      padding: 20px;
+      margin-bottom: 24px;
+      row-gap: 20px;
+      &__text {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    &__answer {
+      gap: 16px;
+      &__img {
+        width: 36px;
+        height: 36px;
+      }
+      &__info {
+        &__fio {
+          &__name {
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.02em;
+          }
+        }
+        &__status {
+          font-size: 14px;
+          line-height: 16px;
+          letter-spacing: 0.4px;
+          margin-bottom: 12px;
+        }
+        &__text {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
