@@ -1,0 +1,113 @@
+@import '@/style/colors.scss';
+.dots {
+  display: none;
+}
+.arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 1px solid $green_light;
+  display: block;
+  text-align: center;
+  font-weight: 900;
+  font-size: 24px;
+  padding-top: 8px;
+  background-color: $white;
+  &_next {
+    border: none;
+    background-color: $green;
+    color: $white;
+  }
+}
+.more {
+  &__head {
+    font-family: 'Gilroy-Bold';
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 32px;
+  }
+  &__slider {
+    position: relative;
+    &__arrows {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      z-index: 3;
+      bottom: 50%;
+      transform: translate(-3%, -60%);
+      width: 106%;
+    }
+    &__in {
+      &__slide {
+        &__img {
+          width: 100%;
+          height: auto;
+          border-radius: 20px;
+          margin-bottom: 16px;
+        }
+        &__themes {
+          display: flex;
+          gap: 8px;
+          margin-bottom: 12px;
+          flex-wrap: wrap;
+          &__topic {
+            padding: 0 12px;
+            border-radius: 50px;
+            border: 1px solid $green;
+            font-size: 12px;
+            line-height: 24px;
+          }
+        }
+        &__head {
+          font-family: 'Gilroy-Bold';
+          font-size: 24px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .more {
+    &__head {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+    &__slider {
+      &__arrows {
+        display: none;
+      }
+      &__in {
+        &__slide {
+          &__img {
+            margin-bottom: 16px;
+          }
+          &__themes {
+            margin-bottom: 12px;
+          }
+          &__head {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+  .dots {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    &__item {
+      background-color: $green_30;
+      width: 10px;
+      height: 10px;
+      border: none;
+      border-radius: 5px;
+      &_active {
+        background-color: $green;
+      }
+    }
+  }
+}
