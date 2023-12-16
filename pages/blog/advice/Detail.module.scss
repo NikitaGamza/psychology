@@ -81,6 +81,7 @@
     display: flex;
     flex-direction: column;
     gap: 60px;
+    margin-bottom: 60px;
     &__block {
       &__head {
         font-family: 'Gilroy-Bold';
@@ -97,6 +98,79 @@
           font-size: 18px;
           font-weight: 400;
           line-height: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 846px) {
+  .det {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .det {
+    padding-top: 16px;
+    padding-bottom: 60px;
+    &__back {
+      margin-bottom: 24px;
+    }
+    &__themes {
+      margin-bottom: 16px;
+      gap: 8px;
+      &__item {
+        font-size: 12px;
+        padding: 0 12px;
+      }
+    }
+    &__head {
+      font-size: 24px;
+      line-height: 24px;
+      margin-bottom: 22px;
+    }
+    &__img {
+      margin-bottom: 10px;
+    }
+    &__form {
+      margin-bottom: 24px;
+      &__img {
+        width: 48px;
+        height: 48px;
+      }
+      &__info {
+        &__fio {
+          &__name {
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+        &__status {
+          font-size: 14px;
+          line-height: 12px;
+          letter-spacing: 0.4px;
+        }
+      }
+    }
+    &__preview {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-bottom: 40px;
+    }
+    &__content {
+      gap: 40px;
+      &__block {
+        &__head {
+          font-size: 20px;
+          line-height: 24px;
+          margin-bottom: 16px;
+        }
+        &__text {
+          &__speach {
+            font-size: 14px;
+            line-height: 24px;
+          }
         }
       }
     }

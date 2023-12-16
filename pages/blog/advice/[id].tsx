@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import BlogLayout from '../layout';
 import { detailList } from './detailList';
+import Banner from './components/Banner/Banner';
 
 export default function AdviceDetail() {
   const router = useRouter();
@@ -83,6 +84,7 @@ export default function AdviceDetail() {
             </div>
           ))}
         </div>
+        <Banner />
       </div>
     </BlogLayout>
   );
