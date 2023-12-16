@@ -35,24 +35,26 @@ export default function Answer() {
             </span>
           ))}
         </div>
-        <h2 className={style.ans__head}>{question.quest}</h2>
+        <h2 className={style.ans__head}>{question?.quest}</h2>
         <div className={style.ans__client}>
           <Image
-            src={question.imgUrl}
+            src={question?.imgUrl}
             alt="client"
             width={64}
             height={64}
             className={style.ans__client__img}
           />
           <div className={style.ans__client__shortcut}>
-            <p className={style.ans__client__shortcut__name}>{question.name}</p>
+            <p className={style.ans__client__shortcut__name}>
+              {question?.name}
+            </p>
             <p className={style.ans__client__shortcut__status}>
-              {question.status}
+              {question?.status}
             </p>
           </div>
         </div>
         <div className={style.ans__question}>
-          {question.text.map((item: string, idx: number) => (
+          {question?.text.map((item: string, idx: number) => (
             <p key={idx} className={style.ans__question__text}>
               {item}
             </p>
@@ -60,7 +62,7 @@ export default function Answer() {
         </div>
         <div className={style.ans__answer}>
           <Image
-            src={question.answer.imgUrl}
+            src={question?.answer.imgUrl}
             alt="ans"
             width={64}
             height={64}
@@ -69,17 +71,17 @@ export default function Answer() {
           <div className={style.ans__answer__info}>
             <div className={style.ans__answer__info__fio}>
               <span className={style.ans__answer__info__fio__name}>
-                {question.answer.firstName}
+                {question?.answer.firstName}
               </span>
               <span className={style.ans__answer__info__fio__name}>
-                {question.answer.lastName}
+                {question?.answer.lastName}
               </span>
             </div>
             <p className={style.ans__answer__info__status}>
-              {question.answer.status}
+              {question?.answer.status}
             </p>
             <p className={style.ans__answer__info__text}>
-              {question.answer.text}...{' '}
+              {question?.answer.text}...{' '}
               <button className={style.ans__answer__info__text__open}>
                 Развернуть
               </button>
