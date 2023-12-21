@@ -19,7 +19,7 @@ export default function VideoDetail() {
   return (
     <BlogLayout>
       <div className={style.det}>
-        <Link href={'/blog/advice'} className={style.det__back}>
+        <Link href={'/blog/video'} className={style.det__back}>
           <Image
             src={'/img/icons/arrows/arrow-left-green.svg'}
             alt="back"
