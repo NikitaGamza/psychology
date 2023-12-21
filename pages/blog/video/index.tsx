@@ -34,7 +34,7 @@ export default function Video() {
         <div className={style.video__content}>
           {videoList.map((item: IVideo, idx: number) => (
             <div key={idx} className={style.video__content__item}>
-              <Link href={item.videoUrl}>
+              <Link href={`/blog/video/${item.id}`}>
                 <iframe
                   className={style.video__content__item__video}
                   src={item.videoUrl}
@@ -51,7 +51,7 @@ export default function Video() {
                   </span>
                 ))}
               </div>
-              <Link href={item.videoUrl}>
+              <Link href={`/blog/video/${item.id}`}>
                 <h5 className={style.video__content__item__head}>
                   {item.head}
                 </h5>

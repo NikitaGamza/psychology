@@ -3,7 +3,7 @@ export const videoList = [
     id: 1,
     videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
     themes: ['Отношения', 'Семья'],
-    head: 'На что обращать внимание при знакомстве?',
+    head: 'Доверие за 20 секунд',
   },
   {
     id: 2,

@@ -1,0 +1,58 @@
+@import '@/style/colors.scss';
+.dots {
+  display: none;
+}
+.arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 1px solid $green_light;
+  display: block;
+  text-align: center;
+  font-weight: 900;
+  font-size: 24px;
+  padding-top: 8px;
+  background-color: $white;
+  &_next {
+    border: none;
+    background-color: $green;
+    color: $white;
+  }
+}
+.more {
+  &__head {
+    font-family: 'Gilroy-Bold';
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 32px;
+  }
+  &__slider {
+    position: relative;
+    &__arrows {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      z-index: 3;
+      bottom: 50%;
+      transform: translate(-2%, -5%);
+      width: 104%;
+    }
+    &__in {
+      &__slide {
+        &__video {
+          border: none;
+          border-radius: 16px;
+          width: 100%;
+          margin-bottom: 10px;
+          height: 164px;
+        }
+        &__head {
+          font-family: 'Gilroy-Bold';
+          font-size: 16px;
+          line-height: 18px;
+          letter-spacing: 0.02em;
+        }
+      }
+    }
+  }
+}

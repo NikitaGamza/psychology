@@ -1,0 +1,44 @@
+@import '@/style/colors.scss';
+.det {
+  padding-top: 22px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+    &__text {
+      font-family: 'Gilroy-Bold';
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      color: $green;
+    }
+  }
+  &__video {
+    border: none;
+    width: 100%;
+    height: 693px;
+    margin-bottom: 20px;
+  }
+  &__head {
+    font-family: 'Gilroy-Bold';
+    font-size: 32px;
+    line-height: 42px;
+    margin-bottom: 24px;
+  }
+  &__themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 100px;
+    &__item {
+      border-radius: 50px;
+      border: 1px solid $green;
+      padding: 7px 16px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
