@@ -33,7 +33,7 @@ export default function VideoDetail() {
         <div className={style.det__info}>
           <h3 className={style.det__info__head}>{video?.head}</h3>
           <div className={style.det__info__themes}>
-            {video.themes.map((item: string, idx: number) => (
+            {video?.themes.map((item: string, idx: number) => (
               <span key={idx} className={style.det__info__themes__item}>
                 {item}
               </span>
