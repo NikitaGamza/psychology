@@ -3,11 +3,11 @@ export const videoList = [
     id: 1,
     videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
     themes: ['Отношения', 'Семья'],
-    head: 'Доверие за 20 секунд',
+    head: 'Как стать хорошим психологом?',
   },
   {
     id: 2,
-    videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
+    videoUrl: 'https://www.youtube.com/embed/FtpN8QI9PuA?si=ia8ZYfeKJ2bLHHR5',
     themes: ['Отношения', 'Семья'],
     head: 'На что обращать внимание при знакомстве?',
   },

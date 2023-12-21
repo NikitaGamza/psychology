@@ -22,23 +22,62 @@
     height: 693px;
     margin-bottom: 20px;
   }
-  &__head {
-    font-family: 'Gilroy-Bold';
-    font-size: 32px;
-    line-height: 42px;
-    margin-bottom: 24px;
-  }
-  &__themes {
+  &__info {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    flex-direction: column;
+    gap: 24px;
     margin-bottom: 100px;
-    &__item {
-      border-radius: 50px;
-      border: 1px solid $green;
-      padding: 7px 16px;
-      font-size: 16px;
-      line-height: 24px;
+    &__head {
+      font-family: 'Gilroy-Bold';
+      font-size: 32px;
+      line-height: 42px;
+    }
+    &__themes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      &__item {
+        border-radius: 50px;
+        border: 1px solid $green;
+        padding: 7px 16px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .det {
+    padding-top: 15px;
+    padding-bottom: 60px;
+    &__back {
+      margin-bottom: 18px;
+      &__text {
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+      }
+    }
+    &__video {
+      height: 200px;
+      margin-bottom: 13px;
+    }
+    &__info {
+      flex-direction: column-reverse;
+      gap: 15px;
+      margin-bottom: 60px;
+      &__themes {
+        &__item {
+          padding: 0 12px;
+          font-size: 12px;
+          line-height: 22px;
+        }
+      }
+      &__head {
+        font-size: 24px;
+        line-height: 24px;
+      }
     }
   }
 }

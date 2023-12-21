@@ -1,6 +1,19 @@
 @import '@/style/colors.scss';
 .dots {
   display: none;
+  margin-top: 20px;
+  justify-content: center;
+  gap: 5px;
+  &__item {
+    background-color: $green_30;
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 5px;
+    &_active {
+      background-color: $green;
+    }
+  }
 }
 .arrow {
   width: 48px;
@@ -46,11 +59,57 @@
           margin-bottom: 10px;
           height: 164px;
         }
+        &__themes {
+          display: none;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-bottom: 12px;
+          &__item {
+            border: 1px solid $green;
+            border-radius: 50px;
+            padding: 0 12px;
+            font-size: 12px;
+            line-height: 24px;
+          }
+        }
         &__head {
           font-family: 'Gilroy-Bold';
           font-size: 16px;
           line-height: 18px;
           letter-spacing: 0.02em;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1264px) {
+  .more {
+    &__slider {
+      &__arrows {
+        display: none;
+      }
+    }
+  }
+  .dots {
+    display: flex;
+  }
+}
+@media screen and (max-width: 768px) {
+  .more {
+    &__head {
+      font-size: 20px;
+      line-height: 20px;
+      margin-bottom: 25px;
+    }
+    &__slider {
+      &__in {
+        &__slide {
+          &__video {
+            height: 185px;
+          }
+          &__themes {
+            display: flex;
+          }
         }
       }
     }

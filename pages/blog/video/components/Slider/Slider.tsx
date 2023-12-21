@@ -46,7 +46,19 @@ export default function Slider(props: IList) {
       spacing: 24,
     },
     breakpoints: {
-      '(max-width: 600px)': {
+      '(max-width: 1264px)': {
+        slides: {
+          perView: 3,
+          spacing: 24,
+        },
+      },
+      '(max-width: 980px)': {
+        slides: {
+          perView: 2,
+          spacing: 24,
+        },
+      },
+      '(max-width: 715px)': {
         slides: {
           perView: 1,
         },
@@ -75,6 +87,16 @@ export default function Slider(props: IList) {
                   src={item.videoUrl}
                 ></iframe>
               </Link>
+              <div className={style.more__slider__in__slide__themes}>
+                {item.themes.map((topic: string, topicIdx: number) => (
+                  <span
+                    key={topicIdx}
+                    className={style.more__slider__in__slide__themes__item}
+                  >
+                    {topic}
+                  </span>
+                ))}
+              </div>
               <Link href={`/blog/video/${item.id}`}>
                 <h4 className={style.more__slider__in__slide__head}>
                   {item.head}

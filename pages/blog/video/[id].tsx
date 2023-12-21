@@ -30,14 +30,17 @@ export default function VideoDetail() {
           <span className={style.det__back__text}>Назад</span>
         </Link>
         <iframe className={style.det__video} src={video?.videoUrl}></iframe>
-        <h3 className={style.det__head}>{video?.head}</h3>
-        <div className={style.det__themes}>
-          {video.themes.map((item: string, idx: number) => (
-            <span key={idx} className={style.det__themes__item}>
-              {item}
-            </span>
-          ))}
+        <div className={style.det__info}>
+          <h3 className={style.det__info__head}>{video?.head}</h3>
+          <div className={style.det__info__themes}>
+            {video.themes.map((item: string, idx: number) => (
+              <span key={idx} className={style.det__info__themes__item}>
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
+
         <Slider moreList={videoList} />
       </div>
     </BlogLayout>
