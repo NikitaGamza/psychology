@@ -104,16 +104,17 @@
     // width: 290px;
     text-align: center;
     padding: 32px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0px 0px 5px 0px #1d304e26;
+    margin-right: -2px;
     &__img {
-      width: 190px;
-      height: 190px;
+      width: 200px;
+      height: 200px;
       border-radius: 100px;
       margin-bottom: 10px;
     }
     &__fullname {
-      font-family: Gilroy-ExtraBold;
+      font-family: 'Gilroy-Bold';
       font-size: 25px;
     }
     &__fields {

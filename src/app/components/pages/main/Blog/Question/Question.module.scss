@@ -1,4 +1,4 @@
-@import '../../../../../style/colors.scss';
+@import '@/style/colors.scss';
 .question {
   display: flex;
   justify-content: space-between;
@@ -7,11 +7,11 @@
     padding: 32px 32px 39px 32px;
     box-shadow: 0px 0px 5px 0px #1d304e26;
     border-radius: 16px;
-    background-color: $blue_10;
+    background-color: $green_10;
     &__list {
       display: flex;
       gap: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       &__topic {
         font-size: 12px;
         font-weight: 500;
@@ -22,14 +22,14 @@
       }
     }
     &__head {
+      font-family: 'Gilroy-Bold';
       font-size: 24px;
-      font-weight: 700;
       line-height: 28px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     &__text {
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 900;
       line-height: 24px;
       max-width: 2100px;
     }
@@ -40,7 +40,8 @@
       color: $green;
     }
     &_max {
-      background-color: $green_10;
+      background-color: $blue_10;
+      width: 975px;
     }
   }
 }

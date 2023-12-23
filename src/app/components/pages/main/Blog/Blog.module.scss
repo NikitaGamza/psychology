@@ -15,15 +15,24 @@
         align-items: center;
         &__title {
           font-size: 32px;
-          font-weight: 900;
           line-height: 36px;
-          font-family: Gilroy-ExtraBold;
+          font-family: 'Gilroy-Bold';
         }
         &__link {
-          font-size: 16px;
-          font-weight: 700;
-          line-height: 24px;
-          color: $green;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          &__text {
+            font-family: 'Gilroy-Bold';
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 24px;
+            color: $green;
+          }
+          &__arrow {
+            width: 10px;
+            height: auto;
+          }
         }
       }
       &__questions {

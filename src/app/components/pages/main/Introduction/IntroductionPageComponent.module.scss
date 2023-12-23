@@ -2,11 +2,7 @@
 @import '@/style/mixins.scss';
 .introduction {
   padding-top: 215px;
-  padding-bottom: 220px;
-  &__wrapper {
-    width: 1232px;
-    margin: 0 auto;
-  }
+  padding-bottom: 90px;
   &__container {
     width: 765px;
     display: flex;
@@ -31,7 +27,7 @@
       font-size: 20px;
       font-weight: 900;
       line-height: 28px;
-      width: 750px;
+      width: 760px;
       // font-family: Gilroy-ExtraBold;
     }
     &__buttons {

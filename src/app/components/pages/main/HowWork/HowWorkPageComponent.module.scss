@@ -2,6 +2,7 @@
 @import '@/style/mixins.scss';
 $green: #588068;
 .how {
+  margin-bottom: 160px; //!!!
   &__options {
     display: flex;
     justify-content: center;
@@ -42,7 +43,7 @@ $green: #588068;
           font-size: 24px;
           font-weight: 900;
           line-height: 36px;
-          width: 520px;
+          width: 512px;
           // font-family: Gilroy-ExtraBold;
         }
       }

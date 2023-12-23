@@ -34,7 +34,7 @@ export default function Header() {
     },
     {
       title: 'Блог',
-      linkTo: '/blog',
+      linkTo: '/blog/questions',
     },
     {
       title: 'FAQ',

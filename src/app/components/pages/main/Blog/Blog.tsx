@@ -1,55 +1,12 @@
 import style from './Blog.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 import Question from './Question/Question';
 import ArticleCart from '@/app/components/ui/ArticleCart/ArticleCart';
-
+import { questionList } from './questionList';
+import { suggestList } from './suggestList';
+import { videoList } from './videoList';
 export default function Blog() {
-  const questionList = [
-    {
-      head: 'Как правильно налаживать свою жизнь?',
-      topics: ['Отношения', 'Семья'],
-      text: 'Мне уже 28 лет, но я до их пор ничего не сделал толкового в жизни. В жизни вceгдa ecть выбop. Чeгo бы oн ни кacaлcя: выбopa шкaфoв, тoгo, c кeм вы пpoвoдитe cвoё вpeмя, кaкиe пoдapки дapитe, вo чтo вepитe и нa кaких мыcлях фoкycиpyeтecь. Хaoc — этo выбop. Гнeв — этo выбop. Для мужчины главное понимать, что ты его любишь и что ты ему верна. Чeгo бы oн ни кacaлcя...',
-    },
-    {
-      head: 'Как правильно налаживать свою жизнь?',
-      topics: ['Отношения', 'Семья'],
-      text: 'Мне уже 28 лет, но я до их пор ничего не сделал толкового в жизни. В жизни вceгдa ecть выбop. Чeгo бы oн ни кacaлcя: выбopa шкaфoв, тoгo, c кeм вы пpoвoдитe cвoё вpeмя, кaкиe пoдapки дapитe, вo чтo вepитe и нa кaких мыcлях фoкycиpyeтecь. Хaoc — этo выбop. Гнeв — этo выбop. Для мужчины главное понимать, что ты его любишь и что ты ему верна. Чeгo бы oн ни кacaлcя...',
-    },
-  ];
-  const suggestList = [
-    {
-      imgUrl: '/img/pages/main/Suggest/img2.png',
-      topics: ['Отношения', 'Семья'],
-      head: 'На что обращать внимание при знакомстве?',
-    },
-    {
-      imgUrl: '/img/pages/main/Suggest/img2.png',
-      topics: ['Отношения', 'Семья'],
-      head: 'На что обращать внимание при знакомстве?',
-    },
-    {
-      imgUrl: '/img/pages/main/Suggest/img2.png',
-      topics: ['Отношения', 'Семья'],
-      head: 'На что обращать внимание при знакомстве?',
-    },
-  ];
-  const videoList = [
-    {
-      videoUrl: '/video/koala.mp4',
-      topics: ['Отношения', 'Семья'],
-      head: 'На что обращать внимание при знакомстве?',
-    },
-    {
-      videoUrl: '/video/koala.mp4',
-      topics: ['Отношения', 'Семья'],
-      head: 'На что обращать внимание при знакомстве?',
-    },
-    {
-      videoUrl: '/video/koala.mp4',
-      topics: ['Отношения', 'Семья'],
-      head: 'На что обращать внимание при знакомстве?',
-    },
-  ];
   return (
     <section className={style.blog}>
       <div className="container">
@@ -67,10 +24,19 @@ export default function Blog() {
                   Разбираем ваши вопросы
                 </h4>
                 <Link
-                  href={'#'}
+                  href={'/blog/questions'}
                   className={style.blog__content__part__head__link}
                 >
-                  Все вопросы
+                  <span className={style.blog__content__part__head__link__text}>
+                    Все вопросы
+                  </span>
+                  <Image
+                    width={7}
+                    height={7}
+                    src={'/img/icons/arrows/arrow-right-green.svg'}
+                    alt="arrow"
+                    className={style.blog__content__part__head__link__arrow}
+                  />
                 </Link>
               </div>
               <div className={style.blog__content__part__questions}>
@@ -85,10 +51,19 @@ export default function Blog() {
                   Советы психологов
                 </h4>
                 <Link
-                  href={'#'}
+                  href={'/blog/advice'}
                   className={style.blog__content__part__head__link}
                 >
-                  Все советы
+                  <span className={style.blog__content__part__head__link__text}>
+                    Все советы
+                  </span>
+                  <Image
+                    width={7}
+                    height={7}
+                    src={'/img/icons/arrows/arrow-right-green.svg'}
+                    alt="arrow"
+                    className={style.blog__content__part__head__link__arrow}
+                  />
                 </Link>
               </div>
               <div className={style.blog__content__part__main}>
@@ -103,10 +78,19 @@ export default function Blog() {
                   Поллезные видео
                 </h4>
                 <Link
-                  href={'#'}
+                  href={'/blog/video'}
                   className={style.blog__content__part__head__link}
                 >
-                  Все видео
+                  <span className={style.blog__content__part__head__link__text}>
+                    Все видео
+                  </span>
+                  <Image
+                    width={7}
+                    height={7}
+                    src={'/img/icons/arrows/arrow-right-green.svg'}
+                    alt="arrow"
+                    className={style.blog__content__part__head__link__arrow}
+                  />
                 </Link>
               </div>
               <div className={style.blog__content__part__main}>

@@ -1,5 +1,6 @@
 @import '../../../../style/colors.scss';
 .help {
+  margin-bottom: 160px;
   &__flex {
     display: flex;
   }
@@ -7,15 +8,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    row-gap: 80px;
+    row-gap: 85px;
     &__item {
       &__img {
         border-radius: 50%;
-        margin-bottom: 25px;
+        margin-bottom: 22px;
       }
       &__text {
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 900;
         line-height: 28px;
         text-align: center;
         width: 330px;

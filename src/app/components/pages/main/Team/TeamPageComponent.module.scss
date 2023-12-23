@@ -1,6 +1,7 @@
 @import '@/style/colors.scss';
 @import '@/style/mixins.scss';
 .team {
+  margin-bottom: 153px; //!!!
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -12,5 +13,6 @@
   &__all {
     @include link-green;
     margin: 0 auto;
+    margin-top: -15px;
   }
 }

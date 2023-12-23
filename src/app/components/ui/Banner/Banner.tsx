@@ -36,28 +36,6 @@ export default function Banner(props: any) {
           Подобрать психолога
         </Link>
       </div>
-
-      {/* <div
-        className={
-          bgColor === 'blue_req' ? style.banner__img_req : style.banner__img
-        }
-      > */}
-      <Image
-        src={imgUrl}
-        alt={imgUrl}
-        width={334}
-        height={393}
-        placeholder="blur"
-        blurDataURL={imgUrl}
-        className={
-          bgColor === 'green'
-            ? style.banner__img_green
-            : bgColor === 'blue'
-            ? style.banner__img_blue
-            : ''
-        }
-      />
-      {/* </div> */}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-@import '../../../../../../style/colors.scss';
+@import '@/style/colors.scss';
 .arrow {
   width: 48px;
   height: 48px;
@@ -18,7 +18,7 @@
 .slider {
   position: relative;
   &__wrap {
-    padding: 5px 0 5px 0;
+    padding: 5px 0 5px 3px;
   }
   &__arrows {
     display: flex;
@@ -26,8 +26,8 @@
     position: absolute;
     z-index: 3;
     bottom: 50%;
-    transform: translate(0, 50%);
-    width: 100%;
+    transform: translate(-1.7%, 40%);
+    width: 104%;
   }
 }
 .dots {

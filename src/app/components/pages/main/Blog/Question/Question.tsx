@@ -5,15 +5,11 @@ import { useEffect } from 'react';
 export default function Question(item: any) {
   const question = item.item;
   const { idx } = item;
-  //   useEffect(() => {
-  //     console.log(item);
-  //   }, []);
   return (
     <div
       className={`${style.question__item} ${
-        idx === 0 && style.question__item_max
+        question.id === 2 && style.question__item_max
       }`}
-      key={idx}
     >
       <div className={style.question__item__list}>
         {question.topics.map((topic: any, idx: number) => (
@@ -24,8 +20,8 @@ export default function Question(item: any) {
       </div>
       <h5 className={style.question__item__head}>{question.head}</h5>
       <p className={style.question__item__text}>
-        {idx === 1
-          ? `${question.text.slice(0, 142)}...`
+        {idx === 2
+          ? `${question.text.slice(0, 363)}...`
           : `${question.text.slice(0, 363)}...`}
       </p>
       <Link href={'#'} className={style.question__item__link}>

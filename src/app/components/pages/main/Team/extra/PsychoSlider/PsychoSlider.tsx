@@ -3,6 +3,7 @@ import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import { useState } from 'react';
 import style from './PsychoSlider.module.scss';
+import { psychoList } from './psychoList';
 
 function Arrow(props: {
   disabled: boolean;
@@ -22,100 +23,6 @@ function Arrow(props: {
 }
 
 export default function PsychoSlider() {
-  const psychoList = [
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Любовь',
-      lastName: 'Иваненко',
-      format: ['очно', 'онлайн', 'переписка'],
-      fields: ['Психолог', 'психотерапевт'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: true,
-      isMarried: true,
-      locations: ['Москва', 'Санкт-Петербург'],
-      tags: ['Дети', 'Семья', 'Карьера'],
-    },
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Наталья',
-      lastName: 'Петрова',
-      format: ['очно', 'онлайн'],
-      fields: ['Психолог', 'к.п.н'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: false,
-      isMarried: true,
-      locations: ['Иркутск'],
-      tags: [
-        'Дети',
-        'Семья',
-        'Страхи',
-        'Грусть, тоска',
-        'Самоопределение',
-        'Личностный рост',
-      ],
-    },
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Элина',
-      lastName: 'Кроповницкая',
-      format: ['онлайн', 'переписка'],
-      fields: ['Психолог', 'семейный психолог', 'к.п.н'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: false,
-      isMarried: false,
-      locations: ['Москва', 'Санкт-Петербург'],
-      tags: ['Дети', 'Семья', 'Карьера'],
-    },
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Любовь',
-      lastName: 'Иваненко',
-      format: ['онлайн', 'переписка'],
-      fields: ['Психолог', 'семейный психолог', 'к.п.н'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: false,
-      isMarried: false,
-      locations: ['Москва', 'Санкт-Петербург'],
-      tags: ['Дети', 'Семья', 'Карьера'],
-    },
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Анна',
-      lastName: 'Костина',
-      format: ['онлайн', 'переписка'],
-      fields: ['Психолог', 'семейный психолог', 'к.п.н'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: false,
-      isMarried: false,
-      locations: ['Иркутск'],
-      tags: ['Дети', 'Семья', 'Карьера'],
-    },
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Леонид',
-      lastName: 'Матвеев',
-      format: ['онлайн', 'переписка'],
-      fields: ['Психолог', 'семейный психолог', 'к.п.н'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: true,
-      isMarried: false,
-      locations: ['Иркутск'],
-      tags: ['Дети', 'Семья', 'Карьера'],
-    },
-  ];
-
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -186,7 +93,7 @@ export default function PsychoSlider() {
           </div>
         )}
       </div>
-      {/* {loaded && instanceRef.current && (
+      {loaded && instanceRef.current && (
         <div className={style.dots}>
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
@@ -205,7 +112,7 @@ export default function PsychoSlider() {
             );
           })}
         </div>
-      )} */}
+      )}
     </>
   );
 }

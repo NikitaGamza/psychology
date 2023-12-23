@@ -15,34 +15,26 @@ $blue_75: #6899ca;
 .banner {
   &_green {
     @include banner;
-    padding: 72px 72px 0 72px;
+    padding: 72px;
     background-color: #4e855c;
+    background-image: url('/img/ui/Banner/brain.png');
+    background-repeat: no-repeat;
+    background-position: 89% 100%;
+    margin-bottom: 157px; //!!!
   }
   &_blue {
     @include banner;
-    padding: 72px 0px 0px 72px;
+    padding: 72px 0 60px 72px;
     background-color: $blue_75;
+    background-image: url('/img/ui/Banner/flover.svg');
+    background-repeat: no-repeat;
+    background-position: 100% 57%;
+    margin-bottom: 155px; //!!!
   }
   &_req {
     @include banner;
     padding: 72px 0px 0px 72px;
     background-color: $blue_75;
-  }
-  &__img {
-    &_req {
-      margin-top: -60px;
-    }
-    &_green {
-      margin-top: -30px;
-      margin-right: 30px;
-      width: 334px;
-      height: 380px;
-    }
-    &_blue {
-      margin-top: -30px;
-      width: 334px;
-      height: 380px;
-    }
   }
   &__info {
     margin-bottom: 40px;
@@ -53,6 +45,8 @@ $blue_75: #6899ca;
       font-weight: 700;
       line-height: 56px; /* 116.667% */
       width: 710px;
+
+      font-family: 'Gilroy-Bold';
     }
     &__text {
       color: #fff;
@@ -66,7 +60,7 @@ $blue_75: #6899ca;
         padding: 15px 31px;
         font-size: 20px;
         font-weight: 900;
-        font-family: Gilroy-ExtraBold;
+        font-family: 'Gilroy-Bold';
       }
       &_blue {
         @include link-sheer-green;
@@ -94,10 +88,8 @@ $blue_75: #6899ca;
     line-height: 24px; /* 120% */
   }
   &__wrap {
-    margin-bottom: 72px;
     width: 642px;
     &_blue {
-      margin-bottom: 60px;
       width: 642px;
     }
   }

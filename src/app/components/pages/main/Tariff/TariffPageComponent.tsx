@@ -16,7 +16,7 @@ export default function TariffPageComponent() {
       <div className="container">
         <div className="section">
           <div className="section__head">
-            <h2 className="section__head__title">Тарифы</h2>
+            <h2 className={'section__head__title'}>Тарифы</h2>
           </div>
           <div className={style.tariff__container}>
             <div className={style.tariff__container__options}>
