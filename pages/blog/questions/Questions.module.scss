@@ -18,6 +18,55 @@
     padding: 24px 20px 23px 20px;
   }
 }
+.test {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-template-areas:
+    'item1 item1 item2'
+    'item3 item4 item5'
+    'item6 item7 item7';
+}
+.griditem {
+  padding: 20px;
+}
+
+.item1 {
+  grid-area: item1;
+  background-color: $green;
+}
+.item2 {
+  grid-area: item2;
+  background-color: $blue_10;
+}
+.item3 {
+  grid-area: item3;
+}
+.item4 {
+  grid-area: item4;
+}
+.item5 {
+  grid-area: item5;
+}
+.item6 {
+  grid-area: item6;
+}
+.item7 {
+  grid-area: item7;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
 .que {
   padding-top: 40px;
   padding-bottom: 100px;
