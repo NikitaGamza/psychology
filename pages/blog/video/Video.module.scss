@@ -1,7 +1,6 @@
 @import '@/style/colors.scss';
 @import '@/style/mixins.scss';
 .video {
-  padding-top: 35px;
   padding-bottom: 100px;
   &__head {
     font-family: 'Gilroy-Bold';
@@ -40,6 +39,16 @@
       font-size: 16px;
       font-weight: 900;
       line-height: 24px;
+      &_active {
+        padding: 4px 20px;
+        border-radius: 50px;
+        background-color: $green_10;
+        border: 1px solid $green;
+        color: $green;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 24px;
+      }
     }
   }
   &__content {
@@ -93,7 +102,6 @@
 }
 @media screen and (max-width: 768px) {
   .video {
-    padding-top: 28px;
     &__head {
       font-size: 24px;
       line-height: 24px;
@@ -121,6 +129,12 @@
         font-size: 12px;
         line-height: 12px;
         margin-right: 8px;
+        &_active {
+          padding: 6px 16px;
+          font-size: 12px;
+          line-height: 12px;
+          margin-right: 8px;
+        }
       }
     }
     &__content {

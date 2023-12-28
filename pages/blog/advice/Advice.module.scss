@@ -1,7 +1,6 @@
 @import '@/style/colors.scss';
 @import '@/style/mixins.scss';
 .ad {
-  padding-top: 35px;
   padding-bottom: 100px;
   &__head {
     font-family: 'Gilroy-Bold';
@@ -122,7 +121,6 @@
 
 @media screen and (max-width: 768px) {
   .ad {
-    padding-top: 28px;
     padding-bottom: 60px;
     &__head {
       font-size: 24px;

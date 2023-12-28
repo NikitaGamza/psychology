@@ -5,23 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Advice() {
-  const themesList = [
-    'Дети',
-    'Семья',
-    'Личностный рост',
-    'Самоопределение',
-    'Карьера',
-    'Депрессия',
-    'Грусть, тоска',
-    'Тревога',
-    'Прокрастинация',
-    'Апатия',
-    'Панические атаки',
-    'Травмы',
-    'Неуверенность в себе',
-    'Отношения',
-    'Выгорание',
-  ];
   const firstList = [
     {
       id: 1,
@@ -77,19 +60,6 @@ export default function Advice() {
   return (
     <BlogLayout>
       <div className={style.ad}>
-        <h1 className={style.ad__head}>Советы</h1>
-        <div className={style.ad__order}>
-          <button className={style.ad__order__btn}>Самые читаемые</button>
-          <button className={style.ad__order__btn}>По дате публикации</button>
-          <button className={style.ad__order__btn}>По теме</button>
-        </div>
-        <div className={style.ad__themes}>
-          {themesList.map((item: string, idx: number) => (
-            <button key={idx} className={style.ad__themes__btn}>
-              {item}
-            </button>
-          ))}
-        </div>
         <div className={style.ad__content}>
           <div className={style.ad__content__first}>
             {firstList.map((item: any) => (

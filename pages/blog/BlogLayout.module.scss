@@ -44,6 +44,62 @@
     margin: 0 auto;
     // padding-top: 36px;
   }
+  &__info {
+    width: 1264px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  &__head {
+    margin-top: 40px;
+    font-family: 'Gilroy-Bold';
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 40px;
+  }
+  &__order {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    border-bottom: 1px solid $grey_line;
+    margin-bottom: 32px;
+    &__btn {
+      font-family: 'Gilroy-Bold';
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background-color: $white;
+      border: none;
+      color: $grey_no_active;
+      padding-bottom: 7px;
+    }
+  }
+  &__themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 40px;
+    &__btn {
+      padding: 4px 20px;
+      border-radius: 50px;
+      background-color: $white;
+      border: 1px solid $grey_line;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 24px;
+      &_active {
+        padding: 4px 20px;
+        border-radius: 50px;
+        background-color: $green_10;
+        border: 1px solid $green;
+        color: $green;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 24px;
+      }
+    }
+  }
 }
 @media screen and (max-width: 1264px) {
   .lay {
@@ -58,6 +114,9 @@
       width: 100%;
       padding-left: 16px;
       padding-right: 16px;
+    }
+    &__info {
+      width: 100%;
     }
   }
 }
@@ -85,6 +144,42 @@
     }
     &__content {
       // padding-top: 28px;
+    }
+    &__head {
+      margin-top: 28px;
+      font-size: 24px;
+      line-height: 24px;
+      margin-bottom: 28px;
+    }
+    &__order {
+      display: block;
+      overflow: auto;
+      white-space: nowrap;
+      margin-bottom: 24px;
+      &__btn {
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.04em;
+        margin-right: 20px;
+      }
+    }
+    &__themes {
+      margin-bottom: 24px;
+      display: block;
+      overflow: auto;
+      white-space: nowrap;
+      &__btn {
+        padding: 6px 16px;
+        font-size: 12px;
+        line-height: 12px;
+        margin-right: 8px;
+        &_active {
+          padding: 6px 16px;
+          font-size: 12px;
+          line-height: 12px;
+          margin-right: 8px;
+        }
+      }
     }
   }
 }

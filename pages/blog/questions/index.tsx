@@ -31,19 +31,6 @@ export default function Questions() {
   return (
     <BlogLayout>
       <div className={style.que}>
-        <h1 className={style.que__head}>Вопросы</h1>
-        <div className={style.que__order}>
-          <button className={style.que__order__btn}>Самые читаемые</button>
-          <button className={style.que__order__btn}>По дате публикации</button>
-          <button className={style.que__order__btn}>По теме</button>
-        </div>
-        <div className={style.que__themes}>
-          {themesList.map((item: string, idx: number) => (
-            <button key={idx} className={style.que__themes__btn}>
-              {item}
-            </button>
-          ))}
-        </div>
         {/* <div className={style.que__content}>
           {questionList.map((item: ICart) => (
             <div

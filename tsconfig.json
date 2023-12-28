@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@/style/*": ["./src/app/style/*"]
+      "@/style/*": ["./src/app/style/*"],
+      "@/store": ["./src/store/store.ts"]
     }
   },
   "include": [
