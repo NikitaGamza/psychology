@@ -16,6 +16,9 @@ export default function AdviceDetail() {
     setDetail(detailList.find((item: any) => item.id == router.query.id));
   });
   useEffect(() => {
+    console.log(router);
+  });
+  useEffect(() => {
     setDetail(detailList.find((item: any) => item.id == router.query.id));
   }, [router.query.id]);
   return (

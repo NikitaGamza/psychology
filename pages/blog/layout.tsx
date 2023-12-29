@@ -51,33 +51,39 @@ export default function BlogLayout({
           </div>
         </div>
       </div>
-      <div className={style.lay__info}>
-        <h1 className={style.lay__head}>
-          {router.pathname == '/blog/video' && 'Видео'}
-          {router.pathname == '/blog/questions' && 'Вопросы'}
-          {router.pathname == '/blog/advice' && 'Советы'}
-        </h1>
-        <div className={style.lay__order}>
-          <button className={style.lay__order__btn}>Самые читаемые</button>
-          <button className={style.lay__order__btn}>По дате публикации</button>
-          <button className={style.lay__order__btn}>По теме</button>
-        </div>
-        <div className={style.lay__themes}>
-          {blogThemes.map((item: any, idx: number) => (
-            <button
-              key={idx}
-              className={
-                item.isSelected
-                  ? style.lay__themes__btn_active
-                  : style.lay__themes__btn
-              }
-              onClick={() => dispatch(toggle(item.id))}
-            >
-              {item.name}
+      {(router.pathname == '/blog/video' ||
+        router.pathname == '/blog/questions' ||
+        router.pathname == '/blog/advice') && (
+        <div className={style.lay__info}>
+          <h1 className={style.lay__head}>
+            {router.pathname == '/blog/video' && 'Видео'}
+            {router.pathname == '/blog/questions' && 'Вопросы'}
+            {router.pathname == '/blog/advice' && 'Советы'}
+          </h1>
+          <div className={style.lay__order}>
+            <button className={style.lay__order__btn}>Самые читаемые</button>
+            <button className={style.lay__order__btn}>
+              По дате публикации
             </button>
-          ))}
+            <button className={style.lay__order__btn}>По теме</button>
+          </div>
+          <div className={style.lay__themes}>
+            {blogThemes.map((item: any, idx: number) => (
+              <button
+                key={idx}
+                className={
+                  item.isSelected
+                    ? style.lay__themes__btn_active
+                    : style.lay__themes__btn
+                }
+                onClick={() => dispatch(toggle(item.id))}
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       <div className={style.lay__content}>{children}</div>
     </div>
