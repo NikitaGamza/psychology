@@ -24,12 +24,12 @@ export default function Team() {
           </div>
           <Parameters parameters={parameters} setParameters={setParameters} />
         </div>
-        <Banner
+        {/* <Banner
           head={'Не нашли подходящего психолога?'}
           text={'Оставьте заявку на подбор нашим специалистам'}
           imgUrl={'/img/ui/Banner/request.svg'}
           bgColor={'blue_req'}
-        />
+        /> */}
       </div>
     </div>
   );

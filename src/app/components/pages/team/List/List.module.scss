@@ -1,6 +1,15 @@
 @import '@/style/colors.scss';
+@import '@/style/mixins.scss';
 .list {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  &__more {
+    @include link-sheer-green;
+    margin: 0 auto;
+    padding-left: 68px;
+    padding-right: 68px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 }

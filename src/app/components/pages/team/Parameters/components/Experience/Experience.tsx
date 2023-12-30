@@ -35,6 +35,7 @@ export default function Experience() {
               name="experience"
               id={`exp${item.id}`}
               onClick={() => dispatch(toggle(item.id))}
+              checked={item.isSelected ? true : false}
             />
             <label
               onClick={() => dispatch(toggle(item.id))}

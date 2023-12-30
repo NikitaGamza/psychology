@@ -226,6 +226,9 @@ export default function List({ format, parameters }: any) {
           inDetail={true}
         />
       ))}
+      {result.length > 5 && (
+        <button className={style.list__more}>Показать ещё</button>
+      )}
     </div>
   );
 }
