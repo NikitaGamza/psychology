@@ -1,0 +1,30 @@
+.figure {
+  position: relative;
+  width: 56px; /* can be omitted for a regular non-lazy image */
+  height: 56px;
+  &__img {
+    &_main {
+      border-radius: 8px;
+    }
+    &_hov {
+      background-color: #0000004d;
+      border-radius: 8px;
+      padding: 16px;
+      width: fit-content;
+      height: fit-content;
+    }
+  }
+}
+.figure .Sirv.figure__img_hov {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  //   object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.figure:hover .Sirv.figure__img_hov {
+  opacity: 1;
+}

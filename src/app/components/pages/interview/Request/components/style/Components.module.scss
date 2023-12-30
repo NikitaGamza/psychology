@@ -84,6 +84,44 @@
     &:hover {
       background-color: $grey_light_bg;
     }
+    &_active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px dashed $yellow;
+      padding: 24px;
+      border-radius: 10px;
+    }
+    &__real {
+      display: none;
+    }
+    &__fake {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+    }
+    &__gallery {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 32px;
+      width: 100%;
+      &_none {
+        display: none;
+      }
+      &__img {
+        border-radius: 8px;
+        &:hover {
+          opacity: 0.5;
+          background-color: black;
+        }
+      }
+      &__more {
+        border: 2px solid $green;
+        border-radius: 8px;
+        padding: 9px;
+      }
+    }
     &__btn {
       width: 24px;
       height: 24px;
@@ -93,6 +131,7 @@
       color: $white;
       font-size: 20px;
       font-weight: 900;
+      text-align: center;
       cursor: pointer;
     }
     &__text {
