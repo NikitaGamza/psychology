@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import style from './style.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggle } from '@/store/features/methods/methods';
+import { toggle } from '@/store/features/cities/cities';
 
-export default function Methods() {
+export default function Cities() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const methods = useSelector((state) => state.methods.methods);
+  const cities = useSelector((state) => state.cities.cities);
   const dispatch = useDispatch();
   return (
     <div className={style.block}>
@@ -14,7 +14,7 @@ export default function Methods() {
         className={style.block__head}
         onClick={() => setIsVisible(!isVisible)}
       >
-        <h6 className={style.block__head__title}>Методы и подходы</h6>
+        <h6 className={style.block__head__title}>Город</h6>
         <Image
           src={
             isVisible
@@ -28,35 +28,24 @@ export default function Methods() {
         />
       </div>
       <div className={isVisible ? style.block__list : style.none}>
-        {methods.map((item: any, idx: number) => (
+        {cities.map((item: any, idx: number) => (
           <div key={idx} className={style.block__list__item}>
             <input
-              type="checkbox"
-              name=""
-              id={`meth${item.id}`}
+              type="radio"
+              name="city"
+              id={`cities${item.id}`}
               onClick={() => dispatch(toggle(item.id))}
-              className={style.block__list__item__inp}
             />
-            <div>
-              <div
-                onClick={() => dispatch(toggle(item.id))}
-                className={
-                  item.isSelected
-                    ? style.block__list__item__fake_active
-                    : style.block__list__item__fake
-                }
-              ></div>
-            </div>
-
             <label
+              onClick={() => dispatch(toggle(item.id))}
+              htmlFor={`cities${item.id}`}
               className={
                 item.isSelected
                   ? style.block__list__item__label_active
                   : style.block__list__item__label
               }
-              htmlFor={`meth${item.id}`}
             >
-              {item.name}
+              {item.name ? `${item.name}` : 'Неважно'}
             </label>
           </div>
         ))}

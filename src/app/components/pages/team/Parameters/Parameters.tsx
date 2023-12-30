@@ -4,6 +4,10 @@ import Item from './components/Item/Item';
 import { useEffect, useState } from 'react';
 import Speciality from './components/Speciality/Speciality';
 import Methods from './components/Methods/Methods';
+import Experience from './components/Experience/Experience';
+import Sex from './components/Sex/Sex';
+import Cities from './components/Cities/Cities';
+import Format from './components/Format/Format';
 
 interface IRadio {
   id: string | number | undefined;
@@ -22,6 +26,10 @@ export default function Parameters({ parameters, setParameters }: any) {
       <div className={style.params__set}>
         <Speciality />
         <Methods />
+        <Experience />
+        <Sex />
+        <Cities />
+        <Format />
       </div>
     </div>
   );

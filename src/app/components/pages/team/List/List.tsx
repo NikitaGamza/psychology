@@ -1,35 +1,210 @@
 import style from './List.module.scss';
 import Psychologist from '@/app/components/ui/Psychologist/Psychologist';
 import { psychoList } from './psychoList';
-
-interface Filter {
-  format: string;
-}
-
-interface IPsychologist {
-  imageUrl: string;
-  firstName: string;
-  lastName: string;
-  format: Array<string>;
-  fields: Array<string>;
-  feedbacks: Array<string>;
-  experience: number;
-  age: number;
-  sex: boolean;
-  isMarried: boolean;
-  locations: string;
-  tags: Array<string>;
-  metro?: string;
-  inDetail: boolean;
-}
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 export default function List({ format, parameters }: any) {
-  const result = psychoList.filter(
-    (item: any) =>
-      item.format.includes(format) &&
-      item.city.includes(parameters.city) &&
-      item.experience >= parameters.experience
-  );
+  const filterState = useSelector((state) => state);
+  const { specThemes, sex, methods, experience, cities } = filterState;
+  const [result, setResult] = useState(psychoList);
+
+  useEffect(() => {
+    // console.log(filterState);
+    const foundSex = sex.sex.find((item: any) => item.isSelected === true);
+    const foundExp = experience.experience.find(
+      (item: any) => item.isSelected === true
+    );
+    const foundCity = cities.cities.find(
+      (item: any) => item.isSelected === true
+    );
+    const foundThemes = specThemes.specThemes.filter(
+      (item: any) => item.isSelected === true
+    );
+    const ftar = [];
+    foundThemes.map((item: any) => ftar.push(item.name));
+    const fmar = [];
+    const foundMethods = methods.methods.filter(
+      (item: any) => item.isSelected === true
+    );
+    foundMethods.map((item: any) => fmar.push(item.name));
+    if (
+      foundSex.value !== null &&
+      foundExp.value !== null &&
+      foundCity.name !== null &&
+      ftar.length !== 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) &&
+            item.experience > foundExp.value &&
+            item.city === foundCity.name &&
+            item.sex === foundSex.value &&
+            item.tags.some((ai) => ftar.includes(ai))
+        )
+      );
+    } else if (
+      foundSex.value !== null &&
+      foundExp.value !== null &&
+      foundCity.name !== null &&
+      ftar.length == 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) &&
+            item.experience > foundExp.value &&
+            item.city === foundCity.name &&
+            item.sex === foundSex.value
+        )
+      );
+    } else if (
+      foundSex.value !== null &&
+      foundExp.value !== null &&
+      foundCity.name === null &&
+      ftar.length !== 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) &&
+            item.experience > foundExp.value &&
+            item.sex === foundSex.value &&
+            item.tags.some((ai) => ftar.includes(ai))
+        )
+      );
+    } else if (
+      foundSex.value !== null &&
+      foundExp.value === null &&
+      foundCity.name !== null &&
+      ftar.length !== 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) &&
+            item.sex === foundSex.value &&
+            item.tags.some((ai) => ftar.includes(ai))
+        )
+      );
+    } else if (
+      foundSex.value === null &&
+      foundExp.value !== null &&
+      foundCity.name !== null &&
+      ftar.length !== 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) &&
+            item.city === foundCity.name &&
+            item.sex === foundSex.value &&
+            item.tags.some((ai) => ftar.includes(ai))
+        )
+      );
+    } else if (
+      foundSex.value !== null &&
+      foundExp.value !== null &&
+      foundCity.name === null &&
+      ftar.length === 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) &&
+            item.experience > foundExp.value &&
+            item.sex === foundSex.value
+        )
+      );
+    } else if (
+      foundSex.value !== null &&
+      foundExp.value === null &&
+      foundCity.name !== null &&
+      ftar.length === 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) &&
+            item.city === foundCity.name &&
+            item.sex === foundSex.value
+        )
+      );
+    } else if (
+      foundSex.value === null &&
+      foundExp.value !== null &&
+      foundCity.name !== null &&
+      ftar.length === 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) &&
+            item.experience > foundExp.value &&
+            item.city === foundCity.name
+        )
+      );
+    } else if (
+      foundSex.value !== null &&
+      foundExp.value === null &&
+      foundCity.name === null &&
+      ftar.length === 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) && item.sex === foundSex.value
+        )
+      );
+    } else if (
+      foundSex.value === null &&
+      foundExp.value !== null &&
+      foundCity.name === null &&
+      ftar.length === 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) && item.experience === foundExp.value
+        )
+      );
+    } else if (
+      foundSex.value === null &&
+      foundExp.value === null &&
+      foundCity.name !== null &&
+      ftar.length === 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) && item.city === foundCity.name
+        )
+      );
+    } else if (
+      foundSex.value === null &&
+      foundExp.value === null &&
+      foundCity.name === null &&
+      ftar.length !== 0
+    ) {
+      setResult(
+        psychoList.filter(
+          (item: any) =>
+            item.format.includes(format) &&
+            item.tags.some((ai) => ftar.includes(ai))
+        )
+      );
+    } else if (
+      foundSex.value === null &&
+      foundExp.value === null &&
+      foundCity.name === null &&
+      ftar.length === 0
+    ) {
+      setResult(psychoList.filter((item: any) => item.format.includes(format)));
+    }
+    console.log(foundCity);
+  }, [format, specThemes, sex, methods, experience, cities]);
+
   return (
     <div className={style.list}>
       {result.map((item: any, idx: number) => (
