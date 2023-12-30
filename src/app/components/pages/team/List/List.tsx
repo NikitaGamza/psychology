@@ -17,8 +17,9 @@ interface IPsychologist {
   age: number;
   sex: boolean;
   isMarried: boolean;
-  locations: Array<string>;
+  locations: string;
   tags: Array<string>;
+  metro?: string;
   inDetail: boolean;
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './Psychologist.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -25,6 +25,7 @@ export default function Psychologist(props: any) {
     (sex && !isMarried && 'Не женат') ||
     (!sex && isMarried && 'Замужем') ||
     'Не замужем';
+  const [modal, setModal] = useState(false);
   return (
     <>
       {inDetail ? (
@@ -76,37 +77,47 @@ export default function Psychologist(props: any) {
               </span>
             </div>
             <div className={style.psychologist_full__info__locations}>
-              {city.map((item: string, idx: number) => (
-                <>
-                  <span
-                    key={idx}
-                    className={style.psychologist_full__info__locations__item}
-                  >
-                    {item}
-                  </span>
-                  {idx !== city.length - 1 && (
-                    <span
-                      className={
-                        style.psychologist_full__info__locations__separate
-                      }
-                    >
-                      •
-                    </span>
-                  )}
-                </>
-              ))}
+              <span className={style.psychologist_full__info__locations__item}>
+                {city}
+              </span>
             </div>
             <div className={style.psychologist_full__info__tags}>
-              {tags.map((item: string, idx: number) => (
+              {tags.map((item: string, idx: number) => {
+                if (idx <= 3)
+                  return (
+                    <span
+                      key={idx}
+                      className={style.psychologist_full__info__tags__item}
+                    >
+                      {item}
+                    </span>
+                  );
+              })}
+              {tags.length > 4 && (
                 <span
-                  key={idx}
                   className={style.psychologist_full__info__tags__item}
+                  onClick={() => setModal(!modal)}
                 >
-                  {item}
+                  •••
                 </span>
-              ))}
+              )}
             </div>
-            <Link href={`team/${id}`} className="button_green">
+            {modal && (
+              <div className={style.modal}>
+                {tags.map((item: string, idx: number) => {
+                  if (idx > 3)
+                    return (
+                      <span key={idx} className={style.modal__tag}>
+                        {item}
+                      </span>
+                    );
+                })}
+              </div>
+            )}
+            <Link
+              href={`team/${id}`}
+              className={style.psychologist_full__record}
+            >
               Записаться
             </Link>
           </div>

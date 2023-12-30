@@ -11,7 +11,7 @@ export const psychoList = [
     age: 35,
     sex: true,
     isMarried: true,
-    city: ['Москва', 'Санкт-Петербург'],
+    city: 'Санкт-Петербург',
     tags: ['Дети', 'Семья', 'Карьера'],
   },
   {
@@ -26,7 +26,7 @@ export const psychoList = [
     age: 35,
     sex: false,
     isMarried: true,
-    city: ['Иркутск'],
+    city: 'Иркутск',
     tags: [
       'Дети',
       'Семья',
@@ -48,7 +48,7 @@ export const psychoList = [
     age: 35,
     sex: false,
     isMarried: false,
-    city: ['Москва', 'Санкт-Петербург'],
+    city: 'Санкт-Петербург',
     tags: ['Дети', 'Семья', 'Карьера'],
   },
   {
@@ -63,7 +63,7 @@ export const psychoList = [
     age: 35,
     sex: false,
     isMarried: false,
-    city: ['Москва', 'Санкт-Петербург'],
+    city: 'Москва',
     tags: ['Дети', 'Семья', 'Карьера'],
   },
   {
@@ -78,7 +78,7 @@ export const psychoList = [
     age: 35,
     sex: false,
     isMarried: false,
-    city: ['Иркутск'],
+    city: 'Иркутск',
     tags: ['Дети', 'Семья', 'Карьера'],
   },
   {
@@ -93,7 +93,7 @@ export const psychoList = [
     age: 35,
     sex: true,
     isMarried: false,
-    city: ['Иркутск'],
+    city: 'Иркутск',
     tags: ['Дети', 'Семья', 'Карьера'],
   },
 ];

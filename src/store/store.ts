@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from './features/counterSlice';
-import blogReducer from './features/blogThemesSlice';
+import specReducer from './features/blogThemesSlice';
+import methodsReducer from './features/methods/methods';
 
 //action
 const UPDATE_SELECTED_BLOG_THEME = 'UPDATE_SELECTED_BLOG_THEME';
@@ -51,7 +52,8 @@ const reducer = (state = initialState, action: any) => {
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    blogThemes: blogReducer,
+    specThemes: specReducer,
+    methods: methodsReducer,
   },
 });
 // Infer the `RootState` and `AppDispatch` types from the store itself

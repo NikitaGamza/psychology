@@ -1,0 +1,52 @@
+@import '@/style/colors.scss';
+.none {
+  display: none;
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 215px;
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    &__item {
+      display: flex;
+      align-items: flex-start;
+      column-gap: 8px;
+      &__inp {
+        display: none;
+      }
+      &__fake {
+        width: 24px;
+        height: 24px;
+        background-image: url('/img/icons/rest/checkbox-empty.svg');
+        &_active {
+          width: 24px;
+          height: 24px;
+          background-image: url('/img/icons/rest/checkbox-picked.svg');
+        }
+      }
+      &__label {
+        font-size: 16px;
+        line-height: 24px;
+        &_active {
+          font-size: 16px;
+          line-height: 24px;
+          color: $yellow;
+        }
+      }
+    }
+  }
+}

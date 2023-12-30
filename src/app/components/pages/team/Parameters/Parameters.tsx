@@ -2,6 +2,8 @@ import style from './style/Parameters.module.scss';
 import { params } from './params';
 import Item from './components/Item/Item';
 import { useEffect, useState } from 'react';
+import Speciality from './components/Speciality/Speciality';
+import Methods from './components/Methods/Methods';
 
 interface IRadio {
   id: string | number | undefined;
@@ -18,14 +20,8 @@ export default function Parameters({ parameters, setParameters }: any) {
     <div className={style.params}>
       <h5 className={style.params__head}>Параметры</h5>
       <div className={style.params__set}>
-        {params.map((item: IParameter, idx: number) => (
-          <Item
-            key={idx}
-            item={item}
-            parameters={parameters}
-            setParameters={setParameters}
-          />
-        ))}
+        <Speciality />
+        <Methods />
       </div>
     </div>
   );

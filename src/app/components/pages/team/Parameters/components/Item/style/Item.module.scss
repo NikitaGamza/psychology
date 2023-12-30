@@ -1,7 +1,9 @@
+@import '@/style/colors.scss';
 .block {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 215px;
   &__head {
     display: flex;
     align-items: center;
@@ -17,10 +19,28 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    &_btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
     &__item {
       display: flex;
       align-items: center;
       gap: 8px;
+      &_btn {
+        padding: 4px 16px;
+        border-radius: 50px;
+        background-color: $white;
+        border: 1px solid $grey_line;
+        &_active {
+          padding: 4px 16px;
+          border-radius: 50px;
+          background-color: $green_10;
+          color: $green;
+          border: 1px solid $green;
+        }
+      }
       &__label {
         font-size: 16px;
         font-weight: 500;

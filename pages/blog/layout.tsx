@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/blogThemesSlice';
+import { useEffect } from 'react';
 export default function BlogLayout({
   children,
 }: {
@@ -23,7 +24,10 @@ export default function BlogLayout({
     },
   ];
   const router = useRouter();
-  const blogThemes = useSelector((state) => state.blogThemes.blogThemes);
+  const specThemes = useSelector((state) => state.specThemes.specThemes);
+  useEffect(() => {
+    console.log(specThemes);
+  });
   const dispatch = useDispatch();
   return (
     <div className={style.lay}>
@@ -68,7 +72,7 @@ export default function BlogLayout({
             <button className={style.lay__order__btn}>По теме</button>
           </div>
           <div className={style.lay__themes}>
-            {blogThemes.map((item: any, idx: number) => (
+            {specThemes.map((item: any, idx: number) => (
               <button
                 key={idx}
                 className={
