@@ -75,7 +75,7 @@ export default function Blog() {
             <div className={style.blog__content__part}>
               <div className={style.blog__content__part__head}>
                 <h4 className={style.blog__content__part__head__title}>
-                  Поллезные видео
+                  Полезные видео
                 </h4>
                 <Link
                   href={'/blog/video'}
@@ -100,9 +100,9 @@ export default function Blog() {
               </div>
             </div>
           </div>
-          <button className={`button_green ${style.blog__all}`}>
+          <Link href={'/blog/advice'} className={style.blog__all}>
             Перейти в блог
-          </button>
+          </Link>
         </div>
       </div>
     </section>

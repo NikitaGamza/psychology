@@ -15,11 +15,11 @@
     color: $white;
   }
 }
+.slidepad {
+  padding: 5px;
+}
 .slider {
   position: relative;
-  &__wrap {
-    padding: 5px 0 5px 3px;
-  }
   &__arrows {
     display: flex;
     justify-content: space-between;

@@ -1,6 +1,7 @@
 @import '@/style/colors.scss';
 @import '@/style/mixins.scss';
 .blog {
+  margin-bottom: 158px;
   &__content {
     display: flex;
     flex-direction: column;
@@ -8,7 +9,7 @@
     &__part {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 33px;
       &__head {
         display: flex;
         justify-content: space-between;
@@ -49,6 +50,7 @@
   }
   &__all {
     margin: 0 auto;
+    @include link-green;
   }
 }
 @media screen and (max-width: 1232px) {

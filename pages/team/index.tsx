@@ -3,7 +3,7 @@ import Selectors from '@/app/components/pages/team/Selectors/Selectors';
 import List from '@/app/components/pages/team/List/List';
 import Parameters from '@/app/components/pages/team/Parameters/Parameters';
 import { useEffect, useState } from 'react';
-import Banner from '@/app/components/ui/Banner/Banner';
+import Banner from '@/app/components/pages/team/Banner/Banner';
 
 export default function Team() {
   const [format, setFormat] = useState<string>('Очно');
@@ -24,12 +24,7 @@ export default function Team() {
           </div>
           <Parameters parameters={parameters} setParameters={setParameters} />
         </div>
-        {/* <Banner
-          head={'Не нашли подходящего психолога?'}
-          text={'Оставьте заявку на подбор нашим специалистам'}
-          imgUrl={'/img/ui/Banner/request.svg'}
-          bgColor={'blue_req'}
-        /> */}
+        <Banner />
       </div>
     </div>
   );

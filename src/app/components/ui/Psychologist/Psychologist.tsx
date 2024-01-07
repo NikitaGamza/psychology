@@ -123,7 +123,7 @@ export default function Psychologist(props: any) {
           </div>
         </div>
       ) : (
-        <div className={`keen-slider__slide ${style.psychologist_min}`}>
+        <div className={`${style.psychologist_min}`}>
           <Image
             src={imageUrl}
             alt={imageUrl}

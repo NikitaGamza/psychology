@@ -16,7 +16,7 @@ export default function Cart(item: any) {
     head,
   } = item.item;
   return (
-    <div className={`keen-slider__slide ${style.slide}`}>
+    <div className={`${style.slide}`}>
       <div className={style.slide__content}>
         <Image
           src={imgUrl}

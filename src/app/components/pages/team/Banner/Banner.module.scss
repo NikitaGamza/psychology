@@ -1,0 +1,33 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+.ban {
+  border-radius: 20px;
+  background-color: $blue_75;
+  padding: 72px;
+  &__info {
+    width: 570px;
+    &__head {
+      font-family: 'Gilroy-Bold';
+      font-size: 48px;
+      line-height: 56px;
+      color: $white;
+      margin-bottom: 24px;
+    }
+    &__text {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+      margin-bottom: 40px;
+      color: $white;
+    }
+    &__link {
+      @include link-sheer-green;
+      color: $blue;
+      border: 1px solid $blue;
+      &:hover {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+  }
+}

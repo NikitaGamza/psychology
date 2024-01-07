@@ -32,7 +32,7 @@ export default function PsychoSlider() {
     },
     slides: {
       perView: 4,
-      spacing: 20,
+      spacing: 15,
     },
     breakpoints: {
       '(max-width: 1232px)': {
@@ -62,13 +62,15 @@ export default function PsychoSlider() {
       <div className={`navigation-wrapper ${style.slider}`}>
         <div ref={sliderRef} className={`keen-slider ${style.slider__wrap}`}>
           {psychoList.map((item: any, index: number) => (
-            <Psychologist
-              key={index}
-              imageUrl={item.imageUrl}
-              firstName={item.firstName}
-              lastName={item.lastName}
-              fields={item.fields}
-            />
+            <div className={`keen-slider__slide ${style.slidepad}`}>
+              <Psychologist
+                key={index}
+                imageUrl={item.imageUrl}
+                firstName={item.firstName}
+                lastName={item.lastName}
+                fields={item.fields}
+              />
+            </div>
           ))}
         </div>
         {loaded && instanceRef.current && (

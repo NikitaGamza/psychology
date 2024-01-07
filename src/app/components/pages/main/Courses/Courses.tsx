@@ -3,6 +3,7 @@ import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import { useState } from 'react';
 import Cart from './components/Cart/Cart';
+import { courseList } from './courseList';
 
 function Arrow(props: {
   disabled: boolean;
@@ -31,7 +32,7 @@ export default function Courses() {
     },
     slides: {
       perView: 2,
-      spacing: 20,
+      spacing: 10,
     },
     breakpoints: {
       '(max-width: 1232px)': {
@@ -44,73 +45,7 @@ export default function Courses() {
       setLoaded(true);
     },
   });
-  const courseList = [
-    {
-      imgUrl: '/img/pages/main/Courses/blank.png',
-      imgHorizontUrl: '/img/pages/main/Courses/blank-horizont.png',
-      topics: ['Курс', 'Отношения'],
-      head: 'Искусство быть вместе. Большой практический курс о партнёрских отношениях',
-      startDate: '15 апреля',
-      duralation: 2,
-      day: 'По четвергам',
-      time: '19:00',
-      type: 'Очно',
-      address: 'Московский проспект, д.6, БЦ Корона',
-      price: 2500,
-    },
-    {
-      imgUrl: '/img/pages/main/Courses/blank.png',
-      imgHorizontUrl: '/img/pages/main/Courses/blank-horizont.png',
-      topics: ['Курс', 'Отношения'],
-      head: 'Искусство быть вместе. Большой практический курс о партнёрских отношениях',
-      startDate: '15 апреля',
-      duralation: 2,
-      day: 'По четвергам',
-      time: '19:00',
-      type: 'Очно',
-      address: 'Московский проспект, д.6, БЦ Корона',
-      price: 2500,
-    },
-    {
-      imgUrl: '/img/pages/main/Courses/blank.png',
-      imgHorizontUrl: '/img/pages/main/Courses/blank-horizont.png',
-      topics: ['Курс', 'Отношения'],
-      head: 'Искусство быть вместе. Большой практический курс о партнёрских отношениях',
-      startDate: '15 апреля',
-      duralation: 2,
-      day: 'По четвергам',
-      time: '19:00',
-      type: 'Очно',
-      address: 'Московский проспект, д.6, БЦ Корона',
-      price: 2500,
-    },
-    {
-      imgUrl: '/img/pages/main/Courses/blank.png',
-      imgHorizontUrl: '/img/pages/main/Courses/blank-horizont.png',
-      topics: ['Курс', 'Отношения'],
-      head: 'Искусство быть вместе. Большой практический курс о партнёрских отношениях',
-      startDate: '15 апреля',
-      duralation: 2,
-      day: 'По четвергам',
-      time: '19:00',
-      type: 'Очно',
-      address: 'Московский проспект, д.6, БЦ Корона',
-      price: 2500,
-    },
-    {
-      imgUrl: '/img/pages/main/Courses/blank.png',
-      imgHorizontUrl: '/img/pages/main/Courses/blank-horizont.png',
-      topics: ['Курс', 'Отношения'],
-      head: 'Искусство быть вместе. Большой практический курс о партнёрских отношениях',
-      startDate: '15 апреля',
-      duralation: 2,
-      day: 'По четвергам',
-      time: '19:00',
-      type: 'Очно',
-      address: 'Московский проспект, д.6, БЦ Корона',
-      price: 2500,
-    },
-  ];
+
   return (
     <section className={style.courses}>
       <div className="container">
@@ -126,8 +61,9 @@ export default function Courses() {
                 className={`keen-slider ${style.courses__slider__wrap}`}
               >
                 {courseList.map((item: any, idx: number) => (
-                  // <p className="keen-slider__slide">hi</p>
-                  <Cart key={idx} item={item} />
+                  <div className={`keen-slider__slide ${style.slidepad}`}>
+                    <Cart key={idx} item={item} />
+                  </div>
                 ))}
               </div>
               {loaded && instanceRef.current && (
@@ -153,7 +89,7 @@ export default function Courses() {
             </div>
             {loaded && instanceRef.current && (
               <div className={style.dots}>
-                {/* {[
+                {[
                   ...Array(
                     instanceRef.current.track.details.slides.length
                   ).keys(),
@@ -172,7 +108,7 @@ export default function Courses() {
                       }
                     ></button>
                   );
-                })} */}
+                })}
               </div>
             )}
           </>
