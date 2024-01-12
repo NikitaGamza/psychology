@@ -3,6 +3,7 @@ import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import { useState } from 'react';
 import Cart from './components/Cart/Cart';
+import { orgList } from './orgList';
 function Arrow(props: {
   disabled: boolean;
   left?: boolean;
@@ -29,7 +30,7 @@ export default function Organizations() {
     },
     slides: {
       perView: 4,
-      spacing: 24,
+      spacing: 10,
     },
     breakpoints: {
       '(max-width: 1232px)': {
@@ -54,28 +55,7 @@ export default function Organizations() {
       setLoaded(true);
     },
   });
-  const orgList = [
-    {
-      imgUrl: '/img/pages/main/Organizations/blank-org.png',
-      head: 'Северо-Западный медицинский центр',
-    },
-    {
-      imgUrl: '/img/pages/main/Organizations/blank-org.png',
-      head: 'Северо-Западный медицинский центр Северо-Западный медицинский центр',
-    },
-    {
-      imgUrl: '/img/pages/main/Organizations/blank-org.png',
-      head: 'Северо-Западный медицинский центр',
-    },
-    {
-      imgUrl: '/img/pages/main/Organizations/blank-org.png',
-      head: 'Северо-Западный медицинский центр',
-    },
-    {
-      imgUrl: '/img/pages/main/Organizations/blank-org.png',
-      head: 'Северо-Западный медицинский центр',
-    },
-  ];
+
   return (
     <section className={style.org}>
       <div className="container">
@@ -85,9 +65,6 @@ export default function Organizations() {
               Организации, с которыми сотрудничают наши психологи и
               психотерапевты
             </h2>
-            {/* <p className="section__head__subtitle">
-              Обратитесь за квалифицированной помощью
-            </p> */}
           </div>
           <>
             <div className={`navigation-wrapper ${style.org__slider}`}>
@@ -96,7 +73,12 @@ export default function Organizations() {
                 className={`keen-slider ${style.org__slider__wrap}`}
               >
                 {orgList.map((item: any, idx: number) => (
-                  <Cart key={idx} item={item} />
+                  <div
+                    key={idx}
+                    className={`keen-slider__slide ${style.org__slider__wrap__item}`}
+                  >
+                    <Cart item={item} />
+                  </div>
                 ))}
               </div>
               {loaded && instanceRef.current && (
@@ -122,7 +104,7 @@ export default function Organizations() {
             </div>
             {loaded && instanceRef.current && (
               <div className={style.dots}>
-                {/* {[
+                {[
                   ...Array(
                     instanceRef.current.track.details.slides.length
                   ).keys(),
@@ -141,7 +123,7 @@ export default function Organizations() {
                       }
                     ></button>
                   );
-                })} */}
+                })}
               </div>
             )}
           </>

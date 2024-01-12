@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './Questions.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Questions() {
+  const [checker, setChecker] = useState(false);
   return (
     <div className={style.question}>
       <div className="container">
@@ -93,6 +94,15 @@ export default function Questions() {
                 className={style.question__content__form__inputs__text}
               />
               <div className={style.question__content__form__inputs__checkwrap}>
+                <label
+                  htmlFor="privacy"
+                  onClick={() => setChecker(!checker)}
+                  className={
+                    checker
+                      ? style.question__content__form__inputs__check_fake
+                      : style.question__content__form__inputs__check_fake_active
+                  }
+                ></label>
                 <input
                   type="checkbox"
                   name=""
@@ -102,6 +112,7 @@ export default function Questions() {
                 <label
                   htmlFor="privacy"
                   className={style.question__content__form__inputs__label}
+                  onClick={() => setChecker(!checker)}
                 >
                   Я согласен с{' '}
                   <Link

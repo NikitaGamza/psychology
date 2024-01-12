@@ -1,7 +1,7 @@
 @import '@/style/colors.scss';
 @import '@/style/mixins.scss';
 .question {
-  padding: 100px 0px;
+  padding: 100px 0px 97px 0px;
   background-color: $green;
   &__content {
     display: flex;
@@ -18,7 +18,7 @@
         font-size: 48px;
         font-weight: 700;
         line-height: 56px;
-        font-family: Gilroy-ExtraBold;
+        font-family: 'Gilroy-Bold';
       }
       &__contact {
         &__head {
@@ -61,26 +61,44 @@
       gap: 32px;
       &__head {
         font-size: 32px;
-        font-weight: 700;
         line-height: 36px;
         width: 325px;
-        font-family: Gilroy-ExtraBold;
+        font-family: 'Gilroy-Bold';
       }
       &__inputs {
         display: flex;
         flex-direction: column;
         gap: 24px;
+        &__checkwrap {
+          display: flex;
+          align-items: center;
+          gap: 17px;
+        }
         &__text {
           border: 1px solid $grey;
           border-radius: 8px;
-          padding: 16px;
+          padding: 15px;
           font-size: 16px;
           font-weight: 500;
           line-height: 24px;
           width: 472px;
         }
         &__check {
-          margin-right: 17px;
+          display: none;
+          &_fake {
+            width: 24px;
+            height: 24px;
+            display: block;
+            background-image: url('/img/icons/rest/checkbox-empty.svg');
+            background-size: cover;
+            &_active {
+              width: 24px;
+              height: 24px;
+              display: block;
+              background-image: url('/img/icons/rest/checkbox-picked.svg');
+              background-size: cover;
+            }
+          }
         }
         &__label {
           font-size: 16px;
@@ -92,7 +110,7 @@
         }
       }
       &__send {
-        padding: 18px 32px;
+        padding: 16px 34px;
         background-color: $green;
         border-radius: 32px;
         border: none;

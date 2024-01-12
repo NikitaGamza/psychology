@@ -44,9 +44,10 @@ export default function Home() {
             <div className={style.main__banner}>
               <h2 className={style.main__banner__text}>
                 98% наших клиентов уверены, что помощь психолога помогает решить
-                проблему и улучшить качество жизни
+                проблему <br className={style.main__banner__text__br} /> и
+                улучшить качество жизни
               </h2>
-              <Link href={'/cources'} className={style.main__banner__link}>
+              <Link href={'/courses'} className={style.main__banner__link}>
                 Смотреть все курсы
               </Link>
             </div>

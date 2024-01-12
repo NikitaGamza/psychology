@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Cart(item: any) {
   const { imgUrl, head } = item.item;
   return (
-    <div className={`keen-slider__slide ${style.slide}`}>
+    <div className={` ${style.slide}`}>
       <div className={style.slide__frame}>
         <Image
           src={imgUrl}
@@ -15,7 +15,7 @@ export default function Cart(item: any) {
         />
       </div>
       <hr className={style.slide__hr} />
-      <p>{head}</p>
+      <p className={style.slide__text}>{head}</p>
     </div>
   );
 }

@@ -33,6 +33,7 @@
   padding: 5px;
 }
 .courses {
+  margin-bottom: 160px;
   &__slider {
     margin-top: -10px;
     position: relative;
@@ -47,8 +48,8 @@
     position: absolute;
     z-index: 3;
     bottom: 50%;
-    transform: translate(0, 50%);
-    width: 100%;
+    transform: translate(-1.7%, 50%);
+    width: 104%;
   }
   &__all {
     @include link-green;

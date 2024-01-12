@@ -1,4 +1,4 @@
-@import '../../../../style/colors.scss';
+@import '@/style/colors.scss';
 .dots {
   display: none;
   &__item {
@@ -13,11 +13,15 @@
   }
 }
 .org {
+  margin-bottom: 147px;
   &__slider {
     position: relative;
     &__wrap {
       padding-top: 5px;
       padding-bottom: 5px;
+      &__item {
+        padding: 3px 5px;
+      }
     }
   }
   &__arrows {
@@ -26,8 +30,8 @@
     position: absolute;
     z-index: 3;
     bottom: 50%;
-    transform: translate(0, 50%);
-    width: 100%;
+    transform: translate(-1.7%, 30%);
+    width: 104%;
   }
 }
 .arrow {
