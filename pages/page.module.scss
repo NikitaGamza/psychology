@@ -2,7 +2,7 @@
 @import '@/style/colors.scss';
 @import '@/style/mixins.scss';
 .main {
-  background-image: url('../public/img/pages/main/bgnew.png');
+  background-image: url('/img/pages/main/bgnew.png');
   background-repeat: no-repeat;
   background-position: right top;
   &_flex {
@@ -115,11 +115,16 @@
   }
 }
 
+@media screen and (max-width: 1550px) {
+  .main {
+    background-size: 70%;
+  }
+}
+
 @media screen and (max-width: 1264px) {
   .main {
     // padding-left: 16px;
     // padding-right: 16px;
-    background-image: none;
     &_flex {
       gap: 60px;
     }
@@ -143,6 +148,30 @@
     &__head {
       &__title {
         font-size: 24px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .main {
+    background-image: none;
+    &__banner {
+      margin-bottom: 0;
+      padding: 40px 20px;
+      width: auto;
+      background-image: none;
+      &__text {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 24px;
+      }
+      &__link {
+        padding: 16px 0px;
+        display: block;
+        width: 100%;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: center;
       }
     }
   }

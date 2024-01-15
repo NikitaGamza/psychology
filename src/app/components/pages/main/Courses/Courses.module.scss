@@ -58,10 +58,16 @@
   }
 }
 
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 768px) {
   .courses {
+    margin-bottom: 0;
     &__arrows {
       display: none;
+    }
+    &__all {
+      font-size: 14px;
+      padding: 10px 40px;
+      width: 100%;
     }
   }
   .dots {

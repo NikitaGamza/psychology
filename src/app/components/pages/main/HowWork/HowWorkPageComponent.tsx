@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import style from './HowWorkPageComponent.module.scss';
 import WorkInfo from './WorkInfo';
 import { format } from './format';

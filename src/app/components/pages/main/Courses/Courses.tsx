@@ -4,6 +4,7 @@ import { useKeenSlider } from 'keen-slider/react';
 import { useState } from 'react';
 import Cart from './components/Cart/Cart';
 import { courseList } from './courseList';
+import Link from 'next/link';
 
 function Arrow(props: {
   disabled: boolean;
@@ -112,7 +113,9 @@ export default function Courses() {
               </div>
             )}
           </>
-          <button className={style.courses__all}>Смотреть все курсы</button>
+          <Link href={'/courses'} className={style.courses__all}>
+            Смотреть все курсы
+          </Link>
         </div>
       </div>
     </section>

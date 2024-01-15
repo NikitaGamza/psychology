@@ -3,6 +3,42 @@
 .selectors {
   display: flex;
   gap: 8px;
-  margin-top: 40px;
+  margin-top: 43px;
   margin-bottom: 40px;
+  &__btn {
+    border-radius: 30px;
+    padding: 9px 24px;
+    border: 1px solid $grey;
+    background-color: $white;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 28px;
+    text-align: center;
+    &_active {
+      border: 2px solid $green;
+      background-color: $green_10;
+      padding: 9px 24px;
+      border-radius: 30px;
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 28px;
+      text-align: center;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .selectors {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    &__btn {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 7px 12px;
+      &_active {
+        font-size: 16px;
+        line-height: 16px;
+        padding: 7px 12px;
+      }
+    }
+  }
 }

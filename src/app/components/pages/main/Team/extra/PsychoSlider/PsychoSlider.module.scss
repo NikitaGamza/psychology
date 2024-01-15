@@ -49,8 +49,10 @@
     display: flex;
     justify-content: center;
     gap: 5px;
+    margin-bottom: 15px;
   }
   .slider {
+    margin-bottom: 7px;
     &__arrows {
       display: none;
     }

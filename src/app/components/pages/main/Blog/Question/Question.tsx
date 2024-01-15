@@ -8,12 +8,19 @@ export default function Question(item: any) {
   return (
     <div
       className={`${style.question__item} ${
-        question.id === 2 && style.question__item_max
+        question.id === 1 && style.question__item_max
       }`}
     >
       <div className={style.question__item__list}>
         {question.topics.map((topic: any, idx: number) => (
-          <span key={idx} className={style.question__item__list__topic}>
+          <span
+            key={idx}
+            className={
+              question.id === 1
+                ? style.question__item__list__topic
+                : style.question__item__list__topic_max
+            }
+          >
             {topic}
           </span>
         ))}

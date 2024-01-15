@@ -41,74 +41,20 @@ export default function Selection() {
           </div>
         </div>
         <div className={style.pics}>
-          <div className={style.pics__column_first}>
-            <Image
-              src={'/img/pages/about/Selection/pics/1.svg'}
-              alt="img"
-              width={156}
-              height={156}
-              className={style.pics__img_one}
-            />
-            <p className={style.pics__tag_green_one}>Арт-терапия</p>
-            <Image
-              src={'/img/pages/about/Selection/pics/2.svg'}
-              alt="img"
-              width={129}
-              height={129}
-              className={style.pics__img_two}
-            />
-            <p className={style.pics__tag_yellow_one}>Гештальт</p>
-            <Image
-              src={'/img/pages/about/Selection/pics/3.svg'}
-              alt="img"
-              width={162}
-              height={162}
-              className={style.pics__img_three}
-            />
-          </div>
-          <div className={style.pics__column_second}>
-            <p className={style.pics__tag_blue_one}>Коучинг</p>
-            <Image
-              src={'/img/pages/about/Selection/pics/4.svg'}
-              alt="img"
-              width={167}
-              height={167}
-              className={style.pics__img_four}
-            />
-            <Image
-              src={'/img/pages/about/Selection/pics/5.svg'}
-              alt="img"
-              width={193}
-              height={193}
-              className={style.pics__img_five}
-            />
-            <p className={style.pics__tag_blue_two}>Семейная терапия</p>
-          </div>
-          <div className={style.pics__column_third}>
-            <Image
-              src={'/img/pages/about/Selection/pics/6.svg'}
-              alt="img"
-              width={120}
-              height={120}
-              className={style.pics__img_six}
-            />
-            <p className={style.pics__tag_yellow_two}>Психоанализ</p>
-            <Image
-              src={'/img/pages/about/Selection/pics/7.svg'}
-              alt="img"
-              width={173}
-              height={173}
-              className={style.pics__img_seven}
-            />
-            <p className={style.pics__tag_green_two}>КПТ</p>
-            <Image
-              src={'/img/pages/about/Selection/pics/8.svg'}
-              alt="img"
-              width={133}
-              height={133}
-              className={style.pics__img_eight}
-            />
-          </div>
+          <Image
+            src={'/img/pages/about/Selection/pics/selection-team.png'}
+            alt=""
+            width={540}
+            height={680}
+            className={style.pics__desctop}
+          />
+          <Image
+            src={'/img/pages/about/Selection/pics/selection-mob.png'}
+            alt=""
+            width={284}
+            height={226}
+            className={style.pics__mob}
+          />
         </div>
       </div>
     </div>

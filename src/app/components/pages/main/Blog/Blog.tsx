@@ -28,7 +28,7 @@ export default function Blog() {
                   className={style.blog__content__part__head__link}
                 >
                   <span className={style.blog__content__part__head__link__text}>
-                    Все вопросы
+                    Все
                   </span>
                   <Image
                     width={7}
@@ -55,7 +55,7 @@ export default function Blog() {
                   className={style.blog__content__part__head__link}
                 >
                   <span className={style.blog__content__part__head__link__text}>
-                    Все советы
+                    Все
                   </span>
                   <Image
                     width={7}
@@ -82,7 +82,7 @@ export default function Blog() {
                   className={style.blog__content__part__head__link}
                 >
                   <span className={style.blog__content__part__head__link__text}>
-                    Все видео
+                    Все
                   </span>
                   <Image
                     width={7}

@@ -222,6 +222,7 @@ export default function List({ format, parameters }: any) {
           sex={item.sex}
           isMarried={item.isMarried}
           city={item.city}
+          metro={item.metro}
           tags={item.tags}
           inDetail={true}
         />

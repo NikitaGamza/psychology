@@ -5,10 +5,10 @@ $blue_75: #6899ca;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
-  width: 1232px;
+  width: 100%;
   margin: 0 auto;
-  @media screen and (max-width: 1232px) {
-    width: 100%;
+
+  @media screen and (max-width: 768px) {
     padding: 40px 20px;
   }
 }
@@ -69,7 +69,7 @@ $blue_75: #6899ca;
         padding: 15px 31px;
         font-size: 20px;
         font-weight: 900;
-        font-family: Gilroy-ExtraBold;
+        font-family: 'Gilroy-Bold';
         &:hover {
           background-color: $blue_75;
         }
@@ -94,16 +94,77 @@ $blue_75: #6899ca;
     }
   }
 }
-@media screen and (max-width: 1232px) {
+@media screen and (max-width: 1264px) {
   .banner {
+    &_green {
+      background-size: 30%;
+      background-position: 100% 100%;
+    }
+    &_blue {
+      background-size: 30%;
+      background-position: 100% 100%;
+    }
+  }
+}
+@media screen and (max-width: 950px) {
+  .banner {
+    &_green {
+      background-image: none;
+    }
+    &_blue {
+      background-image: none;
+    }
     &__info {
       &__head {
+        width: auto;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner {
+    &_green {
+      margin-bottom: 0px;
+    }
+    &_blue {
+      margin-bottom: 0;
+    }
+    &__wrap {
+      width: auto;
+      &_blue {
+        width: auto;
+      }
+    }
+    &__info {
+      margin-bottom: 25px;
+      &__head {
+        width: auto;
         font-size: 24px;
         line-height: 28px;
+        text-align: center;
       }
       &__text {
         font-size: 16px;
         line-height: 24px;
+        text-align: center;
+      }
+      &__btn {
+        &_green {
+          width: 100%;
+          font-size: 16px;
+          line-height: 24px;
+          text-align: center;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        &_blue {
+          width: 100%;
+          font-size: 16px;
+          line-height: 24px;
+          text-align: center;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
       }
     }
     &__img {

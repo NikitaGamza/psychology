@@ -1,4 +1,4 @@
-@import '../../../style/colors.scss';
+@import '@/style/colors.scss';
 .cart {
   width: 395px;
   &__img {
@@ -47,6 +47,14 @@
     }
     &:nth-child(2) {
       display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cart {
+    &__img {
+      height: 182px;
     }
   }
 }

@@ -4,6 +4,8 @@
   padding-top: 56px;
   padding-bottom: 32px;
   background-color: $grey-bg;
+  // padding-left: 16px;
+  // padding-right: 16px;
   &__content {
     display: flex;
     justify-content: space-between;
@@ -33,7 +35,7 @@
           font-size: 16px;
           font-weight: 900;
           line-height: 24px;
-          font-family: Gilroy-ExtraBold;
+          font-family: 'Gilroy-Bold';
         }
         &__display {
           display: flex;
@@ -73,7 +75,7 @@
         gap: 16px;
         &__head {
           font-size: 16px;
-          font-weight: 500;
+          font-weight: 900;
           line-height: 24px;
         }
         &__list {
@@ -121,8 +123,8 @@
   .footer {
     padding-top: 32px;
     padding-bottom: 32px;
-    padding-left: 16px;
-    padding-right: 16px;
+    // padding-left: 16px;
+    // padding-right: 16px;
     &__content {
       flex-direction: column;
       gap: 32px;
@@ -149,5 +151,9 @@
       flex-direction: column;
       gap: 16px;
     }
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer {
   }
 }

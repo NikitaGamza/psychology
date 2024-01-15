@@ -1,4 +1,4 @@
-@import '../../../../style/colors.scss';
+@import '@/style/colors.scss';
 .help {
   margin-bottom: 160px;
   &__flex {
@@ -51,8 +51,9 @@
   }
 }
 
-@media screen and (max-width: 725px) {
+@media screen and (max-width: 768px) {
   .help {
+    margin-bottom: 0;
     &__content {
       display: none;
       &__item {

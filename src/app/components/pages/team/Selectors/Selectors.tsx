@@ -11,20 +11,28 @@ export default function Selectors({ format, setFormat }: ChildProps) {
     <div className={style.selectors}>
       <button
         onClick={() => setFormat('Очно')}
-        className={format === 'Очно' ? 'button_sheer_active' : 'button_sheer'}
+        className={
+          format === 'Очно' ? style.selectors__btn_active : style.selectors__btn
+        }
       >
         Очно
       </button>
       <button
         onClick={() => setFormat('Онлайн')}
-        className={format === 'Онлайн' ? 'button_sheer_active' : 'button_sheer'}
+        className={
+          format === 'Онлайн'
+            ? style.selectors__btn_active
+            : style.selectors__btn
+        }
       >
         Онлайн
       </button>
       <button
         onClick={() => setFormat('Переписка')}
         className={
-          format === 'Переписка' ? 'button_sheer_active' : 'button_sheer'
+          format === 'Переписка'
+            ? style.selectors__btn_active
+            : style.selectors__btn
         }
       >
         Переписка

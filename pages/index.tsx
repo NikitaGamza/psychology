@@ -41,16 +41,20 @@ export default function Home() {
             />
             <Blog />
             <Courses />
-            <div className={style.main__banner}>
-              <h2 className={style.main__banner__text}>
-                98% наших клиентов уверены, что помощь психолога помогает решить
-                проблему <br className={style.main__banner__text__br} /> и
-                улучшить качество жизни
-              </h2>
-              <Link href={'/courses'} className={style.main__banner__link}>
-                Смотреть все курсы
-              </Link>
+            <div className="container">
+              <div className={style.main__banner}>
+                <h2 className={style.main__banner__text}>
+                  98% наших клиентов уверены, что помощь психолога помогает
+                  решить проблему{' '}
+                  <br className={style.main__banner__text__br} /> и улучшить
+                  качество жизни
+                </h2>
+                <Link href={'/courses'} className={style.main__banner__link}>
+                  Смотреть все курсы
+                </Link>
+              </div>
             </div>
+
             <Organizations />
             <div></div>
           </div>

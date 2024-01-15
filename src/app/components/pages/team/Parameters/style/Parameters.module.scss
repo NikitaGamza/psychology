@@ -3,9 +3,11 @@
   display: none;
 }
 .params {
+  padding-top: 108px;
+  width: 290px;
   &__head {
     font-size: 24px;
-    font-weight: 700;
+    font-family: 'Gilroy-Bold';
     line-height: 28px;
     margin-bottom: 40px;
   }
@@ -25,5 +27,20 @@
         gap: 16px;
       }
     }
+  }
+}
+@media screen and (max-width: 1264px) {
+  .params {
+    width: fit-content;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .params {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .params {
+    display: none;
   }
 }

@@ -127,8 +127,8 @@
 @media screen and (max-width: 1232px) {
   .question {
     padding: 60px 0;
-    padding-left: 16px;
-    padding-right: 16px;
+    // padding-left: 16px;
+    // padding-right: 16px;
     &__content {
       text-align: center;
       flex-direction: column;
@@ -195,6 +195,32 @@
           width: 100%;
           font-size: 16px;
           line-height: 20px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .question {
+    &__content {
+      &__form {
+        &__inputs {
+          gap: 8px;
+          &__checkwrap {
+            margin-top: 4px;
+            align-items: center;
+          }
+          &__check {
+            &_fake {
+              margin-top: -15px;
+              &_active {
+                margin-top: -15px;
+              }
+            }
+          }
+          &__label {
+            // margin-top: -4px;
+          }
         }
       }
     }

@@ -7,7 +7,10 @@
     padding: 32px 32px 39px 32px;
     box-shadow: 0px 0px 5px 0px #1d304e26;
     border-radius: 16px;
-    background-color: $green_10;
+    background-color: $blue_10;
+    &_max {
+      background-color: $green_10;
+    }
     &__list {
       display: flex;
       gap: 8px;
@@ -19,6 +22,14 @@
         padding: 0 12px;
         border: 1px solid $green;
         border-radius: 12px;
+        &_max {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 24px;
+          padding: 0 12px;
+          border: 1px solid #3677b8;
+          border-radius: 12px;
+        }
       }
     }
     &__head {
@@ -39,18 +50,37 @@
       line-height: 24px;
       color: $green;
     }
-    &_max {
-      background-color: $blue_10;
-      width: 975px;
-    }
   }
 }
 
-@media screen and (max-width: 1232px) {
+@media screen and (max-width: 1264px) {
   .question {
     &__item {
       &_max {
         display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .question {
+    &__item {
+      padding: 24px 20px 26px 20px;
+      &__list {
+        margin-bottom: 10px;
+      }
+      &__head {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 8px;
+      }
+      &__text {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      &__link {
+        font-size: 14px;
+        line-height: 20px;
       }
     }
   }

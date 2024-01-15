@@ -255,8 +255,25 @@ li:before {
     width: 100%;
   }
   .section {
+    // gap: 24px;
+    &__head {
+      &__title {
+        // font-size: 24px;
+        // line-height: 28px;
+        width: auto;
+      }
+      &__subtitle {
+        // font-size: 16px;
+        // line-height: 24px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .section {
     gap: 24px;
     &__head {
+      gap: 16px;
       &__title {
         font-size: 24px;
         line-height: 28px;

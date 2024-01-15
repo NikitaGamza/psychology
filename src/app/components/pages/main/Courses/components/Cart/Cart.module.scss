@@ -47,7 +47,7 @@
         align-items: center;
         &__text {
           font-size: 16px;
-          font-weight: 500;
+          font-weight: 900;
           line-height: 24px;
         }
       }
@@ -104,23 +104,28 @@
     }
   }
 }
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 768px) {
   .slide {
-    padding: 20px;
+    padding: 20px 16px 20px 16px;
     &__content {
       &__img {
         display: none;
       }
       &__info {
+        &__topics {
+          &__item {
+            line-height: 23px;
+          }
+        }
         &__img {
           display: block;
           width: 100%;
           height: auto;
           border-radius: 20px;
-          margin-bottom: 16px;
+          margin-bottom: 15px;
         }
         &__head {
-          margin-bottom: 16px;
+          margin-bottom: 17px;
           font-size: 16px;
           line-height: 24px;
         }
@@ -131,7 +136,7 @@
           }
         }
         &__location {
-          margin-bottom: 16px;
+          margin-bottom: 24px;
           &__text {
             font-size: 14px;
             line-height: 20px;

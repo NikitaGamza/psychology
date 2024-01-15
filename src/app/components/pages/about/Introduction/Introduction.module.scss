@@ -1,4 +1,4 @@
-@import '../../../../style/colors.scss';
+@import '@/style/colors.scss';
 
 .intro {
   &__head {
@@ -8,12 +8,12 @@
     width: 1030px;
     &__title {
       font-size: 48px;
-      font-weight: 700;
+      font-family: 'Gilroy-Bold';
       line-height: 56px;
     }
     &__text {
       font-size: 24px;
-      font-weight: 500;
+      font-weight: 900;
       line-height: 36px;
     }
   }
@@ -26,7 +26,7 @@
 }
 @media screen and (max-width: 1232px) {
   .intro {
-    padding: 0 16px;
+    // padding: 0 16px;
     &__head {
       gap: 16px;
       width: auto;
@@ -38,6 +38,14 @@
         font-size: 16px;
         line-height: 24px;
       }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .intro {
+    &__video {
+      margin-top: 8px;
+      height: 184px;
     }
   }
 }

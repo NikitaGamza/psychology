@@ -9,7 +9,7 @@ export default function Charity() {
       <div className="container">
         <div className="section">
           <div className="section__head">
-            <h2 className="section__head__title">
+            <h2 className={style.char__head}>
               Мы участвуем в благотворительных проектах
             </h2>
           </div>

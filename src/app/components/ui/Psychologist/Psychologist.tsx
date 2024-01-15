@@ -17,6 +17,7 @@ export default function Psychologist(props: any) {
     sex,
     isMarried,
     city,
+    metro,
     tags,
     inDetail,
   } = props;
@@ -80,6 +81,24 @@ export default function Psychologist(props: any) {
               <span className={style.psychologist_full__info__locations__item}>
                 {city}
               </span>
+              {metro && (
+                <>
+                  <Image
+                    src={'/img/icons/bullet/bullet-blue.svg'}
+                    width={8}
+                    height={8}
+                    alt=""
+                    className={
+                      style.psychologist_full__info__locations__metrosep
+                    }
+                  ></Image>
+                  <span
+                    className={style.psychologist_full__info__locations__item}
+                  >
+                    {metro}
+                  </span>
+                </>
+              )}
             </div>
             <div className={style.psychologist_full__info__tags}>
               {tags.map((item: string, idx: number) => {

@@ -58,6 +58,7 @@
     &__content {
       gap: 60px;
       &__part {
+        gap: 24px;
         &__head {
           &__title {
             font-size: 20px;
@@ -83,6 +84,18 @@
           justify-content: space-around;
         }
       }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .blog {
+    margin-bottom: 0;
+    &__all {
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      line-height: 16px;
+      padding: 16px 0;
     }
   }
 }

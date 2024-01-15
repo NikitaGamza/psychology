@@ -24,10 +24,12 @@ export default function Slider() {
     <div className={`navigation-wrapper ${style.slider}`}>
       <div ref={sliderRef} className={`keen-slider ${style.slider__wrap}`}>
         {charList.map((item: any, idx: number) => (
-          <Cart props={item} key={idx} />
+          <div className="keen-slider__slide">
+            <Cart props={item} key={idx} />
+          </div>
         ))}
       </div>
-      {/* {loaded && instanceRef.current && (
+      {loaded && instanceRef.current && (
         <div className={style.dots}>
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
@@ -46,7 +48,7 @@ export default function Slider() {
             );
           })}
         </div>
-      )} */}
+      )}
     </div>
   );
 }

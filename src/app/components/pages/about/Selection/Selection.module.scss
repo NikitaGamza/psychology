@@ -30,13 +30,13 @@
   &__content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     &__info {
       &__title {
         font-size: 32px;
-        font-weight: 700;
+        font-family: 'Gilroy-Bold';
         line-height: 36px;
         margin-bottom: 48px;
+        margin-top: 25px;
       }
       &__list {
         display: flex;
@@ -48,108 +48,15 @@
 }
 .pics {
   display: flex;
-  &__column {
-    &_first {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-    }
-    &_second {
-      display: flex;
-      flex-direction: column;
-      align-items: end;
-    }
-    &_third {
-      display: flex;
-      flex-direction: column;
-      align-items: end;
-    }
+  &__desctop {
+    width: 540px;
+    height: 680px;
   }
-  &__img {
-    &_one {
-      width: 156px;
-      height: 156px;
-      margin-bottom: 37px;
-    }
-    &_two {
-      width: 129px;
-      height: 129px;
-      margin-bottom: 43px;
-    }
-    &_three {
-      width: 162px;
-      height: 162px;
-    }
-    &_four {
-      width: 167px;
-      height: 167px;
-      margin-bottom: 52px;
-    }
-    &_five {
-      width: 193px;
-      height: 193px;
-    }
-    &_six {
-      width: 120px;
-      height: 120px;
-      margin-bottom: 50px;
-    }
-    &_seven {
-      width: 173px;
-      height: 173px;
-      margin-bottom: 55px;
-    }
-    &_eight {
-      width: 133px;
-      height: 133px;
-    }
-  }
-  &__tag {
-    &_green {
-      &_one {
-        @include tag;
-        border-color: $green_30;
-        margin-bottom: 40px;
-      }
-      &_two {
-        @include tag;
-        border-color: $green_30;
-        margin-bottom: 22px;
-        margin-right: 58px;
-      }
-    }
-    &_yellow {
-      &_one {
-        @include tag;
-        border-color: $yellow_30;
-        margin-bottom: 32px;
-      }
-      &_two {
-        @include tag;
-        border-color: $yellow_30;
-        margin-bottom: 45px;
-      }
-    }
-    &_blue {
-      @include tag;
-      border-color: $blue_30;
-      &_one {
-        @include tag;
-        border-color: $blue_30;
-        margin-top: 40px;
-        margin-bottom: 65px;
-      }
-      &_two {
-        @include tag;
-        border-color: $blue_30;
-        margin-top: 56px;
-        margin-bottom: 27px;
-      }
-    }
+  &__mob {
+    display: none;
   }
 }
-@media screen and (max-width: 1232px) {
+@media screen and (max-width: 1268px) {
   .selection {
     width: 100%;
     padding: 0 16px;
@@ -163,9 +70,11 @@
     }
     &__content {
       flex-direction: column-reverse;
+      align-items: center;
       gap: 32px;
       &__info {
         &__title {
+          margin-top: 0;
           margin-bottom: 24px;
           font-size: 16px;
         }
@@ -178,63 +87,15 @@
 }
 @media screen and (max-width: 590px) {
   .pics {
-    &__column {
-      &_first {
-      }
-      &_second {
-      }
-      &_third {
-      }
+    display: block;
+    width: 100%;
+    &__desctop {
+      display: none;
     }
-    &__img {
-      &_three {
-        display: none;
-      }
-      &_five {
-        display: none;
-      }
-      &_eight {
-        display: none;
-      }
-      &_one {
-        width: 84px;
-        height: 84px;
-      }
-      &_two {
-        margin: 0;
-        width: 70px;
-        height: 70px;
-      }
-      &_four {
-        width: 90px;
-        height: 90px;
-      }
-      &_six {
-        width: 65px;
-        height: 65px;
-      }
-      &_seven {
-        margin: 0;
-        width: 94px;
-        height: 94px;
-      }
-    }
-    &__tag {
-      &_yellow {
-        &_one {
-          display: none;
-        }
-      }
-      &_green {
-        &_two {
-          display: none;
-        }
-      }
-      &_blue {
-        &_two {
-          margin: 0;
-        }
-      }
+    &__mob {
+      display: block;
+      width: 100%;
+      height: auto;
     }
   }
 }
