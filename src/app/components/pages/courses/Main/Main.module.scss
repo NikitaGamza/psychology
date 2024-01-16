@@ -93,12 +93,17 @@
       }
     }
     &__type {
+      display: block;
+      overflow: auto;
+      white-space: nowrap;
       &__btn {
         font-size: 20px;
         line-height: 20px;
+        margin-right: 20px;
         &_active {
           font-size: 20px;
           line-height: 20px;
+          margin-right: 20px;
         }
       }
     }

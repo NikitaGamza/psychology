@@ -1,0 +1,46 @@
+@import '@/style/colors.scss';
+.mob {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  max-height: fit-content;
+  background-color: $white;
+  z-index: 100;
+  &__head {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $green;
+    border-bottom: 1px solid #ffffff33;
+  }
+  &__content {
+    padding: 24px 16px 32px 16px;
+    background-color: $green;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    &__link {
+      color: $white;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    &__find {
+      color: $green;
+      background-color: $white;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 18px;
+      text-align: center;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    &__socials {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+  }
+}

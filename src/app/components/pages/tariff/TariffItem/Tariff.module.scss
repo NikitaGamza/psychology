@@ -25,16 +25,16 @@
       gap: 8px;
       &__item {
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 900;
         padding: 12px 24px;
         background-color: $white;
         border-radius: 30px;
         border: 1px solid $grey;
         &_active {
           font-size: 20px;
-          font-weight: 500;
+          font-weight: 900;
           padding: 12px 24px;
-          background-color: $green_light;
+          background-color: $green_10;
           border-radius: 30px;
           border: 2px solid $green;
         }
@@ -141,6 +141,20 @@
     }
     &__carts {
       margin-top: 36px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .tariff {
+    &__info {
+      &__btns {
+        &__item {
+          padding: 6px 10px;
+          &_active {
+            padding: 6px 10px;
+          }
+        }
+      }
     }
   }
 }

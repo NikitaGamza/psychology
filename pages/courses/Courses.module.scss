@@ -5,6 +5,21 @@
   padding-top: 135px;
   padding-bottom: 100px;
   background-color: $grey_light_bg;
+  &__head {
+    font-family: 'Gilroy-Bold';
+    font-size: 48px;
+    line-height: 56px;
+    margin-bottom: 40px;
+    &_mob {
+      display: none;
+      margin-bottom: 40px;
+      &__title {
+        font-family: 'Gilroy-Bold';
+        font-size: 48px;
+        line-height: 56px;
+      }
+    }
+  }
   &__content {
     display: flex;
     justify-content: space-between;
@@ -19,11 +34,31 @@
     gap: 160px;
   }
 }
-
+@media screen and (max-width: 1170px) {
+  .course {
+    &__head {
+      display: none;
+      &_mob {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .course {
     padding-top: 80px;
     padding-bottom: 60px;
+    &__head {
+      &_mob {
+        margin-bottom: 24px;
+        &__title {
+          font-size: 24px;
+          line-height: 24px;
+        }
+      }
+    }
   }
   .dynamic {
     padding-top: 80px;

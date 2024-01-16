@@ -1,59 +1,18 @@
 import style from './Header.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+import MobileLinks from './components/MobileLinks/MobileLinks';
+import { useState } from 'react';
+import { navigation } from './linksList';
 // import '@globals.css';
 export default function Header() {
-  const navigation = [
-    // {
-    //   title: 'Главная',
-    //   linkTo: '/',
-    // },
-    {
-      title: 'О нас',
-      linkTo: '/about',
-    },
-    {
-      title: 'Психологи',
-      linkTo: '/team',
-    },
-    {
-      title: 'Тарифы',
-      linkTo: '/tariff',
-    },
-    {
-      title: 'Курсы',
-      linkTo: '/courses',
-    },
-    {
-      title: 'Организациям',
-      linkTo: '/for-organizations',
-    },
-    {
-      title: 'Психологам',
-      linkTo: '/for-psychologists',
-    },
-    {
-      title: 'Блог',
-      linkTo: '/blog/questions',
-    },
-    {
-      title: 'FAQ',
-      linkTo: '/faq',
-    },
-  ];
+  const [mobileMenu, setMobileMenu] = useState<boolean>(false);
   return (
     <div className={style.header}>
+      {mobileMenu && (
+        <MobileLinks setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} />
+      )}
       <div className={style.header__container}>
-        {/* <div className={style.header__logo}>
-          <div className={style.header__logo__main}>
-            <h6 className={style.header__logo__main__head}>Твой</h6>
-          </div>
-
-          <div className={style.header__logo__description}>
-            <h6 className={style.header__logo__title}>психолог</h6>
-            <p className={style.header__logo__subtitle}>помощь очно и онлайн</p>
-          </div>
-        </div> */}
         <Image
           src={'/logo-head.svg'}
           alt="logo"
@@ -82,7 +41,10 @@ export default function Header() {
         <Link href="" className={style.header__button}>
           Подобрать психолога
         </Link>
-        <button className={style.header__burger}>
+        <button
+          onClick={() => setMobileMenu(!mobileMenu)}
+          className={style.header__burger}
+        >
           <Image src="/burger.svg" alt="burger" width="24" height="24" />
         </button>
       </div>
