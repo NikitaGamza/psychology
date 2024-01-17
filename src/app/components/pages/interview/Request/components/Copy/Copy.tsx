@@ -4,7 +4,7 @@ import copyStyle from './Copy.module.scss';
 import Image from 'next/image';
 
 export default function Copy() {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<Array<any>>([]);
   const handleMultipleImages = (evnt: any) => {
     const selectedFIles = [...images];
     const targetFiles = evnt.target.files;
@@ -15,7 +15,7 @@ export default function Copy() {
     setImages(selectedFIles);
   };
   function handleDelete(id: number) {
-    const newList = [];
+    const newList: Array<any> = [];
     images.map((item: any, idx: number) => {
       if (idx !== id) {
         newList.push(item);
