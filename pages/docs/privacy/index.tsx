@@ -34,7 +34,7 @@ export default function Privacy() {
                 </li>
                 <li className={style.pr__content__info__part__list__item}>
                   Сайт www.psyalter.ru (далее – Сайт) является собственностью
-                  ООО \"Альтер\".
+                  ООО {`\"`}Альтер.
                 </li>
                 <li className={style.pr__content__info__part__list__item}>
                   Настоящее Соглашение регулирует отношения между ООО "Альтер"
