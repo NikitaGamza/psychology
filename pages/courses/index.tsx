@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './Courses.module.scss';
 import Main from '@/app/components/pages/courses/Main/Main';
-import Filters from '@/app/components/pages/courses/Filters/Filters';
+// import Filters from '@/app/components/pages/courses/Filters/Filters';
 import Image from 'next/image';
 import MobileFilter from '@/app/components/pages/courses/MobileFilter/MobileFilter';
 
@@ -26,7 +26,7 @@ export default function Courses() {
         </div>
         <div className={style.course__content}>
           <Main />
-          <Filters />
+          {/* <Filters /> */}
         </div>
       </div>
     </div>
