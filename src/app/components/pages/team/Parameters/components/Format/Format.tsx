@@ -6,7 +6,7 @@ import { toggle } from '@/store/features/format/format';
 
 export default function Format() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const format = useSelector((state) => state.format.format);
+  const format = useSelector((state: any) => state.format.format);
   const dispatch = useDispatch();
   return (
     <div className={style.block}>

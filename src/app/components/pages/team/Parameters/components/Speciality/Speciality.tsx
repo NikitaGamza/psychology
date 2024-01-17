@@ -6,7 +6,7 @@ import { toggle } from '@/store/features/blogThemesSlice';
 
 export default function Speciality() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const specThemes = useSelector((state) => state.specThemes.specThemes);
+  const specThemes = useSelector((state: any) => state.specThemes.specThemes);
   const dispatch = useDispatch();
   return (
     <div className={style.block}>

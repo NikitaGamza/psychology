@@ -6,7 +6,7 @@ import { toggle } from '@/store/features/cities/cities';
 
 export default function Cities() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const cities = useSelector((state) => state.cities.cities);
+  const cities = useSelector((state: any) => state.cities.cities);
   const dispatch = useDispatch();
   return (
     <div className={style.block}>

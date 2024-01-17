@@ -6,7 +6,7 @@ import { toggle } from '@/store/features/experience/experience';
 
 export default function Experience() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const experience = useSelector((state) => state.experience.experience);
+  const experience = useSelector((state: any) => state.experience.experience);
   const dispatch = useDispatch();
   return (
     <div className={style.block}>

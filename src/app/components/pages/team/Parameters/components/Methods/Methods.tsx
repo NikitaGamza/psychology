@@ -6,7 +6,7 @@ import { toggle } from '@/store/features/methods/methods';
 
 export default function Methods() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const methods = useSelector((state) => state.methods.methods);
+  const methods = useSelector((state: any) => state.methods.methods);
   const dispatch = useDispatch();
   return (
     <div className={style.block}>

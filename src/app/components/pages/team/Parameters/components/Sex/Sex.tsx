@@ -6,7 +6,7 @@ import { toggle } from '@/store/features/sex/sex';
 
 export default function Sex() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const sex = useSelector((state) => state.sex.sex);
+  const sex = useSelector((state: any) => state.sex.sex);
   const dispatch = useDispatch();
   return (
     <div className={style.block}>
