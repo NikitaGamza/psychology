@@ -62,9 +62,8 @@ export default function PsychoSlider() {
       <div className={`navigation-wrapper ${style.slider}`}>
         <div ref={sliderRef} className={`keen-slider ${style.slider__wrap}`}>
           {psychoList.map((item: any, index: number) => (
-            <div className={`keen-slider__slide ${style.slidepad}`}>
+            <div key={index} className={`keen-slider__slide ${style.slidepad}`}>
               <Psychologist
-                key={index}
                 imageUrl={item.imageUrl}
                 firstName={item.firstName}
                 lastName={item.lastName}

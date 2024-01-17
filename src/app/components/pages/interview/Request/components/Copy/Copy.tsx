@@ -58,9 +58,8 @@ export default function Copy() {
           }
         >
           {images.map((url: any, idx: number) => (
-            <div className={copyStyle.figure}>
+            <div key={idx} className={copyStyle.figure}>
               <Image
-                key={idx}
                 src={url}
                 alt="img"
                 width={56}

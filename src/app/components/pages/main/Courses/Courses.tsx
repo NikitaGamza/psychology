@@ -62,8 +62,11 @@ export default function Courses() {
                 className={`keen-slider ${style.courses__slider__wrap}`}
               >
                 {courseList.map((item: any, idx: number) => (
-                  <div className={`keen-slider__slide ${style.slidepad}`}>
-                    <Cart key={idx} item={item} />
+                  <div
+                    key={idx}
+                    className={`keen-slider__slide ${style.slidepad}`}
+                  >
+                    <Cart item={item} />
                   </div>
                 ))}
               </div>
