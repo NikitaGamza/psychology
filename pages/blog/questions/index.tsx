@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Questions.module.scss';
 import BlogLayout from '../layout';
 import Link from 'next/link';
-import { questionList } from './questionList';
+import questionList from './questionList';
 
 export default function Questions() {
   const themesList = [

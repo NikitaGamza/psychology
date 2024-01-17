@@ -1,4 +1,4 @@
-export const moreList = [
+const moreList = [
   {
     id: 1,
     imgUrl: '/img/pages/blog/1.png',
@@ -18,3 +18,5 @@ export const moreList = [
     head: 'На что обращать внимание при знакомстве?',
   },
 ];
+
+export default moreList;

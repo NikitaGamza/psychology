@@ -1,4 +1,4 @@
-export const questionList = [
+const questionList = [
   {
     id: 1,
     themes: ['Отношения', 'Семья'],
@@ -49,3 +49,4 @@ export const questionList = [
       'Мне уже 28 лет, но я до их пор ничего не сделал толкового в жизни. В жизни вceгдa ecть выбop. Чeгo бы oн ни кacaлcя: выбopa шкaфoв, тoгo, c кeм вы пpoвoдитe cвoё вpeмя, кaкиe пoдapки дapитe, вo чтo вepитe и нa кaких мыcлях фoкycиpyeтecь. Хaoc — этo выбop. Гнeв — этo выбop. Для мужчины главное понимать, что ты его любишь и что ты ему верна. Чeгo бы oн ни кaсался',
   },
 ];
+export default questionList;

@@ -1,4 +1,4 @@
-export const videoList = [
+const videoList = [
   {
     id: 1,
     videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
@@ -54,3 +54,4 @@ export const videoList = [
     head: 'На что обращать внимание при знакомстве?',
   },
 ];
+export default videoList;

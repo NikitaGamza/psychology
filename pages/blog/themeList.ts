@@ -1,4 +1,4 @@
-export const themesList = [
+const themesList = [
   'Дети',
   'Семья',
   'Личностный рост',
@@ -15,3 +15,4 @@ export const themesList = [
   'Отношения',
   'Выгорание',
 ];
+export default themesList;

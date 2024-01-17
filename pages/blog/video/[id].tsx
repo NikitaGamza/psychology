@@ -4,7 +4,7 @@ import style from './Detail.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { videoList } from './videoList';
+import videoList from './videoList';
 import Slider from './components/Slider/Slider';
 
 export default function VideoDetail() {

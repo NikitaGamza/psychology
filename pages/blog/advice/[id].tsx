@@ -7,7 +7,7 @@ import BlogLayout from '../layout';
 import detailList from './detailList';
 import Banner from './components/Banner/Banner';
 import Slider from './components/Slider/Slider';
-import { moreList } from './moreList';
+import moreList from './moreList';
 
 export default function AdviceDetail() {
   const router = useRouter();

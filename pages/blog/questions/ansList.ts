@@ -1,4 +1,4 @@
-export const ansList = [
+const ansList = [
   {
     id: 1,
     themes: ['Психология', 'Терапия'],
@@ -21,3 +21,5 @@ export const ansList = [
     },
   },
 ];
+
+export default ansList;

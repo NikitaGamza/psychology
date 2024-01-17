@@ -4,7 +4,7 @@ import BlogLayout from '../layout';
 import style from './Answer.module.scss';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { ansList } from './ansList';
+import ansList from './ansList';
 
 export default function Answer() {
   const router = useRouter();

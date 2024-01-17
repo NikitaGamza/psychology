@@ -1,7 +1,7 @@
 import React from 'react';
 import BlogLayout from '../layout';
 import style from './Video.module.scss';
-import { videoList } from './videoList';
+import videoList from './videoList';
 import Link from 'next/link';
 
 interface IVideo {
