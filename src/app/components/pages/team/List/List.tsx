@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 export default function List({ format, parameters }: any) {
   const filterState = useSelector((state) => state);
-  const { specThemes, sex, methods, experience, cities } = filterState;
+  const { specThemes, sex, methods, experience, cities }: any = filterState;
   const [result, setResult] = useState(psychoList);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function List({ format, parameters }: any) {
     const foundThemes = specThemes.specThemes.filter(
       (item: any) => item.isSelected === true
     );
-    const ftar = [];
+    const ftar: Array<any> = [];
     foundThemes.map((item: any) => ftar.push(item.name));
     const fmar = [];
     const foundMethods = methods.methods.filter(
@@ -41,7 +41,7 @@ export default function List({ format, parameters }: any) {
             item.experience > foundExp.value &&
             item.city === foundCity.name &&
             item.sex === foundSex.value &&
-            item.tags.some((ai) => ftar.includes(ai))
+            item.tags.some((ai: any) => ftar.includes(ai))
         )
       );
     } else if (
@@ -71,7 +71,7 @@ export default function List({ format, parameters }: any) {
             item.format.includes(format) &&
             item.experience > foundExp.value &&
             item.sex === foundSex.value &&
-            item.tags.some((ai) => ftar.includes(ai))
+            item.tags.some((ai: any) => ftar.includes(ai))
         )
       );
     } else if (
@@ -85,7 +85,7 @@ export default function List({ format, parameters }: any) {
           (item: any) =>
             item.format.includes(format) &&
             item.sex === foundSex.value &&
-            item.tags.some((ai) => ftar.includes(ai))
+            item.tags.some((ai: any) => ftar.includes(ai))
         )
       );
     } else if (
@@ -100,7 +100,7 @@ export default function List({ format, parameters }: any) {
             item.format.includes(format) &&
             item.city === foundCity.name &&
             item.sex === foundSex.value &&
-            item.tags.some((ai) => ftar.includes(ai))
+            item.tags.some((ai: any) => ftar.includes(ai))
         )
       );
     } else if (
@@ -191,7 +191,7 @@ export default function List({ format, parameters }: any) {
         psychoList.filter(
           (item: any) =>
             item.format.includes(format) &&
-            item.tags.some((ai) => ftar.includes(ai))
+            item.tags.some((ai: any) => ftar.includes(ai))
         )
       );
     } else if (
