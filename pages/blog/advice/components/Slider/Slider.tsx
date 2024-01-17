@@ -64,38 +64,39 @@ export default function Slider(props: IList) {
           ref={sliderRef}
           className={`keen-slider ${style.more__slider__in}`}
         >
-          {moreList.map((item: any, idx: number) => (
-            <div
-              key={idx}
-              className={`keen-slider__slide ${style.more__slider__in__slide}`}
-            >
-              <Link href={`/blog/advice/${item.id}`}>
-                <Image
-                  src={item.imgUrl}
-                  alt="img"
-                  width={100}
-                  height={100}
-                  className={style.more__slider__in__slide__img}
-                />
-              </Link>
+          {moreList &&
+            moreList.map((item: any, idx: number) => (
+              <div
+                key={idx}
+                className={`keen-slider__slide ${style.more__slider__in__slide}`}
+              >
+                <Link href={`/blog/advice/${item.id}`}>
+                  <Image
+                    src={item.imgUrl}
+                    alt="img"
+                    width={100}
+                    height={100}
+                    className={style.more__slider__in__slide__img}
+                  />
+                </Link>
 
-              <div className={style.more__slider__in__slide__themes}>
-                {item.themes.map((topic: string, idxTopic: number) => (
-                  <span
-                    key={idxTopic}
-                    className={style.more__slider__in__slide__themes__topic}
-                  >
-                    {topic}
-                  </span>
-                ))}
+                <div className={style.more__slider__in__slide__themes}>
+                  {item.themes.map((topic: string, idxTopic: number) => (
+                    <span
+                      key={idxTopic}
+                      className={style.more__slider__in__slide__themes__topic}
+                    >
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+                <Link href={`/blog/advice/${item.id}`}>
+                  <h5 className={style.more__slider__in__slide__head}>
+                    {item.head}
+                  </h5>
+                </Link>
               </div>
-              <Link href={`/blog/advice/${item.id}`}>
-                <h5 className={style.more__slider__in__slide__head}>
-                  {item.head}
-                </h5>
-              </Link>
-            </div>
-          ))}
+            ))}
         </div>
         {loaded && instanceRef.current && (
           <div className={style.more__slider__arrows}>

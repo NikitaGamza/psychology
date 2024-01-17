@@ -76,34 +76,35 @@ export default function Slider(props: IList) {
           ref={sliderRef}
           className={`keen-slider ${style.more__slider__in}`}
         >
-          {moreList.map((item: IVideo, idx: number) => (
-            <div
-              key={idx}
-              className={`keen-slider__slide ${style.more__slider__in__slide}`}
-            >
-              <Link href={`/blog/video/${item.id}`}>
-                <iframe
-                  className={style.more__slider__in__slide__video}
-                  src={item.videoUrl}
-                ></iframe>
-              </Link>
-              <div className={style.more__slider__in__slide__themes}>
-                {item.themes.map((topic: string, topicIdx: number) => (
-                  <span
-                    key={topicIdx}
-                    className={style.more__slider__in__slide__themes__item}
-                  >
-                    {topic}
-                  </span>
-                ))}
+          {moreList &&
+            moreList.map((item: IVideo, idx: number) => (
+              <div
+                key={idx}
+                className={`keen-slider__slide ${style.more__slider__in__slide}`}
+              >
+                <Link href={`/blog/video/${item.id}`}>
+                  <iframe
+                    className={style.more__slider__in__slide__video}
+                    src={item.videoUrl}
+                  ></iframe>
+                </Link>
+                <div className={style.more__slider__in__slide__themes}>
+                  {item.themes.map((topic: string, topicIdx: number) => (
+                    <span
+                      key={topicIdx}
+                      className={style.more__slider__in__slide__themes__item}
+                    >
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+                <Link href={`/blog/video/${item.id}`}>
+                  <h4 className={style.more__slider__in__slide__head}>
+                    {item.head}
+                  </h4>
+                </Link>
               </div>
-              <Link href={`/blog/video/${item.id}`}>
-                <h4 className={style.more__slider__in__slide__head}>
-                  {item.head}
-                </h4>
-              </Link>
-            </div>
-          ))}
+            ))}
         </div>
         {loaded && instanceRef.current && (
           <div className={style.more__slider__arrows}>
