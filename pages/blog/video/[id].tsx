@@ -4,10 +4,65 @@ import style from './Detail.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import videoList from './videoList';
 import Slider from './components/Slider/Slider';
 
 export default function VideoDetail() {
+  const videoList = [
+    {
+      id: 1,
+      videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
+      themes: ['Отношения', 'Семья'],
+      head: 'Как стать хорошим психологом?',
+    },
+    {
+      id: 2,
+      videoUrl: 'https://www.youtube.com/embed/FtpN8QI9PuA?si=ia8ZYfeKJ2bLHHR5',
+      themes: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+    {
+      id: 3,
+      videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
+      themes: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+    {
+      id: 4,
+      videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
+      themes: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+    {
+      id: 5,
+      videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
+      themes: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+    {
+      id: 6,
+      videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
+      themes: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+    {
+      id: 7,
+      videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
+      themes: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+    {
+      id: 8,
+      videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
+      themes: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+    {
+      id: 9,
+      videoUrl: 'https://youtube.com/embed/zpOULjyy-n8?rel=0',
+      themes: ['Отношения', 'Семья'],
+      head: 'На что обращать внимание при знакомстве?',
+    },
+  ];
   const router = useRouter();
   const [video, setVideo] = useState<any>();
   useEffect(() => {
