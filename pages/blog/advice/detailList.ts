@@ -1,4 +1,4 @@
-export const detailList = [
+const detailList = [
   {
     id: 1,
     themes: ['Психология', 'Терапия'],
@@ -39,3 +39,4 @@ export const detailList = [
     ],
   },
 ];
+export default detailList;
