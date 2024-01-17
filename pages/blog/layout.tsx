@@ -24,7 +24,7 @@ export default function BlogLayout({
     },
   ];
   const router = useRouter();
-  const specThemes = useSelector((state) => state.specThemes.specThemes);
+  const specThemes = useSelector((state: any) => state.specThemes.specThemes);
   useEffect(() => {
     console.log(specThemes);
   });
