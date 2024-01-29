@@ -4,39 +4,46 @@ import BlogLayout from '../layout';
 import style from './Answer.module.scss';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import type {
+  InferGetStaticPropsType,
+  GetStaticProps,
+  GetStaticPaths,
+} from 'next';
 
-export default function Answer() {
-  const ansList = [
-    {
-      id: 1,
-      themes: ['Психология', 'Терапия'],
-      quest: 'Как стать хорошим психологом?',
-      imgUrl: '/img/pages/blog/clinet.svg',
-      name: 'Ирина',
-      status: 'Клиент',
-      text: [
-        'Доброго времени суток!',
-        'Мне 33 года, образование техническое. Работа моя по своей сути скучна и однообразна, но вокруг находятся разные и интересные люди. Мне хочется разнообразить свою деятельность и в процессе работы наблюдать за людьми. Хочется стать хорошим психологом, уметь "считывать" страхи, опасения, намерения людей. Уметь от негатива защищаться, гасить его, негативную посылы людей трансформировать в позитивные и направлять в доброе русло.',
-        'Людям, несущим позитив хочется помогать, избавлять от страхов и неуверенности.И делать это не грубыми методиками "под одну гребенку", а с помощью простых дружеских бесед и прочими "незаметными" способами.',
-        'Вокруг ооочень много разной литературы, я просто теряюсь и не знаю с чего начать! Наверное с себя? Посоветуйте, пожалуйста, литературу? Простую, для новичков, без сложной профессиональной терминологии. Слышала что стать хорошим психологом можно читая и анализируя классическую литературу. Какие именно произведения? Буду благодарна за любые советы и рекомендации!',
-      ],
-      answer: {
-        imgUrl: '/img/pages/blog/batamirov.svg',
-        firstName: 'Игорь',
-        lastName: 'Батамиров',
-        status: 'Психолог',
-        text: 'Если говорить просто то: "учиться учиться и еще раз учиться". Но, если говорить более серьезно, то конечно чтение специальной литературы - да, это основы основ и от этого никуда не денешься. Общепризнанных классиков психологии и психиатрии, Ганнушкина, например. Но понимаете, необходимо просто чтение и просто изучение чем то дополнять. Поэтому важно быть наблюдательным. В жизни, вокруг нас самих, порой происходит масса занимательных с психологической точки зрения вещей, причем происходит как в жизни отдельных',
-      },
-    },
-  ];
+export const getStaticPaths = (async () => {
+  const res = await fetch('http://localhost:1337/api/questions');
+  const repo = await res.json();
+  return {
+    paths: [
+      {
+        params: {
+          id: `${repo.data[0]}`,
+        },
+      }, // See the "paths" section below
+    ],
+    fallback: true, // false or "blocking"
+  };
+}) satisfies GetStaticPaths;
+
+export const getStaticProps = (async (context) => {
+  const res = await fetch('http://localhost:1337/api/questions');
+  const repo = await res.json();
+  return { props: { repo } };
+}) satisfies GetStaticProps<{
+  repo: any;
+}>;
+
+export default function Answer({
+  repo,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
-  const [question, setQuestion] = useState<any>();
+  const [answer, setAnswer] = useState<any>();
   useEffect(() => {
-    setQuestion(ansList.find((item: any) => item.id == router.query.id));
-  });
-  useEffect(() => {
-    setQuestion(ansList.find((item: any) => item.id == router.query.id));
-  }, [router.query.id]);
+    const found = repo?.data.find((el: any) => el.id == router.query.id);
+    setAnswer(found);
+    console.log(found);
+    console.log(answer);
+  }, [repo]);
   return (
     <BlogLayout>
       <div className={style.ans}>
@@ -51,16 +58,17 @@ export default function Answer() {
           <span className={style.ans__back__text}>Назад</span>
         </Link>
         <div className={style.ans__themes}>
-          {question?.themes.map((item: string, idx: number) => (
+          {answer?.attributes.themes.map((item: string, idx: number) => (
             <span key={idx} className={style.ans__themes__item}>
               {item}
             </span>
           ))}
         </div>
-        <h2 className={style.ans__head}>{question?.quest}</h2>
+
+        <h2 className={style.ans__head}>{answer?.attributes.Title}</h2>
         <div className={style.ans__client}>
           <Image
-            src={question?.imgUrl}
+            src={'http://localhost:1337/uploads/Group_2991_ed21709b72.svg'}
             alt="client"
             width={64}
             height={64}
@@ -68,23 +76,25 @@ export default function Answer() {
           />
           <div className={style.ans__client__shortcut}>
             <p className={style.ans__client__shortcut__name}>
-              {question?.name}
+              {answer?.attributes.clientName}
             </p>
             <p className={style.ans__client__shortcut__status}>
-              {question?.status}
+              {answer?.attributes.clientStatus}
             </p>
           </div>
         </div>
         <div className={style.ans__question}>
-          {question?.text.map((item: string, idx: number) => (
-            <p key={idx} className={style.ans__question__text}>
-              {item}
-            </p>
-          ))}
+          {answer?.attributes.question.map((item: any, idx: number) => {
+            return item.children.map((childText: any, idChildText: number) => (
+              <p key={idx} className={style.ans__question__text}>
+                {childText.text}
+              </p>
+            ));
+          })}
         </div>
         <div className={style.ans__answer}>
           <Image
-            src={question?.answer.imgUrl}
+            src={answer?.attributes.answerImg}
             alt="ans"
             width={64}
             height={64}
@@ -93,17 +103,19 @@ export default function Answer() {
           <div className={style.ans__answer__info}>
             <div className={style.ans__answer__info__fio}>
               <span className={style.ans__answer__info__fio__name}>
-                {question?.answer.firstName}
-              </span>
-              <span className={style.ans__answer__info__fio__name}>
-                {question?.answer.lastName}
+                {answer?.attributes.answerFIO}
               </span>
             </div>
             <p className={style.ans__answer__info__status}>
-              {question?.answer.status}
+              {answer?.attributes.answerStatus}
             </p>
             <p className={style.ans__answer__info__text}>
-              {question?.answer.text}...{' '}
+              {answer?.attributes.answerText.map((item: any, idx: number) => {
+                return item.children.map(
+                  (childText: any, childId: number) => childText.text
+                );
+              })}
+              ...{' '}
               <button className={style.ans__answer__info__text__open}>
                 Развернуть
               </button>

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/blogThemesSlice';
-import { useEffect } from 'react';
 export default function BlogLayout({
   children,
 }: {
@@ -25,9 +24,9 @@ export default function BlogLayout({
   ];
   const router = useRouter();
   const specThemes = useSelector((state: any) => state.specThemes.specThemes);
-  useEffect(() => {
-    console.log(specThemes);
-  });
+  // useEffect(() => {
+  //   console.log(specThemes);
+  // });
   const dispatch = useDispatch();
   return (
     <div className={style.lay}>

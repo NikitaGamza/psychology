@@ -4,29 +4,13 @@ import Image from 'next/image';
 import { monthList } from './monthList';
 import Link from 'next/link';
 
-interface ICart {
-  id: number;
-  imgUrl: string;
-  imgUrlMobile: string;
-  lessonType: string;
-  specialization: Array<string>;
-  name: string;
-  startDate: string;
-  duralation: number;
-  weekDay: string;
-  time: string;
-  format: string;
-  address: string;
-  price: number;
-}
-
-export default function Cart(props: ICart) {
+export default function Cart(props: any) {
   const startDay = new Date(props.startDate);
   //startDay.getMonth().toLocaleString('ru-RU')
   return (
     <div className={style.cart}>
       <Image
-        src={props.imgUrl}
+        src={`http://localhost:1337${props.imgUrl}`}
         alt="pic"
         width={160}
         height={300}
@@ -38,9 +22,9 @@ export default function Cart(props: ICart) {
             <div className={style.cart__info__wrap__tags__item}>
               {props.lessonType}
             </div>
-            {props.specialization.map((item: string, idx: number) => (
-              <div className={style.cart__info__wrap__tags__item} key={idx}>
-                {item}
+            {props.specialization.map((item: any) => (
+              <div className={style.cart__info__wrap__tags__item} key={item.id}>
+                {item.attributes.themeName}
               </div>
             ))}
           </div>
@@ -73,7 +57,7 @@ export default function Cart(props: ICart) {
               className={style.cart__info__wrap__details__middle}
             />
             <p className={style.cart__info__wrap__details__item}>
-              {props.weekDay} в {props.time}
+              {props.weekDay} в {props.time.slice(0, -7)}
             </p>
             <Image
               src={'/img/icons/bullet/bullet-green.svg'}

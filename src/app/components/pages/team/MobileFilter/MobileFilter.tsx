@@ -6,17 +6,25 @@ import Methods from '../Parameters/components/Methods/Methods';
 import Experience from '../Parameters/components/Experience/Experience';
 import Cities from '../Parameters/components/Cities/Cities';
 import Format from '../Parameters/components/Format/Format';
+import Image from 'next/image';
 
 export default function MobileFilter({ setMobileFilt, mobileFilt }: any) {
   return (
     <div className={style.mob}>
       <div className={style.mob__head}>
-        <h1
+        <div
           className={style.mob__head__closer}
           onClick={() => setMobileFilt(!mobileFilt)}
         >
-          Фильтры
-        </h1>
+          <Image
+            src={'/img/icons/rest/cross.svg'}
+            alt="close"
+            width={24}
+            height={24}
+            className={style.mob__head__closer__cross}
+          />
+          <h1 className={style.mob__head__closer__text}>Фильтры</h1>
+        </div>
         <h1 className={style.mob__head__refresh}>Сбросить всё</h1>
       </div>
       <div className={style.mob__content}>

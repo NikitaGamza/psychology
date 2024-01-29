@@ -5,8 +5,46 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Slider from './components/Slider/Slider';
+import type {
+  InferGetStaticPropsType,
+  GetStaticProps,
+  GetStaticPaths,
+} from 'next';
 
-export default function VideoDetail() {
+export const getStaticPaths = (async () => {
+  const res = await fetch('http://localhost:1337/api/videos?populate=*');
+  const repo = await res.json();
+  return {
+    paths: [
+      {
+        params: {
+          id: `${repo.data[0]}`,
+        },
+      }, // See the "paths" section below
+    ],
+    fallback: true, // false or "blocking"
+  };
+}) satisfies GetStaticPaths;
+
+export const getStaticProps = (async (context) => {
+  const res = await fetch('http://localhost:1337/api/videos?populate=*');
+  const repo = await res.json();
+  return { props: { repo } };
+}) satisfies GetStaticProps<{
+  repo: any;
+}>;
+
+export default function VideoDetail({
+  repo,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  const router = useRouter();
+  const [video, setVideo] = useState<any>();
+  useEffect(() => {
+    const found = repo?.data.find((el: any) => el.id == router.query.id);
+    setVideo(found);
+    console.log(found);
+    console.log(video);
+  }, [repo]);
   const videoList = [
     {
       id: 1,
@@ -63,14 +101,6 @@ export default function VideoDetail() {
       head: 'На что обращать внимание при знакомстве?',
     },
   ];
-  const router = useRouter();
-  const [video, setVideo] = useState<any>();
-  useEffect(() => {
-    setVideo(videoList.find((item: any) => item.id == router.query.id));
-  });
-  useEffect(() => {
-    setVideo(videoList.find((item: any) => item.id == router.query.id));
-  }, [router.query.id]);
   return (
     <BlogLayout>
       <div className={style.det}>
@@ -84,13 +114,18 @@ export default function VideoDetail() {
           />
           <span className={style.det__back__text}>Назад</span>
         </Link>
-        <iframe className={style.det__video} src={video?.videoUrl}></iframe>
+        <iframe
+          className={style.det__video}
+          src={video?.attributes.videoLink}
+        ></iframe>
         <div className={style.det__info}>
-          <h3 className={style.det__info__head}>{video?.head}</h3>
+          <h3 className={style.det__info__head}>
+            {video?.attributes.videoName}
+          </h3>
           <div className={style.det__info__themes}>
-            {video?.themes.map((item: string, idx: number) => (
-              <span key={idx} className={style.det__info__themes__item}>
-                {item}
+            {video?.attributes.themes.data.map((item: any) => (
+              <span key={item.id} className={style.det__info__themes__item}>
+                {item.attributes.themeName}
               </span>
             ))}
           </div>

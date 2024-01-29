@@ -1,43 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from './List.module.scss';
 import { courseList } from './courseList';
 import Cart from './components/Cart/Cart';
 
-interface ICart {
-  id: number;
-  imgUrl: string;
-  imgUrlMobile: string;
-  lessonType: string;
-  specialization: Array<string>;
-  name: string;
-  startDate: string;
-  duralation: number;
-  weekDay: string;
-  time: string;
-  format: string;
-  address: string;
-  price: number;
-}
-
-export default function List() {
+export default function List({ posts }: any) {
+  useEffect(() => console.log(posts), [posts]);
   return (
     <div className={style.list}>
-      {courseList.map((item: ICart, idx: number) => (
+      {posts?.data.map((item: any) => (
+        // <h1>{item.attributes.courseName}</h1>
         <Cart
-          key={idx}
+          key={item.id}
           id={item.id}
-          imgUrl={item.imgUrl}
-          lessonType={item.lessonType}
-          specialization={item.specialization}
-          name={item.name}
-          startDate={item.startDate}
-          duralation={item.duralation}
-          weekDay={item.weekDay}
-          time={item.time}
-          format={item.format}
-          address={item.address}
-          price={item.price}
-          imgUrlMobile={item.imgUrlMobile}
+          imgUrl={item.attributes.imgMain.data.attributes.url}
+          lessonType={item.attributes.course_type.data.attributes.typeName}
+          specialization={item.attributes.themes.data}
+          name={item.attributes.courseName}
+          startDate={item.attributes.startDate}
+          duralation={item.attributes.duralation}
+          weekDay={item.attributes.weekDay}
+          time={item.attributes.time}
+          format={item.attributes.format.data.attributes.formatName}
+          address={item.attributes.address}
+          price={item.attributes.price}
+          imgUrlMobile={item.attributes.imgMobile.data.attributes.url}
         />
       ))}
       <button className={style.list__load}>Показать еще</button>

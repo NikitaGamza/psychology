@@ -6,8 +6,39 @@ import Link from 'next/link';
 import BlogLayout from '../layout';
 import Banner from './components/Banner/Banner';
 import Slider from './components/Slider/Slider';
+import Markdown from 'react-markdown';
+import type {
+  InferGetStaticPropsType,
+  GetStaticProps,
+  GetStaticPaths,
+} from 'next';
 
-export default function AdviceDetail() {
+export const getStaticPaths = (async () => {
+  const res = await fetch('http://localhost:1337/api/advices?populate=*');
+  const repo = await res.json();
+  return {
+    paths: [
+      {
+        params: {
+          id: `${repo.data[0]}`,
+        },
+      }, // See the "paths" section below
+    ],
+    fallback: true, // false or "blocking"
+  };
+}) satisfies GetStaticPaths;
+
+export const getStaticProps = (async (context) => {
+  const res = await fetch('http://localhost:1337/api/advices?populate=*');
+  const repo = await res.json();
+  return { props: { repo } };
+}) satisfies GetStaticProps<{
+  repo: any;
+}>;
+
+export default function AdviceDetail({
+  repo,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const moreList = [
     {
       id: 1,
@@ -28,58 +59,14 @@ export default function AdviceDetail() {
       head: 'На что обращать внимание при знакомстве?',
     },
   ];
-  const detailList = [
-    {
-      id: 1,
-      themes: ['Психология', 'Терапия'],
-      head: 'Как устроен психологический тренинг и что он дает?',
-      imgUrl: '/img/pages/blog/1.png',
-      answerer: {
-        imgUrl: '/img/pages/blog/batamirov.svg',
-        status: 'Психолог, психотерапевт',
-        firstName: 'Игорь',
-        lastName: 'Батамиров',
-      },
-      preview:
-        'В нашей стране необходимость участия в психологических группах стала осознаваться только недавно. Тренинг как способ психологической работы в советские времена практически не существовал, как не существовало и многого другого, без чего практически невозможно представить себе цивилизованного человека. Поэтому в современной российской практике он только начинает свое развитие.',
-      blocks: [
-        {
-          head: 'Как в России?',
-          text: [
-            'В нашей стране необходимость участия в психологических группах стала осознаваться только недавно. Тренинг как способ психологической работы в советские времена практически не существовал, как не существовало и многого другого, без чего практически невозможно представить себе цивилизованного человека. Поэтому в современной российской практике он только начинает свое развитие. ',
-            'К счастью, многие люди в нашей стране уже задумываются о работе над собственной личностью как необходимом, "гигиеническом" моменте современной сверхнасыщенной жизни. Участие в тренинге необходимо не для того, чтобы "вылечиться" от какой-нибудь "патологии", а чтобы оставаться в хорошем "психологическом тонусе", точно так же как занятия спортом позволяют сохранять тело здоровым.',
-          ],
-        },
-        {
-          head: 'Что дает тренинг?',
-          text: [
-            'Сила Тренинга заключается в понимании участниками тех процессов, к которым они приступают. Ясное и четкое понимание того, что Тренинг предлагает вызов сложившемуся субъективному видению мира, позволяет участнику, проходящему Тренинг, подготовиться к нему должным образом так, чтобы возможность создания новых результатов во время Тренинга и после его завершения имела бы практическую реализацию. Большинство из наших установок и интерпретаций, которыми мы пользуемся в жизни - это идеи и решения, которые мы принимали на протяжении путешествия по жизни. ',
-            'За прошедшее время мы собрали предостаточно свидетельств и доказательств в поддержку своей точке зрения на мир. Довольно скоро данное мировоззрение становится для нас реальностью подобной факту (подобно гравитации - чем-то, что просто есть и по поводу чего мы не в силах что-либо сделать). Таким образом, наши интерпретации начинают управлять нами. Мы начинаем видеть вещи, себя и жизнь так, как мы верим в это, полагая, что только так и возможно.',
-          ],
-        },
-        {
-          head: 'За счет чего происходят изменения?',
-          text: [
-            'В первую очередь, на человека влияет само участие в тренинге как особо организованном процессе, а также люди, являющиеся соучастниками этого процесса. Изменения возникают за счет взаимодействия с единомышленниками, целью которых тоже является работа над собой. Кроме того, развитие каждого участника и развитие группы в целом представляют собой взаимоподдерживающие и взаимовлияющие процессы, активизация одного с необходимостью вызывает другое. Безусловно, уровень взаимодействия с группой, сфера и уровень работы определяются каждым участником индивидуально. Готовность и желание участвовать в той или иной процедуре являются собственным выбором каждого человека. ',
-            'Еще одним условием изменений можно назвать особую атмосферу в группе. Групповая психологическая работа в качестве одного из первых условий выдвигает принципы психологического комфорта и безопасности. Для этого ведущий с самого начала работы тренинга предлагает каждому участнику реализовывать специальные принципы поведения на группе, способствующие ощущению принятия и доверия.',
-            'В тренинге ведущий предлагает участникам включиться в выполнение разных техник и упражнений. Основная цель таких процедур - помочь разобраться в собственных переживаниях и приобрести навыки эффективного преодоления трудностей. В процессе работы тренинга возможность изменений обеспечивается за счет психологических закономерностей, в числе которых получение обратной связи от ведущего и других участников, активизация личностной рефлексии, осознание ранее не знаемых особенностей. В результате приобретаются базовые психологические знания и навыки, которые потом могут быть активно применены и за пределами ситуации тренинга.',
-            'В тренинге реализуются принципы работы и техники, которые могут быть отнесены к гуманистическому направлению в психологии. Речь идет о таких направлениях как группы встреч, гештальт-подход, психодрама, арт-подход и др.',
-          ],
-        },
-      ],
-    },
-  ];
   const router = useRouter();
   const [detail, setDetail] = useState<any>();
   useEffect(() => {
-    setDetail(detailList.find((item: any) => item.id == router.query.id));
-  });
-  useEffect(() => {
-    console.log(router);
-  });
-  useEffect(() => {
-    setDetail(detailList.find((item: any) => item.id == router.query.id));
-  }, [router.query.id]);
+    const found = repo?.data.find((el: any) => el.id == router.query.id);
+    setDetail(found);
+    console.log(found);
+    console.log(detail);
+  }, [repo]);
   return (
     <BlogLayout>
       <div className={style.det}>
@@ -94,15 +81,17 @@ export default function AdviceDetail() {
           <span className={style.det__back__text}>Назад</span>
         </Link>
         <div className={style.det__themes}>
-          {detail?.themes.map((item: string, idx: number) => (
+          {detail?.attributes.themes.data.map((item: any, idx: number) => (
             <span key={idx} className={style.det__themes__item}>
-              {item}
+              {item.attributes.themeName}
             </span>
           ))}
         </div>
-        <h2 className={style.det__head}>{detail?.head}</h2>
+        <h2 className={style.det__head}>{detail?.attributes.title}</h2>
         <Image
-          src={detail?.imgUrl}
+          src={`http://localhost:1337/${detail?.attributes.adviceImg.data.attributes.url.slice(
+            1
+          )}`}
           alt="img"
           width={100}
           height={100}
@@ -110,7 +99,9 @@ export default function AdviceDetail() {
         />
         <div className={style.det__form}>
           <Image
-            src={detail?.answerer.imgUrl}
+            src={`http://localhost:1337/${detail?.attributes.authorImg.data.attributes.url.slice(
+              1
+            )}`}
             alt="img"
             width={64}
             height={64}
@@ -119,34 +110,16 @@ export default function AdviceDetail() {
           <div className={style.det__form__info}>
             <div className={style.det__form__info__fio}>
               <span className={style.det__form__info__fio__name}>
-                {detail?.answerer.firstName}
-              </span>
-              <span className={style.det__form__info__fio__name}>
-                {detail?.answerer.lastName}
+                {detail?.attributes.authorFIO}
               </span>
             </div>
             <p className={style.det__form__info__status}>
-              {detail?.answerer.status}
+              {detail?.attributes.authorStatus}
             </p>
           </div>
         </div>
-        <p className={style.det__preview}>{detail?.preview}</p>
         <div className={style.det__content}>
-          {detail?.blocks.map((block: any, idx: number) => (
-            <div key={idx} className={style.det__content__block}>
-              <h3 className={style.det__content__block__head}>{block.head}</h3>
-              <div className={style.det__content__block__text}>
-                {block.text.map((speach: string, idxText: number) => (
-                  <p
-                    key={idxText}
-                    className={style.det__content__block__text__speach}
-                  >
-                    {speach}
-                  </p>
-                ))}
-              </div>
-            </div>
-          ))}
+          <Markdown>{detail?.attributes.adviceText2}</Markdown>
         </div>
         <Banner />
         <Slider moreList={moreList} />

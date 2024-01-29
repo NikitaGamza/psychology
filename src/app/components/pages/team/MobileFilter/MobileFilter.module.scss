@@ -13,10 +13,18 @@
     justify-content: space-between;
     background-color: $green;
     &__closer {
-      color: $white;
-      font-size: 16px;
-      font-family: 'Gilroy-Bold';
-      line-height: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      &__cross {
+        color: $white;
+      }
+      &__text {
+        color: $white;
+        font-size: 16px;
+        font-family: 'Gilroy-Bold';
+        line-height: 24px;
+      }
     }
     &__refresh {
       color: $white;

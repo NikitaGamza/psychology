@@ -1,18 +1,18 @@
-import React from 'react';
-// import style from './Courses.module.scss';
-// import Main from '@/app/components/pages/courses/Main/Main';
-// import Filters from '@/app/components/pages/courses/Filters/Filters';
-// import Image from 'next/image';
-// import MobileFilter from '@/app/components/pages/courses/MobileFilter/MobileFilter';
+import React, { useEffect, useState } from 'react';
+import style from './Courses.module.scss';
+import Main from '@/app/components/pages/courses/Main/Main';
+import Filters from '@/app/components/pages/courses/Filters/Filters';
+import Image from 'next/image';
+import MobileFilter from '@/app/components/pages/courses/MobileFilter/MobileFilter';
 
-export default function Courses() {
-  // const [mobileFilt, setMobileFilt] = useState<boolean>(false);
+export default function Courses({ posts }: any) {
+  const [mobileFilt, setMobileFilt] = useState<boolean>(false);
   return (
-    <div>
+    <div className={style.course}>
       {/* {mobileFilt && (
         <MobileFilter setMobileFilt={setMobileFilt} mobileFilt={mobileFilt} />
       )} */}
-      {/* <div className="container">
+      <div className="container">
         <h2 className={style.course__head}>Курсы</h2>
         <div className={style.course__head_mob}>
           <h2 className={style.course__head_mob__title}>Курсы</h2>
@@ -24,11 +24,23 @@ export default function Courses() {
             onClick={() => setMobileFilt(!mobileFilt)}
           />
         </div>
-        <div className={style.course__content}> */}
-      {/* <Main /> */}
-      {/* <Filters /> */}
-      {/* </div>
-      </div> */}
+        <div className={style.course__content}>
+          <Main posts={posts} />
+          {/* <Filters /> */}
+        </div>
+      </div>
     </div>
   );
+}
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const res = await fetch('http://localhost:1337/api/courses?populate=*');
+  const posts = await res.json();
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }
