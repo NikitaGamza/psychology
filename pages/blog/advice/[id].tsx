@@ -13,63 +13,62 @@ import type {
   GetStaticPaths,
 } from 'next';
 
-export const getStaticPaths = (async () => {
-  const res = await fetch('http://localhost:1337/api/advices?populate=*');
-  const repo = await res.json();
-  return {
-    paths: [
-      {
-        params: {
-          id: `${repo.data[0]}`,
-        },
-      }, // See the "paths" section below
-    ],
-    fallback: true, // false or "blocking"
-  };
-}) satisfies GetStaticPaths;
+// export const getStaticPaths = (async () => {
+//   const res = await fetch('http://localhost:1337/api/advices?populate=*');
+//   const repo = await res.json();
+//   return {
+//     paths: [
+//       {
+//         params: {
+//           id: `${repo.data[0]}`,
+//         },
+//       }, // See the "paths" section below
+//     ],
+//     fallback: true, // false or "blocking"
+//   };
+// }) satisfies GetStaticPaths;
 
-export const getStaticProps = (async (context) => {
-  const res = await fetch('http://localhost:1337/api/advices?populate=*');
-  const repo = await res.json();
-  return { props: { repo } };
-}) satisfies GetStaticProps<{
-  repo: any;
-}>;
+// export const getStaticProps = (async (context) => {
+//   const res = await fetch('http://localhost:1337/api/advices?populate=*');
+//   const repo = await res.json();
+//   return { props: { repo } };
+// }) satisfies GetStaticProps<{
+//   repo: any;
+// }>;
 
-export default function AdviceDetail({
-  repo,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-  const moreList = [
-    {
-      id: 1,
-      imgUrl: '/img/pages/blog/1.png',
-      themes: ['Отношения', 'Семья'],
-      head: 'На что обращать внимание при знакомстве?',
-    },
-    {
-      id: 2,
-      imgUrl: '/img/pages/blog/3.png',
-      themes: ['Отношения', 'Семья'],
-      head: 'На что обращать внимание при знакомстве?',
-    },
-    {
-      id: 3,
-      imgUrl: '/img/pages/blog/4.png',
-      themes: ['Отношения', 'Семья'],
-      head: 'На что обращать внимание при знакомстве?',
-    },
-  ];
-  const router = useRouter();
-  const [detail, setDetail] = useState<any>();
-  useEffect(() => {
-    const found = repo?.data.find((el: any) => el.id == router.query.id);
-    setDetail(found);
-    console.log(found);
-    console.log(detail);
-  }, [repo]);
+export default function AdviceDetail() {
+  // const moreList = [
+  //   {
+  //     id: 1,
+  //     imgUrl: '/img/pages/blog/1.png',
+  //     themes: ['Отношения', 'Семья'],
+  //     head: 'На что обращать внимание при знакомстве?',
+  //   },
+  //   {
+  //     id: 2,
+  //     imgUrl: '/img/pages/blog/3.png',
+  //     themes: ['Отношения', 'Семья'],
+  //     head: 'На что обращать внимание при знакомстве?',
+  //   },
+  //   {
+  //     id: 3,
+  //     imgUrl: '/img/pages/blog/4.png',
+  //     themes: ['Отношения', 'Семья'],
+  //     head: 'На что обращать внимание при знакомстве?',
+  //   },
+  // ];
+  // const router = useRouter();
+  // const [detail, setDetail] = useState<any>();
+  // useEffect(() => {
+  //   const found = repo?.data.find((el: any) => el.id == router.query.id);
+  //   setDetail(found);
+  //   console.log(found);
+  //   console.log(detail);
+  // }, [repo]);
   return (
     <BlogLayout>
-      <div className={style.det}>
+      <h1>hi</h1>
+      {/* <div className={style.det}>
         <Link href={'/blog/advice'} className={style.det__back}>
           <Image
             src={'/img/icons/arrows/arrow-left-green.svg'}
@@ -123,7 +122,7 @@ export default function AdviceDetail({
         </div>
         <Banner />
         <Slider moreList={moreList} />
-      </div>
+      </div> */}
     </BlogLayout>
   );
 }

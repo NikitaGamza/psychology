@@ -9,7 +9,7 @@ export default function Questions({ posts }: any) {
     <BlogLayout>
       <div className={style.que}>
         <div className={style.grid}>
-          {posts.data.map((item: any, idx: number) => (
+          {/* {posts.data.map((item: any, idx: number) => (
             <Link
               className={style.grid__item}
               key={idx}
@@ -30,23 +30,24 @@ export default function Questions({ posts }: any) {
               <h4 className={style.grid__item__head}>
                 {item.attributes.Title}
               </h4>
+              
             </Link>
-          ))}
+          ))} */}
         </div>
         <button className={style.que__more}>Показать еще</button>
       </div>
     </BlogLayout>
   );
 }
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const res = await fetch('http://localhost:1337/api/questions');
-  const posts = await res.json();
+// export async function getStaticProps() {
+//   // Call an external API endpoint to get posts.
+//   // You can use any data fetching library
+//   const res = await fetch('http://localhost:1337/api/questions');
+//   const posts = await res.json();
 
-  return {
-    props: {
-      posts,
-    },
-  };
-}
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// }

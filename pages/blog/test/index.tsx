@@ -17,7 +17,7 @@ export default function Test({ posts }: any) {
       </Head>
       <div className={style.test}>
         <h1>hi</h1>
-        {posts.data.map((item: any, idx: number) => (
+        {/* {posts.data.map((item: any, idx: number) => (
           <Link
             className={style.test__link}
             key={idx}
@@ -37,20 +37,20 @@ export default function Test({ posts }: any) {
               )}
             </p>
           </Link>
-        ))}
+        ))} */}
       </div>
     </BlogLayout>
   );
 }
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const res = await fetch('http://localhost:1337/api/questions');
-  const posts = await res.json();
+// export async function getStaticProps() {
+//   // Call an external API endpoint to get posts.
+//   // You can use any data fetching library
+//   const res = await fetch('http://localhost:1337/api/questions');
+//   const posts = await res.json();
 
-  return {
-    props: {
-      posts,
-    },
-  };
-}
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// }

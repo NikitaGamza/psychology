@@ -10,43 +10,42 @@ import type {
   GetStaticPaths,
 } from 'next';
 
-export const getStaticPaths = (async () => {
-  const res = await fetch('http://localhost:1337/api/questions');
-  const repo = await res.json();
-  return {
-    paths: [
-      {
-        params: {
-          id: `${repo.data[0]}`,
-        },
-      }, // See the "paths" section below
-    ],
-    fallback: true, // false or "blocking"
-  };
-}) satisfies GetStaticPaths;
+// export const getStaticPaths = (async () => {
+//   const res = await fetch('http://localhost:1337/api/questions');
+//   const repo = await res.json();
+//   return {
+//     paths: [
+//       {
+//         params: {
+//           id: `${repo.data[0]}`,
+//         },
+//       }, // See the "paths" section below
+//     ],
+//     fallback: true, // false or "blocking"
+//   };
+// }) satisfies GetStaticPaths;
 
-export const getStaticProps = (async (context) => {
-  const res = await fetch('http://localhost:1337/api/questions');
-  const repo = await res.json();
-  return { props: { repo } };
-}) satisfies GetStaticProps<{
-  repo: any;
-}>;
+// export const getStaticProps = (async (context) => {
+//   const res = await fetch('http://localhost:1337/api/questions');
+//   const repo = await res.json();
+//   return { props: { repo } };
+// }) satisfies GetStaticProps<{
+//   repo: any;
+// }>;
 
-export default function Answer({
-  repo,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-  const router = useRouter();
-  const [answer, setAnswer] = useState<any>();
-  useEffect(() => {
-    const found = repo?.data.find((el: any) => el.id == router.query.id);
-    setAnswer(found);
-    console.log(found);
-    console.log(answer);
-  }, [repo]);
+export default function Answer() {
+  // const router = useRouter();
+  // const [answer, setAnswer] = useState<any>();
+  // useEffect(() => {
+  //   const found = repo?.data.find((el: any) => el.id == router.query.id);
+  //   setAnswer(found);
+  //   console.log(found);
+  //   console.log(answer);
+  // }, [repo]);
   return (
     <BlogLayout>
-      <div className={style.ans}>
+      <h1>hi</h1>
+      {/* <div className={style.ans}>
         <Link href={'/blog/questions'} className={style.ans__back}>
           <Image
             src={'/img/icons/arrows/arrow-left-green.svg'}
@@ -122,7 +121,7 @@ export default function Answer({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </BlogLayout>
   );
 }

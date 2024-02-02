@@ -8,7 +8,7 @@ export default function Video({ posts }: any) {
     <BlogLayout>
       <div className={style.video}>
         <div className={style.video__content}>
-          {posts?.data.map((item: any) => (
+          {/* {posts?.data.map((item: any) => (
             <div key={item.id} className={style.video__content__item}>
               <Link href={`/blog/video/${item.id}`}>
                 <iframe
@@ -32,22 +32,22 @@ export default function Video({ posts }: any) {
                 </h5>
               </Link>
             </div>
-          ))}
+          ))} */}
         </div>
         <button className={style.video__more}>Показать еще</button>
       </div>
     </BlogLayout>
   );
 }
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const res = await fetch('http://localhost:1337/api/videos?populate=*');
-  const posts = await res.json();
+// export async function getStaticProps() {
+//   // Call an external API endpoint to get posts.
+//   // You can use any data fetching library
+//   const res = await fetch('http://localhost:1337/api/videos?populate=*');
+//   const posts = await res.json();
 
-  return {
-    props: {
-      posts,
-    },
-  };
-}
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// }

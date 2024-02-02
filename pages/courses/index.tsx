@@ -25,22 +25,22 @@ export default function Courses({ posts }: any) {
           />
         </div>
         <div className={style.course__content}>
-          <Main posts={posts} />
+          {/* <Main posts={posts} /> */}
           {/* <Filters /> */}
         </div>
       </div>
     </div>
   );
 }
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const res = await fetch('http://localhost:1337/api/courses?populate=*');
-  const posts = await res.json();
+// export async function getStaticProps() {
+//   // Call an external API endpoint to get posts.
+//   // You can use any data fetching library
+//   const res = await fetch('http://localhost:1337/api/courses?populate=*');
+//   const posts = await res.json();
 
-  return {
-    props: {
-      posts,
-    },
-  };
-}
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// }

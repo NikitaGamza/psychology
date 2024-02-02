@@ -9,7 +9,7 @@ export default function Advice({ posts }: any) {
     <BlogLayout>
       <div className={style.ad}>
         <div className={style.ad__content}>
-          {posts.data.map((item: any) => (
+          {/* {posts.data.map((item: any) => (
             <div key={item.id} className={style.ad__content__item}>
               <Image
                 src={`http://localhost:1337${item.attributes.adviceImg.data.attributes.url}`}
@@ -35,22 +35,22 @@ export default function Advice({ posts }: any) {
                 {item.attributes.title}
               </Link>
             </div>
-          ))}
+          ))} */}
         </div>
         <button className={style.ad__more}>Показать еще</button>
       </div>
     </BlogLayout>
   );
 }
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const res = await fetch('http://localhost:1337/api/advices?populate=*');
-  const posts = await res.json();
+// export async function getStaticProps() {
+//   // Call an external API endpoint to get posts.
+//   // You can use any data fetching library
+//   const res = await fetch('http://localhost:1337/api/advices?populate=*');
+//   const posts = await res.json();
 
-  return {
-    props: {
-      posts,
-    },
-  };
-}
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// }
