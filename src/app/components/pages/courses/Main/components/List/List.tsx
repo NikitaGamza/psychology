@@ -22,7 +22,7 @@ export default function List({ posts }: any) {
           time={item.attributes.time}
           format={item.attributes.format.data.attributes.formatName}
           address={item.attributes.address}
-          price={item.attributes.price}
+          price={item.attributes.priceFull}
           imgUrlMobile={item.attributes.imgMobile.data.attributes.url}
         />
       ))}

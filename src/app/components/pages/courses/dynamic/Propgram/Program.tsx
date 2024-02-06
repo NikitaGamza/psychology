@@ -11,19 +11,19 @@ interface IProgram {
   programList: Array<IPart>;
 }
 
-export default function Program(props: IProgram) {
-  const { duralation, programList } = props;
+export default function Program(props: any) {
+  const { duralation, program } = props;
   return (
     <div className={style.prog}>
       <h2 className={style.prog__head}>Програма курса</h2>
       <h6 className={style.prog__duralation}>{duralation} месяца</h6>
       <div className={style.prog__content}>
-        {programList.map((item: IPart, idx: number) => (
+        {program.map((item: any) => (
           <Part
-            key={idx}
-            index={idx}
-            head={item.head}
-            description={item.description}
+            key={item.id}
+            index={item.id}
+            programTitle={item.programTitle}
+            programDescription={item.programDescription}
           />
         ))}
       </div>

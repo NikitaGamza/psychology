@@ -149,13 +149,18 @@ export default function Popular() {
       <div className={`navigation-wrapper ${style.slider}`}>
         <div ref={sliderRef} className={`keen-slider ${style.slider__wrap}`}>
           {psychoList.map((item: any, index: number) => (
-            <Psychologist
+            <div
               key={index}
-              imageUrl={item.imageUrl}
-              firstName={item.firstName}
-              lastName={item.lastName}
-              fields={item.fields}
-            />
+              className={`keen-slider__slide ${style.slider__slide}`}
+            >
+              <Psychologist
+                key={index}
+                imageUrl={item.imageUrl}
+                firstName={item.firstName}
+                lastName={item.lastName}
+                fields={item.fields}
+              />
+            </div>
           ))}
         </div>
         {loaded && instanceRef.current && (
@@ -180,7 +185,7 @@ export default function Popular() {
           </div>
         )}
       </div>
-      {/* {loaded && instanceRef.current && (
+      {loaded && instanceRef.current && (
         <div className={style.dots}>
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
@@ -199,7 +204,7 @@ export default function Popular() {
             );
           })}
         </div>
-      )} */}
+      )}
     </div>
   );
 }

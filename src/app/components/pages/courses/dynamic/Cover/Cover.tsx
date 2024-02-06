@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from './Cover.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 
 interface ICover {
-  imgUrl: string;
-  imgUrlMob: string;
-  lessonType: string;
-  specialization: Array<string>;
-  name: string;
-  description: string;
+  imgMain: string;
+  imgMobile: string;
+  course_type: string;
+  themes: Array<any>;
+  courseName: string;
+  courseDescription: string;
   format: string;
   startDate: string;
   duralation: number;
@@ -18,24 +18,28 @@ interface ICover {
   address?: string;
 }
 
-export default function Cover(props: ICover) {
+export default function Cover(props: any) {
+  useEffect(() => console.log(props));
   return (
     <div className={style.cover}>
       <div className={style.cover__main}>
         <div className={style.cover__main__info}>
           <div className={style.cover__main__info__tags}>
-            {props.specialization.map((item: string, idx: number) => (
-              <span key={idx} className={style.cover__main__info__tags__item}>
-                {item}
+            {props.themes.map((item: any) => (
+              <span
+                key={item.id}
+                className={style.cover__main__info__tags__item}
+              >
+                {item.attributes.themeName}
               </span>
             ))}
           </div>
-          <h1 className={style.cover__main__info__head}>{props.name}</h1>
+          <h1 className={style.cover__main__info__head}>{props.courseName}</h1>
           <p className={style.cover__main__info__description}>
-            {props.description}
+            {props.courseDescription}
           </p>
           <Image
-            src={props.imgUrlMob}
+            src={`http://localhost:1337/${props.imgMobile?.slice(1)}`}
             alt="img"
             width={328}
             height={184}
@@ -46,7 +50,7 @@ export default function Cover(props: ICover) {
           </Link>
         </div>
         <Image
-          src={props.imgUrl}
+          src={`http://localhost:1337/${props.imgMain?.slice(1)}`}
           alt="img"
           width={420}
           height={640}

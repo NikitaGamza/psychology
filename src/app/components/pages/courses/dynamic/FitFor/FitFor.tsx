@@ -3,7 +3,7 @@ import style from './FitFor.module.scss';
 import Image from 'next/image';
 
 interface IFit {
-  imgUrl: string;
+  img: string;
   head: string;
   text: string;
 }
@@ -18,17 +18,23 @@ export default function FitFor(props: IList) {
       <h2 className={style.for__head}>Кому подойдёт этот курс</h2>
       <div className={style.for__content}>
         {fitFor &&
-          fitFor.map((item: IFit, idx: number) => (
-            <div key={idx} className={style.for__content__item}>
+          fitFor.map((item: any) => (
+            <div key={item.id} className={style.for__content__item}>
               <Image
-                src={item.imgUrl}
+                src={`http://localhost:1337/${item.attributes.img.data.attributes.url.slice(
+                  1
+                )}`}
                 alt="img"
                 width={240}
                 height={240}
                 className={style.for__content__item__img}
               />
-              <h4 className={style.for__content__item__head}>{item.head}</h4>
-              <p className={style.for__content__item__text}>{item.text}</p>
+              <h4 className={style.for__content__item__head}>
+                {item.attributes.head}
+              </h4>
+              <p className={style.for__content__item__text}>
+                {item.attributes.text}
+              </p>
             </div>
           ))}
       </div>

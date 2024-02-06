@@ -1,8 +1,9 @@
+import { useEffect, useLayoutEffect } from 'react';
 import style from './Education.module.scss';
 interface IEdu {
   university: string;
-  title: string;
-  occupation?: string;
+  degree: string;
+  field?: string;
   year: number;
 }
 export default function Education({ props }: any) {
@@ -12,8 +13,8 @@ export default function Education({ props }: any) {
       <ul className={style.edu__list}>
         {props.map((item: IEdu, idx: number) => (
           <li key={idx} className={style.edu__list__item}>
-            {item.university} • {item.title} •{' '}
-            {item.occupation && `${item.occupation} • `} {item.year}
+            {item.university} • {item.degree} •{' '}
+            {item.field && `${item.field} • `} {item.year}
           </li>
         ))}
       </ul>

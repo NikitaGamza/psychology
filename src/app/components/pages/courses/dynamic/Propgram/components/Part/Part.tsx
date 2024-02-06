@@ -8,8 +8,8 @@ interface IPart {
   description: string;
 }
 
-export default function Part(props: IPart) {
-  const { index, head, description } = props;
+export default function Part(props: any) {
+  const { index, programTitle, programDescription } = props;
 
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
@@ -18,8 +18,8 @@ export default function Part(props: IPart) {
       <div className={style.part__head}>
         <h2 className={style.part__head__title}>
           {' '}
-          <span className={style.part__head__title_idx}>{index + 1}.</span>{' '}
-          {head}
+          <span className={style.part__head__title_idx}>{index}.</span>{' '}
+          {programTitle}
         </h2>
         <Image
           src={
@@ -39,7 +39,7 @@ export default function Part(props: IPart) {
           isVisible ? style.part__description : style.part__description_none
         }
       >
-        {description}
+        {programDescription}
       </p>
     </div>
   );

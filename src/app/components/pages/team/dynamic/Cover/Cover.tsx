@@ -5,37 +5,51 @@ import Link from 'next/link';
 
 export default function Cover(props: any) {
   const {
-    imageUrl,
+    img,
     firstName,
     lastName,
     fields,
     feedbacks,
-    experience,
-    age,
+    startWork,
+    dateBirth,
     sex,
     isMarried,
     city,
     address,
     metro,
     links,
-  } = props.props;
+  } = props.props.data.attributes;
   const marriedResult =
     (sex && isMarried && 'Женат') ||
     (sex && !isMarried && 'Не женат') ||
     (!sex && isMarried && 'Замужем') ||
     'Не замужем';
+  function experience() {
+    const income: any = new Date(startWork);
+    const current: any = new Date();
+    const count = current - income;
+    const res = new Date(count);
+    return res.getFullYear() - 1970;
+  }
+  function age() {
+    const birth: any = new Date(dateBirth);
+    const current: any = new Date();
+    const count = current - birth;
+    const res = new Date(count);
+    return res.getFullYear() - 1970;
+  }
   return (
     <div className={style.cover}>
       <div className={style.cover__wrap}>
         <Image
-          src={imageUrl}
-          alt={imageUrl}
+          src={`http://localhost:1337/${img.data.attributes.url?.slice(1)}`}
+          alt={img.data.attributes.url}
           width={220}
           height={220}
           className={style.cover__wrap__img}
         />
         <div className={style.cover__wrap__contact}>
-          {links.youtube && (
+          {/* {links.youtube && (
             <Link href={links.youtube}>
               <Image
                 src={'/img/pages/team/yt.svg'}
@@ -54,7 +68,7 @@ export default function Cover(props: any) {
                 height={32}
               />
             </Link>
-          )}
+          )} */}
         </div>
       </div>
       <div className={style.cover__info}>
@@ -64,9 +78,9 @@ export default function Cover(props: any) {
           </h4>
           <div>
             <div className={style.cover__info__fields}>
-              {fields.map((item: string, idx: number) => (
-                <span key={idx} className={style.cover__info__fields__item}>
-                  {item}{' '}
+              {fields.data.map((item: any) => (
+                <span key={item.id} className={style.cover__info__fields__item}>
+                  {item.attributes.name}{' '}
                 </span>
               ))}
               <span className={style.cover__info__fields__item}>
@@ -75,11 +89,11 @@ export default function Cover(props: any) {
             </div>
             <div className={style.cover__info__params}>
               <span className={style.cover__info__params__item}>
-                Стаж {experience} лет •{' '}
+                Стаж {experience()} лет •{' '}
               </span>
               <span className={style.cover__info__params__item}>
                 {' '}
-                {age} лет •{' '}
+                {age()} лет •{' '}
               </span>
               <span className={style.cover__info__params__item}>
                 {' '}
@@ -88,7 +102,9 @@ export default function Cover(props: any) {
             </div>
           </div>
           <div>
-            <p className={style.cover__info__city}>{city} </p>
+            <p className={style.cover__info__city}>
+              {city.data.attributes.name}{' '}
+            </p>
             <div className={style.cover__info__location}>
               <p className={style.cover__info__location__address}>{address} </p>
               {metro && (
@@ -97,7 +113,7 @@ export default function Cover(props: any) {
             </div>
           </div>
         </div>
-        <div className={style.cover__wrap__contact_mobile}>
+        {/* <div className={style.cover__wrap__contact_mobile}>
           {links.youtube && (
             <Link href={links.youtube}>
               <Image
@@ -118,7 +134,7 @@ export default function Cover(props: any) {
               />
             </Link>
           )}
-        </div>
+        </div> */}
         <div className={style.cover__info__btns}>
           <Link href={'#'} className={style.cover__info__btns__rec}>
             Записаться

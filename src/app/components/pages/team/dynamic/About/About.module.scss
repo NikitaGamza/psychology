@@ -25,6 +25,9 @@
       }
     }
     &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;

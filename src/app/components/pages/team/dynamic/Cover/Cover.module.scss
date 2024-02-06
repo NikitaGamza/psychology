@@ -8,6 +8,12 @@
     flex-direction: column;
     gap: 24px;
     align-items: center;
+    &__img {
+      width: 220px;
+      height: 220px;
+      border-radius: 110px;
+      object-fit: cover;
+    }
     &__contact {
       display: flex;
       gap: 8px;

@@ -35,7 +35,14 @@ export default function Diploma({ props }: any) {
     breakpoints: {
       '(max-width: 844px)': {
         slides: {
+          perView: 2,
+          spacing: 10,
+        },
+      },
+      '(max-width: 600px)': {
+        slides: {
           perView: 1,
+          spacing: 10,
         },
       },
     },
@@ -53,15 +60,21 @@ export default function Diploma({ props }: any) {
               ref={sliderRef}
               className={`keen-slider ${style.dipl__content__slider__wrap}`}
             >
-              {props.map((item: string, idx: number) => (
-                <Image
-                  src={item}
-                  alt={item}
-                  key={idx}
-                  width={394}
-                  height={285}
+              {props.map((item: any) => (
+                <div
+                  key={item.id}
                   className={`keen-slider__slide ${style.dipl__content__slider__wrap__slide}`}
-                />
+                >
+                  <Image
+                    src={`http://localhost:1337/${item.attributes.url.slice(
+                      1
+                    )}`}
+                    alt={item.attributes.url}
+                    width={394}
+                    height={285}
+                    className={style.dipl__content__slider__wrap__slide__img}
+                  />
+                </div>
               ))}
             </div>
             {loaded && instanceRef.current && (
@@ -85,7 +98,7 @@ export default function Diploma({ props }: any) {
               </div>
             )}
           </div>
-          {/* {loaded && instanceRef.current && (
+          {loaded && instanceRef.current && (
             <div className={style.dots}>
               {[
                 ...Array(
@@ -108,7 +121,7 @@ export default function Diploma({ props }: any) {
                 );
               })}
             </div>
-          )} */}
+          )}
         </>
       </div>
     </div>

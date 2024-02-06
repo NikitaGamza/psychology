@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
 import style from './About.module.scss';
 import Image from 'next/image';
+import Markdown from 'react-markdown';
 
-export default function About({ props }: any) {
-  const { quote, text } = props;
-  useEffect(() => {
-    console.log(props);
-  });
+export default function About(props: any) {
+  const { aboutQuote, aboutText } = props;
   return (
     <div className={style.about}>
       <h5 className={style.about__head}>О себе</h5>
@@ -19,9 +17,15 @@ export default function About({ props }: any) {
             height={30}
             className={style.about__content__quote__img}
           />
-          <span className={style.about__content__quote__text}>{quote}</span>
+          <span className={style.about__content__quote__text}>
+            {aboutQuote}
+          </span>
         </div>
-        <p className={style.about__content__text}>{text}</p>
+        <div className={style.about__content__text}>
+          <Markdown>{aboutText}</Markdown>
+        </div>
+
+        {/* <p className={style.about__content__text}>{aboutText}</p> */}
       </div>
     </div>
   );

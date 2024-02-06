@@ -7,6 +7,16 @@ import MobileFilter from '@/app/components/pages/courses/MobileFilter/MobileFilt
 
 export default function Courses({ posts }: any) {
   const [mobileFilt, setMobileFilt] = useState<boolean>(false);
+  const [courseList, setCourseList] = useState<any>();
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(`http://localhost:1337/api/courses?populate=*`);
+      const repo = await res.json();
+      await setCourseList(repo);
+      console.log(courseList);
+    }
+    hiData();
+  }, []);
   return (
     <div className={style.course}>
       {/* {mobileFilt && (
@@ -25,7 +35,7 @@ export default function Courses({ posts }: any) {
           />
         </div>
         <div className={style.course__content}>
-          {/* <Main posts={posts} /> */}
+          <Main posts={courseList} />
           {/* <Filters /> */}
         </div>
       </div>
