@@ -12,10 +12,7 @@ function Arrow(props: {
 }) {
   const disabeld = props.disabled ? ' arrow--disabled' : '';
   return (
-    <span
-      onClick={props.onClick}
-      className={`${style.arrow} ${!disabeld && style.arrow_next}`}
-    >
+    <span onClick={props.onClick} className={style.arrow}>
       {props.left && '←'}
       {!props.left && '→'}
     </span>

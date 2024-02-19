@@ -13,20 +13,23 @@ export default function Header() {
         <MobileLinks setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} />
       )}
       <div className={style.header__container}>
-        <Image
-          src={'/logo-head.svg'}
-          alt="logo"
-          width={200}
-          height={56}
-          className={style.header__logoimg}
-        />
-        <Image
-          src={'/logo-head-mob.svg'}
-          alt="logo"
-          width={200}
-          height={56}
-          className={style.header__logoimg_mob}
-        />
+        <Link href={'/'}>
+          <Image
+            src={'/logo-head.svg'}
+            alt="logo"
+            width={200}
+            height={56}
+            className={style.header__logoimg}
+          />
+          <Image
+            src={'/logo-head-mob.svg'}
+            alt="logo"
+            width={200}
+            height={56}
+            className={style.header__logoimg_mob}
+          />
+        </Link>
+
         <nav className={style.header__nav}>
           {navigation.map((item: any, idx: number) => (
             <Link

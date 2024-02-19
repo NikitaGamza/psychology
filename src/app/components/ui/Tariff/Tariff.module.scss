@@ -12,6 +12,12 @@ $white: #fff;
 
     background-repeat: no-repeat;
     background-position: 110% 115%;
+
+    &:hover {
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      transform: scale(1.05);
+    }
     // overflow: hidden;
     &_1 {
       background-image: url('/img/pages/ui/Tariff/elgreen.svg'),
@@ -53,7 +59,7 @@ $white: #fff;
         font-weight: 700;
         line-height: 36px;
         margin-bottom: 52px;
-        font-family: Gilroy-ExtraBold;
+        font-family: 'Gilroy-Bold';
         &:last-child {
           margin-bottom: 0;
         }

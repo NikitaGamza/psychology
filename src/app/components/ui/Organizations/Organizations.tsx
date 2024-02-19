@@ -10,10 +10,7 @@ function Arrow(props: {
 }) {
   const disabeld = props.disabled ? ' arrow--disabled' : '';
   return (
-    <span
-      onClick={props.onClick}
-      className={`${style.arrow} ${!disabeld && style.arrow_next}`}
-    >
+    <span onClick={props.onClick} className={style.arrow}>
       {props.left && '←'}
       {!props.left && '→'}
     </span>
@@ -29,7 +26,7 @@ export default function Organizations() {
     },
     slides: {
       perView: 4,
-      spacing: 24,
+      spacing: 20,
     },
     breakpoints: {
       '(max-width: 1232px)': {
@@ -96,7 +93,12 @@ export default function Organizations() {
                 className={`keen-slider ${style.org__slider__wrap}`}
               >
                 {orgList.map((item: any, idx: number) => (
-                  <Cart key={idx} item={item} />
+                  <div
+                    className={`keen-slider__slide ${style.org__slider__wrap__item}`}
+                    key={idx}
+                  >
+                    <Cart item={item} />
+                  </div>
                 ))}
               </div>
               {loaded && instanceRef.current && (
@@ -122,7 +124,7 @@ export default function Organizations() {
             </div>
             {loaded && instanceRef.current && (
               <div className={style.dots}>
-                {/* {[
+                {[
                   ...Array(
                     instanceRef.current.track.details.slides.length
                   ).keys(),
@@ -141,7 +143,7 @@ export default function Organizations() {
                       }
                     ></button>
                   );
-                })} */}
+                })}
               </div>
             )}
           </>

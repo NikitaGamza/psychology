@@ -32,6 +32,13 @@
 
         font-size: 20px;
         font-weight: 700;
+
+        cursor: pointer;
+        &:hover {
+          border: 1px solid $white;
+          background-color: $green;
+          color: $white;
+        }
         &_mobile {
           display: none;
         }

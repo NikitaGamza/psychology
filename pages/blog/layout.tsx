@@ -68,7 +68,6 @@ export default function BlogLayout({
             <button className={style.lay__order__btn}>
               По дате публикации
             </button>
-            <button className={style.lay__order__btn}>По теме</button>
           </div>
           <div className={style.lay__themes}>
             {specThemes.map((item: any, idx: number) => (

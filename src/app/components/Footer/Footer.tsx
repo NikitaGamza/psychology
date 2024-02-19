@@ -55,10 +55,7 @@ export default function Footer() {
               <h6 className={style.footer__content__feedback__form__head}>
                 Подпишитесь, чтобы не пропустить скидки и акции
               </h6>
-              <form
-                action=""
-                className={style.footer__content__feedback__form__display}
-              >
+              <div className={style.footer__content__feedback__form__display}>
                 <input
                   type="email"
                   name=""
@@ -80,7 +77,7 @@ export default function Footer() {
                     alt="send"
                   />
                 </button>
-              </form>
+              </div>
               <p className={style.footer__content__feedback__form__privacy}>
                 Подписываясь, я соглашаюсь на обработку{' '}
                 <Link

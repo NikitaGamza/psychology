@@ -1,12 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, Dispatch, useEffect } from 'react';
 import style from './Questions.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import Modal from './components/Modal/Modal';
+
+function submitForm(
+  name: string,
+  mobile: string,
+  checker: boolean,
+  setNameErr: Dispatch<boolean>,
+  setMobileErr: Dispatch<boolean>,
+  setCheckErr: Dispatch<boolean>,
+  setModal: Dispatch<boolean>
+) {
+  if (name === '') {
+    setNameErr(true);
+  } else {
+    setNameErr(false);
+  }
+  if (mobile === '') {
+    setMobileErr(true);
+  } else {
+    setMobileErr(false);
+  }
+  if (checker === false) {
+    setCheckErr(true);
+  } else {
+    setCheckErr(false);
+  }
+  if (name !== '' && mobile !== '' && checker) {
+    setModal(true);
+  }
+}
 
 export default function Questions() {
-  const [checker, setChecker] = useState(false);
+  const [checker, setChecker] = useState<boolean>(false);
+  const [checkErr, setCheckErr] = useState<boolean>(false);
+  const [name, setName] = useState<string>('');
+  const [nameErr, setNameErr] = useState<boolean>(false);
+  const [mobile, setMobile] = useState<string>('');
+  const [mobileErr, setMobileErr] = useState<boolean>(false);
+  const [modal, setModal] = useState<boolean>(false);
+  useEffect(() => {
+    console.log(checker);
+    console.log(checkErr);
+  }, [checker]);
   return (
     <div className={style.question}>
+      {modal && <Modal setModal={setModal} />}
       <div className="container">
         <div className={style.question__content}>
           <div className={style.question__content__info}>
@@ -70,11 +111,7 @@ export default function Questions() {
               </div>
             </div>
           </div>
-          <form
-            action=""
-            method="post"
-            className={style.question__content__form}
-          >
+          <div className={style.question__content__form}>
             <h4 className={style.question__content__form__head}>
               Оставьте заявку и мы перезвоним вам
             </h4>
@@ -85,14 +122,20 @@ export default function Questions() {
                 id=""
                 placeholder="Имя"
                 className={style.question__content__form__inputs__text}
+                onChange={(e) => setName(e.target.value)}
               />
+              {nameErr && <p>Введите имя</p>}
               <input
                 type="tel"
                 name=""
                 id=""
                 placeholder="Телефон"
                 className={style.question__content__form__inputs__text}
+                onChange={(e) => {
+                  setMobile(e.target.value);
+                }}
               />
+              {mobileErr && <p>Введите ваш номер</p>}
               <div className={style.question__content__form__inputs__checkwrap}>
                 <label
                   htmlFor="privacy"
@@ -108,6 +151,7 @@ export default function Questions() {
                   name=""
                   id="privacy"
                   className={style.question__content__form__inputs__check}
+                  checked={checker}
                 />
                 <label
                   htmlFor="privacy"
@@ -122,14 +166,26 @@ export default function Questions() {
                     политикой конфиденциальности
                   </Link>
                 </label>
+                {checkErr && <p>Ознакомьтесь с политикой</p>}
               </div>
             </div>
-            <input
-              type="submit"
-              value="Оставить заявку"
+            <button
               className={style.question__content__form__send}
-            />
-          </form>
+              onClick={() =>
+                submitForm(
+                  name,
+                  mobile,
+                  checker,
+                  setNameErr,
+                  setMobileErr,
+                  setCheckErr,
+                  setModal
+                )
+              }
+            >
+              Оставить заявку
+            </button>
+          </div>
         </div>
       </div>
     </div>

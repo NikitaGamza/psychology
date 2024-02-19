@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './Certificate.module.scss';
 import Image from 'next/image';
+import Modal from './components/Modal/Modal';
 
 export default function Certificate() {
+  const [modal, setModal] = useState<boolean>(false);
   return (
     <div className={style.certificate}>
+      {modal && <Modal setModal={setModal} />}
       <div className="container">
         <div className={style.certificate__content}>
           <div className={style.certificate__content__info}>
@@ -16,7 +19,10 @@ export default function Certificate() {
               попросить. Позаботьтесь о близком человеке — подарите ему сессию с
               психологом.
             </p>
-            <button className={style.certificate__content__info__btn}>
+            <button
+              className={style.certificate__content__info__btn}
+              onClick={() => setModal(true)}
+            >
               Заказать сертификат
             </button>
           </div>
@@ -58,7 +64,10 @@ export default function Certificate() {
           height={217}
           className={style.certificate__content__cart__mobile}
         />
-        <button className={style.certificate__content__info__btn_mobile}>
+        <button
+          className={style.certificate__content__info__btn_mobile}
+          onClick={() => setModal(true)}
+        >
           Заказать сертификат
         </button>
       </div>
