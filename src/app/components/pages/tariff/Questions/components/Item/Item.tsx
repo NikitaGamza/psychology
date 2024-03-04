@@ -5,11 +5,10 @@ export default function Item({ props }: any) {
   const { head, description } = props;
   const [visible, setVisible] = useState<boolean>(false);
   return (
-    <div className={style.item}>
+    <div className={style.item} onClick={() => setVisible(!visible)}>
       <div className={style.item__head}>
         <span className={style.item__head__title}>{head}</span>
         <button
-          onClick={() => setVisible(!visible)}
           className={
             visible
               ? style.item__head__btn_visible

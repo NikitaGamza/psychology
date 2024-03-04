@@ -68,7 +68,13 @@
       &__inputs {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 5px;
+        &__err {
+          height: 16px;
+          &__text {
+            color: $pink;
+          }
+        }
         &__checkwrap {
           display: flex;
           align-items: center;

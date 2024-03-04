@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/format/format';
 
 export default function Format() {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
   const format = useSelector((state: any) => state.format.format);
   const dispatch = useDispatch();
   return (

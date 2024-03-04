@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/sex/sex';
 
 export default function Sex() {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
   const sex = useSelector((state: any) => state.sex.sex);
   const dispatch = useDispatch();
   return (

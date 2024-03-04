@@ -16,21 +16,21 @@ import NotFoundPage from '@/app/not-found';
 export default function Page() {
   const router = useRouter();
   const [psychologist, setPsychologist] = useState<any>();
-  useEffect(() => {
-    async function hiData() {
-      const res = await fetch(
-        `http://localhost:1337/api/psychologists/${router.query.id}?populate=*`
-      );
-      const repo = await res.json();
-      await setPsychologist(repo);
-      console.log(psychologist);
-    }
-    hiData();
-  }, [router.query.id]);
+  // useEffect(() => {
+  //   async function hiData() {
+  //     const res = await fetch(
+  //       `http://localhost:1337/api/psychologists/${router.query.id}?populate=*`
+  //     );
+  //     const repo = await res.json();
+  //     await setPsychologist(repo);
+  //     console.log(psychologist);
+  //   }
+  //   hiData();
+  // }, [router.query.id]);
   return (
     <div className={style.dynamic}>
       {/* {psychologist === undefined && <NotFoundPage />} */}
-      {(psychologist?.data?.id === 0 || psychologist?.data?.id) && (
+      {/* {(psychologist?.data?.id === 0 || psychologist?.data?.id) && (
         <div className={style.dynamic__container}>
           <Cover props={psychologist} />
           <h4 className={style.dynamic__container__head}>О психологе</h4>
@@ -48,7 +48,7 @@ export default function Page() {
             <Popular />
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

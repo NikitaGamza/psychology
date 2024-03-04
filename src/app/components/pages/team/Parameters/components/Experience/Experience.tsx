@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/experience/experience';
 
 export default function Experience() {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
   const experience = useSelector((state: any) => state.experience.experience);
   const dispatch = useDispatch();
   return (

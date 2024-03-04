@@ -1,8 +1,9 @@
+'use client';
 import style from './Header.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileLinks from './components/MobileLinks/MobileLinks';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { navigation } from './linksList';
 // import '@globals.css';
 export default function Header() {

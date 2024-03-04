@@ -12,21 +12,21 @@ import Payment from '@/app/components/pages/courses/dynamic/Payment/Payment';
 export default function Page() {
   const router = useRouter();
   const [course, setCourse] = useState<any>();
-  useEffect(() => {
-    async function hiData() {
-      const res = await fetch(
-        `http://localhost:1337/api/courses/${router.query.id}?populate[0]=imgMain&populate[1]=imgMobile&populate[2]=course_fit_fors.img&populate[3]=course_type&populate[4]=themes&populate[5]=format&populate[6]=learn&populate[7]=program&populate[8]=psychologists.fields&populate[9]=psychologists.img`
-      );
-      const repo = await res.json();
-      await setCourse(repo);
-      console.log(course);
-    }
-    hiData();
-  }, [router.query.id]);
+  // useEffect(() => {
+  //   async function hiData() {
+  //     const res = await fetch(
+  //       `http://localhost:1337/api/courses/${router.query.id}?populate[0]=imgMain&populate[1]=imgMobile&populate[2]=course_fit_fors.img&populate[3]=course_type&populate[4]=themes&populate[5]=format&populate[6]=learn&populate[7]=program&populate[8]=psychologists.fields&populate[9]=psychologists.img`
+  //     );
+  //     const repo = await res.json();
+  //     await setCourse(repo);
+  //     console.log(course);
+  //   }
+  //   hiData();
+  // }, [router.query.id]);
   return (
     <div className={style.dynamic}>
       <div className="container">
-        {(course?.data?.id === 0 || course?.data?.id) && (
+        {/* {(course?.data?.id === 0 || course?.data?.id) && (
           <>
             <Cover
               imgMain={course.data.attributes.imgMain.data.attributes.url}
@@ -56,17 +56,16 @@ export default function Page() {
                 program={course.data.attributes.program}
               />
               <Speakers speakers={course.data.attributes.psychologists.data} />
-              {/* <Feedbacks feedbacks={course.feedbacks} /> */}
             </div>
           </>
-        )}
+        )} */}
       </div>
-      <Payment
+      {/* <Payment
         priceFull={course?.data?.attributes.priceFull}
         priceMonth={course?.data?.attributes.priceMonth}
         place={course?.data?.attributes.freePlace}
         startDate={course?.data?.attributes.startDate}
-      />
+      /> */}
     </div>
   );
 }

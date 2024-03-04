@@ -2,15 +2,18 @@ import React, { useEffect, useState } from 'react';
 import style from './Tariff.module.scss';
 import Tariff from '@/app/components/ui/Tariff/Tariff';
 import { tariffList } from './tariffList';
+import Modal from './components/Modal/Modal';
 
 export default function TariffItem(tariffFilter: any) {
   const { therapyName, format } = tariffFilter.tariffFilter;
   const [tariffFormat, setTariffFormat] = useState(format[0]);
+  const [modal, setModal] = useState<boolean>(false);
   useEffect(() => {
     console.log(tariffFilter);
   });
   return (
     <div className={style.tariff}>
+      {modal && <Modal setModal={setModal} />}
       <div className={style.tariff__info}>
         <h3 className={style.tariff__info__head}>{therapyName}</h3>
         <div className={style.tariff__info__btns}>
@@ -36,7 +39,12 @@ export default function TariffItem(tariffFilter: any) {
             Общение в Zoom или Skype
           </li>
         </ul>
-        <button className={style.tariff__info__req}>Оставить заявку</button>
+        <button
+          className={style.tariff__info__req}
+          onClick={() => setModal(true)}
+        >
+          Оставить заявку
+        </button>
       </div>
       <div className={style.tariff__carts}>
         {tariffList.map(
@@ -55,7 +63,10 @@ export default function TariffItem(tariffFilter: any) {
             )
         )}
       </div>
-      <button className={style.tariff__info__req_mobile}>
+      <button
+        className={style.tariff__info__req_mobile}
+        onClick={() => setModal(true)}
+      >
         Оставить заявку
       </button>
     </div>

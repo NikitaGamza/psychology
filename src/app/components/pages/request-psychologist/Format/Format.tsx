@@ -1,11 +1,24 @@
+import { useState } from 'react';
 import style from '../style/style.module.scss';
 
 export default function Format() {
+  const [checker, setChecker] = useState<string>('online');
   return (
     <div className={style.wrap_radio}>
       <p className={style.wrap__title}>помощь нужна</p>
       <div className={style.wrap__list}>
-        <div className={style.wrap__list__item}>
+        <div
+          className={style.wrap__list__item}
+          onClick={() => setChecker('online')}
+        >
+          <label
+            htmlFor="online"
+            className={
+              checker === 'online'
+                ? style.wrap__list__item__fake_active
+                : style.wrap__list__item__fake
+            }
+          ></label>
           <input
             type="radio"
             name="format"
@@ -17,7 +30,18 @@ export default function Format() {
             Онлайн
           </label>
         </div>
-        <div className={style.wrap__list__item}>
+        <div
+          className={style.wrap__list__item}
+          onClick={() => setChecker('offline')}
+        >
+          <label
+            htmlFor="offline"
+            className={
+              checker === 'offline'
+                ? style.wrap__list__item__fake_active
+                : style.wrap__list__item__fake
+            }
+          ></label>
           <input
             type="radio"
             name="format"
@@ -29,7 +53,18 @@ export default function Format() {
             Очно
           </label>
         </div>
-        <div className={style.wrap__list__item}>
+        <div
+          className={style.wrap__list__item}
+          onClick={() => setChecker('chat')}
+        >
+          <label
+            htmlFor="chat"
+            className={
+              checker === 'chat'
+                ? style.wrap__list__item__fake_active
+                : style.wrap__list__item__fake
+            }
+          ></label>
           <input
             type="radio"
             name="format"
@@ -41,7 +76,18 @@ export default function Format() {
             Переписка
           </label>
         </div>
-        <div className={style.wrap__list__item}>
+        <div
+          className={style.wrap__list__item}
+          onClick={() => setChecker('notMatter')}
+        >
+          <label
+            htmlFor="notMatter"
+            className={
+              checker === 'notMatter'
+                ? style.wrap__list__item__fake_active
+                : style.wrap__list__item__fake
+            }
+          ></label>
           <input
             type="radio"
             name="format"

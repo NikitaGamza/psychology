@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/methods/methods';
 
 export default function Methods() {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
   const methods = useSelector((state: any) => state.methods.methods);
   const dispatch = useDispatch();
   return (

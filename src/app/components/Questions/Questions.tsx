@@ -1,10 +1,12 @@
-import React, { useState, Dispatch, useEffect } from 'react';
+import React, { useState, Dispatch, useEffect, FormEvent } from 'react';
 import style from './Questions.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import Modal from './components/Modal/Modal';
+import ReCAPTCHA from 'react-google-recaptcha';
 
-function submitForm(
+const submitForm = (
+  e: FormEvent,
   name: string,
   mobile: string,
   checker: boolean,
@@ -12,7 +14,8 @@ function submitForm(
   setMobileErr: Dispatch<boolean>,
   setCheckErr: Dispatch<boolean>,
   setModal: Dispatch<boolean>
-) {
+) => {
+  e.preventDefault();
   if (name === '') {
     setNameErr(true);
   } else {
@@ -31,7 +34,7 @@ function submitForm(
   if (name !== '' && mobile !== '' && checker) {
     setModal(true);
   }
-}
+};
 
 export default function Questions() {
   const [checker, setChecker] = useState<boolean>(false);
@@ -41,10 +44,7 @@ export default function Questions() {
   const [mobile, setMobile] = useState<string>('');
   const [mobileErr, setMobileErr] = useState<boolean>(false);
   const [modal, setModal] = useState<boolean>(false);
-  useEffect(() => {
-    console.log(checker);
-    console.log(checkErr);
-  }, [checker]);
+  const [captcha, setCaptcha] = useState<string | null>();
   return (
     <div className={style.question}>
       {modal && <Modal setModal={setModal} />}
@@ -111,7 +111,21 @@ export default function Questions() {
               </div>
             </div>
           </div>
-          <div className={style.question__content__form}>
+          <form
+            className={style.question__content__form}
+            onSubmit={(e) =>
+              submitForm(
+                e,
+                name,
+                mobile,
+                checker,
+                setNameErr,
+                setMobileErr,
+                setCheckErr,
+                setModal
+              )
+            }
+          >
             <h4 className={style.question__content__form__head}>
               Оставьте заявку и мы перезвоним вам
             </h4>
@@ -124,7 +138,15 @@ export default function Questions() {
                 className={style.question__content__form__inputs__text}
                 onChange={(e) => setName(e.target.value)}
               />
-              {nameErr && <p>Введите имя</p>}
+              <div className={style.question__content__form__inputs__err}>
+                {nameErr && (
+                  <p
+                    className={style.question__content__form__inputs__err__text}
+                  >
+                    Введите имя
+                  </p>
+                )}
+              </div>
               <input
                 type="tel"
                 name=""
@@ -135,7 +157,15 @@ export default function Questions() {
                   setMobile(e.target.value);
                 }}
               />
-              {mobileErr && <p>Введите ваш номер</p>}
+              <div className={style.question__content__form__inputs__err}>
+                {mobileErr && (
+                  <p
+                    className={style.question__content__form__inputs__err__text}
+                  >
+                    Введите ваш номер
+                  </p>
+                )}
+              </div>
               <div className={style.question__content__form__inputs__checkwrap}>
                 <label
                   htmlFor="privacy"
@@ -166,26 +196,27 @@ export default function Questions() {
                     политикой конфиденциальности
                   </Link>
                 </label>
-                {checkErr && <p>Ознакомьтесь с политикой</p>}
+              </div>
+              <div className={style.question__content__form__inputs__err}>
+                {checkErr && (
+                  <p
+                    className={style.question__content__form__inputs__err__text}
+                  >
+                    Ознакомьтесь с политикой
+                  </p>
+                )}
               </div>
             </div>
-            <button
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+              onChange={setCaptcha}
+            />
+            <input
+              type="submit"
               className={style.question__content__form__send}
-              onClick={() =>
-                submitForm(
-                  name,
-                  mobile,
-                  checker,
-                  setNameErr,
-                  setMobileErr,
-                  setCheckErr,
-                  setModal
-                )
-              }
-            >
-              Оставить заявку
-            </button>
-          </div>
+              value="Оставить заявку"
+            />
+          </form>
         </div>
       </div>
     </div>

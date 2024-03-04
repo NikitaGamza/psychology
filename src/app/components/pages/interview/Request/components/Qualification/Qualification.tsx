@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from '../style/Components.module.scss';
 
 export default function Qualification() {
+  const [checked, setChecked] = useState<string>('');
   return (
     <div className={style.row}>
       <p className={style.row__head_radio}>Квалификация</p>
       <div className={style.row__list}>
-        <div className={style.row__list__switch}>
+        <div
+          className={style.row__list__switch}
+          onClick={() => setChecked('Магистр')}
+        >
+          <label
+            htmlFor="magistresy"
+            className={
+              checked === 'Магистр'
+                ? style.row__list__switch__label_fake_active
+                : style.row__list__switch__label_fake
+            }
+          ></label>
           <input
             type="radio"
             name="qual"
             id="magistresy"
             value="magistresy"
-            className={style.list__switch__radio}
+            className={style.row__list__switch__radio}
           />
           <label
             htmlFor="magistresy"
@@ -21,7 +33,18 @@ export default function Qualification() {
             Магистр
           </label>
         </div>
-        <div className={style.row__list__switch}>
+        <div
+          className={style.row__list__switch}
+          onClick={() => setChecked('Бакалавр')}
+        >
+          <label
+            htmlFor="bacholor"
+            className={
+              checked === 'Бакалавр'
+                ? style.row__list__switch__label_fake_active
+                : style.row__list__switch__label_fake
+            }
+          ></label>
           <input
             type="radio"
             name="qual"
@@ -33,7 +56,18 @@ export default function Qualification() {
             Бакалавр
           </label>
         </div>
-        <div className={style.row__list__switch}>
+        <div
+          className={style.row__list__switch}
+          onClick={() => setChecked('Специалист')}
+        >
+          <label
+            htmlFor="specialist"
+            className={
+              checked === 'Специалист'
+                ? style.row__list__switch__label_fake_active
+                : style.row__list__switch__label_fake
+            }
+          ></label>
           <input
             type="radio"
             name="qual"

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/cities/cities';
 
 export default function Cities() {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
   const cities = useSelector((state: any) => state.cities.cities);
   const dispatch = useDispatch();
   return (

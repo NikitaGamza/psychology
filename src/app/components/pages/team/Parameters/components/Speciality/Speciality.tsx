@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/blogThemesSlice';
 
 export default function Speciality() {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
   const specThemes = useSelector((state: any) => state.specThemes.specThemes);
   const dispatch = useDispatch();
   return (
