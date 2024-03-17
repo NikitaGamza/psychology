@@ -151,6 +151,7 @@
       height: 200px;
       border-radius: 100px;
       margin-bottom: 10px;
+      object-fit: cover;
     }
     &__fullname {
       font-family: 'Gilroy-Bold';
@@ -158,6 +159,10 @@
     }
     &__fields {
       margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
     }
   }
 }

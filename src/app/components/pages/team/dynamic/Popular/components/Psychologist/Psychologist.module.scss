@@ -11,6 +11,7 @@
     width: 190px;
     height: 190px;
     border-radius: 100px;
+    object-fit:cover;
   }
   &_full {
     border-radius: 20px;
@@ -110,5 +111,6 @@
     box-shadow: 0px 0px 5px 0px #1d304e26;
     border-radius: 20px;
     height: 100%;
+    display: block;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import style from './style.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,8 +6,25 @@ import { toggle } from '@/store/features/cities/cities';
 
 export default function Cities() {
   const [isVisible, setIsVisible] = useState<boolean>(true);
-  const cities = useSelector((state: any) => state.cities.cities);
-  const dispatch = useDispatch();
+  const [cities, setCities] = useState<any>()
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(`http://localhost:1337/api/cities`);
+      const repo = await res.json();
+      repo.data.map((item: any) => (item.isSelected = false));
+      setCities(repo.data);
+    }
+    hiData();
+  }, []);
+  function handleToggle(foundId: number) {
+    const currentId = cities.findIndex((item: any) => item.id === foundId);
+    const updatedItem = Object.assign({}, cities[currentId]);
+    updatedItem.isSelected = !updatedItem.isSelected;
+    const newList = cities.slice();
+    newList.map((item:any)=> (item.isSelected = false))
+    newList[currentId] = updatedItem;
+    setCities(newList);
+  }
   return (
     <div className={style.block}>
       <div
@@ -28,17 +45,16 @@ export default function Cities() {
         />
       </div>
       <div className={isVisible ? style.block__list : style.none}>
-        {cities.map((item: any, idx: number) => (
+        {cities?.map((item: any, idx: number) => (
           <div key={idx} className={style.block__list__item}>
             <input
               type="radio"
               name="city"
               id={`cities${item.id}`}
-              onClick={() => dispatch(toggle(item.id))}
+              onClick={() => handleToggle(item.id)}
               checked={item.isSelected ? true : false}
             />
             <label
-              onClick={() => dispatch(toggle(item.id))}
               htmlFor={`cities${item.id}`}
               className={
                 item.isSelected
@@ -46,7 +62,7 @@ export default function Cities() {
                   : style.block__list__item__label
               }
             >
-              {item.name ? `${item.name}` : 'Неважно'}
+              {item.attributes.name ? `${item.attributes.name}` : 'Неважно'}
             </label>
           </div>
         ))}

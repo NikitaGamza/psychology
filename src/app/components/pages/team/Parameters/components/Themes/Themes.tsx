@@ -1,27 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import style from './style.module.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggle } from '@/store/features/themes/themes';
 
-export default function Speciality() {
+export default function Themes() {
   const [isVisible, setIsVisible] = useState<boolean>(true);
-  const [specThemes, setSpecThemes] = useState<any>(null);
+  const themes = useSelector((state: any) => state.themes.themes);
   useEffect(() => {
-    async function hiData() {
-      const res = await fetch(`http://localhost:1337/api/themes`);
-      const repo = await res.json();
-      repo.data.map((item: any) => (item.isSelected = false));
-      setSpecThemes(repo.data);
-    }
-    hiData();
-  }, []);
-  function handleToggle(foundId: number) {
-    const currentId = specThemes.findIndex((item: any) => item.id === foundId);
-    const updatedItem = Object.assign({}, specThemes[currentId]);
-    updatedItem.isSelected = !updatedItem.isSelected;
-    const newList = specThemes.slice();
-    newList[currentId] = updatedItem;
-    setSpecThemes(newList);
-  }
+    console.log(themes);
+  });
+  //   const dispatch = useDispatch();
   return (
     <div className={style.block}>
       <div
@@ -41,8 +30,8 @@ export default function Speciality() {
           className={style.block__head__arrow}
         />
       </div>
-      <div className={isVisible ? style.block__list : style.none}>
-        {specThemes?.map((item: any, idx: number) => (
+      {/* <div className={isVisible ? style.block__list : style.none}>
+        {themes.map((item: any, idx: number) => (
           <button
             key={idx}
             className={
@@ -50,12 +39,12 @@ export default function Speciality() {
                 ? style.block__list__item_active
                 : style.block__list__item
             }
-            onClick={() => handleToggle(item.id)}
+            onClick={() => dispatch(toggle(item.id))}
           >
-            {item.attributes.themeName}
+            {item.id}
           </button>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

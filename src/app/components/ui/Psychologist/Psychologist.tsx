@@ -171,7 +171,10 @@ export default function Psychologist(props: any) {
           />
           <h5 className={style.psychologist_min__fullname}>{firstName}</h5>
           <h5 className={style.psychologist_min__fullname}>{lastName}</h5>
-          <p className={style.psychologist_min__fields}>{fields.join(', ')}</p>
+          <div className={style.psychologist_min__fields}>{fields?.map((field:any)=> (
+            <span>
+            {field.attributes.name}
+            </span>))}</div>
         </div>
       )}
     </>

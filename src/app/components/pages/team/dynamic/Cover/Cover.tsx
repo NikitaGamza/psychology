@@ -18,7 +18,7 @@ export default function Cover(props: any) {
     address,
     metro,
     links,
-  } = props.props.data.attributes;
+  } = props.props.attributes;
   const marriedResult =
     (sex && isMarried && 'Женат') ||
     (sex && !isMarried && 'Не женат') ||

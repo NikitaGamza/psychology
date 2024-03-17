@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import style from './Popular.module.scss';
@@ -22,99 +22,18 @@ function Arrow(props: {
 }
 
 export default function Popular() {
-  const psychoList = [
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Игорь',
-      lastName: 'Батамиров',
-      format: ['очно', 'онлайн', 'переписка'],
-      fields: ['Психолог', 'семейный психолог', 'к.п.н'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: true,
-      isMarried: true,
-      locations: ['Москва', 'Санкт-Петербург'],
-      tags: ['Дети', 'Семья', 'Карьера'],
-    },
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Наталья',
-      lastName: 'Петрова',
-      format: ['очно', 'онлайн'],
-      fields: ['Психолог', 'к.п.н'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: false,
-      isMarried: true,
-      locations: ['Иркутск'],
-      tags: [
-        'Дети',
-        'Семья',
-        'Страхи',
-        'Грусть, тоска',
-        'Самоопределение',
-        'Личностный рост',
-      ],
-    },
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Элина',
-      lastName: 'Кроповницкая',
-      format: ['онлайн', 'переписка'],
-      fields: ['Психолог', 'семейный психолог', 'к.п.н'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: false,
-      isMarried: false,
-      locations: ['Москва', 'Санкт-Петербург'],
-      tags: ['Дети', 'Семья', 'Карьера'],
-    },
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Любовь',
-      lastName: 'Иваненко',
-      format: ['онлайн', 'переписка'],
-      fields: ['Психолог', 'семейный психолог', 'к.п.н'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: false,
-      isMarried: false,
-      locations: ['Москва', 'Санкт-Петербург'],
-      tags: ['Дети', 'Семья', 'Карьера'],
-    },
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Анна',
-      lastName: 'Костина',
-      format: ['онлайн', 'переписка'],
-      fields: ['Психолог', 'семейный психолог', 'к.п.н'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: false,
-      isMarried: false,
-      locations: ['Иркутск'],
-      tags: ['Дети', 'Семья', 'Карьера'],
-    },
-    {
-      imageUrl: '/img/Psychologist/blank.svg',
-      firstName: 'Леонид',
-      lastName: 'Матвеев',
-      format: ['онлайн', 'переписка'],
-      fields: ['Психолог', 'семейный психолог', 'к.п.н'],
-      feedbacks: ['первый отзыв', 'второй отзыв'],
-      experience: 10,
-      age: 35,
-      sex: true,
-      isMarried: false,
-      locations: ['Иркутск'],
-      tags: ['Дети', 'Семья', 'Карьера'],
-    },
-  ];
+  const [psychoList, setPsychoList] = useState<any>()
+  useEffect(()=>{
+      async function hiData() {
+        const res = await fetch(`http://localhost:1337/api/psychologists?populate=*&filters[isPopular][$eq]=true`);
+        const repo = await res.json();
+        setPsychoList(repo.data);
+        console.log(repo.data)
+      }
+      hiData();
+
+  }, [])
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -146,19 +65,19 @@ export default function Popular() {
   return (
     <div className={style.popular}>
       <h5 className={style.popular__head}>Популярные психологи</h5>
-      <div className={`navigation-wrapper ${style.slider}`}>
+      {(psychoList) && (
+        <div className={`navigation-wrapper ${style.slider}`}>
         <div ref={sliderRef} className={`keen-slider ${style.slider__wrap}`}>
-          {psychoList.map((item: any, index: number) => (
+          {psychoList?.map((item: any, index: number) => (
             <div
               key={index}
               className={`keen-slider__slide ${style.slider__slide}`}
             >
               <Psychologist
-                key={index}
-                imageUrl={item.imageUrl}
-                firstName={item.firstName}
-                lastName={item.lastName}
-                fields={item.fields}
+                imageUrl={item.attributes.img.data.attributes.url}
+                firstName={item.attributes.firstName}
+                lastName={item.attributes.lastName}
+                fields={item.attributes.fields.data}
               />
             </div>
           ))}
@@ -179,16 +98,18 @@ export default function Popular() {
               }
               disabled={
                 currentSlide ===
-                instanceRef.current.track.details.slides.length - 1
+                instanceRef.current.track.details?.slides.length - 1
               }
             />
           </div>
         )}
       </div>
+      )}
+      
       {loaded && instanceRef.current && (
         <div className={style.dots}>
           {[
-            ...Array(instanceRef.current.track.details.slides.length).keys(),
+            ...Array(instanceRef.current.track.details?.slides.length).keys(),
           ].map((idx) => {
             return (
               <button

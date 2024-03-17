@@ -6,6 +6,7 @@ import experienceReducer from './features/experience/experience';
 import sexReducer from './features/sex/sex';
 import citiesReducer from './features/cities/cities';
 import formatReducer from './features/format/format';
+import themesReducer from './features/themes/themes';
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     sex: sexReducer,
     cities: citiesReducer,
     format: formatReducer,
+    themes: themesReducer,
   },
 });
 // Infer the `RootState` and `AppDispatch` types from the store itself

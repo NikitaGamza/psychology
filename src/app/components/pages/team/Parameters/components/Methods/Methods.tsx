@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import style from './style.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,8 +6,24 @@ import { toggle } from '@/store/features/methods/methods';
 
 export default function Methods() {
   const [isVisible, setIsVisible] = useState<boolean>(true);
-  const methods = useSelector((state: any) => state.methods.methods);
-  const dispatch = useDispatch();
+  const [methods, setMethods] = useState<Array<any>>([])
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(`http://localhost:1337/api/methods`);
+      const repo = await res.json();
+      repo.data.map((item: any) => (item.isSelected = false));
+      setMethods(repo.data);
+    }
+    hiData();
+  }, []);
+  function handleToggle(foundId: number) {
+    const currentId = methods.findIndex((item: any) => item.id === foundId);
+    const updatedItem = Object.assign({}, methods[currentId]);
+    updatedItem.isSelected = !updatedItem.isSelected;
+    const newList = methods.slice();
+    newList[currentId] = updatedItem;
+    setMethods(newList);
+  }
   return (
     <div className={style.block}>
       <div
@@ -28,18 +44,18 @@ export default function Methods() {
         />
       </div>
       <div className={isVisible ? style.block__list : style.none}>
-        {methods.map((item: any, idx: number) => (
+        {methods?.map((item: any, idx: number) => (
           <div key={idx} className={style.block__list__item}>
             <input
               type="checkbox"
               name=""
               id={`meth${item.id}`}
-              onClick={() => dispatch(toggle(item.id))}
+              onClick={() => handleToggle(item.id)}
               className={style.block__list__item__inp}
             />
             <div>
               <div
-                onClick={() => dispatch(toggle(item.id))}
+                onClick={() => handleToggle(item.id)}
                 className={
                   item.isSelected
                     ? style.block__list__item__fake_active
@@ -56,7 +72,7 @@ export default function Methods() {
               }
               htmlFor={`meth${item.id}`}
             >
-              {item.name}
+              {item.attributes.name}
             </label>
           </div>
         ))}

@@ -8,6 +8,7 @@ import Experience from './components/Experience/Experience';
 import Sex from './components/Sex/Sex';
 import Cities from './components/Cities/Cities';
 import Format from './components/Format/Format';
+import Themes from './components/Themes/Themes';
 
 interface IRadio {
   id: string | number | undefined;

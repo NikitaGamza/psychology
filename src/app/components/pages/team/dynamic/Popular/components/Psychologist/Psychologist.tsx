@@ -29,7 +29,7 @@ export default function Psychologist(props: any) {
     <>
       {inDetail ? (
         <div className={style.psychologist_full}>
-          <Image src={imageUrl} alt={imageUrl} width={100} height={100} />
+          <Image src={`http://localhost:1337${imageUrl}`} alt={'avatar'} width={100} height={100} />
           <div className={style.psychologist_full__info}>
             <div className={style.psychologist_full__info__head}>
               <h5 className={style.psychologist_full__info__head__fullname}>
@@ -56,8 +56,9 @@ export default function Psychologist(props: any) {
               <span
                 className={style.psychologist_full__info__feedbacks__fields}
               >
-                {fields.join(', ')}
+                {fields?.join(', ')}
               </span>
+              {/* Изменено выше */}
               <span
                 className={style.psychologist_full__info__feedbacks__fields}
               >
@@ -106,19 +107,14 @@ export default function Psychologist(props: any) {
           </div>
         </div>
       ) : (
-        <div className={style.psychologist_min}>
-          <Image
-            className={style.psychologist__img}
-            src={imageUrl}
-            alt={imageUrl}
-            width={100}
-            height={100}
-          />
+        <Link href={`team/${id}`} className={style.psychologist_min}>
+          <Image src={`http://localhost:1337${imageUrl}`} alt={'avatar'} width={100} height={100} className={style.psychologist__img} />
           <h5 className={style.psychologist__fullname}>
             {firstName} {lastName}
           </h5>
-          <p className={style.psychologist__fields}>{fields.join(', ')}</p>
-        </div>
+          <p className={style.psychologist__fields}>{fields?.map((field:any)=> field.attributes.name)}</p>
+          {/* Изменено выше */}
+        </Link>
       )}
     </>
   );
