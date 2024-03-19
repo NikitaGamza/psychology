@@ -56,7 +56,7 @@ export default function Speakers(props: any) {
           speakers.map((item: any) => (
             <div key={item.id} className={style.speak__content__item}>
               <Image
-                src={`http://localhost:1337/${item.attributes.img.data.attributes.url.slice(
+                src={`http://localhost:1337/${item.attributes.img?.data.attributes.url.slice(
                   1
                 )}`}
                 alt="speaker"
@@ -70,7 +70,7 @@ export default function Speakers(props: any) {
               <h4 className={style.speak__content__item__lastname}>
                 {item.attributes.lastName}
               </h4>
-              {item.attributes.fields.data.map((award: any, index: number) => (
+              {item.attributes.fields?.data.map((award: any, index: number) => (
                 <span key={index} className={style.speak__content__item__award}>
                   {award.attributes.name}.{' '}
                 </span>
@@ -86,7 +86,7 @@ export default function Speakers(props: any) {
               className={`keen-slider__slide ${style.speak__content__item}`}
             >
               <Image
-                src={`http://localhost:1337/${item.attributes.img.data.attributes.url.slice(
+                src={`http://localhost:1337/${item.attributes.img?.data.attributes.url.slice(
                   1
                 )}`}
                 alt="speaker"
@@ -100,7 +100,7 @@ export default function Speakers(props: any) {
               <h4 className={style.speak__content__item__lastname}>
                 {item.attributes.lastName}
               </h4>
-              {item.attributes.fields.data.map((award: any, index: number) => (
+              {item.attributes.fields?.data.map((award: any, index: number) => (
                 <span key={index} className={style.speak__content__item__award}>
                   {award.attributes.name}.{' '}
                 </span>

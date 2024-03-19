@@ -15,10 +15,15 @@ export default function About(props: IAbout) {
             {item}
           </p> */}
       </div>
-      <iframe
+      {
+        props.aboutMediaLink && (
+<iframe
         className={style.about__video}
         src={props.aboutMediaLink}
       ></iframe>
+        )
+      }
+      
     </div>
   );
 }

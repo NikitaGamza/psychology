@@ -39,7 +39,7 @@
         font-weight: 700;
         line-height: 28px;
         margin-bottom: 24px;
-        font-family: Gilroy-ExtraBold;
+        font-family: 'Gilroy-Bold';
       }
       &__time {
         display: flex;
@@ -81,7 +81,7 @@
           font-size: 24px;
           font-weight: 700;
           line-height: 28px;
-          font-family: Gilroy-ExtraBold;
+          font-family: 'Gilroy-Bold';
         }
         &__btn {
           @include link-green;

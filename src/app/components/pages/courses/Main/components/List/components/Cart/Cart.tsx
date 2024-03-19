@@ -69,7 +69,8 @@ export default function Cart(props: any) {
               {props.format}
             </p>
           </div>
-          <div className={style.cart__info__wrap__address}>
+          {props.address && (
+<div className={style.cart__info__wrap__address}>
             <Image
               src={'/img/icons/rest/location.svg'}
               alt="loc"
@@ -80,6 +81,8 @@ export default function Cart(props: any) {
               {props.address}
             </p>
           </div>
+          )}
+          
         </div>
         <div className={style.cart__info__rest}>
           <Link
