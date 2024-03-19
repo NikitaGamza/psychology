@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 
 export default function Question(item: any, passKey:number) {
-  useEffect(()=>console.log(passKey), [])
   const question = item.item;
   return (
     <div

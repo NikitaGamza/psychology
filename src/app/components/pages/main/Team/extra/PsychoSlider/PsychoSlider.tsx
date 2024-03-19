@@ -26,7 +26,6 @@ export default function PsychoSlider() {
         const res = await fetch(`http://localhost:1337/api/psychologists?populate=*&filters[isPopular][$eq]=true`);
         const repo = await res.json();
         setPsychoList(repo.data);
-        console.log(repo.data)
       }
       hiData();
 

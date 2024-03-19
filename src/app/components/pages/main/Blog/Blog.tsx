@@ -13,7 +13,6 @@ export default function Blog() {
         const res = await fetch(`http://localhost:1337/api/questions?populate=*&pagination[pageSize]=2&sort=id:desc`);
         const repo = await res.json();
         setQuestionList(repo.data);
-        console.log(repo.data)
       }
       hiData();
   }, [])
@@ -22,7 +21,6 @@ export default function Blog() {
       const res = await fetch(`http://localhost:1337/api/advices?populate=*&pagination[pageSize]=3&sort=id:desc`);
       const repo = await res.json();
       setSuggestList(repo.data);
-      console.log(repo.data)
     }
     hiData();
 }, [])
@@ -31,7 +29,6 @@ useEffect(()=>{
     const res = await fetch(`http://localhost:1337/api/videos?populate=*&pagination[pageSize]=3&sort=id:desc`);
     const repo = await res.json();
     setVideoList(repo.data);
-    console.log(repo.data)
   }
   hiData();
 }, [])

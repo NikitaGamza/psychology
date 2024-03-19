@@ -15,7 +15,7 @@ import NotFoundPage from '@/app/not-found';
 
 export default function Page() {
   const router = useRouter();
-  const [psychologist, setPsychologist] = useState<any>(null);
+  const [psychologist, setPsychologist] = useState<any>();
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
@@ -25,11 +25,11 @@ export default function Page() {
       setPsychologist(repo.data);
     }
     hiData();
-  }, []);
+  }, [router]);
+
   return (
     <div className={style.dynamic}>
-      {psychologist === null && <NotFoundPage />}
-      {(psychologist?.id) && (
+      {(psychologist) && (
         <div className={style.dynamic__container}>
           <Cover props={psychologist} />
           <h4 className={style.dynamic__container__head}>О психологе</h4>

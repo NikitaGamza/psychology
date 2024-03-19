@@ -1,9 +1,8 @@
 import style from './Courses.module.scss';
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Cart from './components/Cart/Cart';
-import { courseList } from './courseList';
 import Link from 'next/link';
 
 function Arrow(props: {
@@ -21,6 +20,15 @@ function Arrow(props: {
 }
 
 export default function Courses() {
+  const [courseList, setCourseList] = useState<any>()
+  useEffect(()=>{
+    async function hiData() {
+      const res = await fetch(`http://localhost:1337/api/courses?populate=*&pagination[pageSize]=3&sort=id:desc`);
+      const repo = await res.json();
+      setCourseList(repo.data);
+    }
+    hiData();
+}, [])
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -53,12 +61,13 @@ export default function Courses() {
             <p className="section__head__subtitle">Какой то текст сюда</p>
           </div>
           <>
+          {(courseList) && (
             <div className={`navigation-wrapper ${style.courses__slider}`}>
               <div
                 ref={sliderRef}
                 className={`keen-slider ${style.courses__slider__wrap}`}
               >
-                {courseList.map((item: any, idx: number) => (
+                {courseList?.map((item: any, idx: number) => (
                   <div
                     key={idx}
                     className={`keen-slider__slide ${style.slidepad}`}
@@ -82,17 +91,19 @@ export default function Courses() {
                     }
                     disabled={
                       currentSlide ===
-                      instanceRef.current.track.details.slides.length - 1
+                      instanceRef.current.track.details?.slides.length - 1
                     }
                   />
                 </div>
               )}
             </div>
+          )}
+            
             {loaded && instanceRef.current && (
               <div className={style.dots}>
                 {[
                   ...Array(
-                    instanceRef.current.track.details.slides.length
+                    instanceRef.current.track.details?.slides.length
                   ).keys(),
                 ].map((idx) => {
                   return (

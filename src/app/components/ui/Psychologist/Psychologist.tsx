@@ -21,7 +21,6 @@ export default function Psychologist(props: any) {
     themes,
     inDetail,
   } = props;
-  useEffect(() => console.log(props));
   const marriedResult =
     (sex && isMarried && 'Женат') ||
     (sex && !isMarried && 'Не женат') ||
@@ -171,8 +170,8 @@ export default function Psychologist(props: any) {
           />
           <h5 className={style.psychologist_min__fullname}>{firstName}</h5>
           <h5 className={style.psychologist_min__fullname}>{lastName}</h5>
-          <div className={style.psychologist_min__fields}>{fields?.map((field:any)=> (
-            <span>
+          <div className={style.psychologist_min__fields}>{fields?.map((field:any, idx:number)=> (
+            <span key={idx}>
             {field.attributes.name}
             </span>))}</div>
         </div>

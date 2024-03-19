@@ -7,10 +7,11 @@
 
   &__content {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     gap: 20px;
     &__img {
       border-radius: 20px;
+      object-fit: cover;
     }
     &__info {
       display: flex;
@@ -94,6 +95,7 @@
 @media screen and (max-width: 1232px) {
   .slide {
     &__content {
+      justify-content: center;
       &__info {
         &__record {
           &__btn {
