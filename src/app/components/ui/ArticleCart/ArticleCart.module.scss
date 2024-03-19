@@ -6,6 +6,8 @@
     height: 222px;
     border-radius: 20px;
     margin-bottom: 13px;
+    object-fit: cover;
+    border: none;
   }
   &__topics {
     display: flex;

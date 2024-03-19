@@ -67,6 +67,7 @@ export default function PsychoSlider() {
   });
   return (
     <>
+{(psychoList) && (
       <div className={`navigation-wrapper ${style.slider}`}>
         <div ref={sliderRef} className={`keen-slider ${style.slider__wrap}`}>
           {psychoList?.map((item: any, index: number) => (
@@ -102,6 +103,8 @@ export default function PsychoSlider() {
           </div>
         )}
       </div>
+)}
+
       {loaded && instanceRef.current && (
         <div className={style.dots}>
           {[

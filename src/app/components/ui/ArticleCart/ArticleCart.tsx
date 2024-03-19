@@ -1,39 +1,38 @@
 import style from './ArticleCart.module.scss';
 import Image from 'next/image';
-// import koala from '../../../../../public/video/koala.mp4'
 
-export default function ArticleCart(item: any) {
-  const { imgUrl, videoUrl, topics, head } = item.item;
+export default function ArticleCart({item}: any) {
   return (
     <div className={style.cart}>
-      {imgUrl && (
+      {item.attributes?.adviceImg?.data.attributes?.url && (
         <Image
-          src={imgUrl}
-          alt="alt"
+          src={`http://localhost:1337${item.attributes?.adviceImg.data.attributes?.url}`}
+          alt='cover'
           width={100}
           height={100}
           className={style.cart__img}
         />
       )}
-      {videoUrl && (
-        <video
-          src={videoUrl}
-          width="320"
-          height="240"
-          className={style.cart__img}
-          controls
-        >
-          video
-        </video>
+      {item.attributes.videoLink && (
+        <iframe src={item.attributes.videoLink} className={style.cart__img}></iframe>
       )}
       <div className={style.cart__topics}>
-        {topics.map((topic: string, idx: number) => (
+        {item.attributes?.themes.data?.map((topic: any, idx: number) => (
           <span key={idx} className={style.cart__topics__item}>
-            {topic}
+            {topic.attributes.themeName}
           </span>
         ))}
       </div>
-      <h5 className={style.cart__head}>{head}</h5>
+      {
+        item.attributes?.title && (
+<h5 className={style.cart__head}>{item.attributes?.title}</h5>
+        )
+      }
+      {
+        item.attributes?.videoName && (
+          <h5 className={style.cart__head}>{item.attributes?.videoName}</h5>
+        )
+      }
     </div>
   );
 }

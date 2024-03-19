@@ -3,10 +3,38 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Question from './Question/Question';
 import ArticleCart from '@/app/components/ui/ArticleCart/ArticleCart';
-import { questionList } from './questionList';
-import { suggestList } from './suggestList';
-import { videoList } from './videoList';
+import { useState, useEffect } from 'react';
 export default function Blog() {
+  const [questionList, setQuestionList] = useState<any>()
+  const [suggestList, setSuggestList] = useState<any>()
+  const [videoList, setVideoList] = useState<any>()
+  useEffect(()=>{
+      async function hiData() {
+        const res = await fetch(`http://localhost:1337/api/questions?populate=*&pagination[pageSize]=2&sort=id:desc`);
+        const repo = await res.json();
+        setQuestionList(repo.data);
+        console.log(repo.data)
+      }
+      hiData();
+  }, [])
+  useEffect(()=>{
+    async function hiData() {
+      const res = await fetch(`http://localhost:1337/api/advices?populate=*&pagination[pageSize]=3&sort=id:desc`);
+      const repo = await res.json();
+      setSuggestList(repo.data);
+      console.log(repo.data)
+    }
+    hiData();
+}, [])
+useEffect(()=>{
+  async function hiData() {
+    const res = await fetch(`http://localhost:1337/api/videos?populate=*&pagination[pageSize]=3&sort=id:desc`);
+    const repo = await res.json();
+    setVideoList(repo.data);
+    console.log(repo.data)
+  }
+  hiData();
+}, [])
   return (
     <section className={style.blog}>
       <div className="container">
@@ -40,8 +68,8 @@ export default function Blog() {
                 </Link>
               </div>
               <div className={style.blog__content__part__questions}>
-                {questionList.map((item: any, idx: number) => (
-                  <Question item={item} key={idx} />
+                {questionList?.map((item: any, idx: number) => (
+                  <Question item={item} key={idx} passKey={idx} />
                 ))}
               </div>
             </div>
@@ -67,7 +95,7 @@ export default function Blog() {
                 </Link>
               </div>
               <div className={style.blog__content__part__main}>
-                {suggestList.map((item: any, idx: number) => (
+                {suggestList?.map((item: any, idx: number) => (
                   <ArticleCart key={idx} item={item} />
                 ))}
               </div>
@@ -94,7 +122,7 @@ export default function Blog() {
                 </Link>
               </div>
               <div className={style.blog__content__part__main}>
-                {videoList.map((item: any, idx: number) => (
+                {videoList?.map((item: any, idx: number) => (
                   <ArticleCart key={idx} item={item} />
                 ))}
               </div>
