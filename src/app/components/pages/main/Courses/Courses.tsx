@@ -20,15 +20,17 @@ function Arrow(props: {
 }
 
 export default function Courses() {
-  const [courseList, setCourseList] = useState<any>()
-  useEffect(()=>{
+  const [courseList, setCourseList] = useState<any>();
+  useEffect(() => {
     async function hiData() {
-      const res = await fetch(`http://localhost:1337/api/courses?populate=*&pagination[pageSize]=3&sort=id:desc`);
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/courses?populate=*&pagination[pageSize]=3&sort=id:desc`
+      );
       const repo = await res.json();
       setCourseList(repo.data);
     }
     hiData();
-}, [])
+  }, []);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -61,44 +63,44 @@ export default function Courses() {
             <p className="section__head__subtitle">Какой то текст сюда</p>
           </div>
           <>
-          {(courseList) && (
-            <div className={`navigation-wrapper ${style.courses__slider}`}>
-              <div
-                ref={sliderRef}
-                className={`keen-slider ${style.courses__slider__wrap}`}
-              >
-                {courseList?.map((item: any, idx: number) => (
-                  <div
-                    key={idx}
-                    className={`keen-slider__slide ${style.slidepad}`}
-                  >
-                    <Cart item={item} />
-                  </div>
-                ))}
-              </div>
-              {loaded && instanceRef.current && (
-                <div className={style.courses__arrows}>
-                  <Arrow
-                    left
-                    onClick={(e: any) =>
-                      e.stopPropagation() || instanceRef.current?.prev()
-                    }
-                    disabled={currentSlide === 0}
-                  />
-                  <Arrow
-                    onClick={(e: any) =>
-                      e.stopPropagation() || instanceRef.current?.next()
-                    }
-                    disabled={
-                      currentSlide ===
-                      instanceRef.current.track.details?.slides.length - 1
-                    }
-                  />
+            {courseList && (
+              <div className={`navigation-wrapper ${style.courses__slider}`}>
+                <div
+                  ref={sliderRef}
+                  className={`keen-slider ${style.courses__slider__wrap}`}
+                >
+                  {courseList?.map((item: any, idx: number) => (
+                    <div
+                      key={idx}
+                      className={`keen-slider__slide ${style.slidepad}`}
+                    >
+                      <Cart item={item} />
+                    </div>
+                  ))}
                 </div>
-              )}
-            </div>
-          )}
-            
+                {loaded && instanceRef.current && (
+                  <div className={style.courses__arrows}>
+                    <Arrow
+                      left
+                      onClick={(e: any) =>
+                        e.stopPropagation() || instanceRef.current?.prev()
+                      }
+                      disabled={currentSlide === 0}
+                    />
+                    <Arrow
+                      onClick={(e: any) =>
+                        e.stopPropagation() || instanceRef.current?.next()
+                      }
+                      disabled={
+                        currentSlide ===
+                        instanceRef.current.track.details?.slides.length - 1
+                      }
+                    />
+                  </div>
+                )}
+              </div>
+            )}
+
             {loaded && instanceRef.current && (
               <div className={style.dots}>
                 {[

@@ -5,33 +5,39 @@ import Question from './Question/Question';
 import ArticleCart from '@/app/components/ui/ArticleCart/ArticleCart';
 import { useState, useEffect } from 'react';
 export default function Blog() {
-  const [questionList, setQuestionList] = useState<any>()
-  const [suggestList, setSuggestList] = useState<any>()
-  const [videoList, setVideoList] = useState<any>()
-  useEffect(()=>{
-      async function hiData() {
-        const res = await fetch(`http://localhost:1337/api/questions?populate=*&pagination[pageSize]=2&sort=id:desc`);
-        const repo = await res.json();
-        setQuestionList(repo.data);
-      }
-      hiData();
-  }, [])
-  useEffect(()=>{
+  const [questionList, setQuestionList] = useState<any>();
+  const [suggestList, setSuggestList] = useState<any>();
+  const [videoList, setVideoList] = useState<any>();
+  useEffect(() => {
     async function hiData() {
-      const res = await fetch(`http://localhost:1337/api/advices?populate=*&pagination[pageSize]=3&sort=id:desc`);
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/questions?populate=*&pagination[pageSize]=2&sort=id:desc`
+      );
+      const repo = await res.json();
+      setQuestionList(repo.data);
+    }
+    hiData();
+  }, []);
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/advices?populate=*&pagination[pageSize]=3&sort=id:desc`
+      );
       const repo = await res.json();
       setSuggestList(repo.data);
     }
     hiData();
-}, [])
-useEffect(()=>{
-  async function hiData() {
-    const res = await fetch(`http://localhost:1337/api/videos?populate=*&pagination[pageSize]=3&sort=id:desc`);
-    const repo = await res.json();
-    setVideoList(repo.data);
-  }
-  hiData();
-}, [])
+  }, []);
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/videos?populate=*&pagination[pageSize]=3&sort=id:desc`
+      );
+      const repo = await res.json();
+      setVideoList(repo.data);
+    }
+    hiData();
+  }, []);
   return (
     <section className={style.blog}>
       <div className="container">

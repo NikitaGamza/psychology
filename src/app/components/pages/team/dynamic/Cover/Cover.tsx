@@ -42,7 +42,9 @@ export default function Cover(props: any) {
     <div className={style.cover}>
       <div className={style.cover__wrap}>
         <Image
-          src={`http://localhost:1337/${img.data.attributes.url?.slice(1)}`}
+          src={`http://77.232.128.234:1337/${img.data.attributes.url?.slice(
+            1
+          )}`}
           alt={img.data.attributes.url}
           width={220}
           height={220}

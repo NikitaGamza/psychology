@@ -12,7 +12,7 @@ export default function Advice({ posts }: any) {
           {/* {posts.data.map((item: any) => (
             <div key={item.id} className={style.ad__content__item}>
               <Image
-                src={`http://localhost:1337${item.attributes.adviceImg.data.attributes.url}`}
+                src={`http://77.232.128.234:1337${item.attributes.adviceImg.data.attributes.url}`}
                 alt="img"
                 width={395}
                 height={222}
@@ -45,7 +45,7 @@ export default function Advice({ posts }: any) {
 // export async function getStaticProps() {
 //   // Call an external API endpoint to get posts.
 //   // You can use any data fetching library
-//   const res = await fetch('http://localhost:1337/api/advices?populate=*');
+//   const res = await fetch('http://77.232.128.234:1337/api/advices?populate=*');
 //   const posts = await res.json();
 
 //   return {

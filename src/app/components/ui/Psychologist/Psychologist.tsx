@@ -46,7 +46,7 @@ export default function Psychologist(props: any) {
       {inDetail ? (
         <div className={style.psychologist_full}>
           <Image
-            src={`http://localhost:1337/${img?.slice(1)}`}
+            src={`http://77.232.128.234:1337/${img?.slice(1)}`}
             alt={img}
             width={300}
             height={300}
@@ -162,7 +162,7 @@ export default function Psychologist(props: any) {
       ) : (
         <div className={`${style.psychologist_min}`}>
           <Image
-            src={`http://localhost:1337/${img?.slice(1)}`}
+            src={`http://77.232.128.234:1337/${img?.slice(1)}`}
             alt={'avatar'}
             width={200}
             height={200}
@@ -170,10 +170,11 @@ export default function Psychologist(props: any) {
           />
           <h5 className={style.psychologist_min__fullname}>{firstName}</h5>
           <h5 className={style.psychologist_min__fullname}>{lastName}</h5>
-          <div className={style.psychologist_min__fields}>{fields?.map((field:any, idx:number)=> (
-            <span key={idx}>
-            {field.attributes.name}
-            </span>))}</div>
+          <div className={style.psychologist_min__fields}>
+            {fields?.map((field: any, idx: number) => (
+              <span key={idx}>{field.attributes.name}</span>
+            ))}
+          </div>
         </div>
       )}
     </>

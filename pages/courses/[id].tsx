@@ -15,7 +15,7 @@ export default function Page() {
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
-        `http://localhost:1337/api/courses/${router.query.id}?populate[0]=imgMain&populate[1]=imgMobile&populate[2]=course_fit_fors.img&populate[3]=course_type&populate[4]=themes&populate[5]=format&populate[6]=learn&populate[7]=program&populate[8]=psychologists.fields&populate[9]=psychologists.img`
+        `http://77.232.128.234:1337/api/courses/${router.query.id}?populate[0]=imgMain&populate[1]=imgMobile&populate[2]=course_fit_fors.img&populate[3]=course_type&populate[4]=themes&populate[5]=format&populate[6]=learn&populate[7]=program&populate[8]=psychologists.fields&populate[9]=psychologists.img`
       );
       const repo = await res.json();
       await setCourse(repo);

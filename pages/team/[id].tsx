@@ -19,7 +19,7 @@ export default function Page() {
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
-        `http://localhost:1337/api/psychologists/${router.query.id}?populate=*`
+        `http://77.232.128.234:1337/api/psychologists/${router.query.id}?populate=*`
       );
       const repo = await res.json();
       setPsychologist(repo.data);
@@ -29,7 +29,7 @@ export default function Page() {
 
   return (
     <div className={style.dynamic}>
-      {(psychologist) && (
+      {psychologist && (
         <div className={style.dynamic__container}>
           <Cover props={psychologist} />
           <h4 className={style.dynamic__container__head}>О психологе</h4>

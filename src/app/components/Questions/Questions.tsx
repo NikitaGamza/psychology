@@ -32,15 +32,15 @@ const submitForm = (
     setCheckErr(false);
   }
   if (name !== '' && mobile !== '' && checker) {
-    fetch("http://localhost:1337/api/common-questions", {
-      method: "POST",
+    fetch('http://77.232.128.234:1337/api/common-questions', {
+      method: 'POST',
       body: JSON.stringify({
         phone: mobile,
         name: name,
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      }
+        'Content-type': 'application/json; charset=UTF-8',
+      },
     });
     setModal(true);
   }

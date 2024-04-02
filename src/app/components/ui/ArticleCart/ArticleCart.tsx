@@ -1,20 +1,23 @@
 import style from './ArticleCart.module.scss';
 import Image from 'next/image';
 
-export default function ArticleCart({item}: any) {
+export default function ArticleCart({ item }: any) {
   return (
     <div className={style.cart}>
       {item.attributes?.adviceImg?.data.attributes?.url && (
         <Image
-          src={`http://localhost:1337${item.attributes?.adviceImg.data.attributes?.url}`}
-          alt='cover'
+          src={`http://77.232.128.234:1337${item.attributes?.adviceImg.data.attributes?.url}`}
+          alt="cover"
           width={100}
           height={100}
           className={style.cart__img}
         />
       )}
       {item.attributes.videoLink && (
-        <iframe src={item.attributes.videoLink} className={style.cart__img}></iframe>
+        <iframe
+          src={item.attributes.videoLink}
+          className={style.cart__img}
+        ></iframe>
       )}
       <div className={style.cart__topics}>
         {item.attributes?.themes.data?.map((topic: any, idx: number) => (
@@ -23,16 +26,12 @@ export default function ArticleCart({item}: any) {
           </span>
         ))}
       </div>
-      {
-        item.attributes?.title && (
-<h5 className={style.cart__head}>{item.attributes?.title}</h5>
-        )
-      }
-      {
-        item.attributes?.videoName && (
-          <h5 className={style.cart__head}>{item.attributes?.videoName}</h5>
-        )
-      }
+      {item.attributes?.title && (
+        <h5 className={style.cart__head}>{item.attributes?.title}</h5>
+      )}
+      {item.attributes?.videoName && (
+        <h5 className={style.cart__head}>{item.attributes?.videoName}</h5>
+      )}
     </div>
   );
 }

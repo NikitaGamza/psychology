@@ -12,7 +12,7 @@ import type {
 } from 'next';
 
 // export const getStaticPaths = (async () => {
-//   const res = await fetch('http://localhost:1337/api/videos?populate=*');
+//   const res = await fetch('http://77.232.128.234:1337/api/videos?populate=*');
 //   const repo = await res.json();
 //   return {
 //     paths: [
@@ -27,7 +27,7 @@ import type {
 // }) satisfies GetStaticPaths;
 
 // export const getStaticProps = (async (context) => {
-//   const res = await fetch('http://localhost:1337/api/videos?populate=*');
+//   const res = await fetch('http://77.232.128.234:1337/api/videos?populate=*');
 //   const repo = await res.json();
 //   return { props: { repo } };
 // }) satisfies GetStaticProps<{

@@ -11,7 +11,7 @@ import type {
 } from 'next';
 
 // export const getStaticPaths = (async () => {
-//   const res = await fetch('http://localhost:1337/api/questions');
+//   const res = await fetch('http://77.232.128.234:1337/api/questions');
 //   const repo = await res.json();
 //   return {
 //     paths: [
@@ -26,7 +26,7 @@ import type {
 // }) satisfies GetStaticPaths;
 
 // export const getStaticProps = (async (context) => {
-//   const res = await fetch('http://localhost:1337/api/questions');
+//   const res = await fetch('http://77.232.128.234:1337/api/questions');
 //   const repo = await res.json();
 //   return { props: { repo } };
 // }) satisfies GetStaticProps<{
@@ -67,7 +67,7 @@ export default function Answer() {
         <h2 className={style.ans__head}>{answer?.attributes.Title}</h2>
         <div className={style.ans__client}>
           <Image
-            src={'http://localhost:1337/uploads/Group_2991_ed21709b72.svg'}
+            src={'http://77.232.128.234:1337/uploads/Group_2991_ed21709b72.svg'}
             alt="client"
             width={64}
             height={64}

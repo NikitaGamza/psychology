@@ -66,7 +66,7 @@ export default function Diploma({ props }: any) {
                   className={`keen-slider__slide ${style.dipl__content__slider__wrap__slide}`}
                 >
                   <Image
-                    src={`http://localhost:1337/${item.attributes.url.slice(
+                    src={`http://77.232.128.234:1337/${item.attributes.url.slice(
                       1
                     )}`}
                     alt={item.attributes.url}

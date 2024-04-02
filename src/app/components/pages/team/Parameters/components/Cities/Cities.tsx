@@ -6,10 +6,10 @@ import { toggle } from '@/store/features/cities/cities';
 
 export default function Cities() {
   const [isVisible, setIsVisible] = useState<boolean>(true);
-  const [cities, setCities] = useState<any>()
+  const [cities, setCities] = useState<any>();
   useEffect(() => {
     async function hiData() {
-      const res = await fetch(`http://localhost:1337/api/cities`);
+      const res = await fetch(`http://77.232.128.234:1337/api/cities`);
       const repo = await res.json();
       repo.data.map((item: any) => (item.isSelected = false));
       setCities(repo.data);
@@ -21,7 +21,7 @@ export default function Cities() {
     const updatedItem = Object.assign({}, cities[currentId]);
     updatedItem.isSelected = !updatedItem.isSelected;
     const newList = cities.slice();
-    newList.map((item:any)=> (item.isSelected = false))
+    newList.map((item: any) => (item.isSelected = false));
     newList[currentId] = updatedItem;
     setCities(newList);
   }

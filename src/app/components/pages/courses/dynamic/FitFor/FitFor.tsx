@@ -21,7 +21,7 @@ export default function FitFor(props: IList) {
           fitFor.map((item: any) => (
             <div key={item.id} className={style.for__content__item}>
               <Image
-                src={`http://localhost:1337/${item.attributes.img?.data.attributes.url.slice(
+                src={`http://77.232.128.234:1337/${item.attributes.img?.data.attributes.url.slice(
                   1
                 )}`}
                 alt="img"

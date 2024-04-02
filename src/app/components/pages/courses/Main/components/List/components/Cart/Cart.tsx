@@ -10,7 +10,7 @@ export default function Cart(props: any) {
   return (
     <div className={style.cart}>
       <Image
-        src={`http://localhost:1337${props.imgUrl}`}
+        src={`http://77.232.128.234:1337${props.imgUrl}`}
         alt="pic"
         width={160}
         height={300}
@@ -70,19 +70,18 @@ export default function Cart(props: any) {
             </p>
           </div>
           {props.address && (
-<div className={style.cart__info__wrap__address}>
-            <Image
-              src={'/img/icons/rest/location.svg'}
-              alt="loc"
-              width={18}
-              height={24}
-            />
-            <p className={style.cart__info__wrap__address__text}>
-              {props.address}
-            </p>
-          </div>
+            <div className={style.cart__info__wrap__address}>
+              <Image
+                src={'/img/icons/rest/location.svg'}
+                alt="loc"
+                width={18}
+                height={24}
+              />
+              <p className={style.cart__info__wrap__address__text}>
+                {props.address}
+              </p>
+            </div>
           )}
-          
         </div>
         <div className={style.cart__info__rest}>
           <Link
