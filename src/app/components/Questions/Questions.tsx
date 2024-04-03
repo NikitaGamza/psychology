@@ -3,7 +3,7 @@ import style from './Questions.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import Modal from './components/Modal/Modal';
-import ReCAPTCHA from 'react-google-recaptcha';
+// import ReCAPTCHA from 'react-google-recaptcha';
 
 const submitForm = (
   e: FormEvent,
@@ -54,7 +54,7 @@ export default function Questions() {
   const [mobile, setMobile] = useState<string>('');
   const [mobileErr, setMobileErr] = useState<boolean>(false);
   const [modal, setModal] = useState<boolean>(false);
-  const [captcha, setCaptcha] = useState<string | null>();
+  // const [captcha, setCaptcha] = useState<string | null>();
   return (
     <div className={style.question}>
       {modal && <Modal setModal={setModal} />}
@@ -217,10 +217,10 @@ export default function Questions() {
                 )}
               </div>
             </div>
-            <ReCAPTCHA
+            {/* <ReCAPTCHA
               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
               onChange={setCaptcha}
-            />
+            /> */}
             <input
               type="submit"
               className={style.question__content__form__send}
