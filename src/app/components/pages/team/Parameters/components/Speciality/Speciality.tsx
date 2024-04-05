@@ -9,7 +9,7 @@ export default function Speciality() {
     async function hiData() {
       const res = await fetch(`http://77.232.128.234:1337/api/themes`);
       const repo = await res.json();
-      repo.data.map((item: any) => (item.isSelected = false));
+      repo.data?.map((item: any) => (item.isSelected = false));
       setSpecThemes(repo.data);
     }
     hiData();

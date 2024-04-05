@@ -11,7 +11,7 @@ export default function Methods() {
     async function hiData() {
       const res = await fetch(`http://77.232.128.234:1337/api/methods`);
       const repo = await res.json();
-      repo.data.map((item: any) => (item.isSelected = false));
+      repo.data?.map((item: any) => (item.isSelected = false));
       setMethods(repo.data);
     }
     hiData();

@@ -21,7 +21,7 @@ export default function List({ format, parameters }: any) {
   return (
     <div className={style.list}>
       {/* '77.232.128.234:1337/url' */}
-      {result?.data.map((item: any) => (
+      {result?.data?.map((item: any) => (
         <Psychologist
           key={item.id}
           id={item.id}
