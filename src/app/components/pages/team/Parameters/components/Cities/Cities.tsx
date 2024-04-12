@@ -47,12 +47,21 @@ export default function Cities() {
       <div className={isVisible ? style.block__list : style.none}>
         {cities?.map((item: any, idx: number) => (
           <div key={idx} className={style.block__list__item}>
+            <label
+              htmlFor={`cities${item.id}`}
+              className={
+                item.isSelected
+                  ? style.block__list__item__label_fake_active
+                  : style.block__list__item__label_fake
+              }
+            ></label>
             <input
               type="radio"
               name="city"
               id={`cities${item.id}`}
               onClick={() => handleToggle(item.id)}
               checked={item.isSelected ? true : false}
+              className={style.block__list__item__radio}
             />
             <label
               htmlFor={`cities${item.id}`}

@@ -30,7 +30,7 @@ export default function Parameters({ parameters, setParameters }: any) {
         <Experience />
         <Sex />
         <Cities />
-        <Format />
+        {/* <Format /> */}
       </div>
     </div>
   );

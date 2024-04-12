@@ -30,11 +30,21 @@ export default function Format() {
       <div className={isVisible ? style.block__list : style.none}>
         {format.map((item: any, idx: number) => (
           <div key={idx} className={style.block__list__item}>
+            <label
+              onClick={() => dispatch(toggle(item.id))}
+              htmlFor={`form${item.id}`}
+              className={
+                item.isSelected
+                  ? style.block__list__item__label_fake_active
+                  : style.block__list__item__label_fake
+              }
+            ></label>
             <input
               type="radio"
               name="experience"
               id={`form${item.id}`}
               onClick={() => dispatch(toggle(item.id))}
+              className={style.block__list__item__radio}
             />
             <label
               onClick={() => dispatch(toggle(item.id))}

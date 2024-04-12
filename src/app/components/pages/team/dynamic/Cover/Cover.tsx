@@ -110,7 +110,16 @@ export default function Cover(props: any) {
             <div className={style.cover__info__location}>
               <p className={style.cover__info__location__address}>{address} </p>
               {metro && (
-                <p className={style.cover__info__location__metro}>{metro}</p>
+                <>
+                  <Image
+                    src={'/img/icons/bullet/bullet-blue.svg'}
+                    alt="metro"
+                    width={8}
+                    height={8}
+                    className={style.cover__info__location__bullet}
+                  />
+                  <p className={style.cover__info__location__metro}>{metro}</p>
+                </>
               )}
             </div>
           </div>

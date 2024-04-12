@@ -30,12 +30,22 @@ export default function Sex() {
       <div className={isVisible ? style.block__list : style.none}>
         {sex.map((item: any, idx: number) => (
           <div key={idx} className={style.block__list__item}>
+            <label
+              onClick={() => dispatch(toggle(item.id))}
+              htmlFor={`sex${item.id}`}
+              className={
+                item.isSelected
+                  ? style.block__list__item__label_fake_active
+                  : style.block__list__item__label_fake
+              }
+            ></label>
             <input
               type="radio"
               name="sex"
               id={`sex${item.id}`}
               onClick={() => dispatch(toggle(item.id))}
               checked={item.isSelected ? true : false}
+              className={style.block__list__item__radio}
             />
             <label
               onClick={() => dispatch(toggle(item.id))}

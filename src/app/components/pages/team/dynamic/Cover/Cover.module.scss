@@ -2,7 +2,8 @@
 .cover {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
+  gap: 48px;
   &__wrap {
     display: flex;
     flex-direction: column;
@@ -35,6 +36,7 @@
       font-size: 32px;
       font-weight: 700;
       line-height: 36px;
+      font-family: 'Gilroy-Bold';
     }
     &__fields {
       &__item {
@@ -71,6 +73,11 @@
         font-size: 16px;
         font-weight: 500;
         line-height: 24px;
+      }
+      &__bullet {
+        transform: translate(0%, 80%);
+        margin-right: 5px;
+        margin-left: 10px;
       }
     }
 
