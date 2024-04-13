@@ -72,7 +72,9 @@ export default function Cover(props: any) {
         <span className={style.cover__detail__item}>
           <p className={style.cover__detail__item__title}>Расписание</p>
           <p className={style.cover__detail__item__info}>{props.weekDay}</p>
-          <p className={style.cover__detail__item__info}>в {props.time}</p>
+          <p className={style.cover__detail__item__info}>
+            в {props.time.slice(0, -7)}
+          </p>
         </span>
         {props.address && (
           <span className={style.cover__detail__item}>
