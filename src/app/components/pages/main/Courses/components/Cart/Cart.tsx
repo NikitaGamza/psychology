@@ -52,7 +52,7 @@ export default function Cart(item: any) {
             </div>
             <div className={style.slide__content__info__time}>
               <p className={style.slide__content__info__time__text}>
-                {attributes.weekDay} в {attributes.time}
+                {attributes.weekDay} в {attributes.time.slice(0, -7)}
               </p>
               <Image
                 src={'/img/icons/rest/separator.svg'}
