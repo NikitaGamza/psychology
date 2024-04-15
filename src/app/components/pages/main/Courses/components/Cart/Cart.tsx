@@ -2,7 +2,23 @@ import style from './Cart.module.scss';
 import 'keen-slider/keen-slider.min.css';
 import Image from 'next/image';
 export default function Cart(item: any) {
+  const monthList = [
+    'января',
+    'февраля',
+    'марта',
+    'апреля',
+    'мая',
+    'июня',
+    'июля',
+    'августа',
+    'сентября',
+    'октября',
+    'ноября',
+    'декабря',
+  ];
+
   const { attributes } = item.item;
+  const startDay = new Date(attributes.startDate);
   return (
     <div className={`${style.slide}`}>
       <div className={style.slide__content}>
@@ -37,7 +53,7 @@ export default function Cart(item: any) {
             </h5>
             <div className={style.slide__content__info__time}>
               <p className={style.slide__content__info__time__text}>
-                c {attributes.startDate}
+                c {startDay.getDate()} {monthList[startDay.getMonth()]}
               </p>
               <Image
                 src={'/img/icons/rest/separator.svg'}
