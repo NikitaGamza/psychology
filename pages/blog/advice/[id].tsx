@@ -7,68 +7,34 @@ import BlogLayout from '../layout';
 import Banner from './components/Banner/Banner';
 import Slider from './components/Slider/Slider';
 import Markdown from 'react-markdown';
-import type {
-  InferGetStaticPropsType,
-  GetStaticProps,
-  GetStaticPaths,
-} from 'next';
-
-// export const getStaticPaths = (async () => {
-//   const res = await fetch('http://77.232.128.234:1337/api/advices?populate=*');
-//   const repo = await res.json();
-//   return {
-//     paths: [
-//       {
-//         params: {
-//           id: `${repo.data[0]}`,
-//         },
-//       }, // See the "paths" section below
-//     ],
-//     fallback: true, // false or "blocking"
-//   };
-// }) satisfies GetStaticPaths;
-
-// export const getStaticProps = (async (context) => {
-//   const res = await fetch('http://77.232.128.234:1337/api/advices?populate=*');
-//   const repo = await res.json();
-//   return { props: { repo } };
-// }) satisfies GetStaticProps<{
-//   repo: any;
-// }>;
 
 export default function AdviceDetail() {
-  // const moreList = [
-  //   {
-  //     id: 1,
-  //     imgUrl: '/img/pages/blog/1.png',
-  //     themes: ['Отношения', 'Семья'],
-  //     head: 'На что обращать внимание при знакомстве?',
-  //   },
-  //   {
-  //     id: 2,
-  //     imgUrl: '/img/pages/blog/3.png',
-  //     themes: ['Отношения', 'Семья'],
-  //     head: 'На что обращать внимание при знакомстве?',
-  //   },
-  //   {
-  //     id: 3,
-  //     imgUrl: '/img/pages/blog/4.png',
-  //     themes: ['Отношения', 'Семья'],
-  //     head: 'На что обращать внимание при знакомстве?',
-  //   },
-  // ];
-  // const router = useRouter();
-  // const [detail, setDetail] = useState<any>();
+  const router = useRouter();
+  const [detail, setDetail] = useState<any>();
+  const [moreList, setMoreList] = useState<any>();
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/advices/${router.query.id}?populate=*`
+      );
+      const repo = await res.json();
+      setDetail(repo);
+    }
+    hiData();
+  }, [router.query.id]);
   // useEffect(() => {
-  //   const found = repo?.data.find((el: any) => el.id == router.query.id);
-  //   setDetail(found);
-  //   console.log(found);
-  //   console.log(detail);
-  // }, [repo]);
+  //   async function hiData() {
+  //     const res = await fetch(
+  //       `http://77.232.128.234:1337/api/advices/${router.query.id}?populate=*`
+  //     );
+  //     const repo = await res.json();
+  //     setDetail(repo);
+  //   }
+  //   hiData();
+  // }, [router.query.id]);
   return (
     <BlogLayout>
-      <h1>hi</h1>
-      {/* <div className={style.det}>
+      <div className={style.det}>
         <Link href={'/blog/advice'} className={style.det__back}>
           <Image
             src={'/img/icons/arrows/arrow-left-green.svg'}
@@ -79,50 +45,57 @@ export default function AdviceDetail() {
           />
           <span className={style.det__back__text}>Назад</span>
         </Link>
-        <div className={style.det__themes}>
-          {detail?.attributes.themes.data.map((item: any, idx: number) => (
-            <span key={idx} className={style.det__themes__item}>
-              {item.attributes.themeName}
-            </span>
-          ))}
-        </div>
-        <h2 className={style.det__head}>{detail?.attributes.title}</h2>
-        <Image
-          src={`http://77.232.128.234:1337/${detail?.attributes.adviceImg.data.attributes.url.slice(
-            1
-          )}`}
-          alt="img"
-          width={100}
-          height={100}
-          className={style.det__img}
-        />
-        <div className={style.det__form}>
-          <Image
-            src={`http://77.232.128.234:1337/${detail?.attributes.authorImg.data.attributes.url.slice(
-              1
-            )}`}
-            alt="img"
-            width={64}
-            height={64}
-            className={style.det__form__img}
-          />
-          <div className={style.det__form__info}>
-            <div className={style.det__form__info__fio}>
-              <span className={style.det__form__info__fio__name}>
-                {detail?.attributes.authorFIO}
-              </span>
+        {(detail?.data?.id === 0 || detail?.data?.id) && (
+          <>
+            <div className={style.det__themes}>
+              {detail?.data.attributes.themes.data.map(
+                (item: any, idx: number) => (
+                  <span key={idx} className={style.det__themes__item}>
+                    {item.attributes.themeName}
+                  </span>
+                )
+              )}
             </div>
-            <p className={style.det__form__info__status}>
-              {detail?.attributes.authorStatus}
-            </p>
-          </div>
-        </div>
-        <div className={style.det__content}>
-          <Markdown>{detail?.attributes.adviceText2}</Markdown>
-        </div>
-        <Banner />
-        <Slider moreList={moreList} />
-      </div> */}
+            <h2 className={style.det__head}>{detail?.attributes?.title}</h2>
+            <Image
+              src={`http://77.232.128.234:1337/${detail?.data.attributes.adviceImg.data.attributes.url.slice(
+                1
+              )}`}
+              alt="img"
+              width={100}
+              height={100}
+              className={style.det__img}
+            />
+            <div className={style.det__form}>
+              <Image
+                src={`http://77.232.128.234:1337/${detail?.data.attributes.authorImg.data.attributes.url.slice(
+                  1
+                )}`}
+                alt="img"
+                width={64}
+                height={64}
+                className={style.det__form__img}
+              />
+              <div className={style.det__form__info}>
+                <div className={style.det__form__info__fio}>
+                  <span className={style.det__form__info__fio__name}>
+                    {detail?.data.attributes.authorFIO}
+                  </span>
+                </div>
+                <p className={style.det__form__info__status}>
+                  {detail?.data.attributes.authorStatus}
+                </p>
+              </div>
+            </div>
+            <div className={style.det__content}>
+              <Markdown>{detail?.data.attributes.adviceText}</Markdown>
+            </div>
+            <Banner />
+          </>
+        )}
+
+        {/* <Slider moreList={moreList} /> */}
+      </div>
     </BlogLayout>
   );
 }

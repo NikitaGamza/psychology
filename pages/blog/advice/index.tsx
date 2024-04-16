@@ -15,7 +15,6 @@ export default function Advice() {
       setSuggestList(repo.data);
     }
     hiData();
-    console.log(suggestList);
   }, []);
   return (
     <BlogLayout>
