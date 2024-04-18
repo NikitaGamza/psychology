@@ -14,7 +14,7 @@ import type {
 } from 'next';
 
 // export const getStaticPaths = (async () => {
-//   const res = await fetch('http://localhost:1337/api/advices?populate=*');
+//   const res = await fetch('http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/advices?populate=*');
 //   const repo = await res.json();
 //   return {
 //     paths: [
@@ -29,7 +29,7 @@ import type {
 // }) satisfies GetStaticPaths;
 
 // export const getStaticProps = (async (context) => {
-//   const res = await fetch('http://localhost:1337/api/advices?populate=*');
+//   const res = await fetch('http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/advices?populate=*');
 //   const repo = await res.json();
 //   return { props: { repo } };
 // }) satisfies GetStaticProps<{
@@ -88,7 +88,7 @@ export default function AdviceDetail() {
         </div>
         <h2 className={style.det__head}>{detail?.attributes.title}</h2>
         <Image
-          src={`http://localhost:1337/${detail?.attributes.adviceImg.data.attributes.url.slice(
+          src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337/${detail?.attributes.adviceImg.data.attributes.url.slice(
             1
           )}`}
           alt="img"
@@ -98,7 +98,7 @@ export default function AdviceDetail() {
         />
         <div className={style.det__form}>
           <Image
-            src={`http://localhost:1337/${detail?.attributes.authorImg.data.attributes.url.slice(
+            src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337/${detail?.attributes.authorImg.data.attributes.url.slice(
               1
             )}`}
             alt="img"

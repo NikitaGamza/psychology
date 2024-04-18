@@ -10,7 +10,7 @@ export default function Cart(props: any) {
   return (
     <div className={style.cart}>
       <Image
-        src={`http://localhost:1337${props.imgUrl}`}
+        src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337${props.imgUrl}`}
         alt="pic"
         width={160}
         height={300}

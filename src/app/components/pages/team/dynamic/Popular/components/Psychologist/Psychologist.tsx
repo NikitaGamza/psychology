@@ -29,7 +29,7 @@ export default function Psychologist(props: any) {
     <>
       {inDetail ? (
         <div className={style.psychologist_full}>
-          <Image src={`http://localhost:1337${imageUrl}`} alt={'avatar'} width={100} height={100} />
+          <Image src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337${imageUrl}`} alt={'avatar'} width={100} height={100} />
           <div className={style.psychologist_full__info}>
             <div className={style.psychologist_full__info__head}>
               <h5 className={style.psychologist_full__info__head__fullname}>
@@ -108,7 +108,7 @@ export default function Psychologist(props: any) {
         </div>
       ) : (
         <Link href={`team/${id}`} className={style.psychologist_min}>
-          <Image src={`http://localhost:1337${imageUrl}`} alt={'avatar'} width={100} height={100} className={style.psychologist__img} />
+          <Image src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337${imageUrl}`} alt={'avatar'} width={100} height={100} className={style.psychologist__img} />
           <h5 className={style.psychologist__fullname}>
             {firstName} {lastName}
           </h5>

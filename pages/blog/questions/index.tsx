@@ -42,7 +42,7 @@ export default function Questions({ posts }: any) {
 // export async function getStaticProps() {
 //   // Call an external API endpoint to get posts.
 //   // You can use any data fetching library
-//   const res = await fetch('http://localhost:1337/api/questions');
+//   const res = await fetch('http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/questions');
 //   const posts = await res.json();
 
 //   return {

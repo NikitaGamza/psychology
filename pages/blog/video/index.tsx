@@ -42,7 +42,7 @@ export default function Video({ posts }: any) {
 // export async function getStaticProps() {
 //   // Call an external API endpoint to get posts.
 //   // You can use any data fetching library
-//   const res = await fetch('http://localhost:1337/api/videos?populate=*');
+//   const res = await fetch('http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/videos?populate=*');
 //   const posts = await res.json();
 
 //   return {

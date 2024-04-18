@@ -19,7 +19,7 @@ export default function Page() {
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
-        `http://localhost:1337/api/psychologists/${router.query.id}?populate=*`
+        `http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/psychologists/${router.query.id}?populate=*`
       );
       const repo = await res.json();
       setPsychologist(repo.data);

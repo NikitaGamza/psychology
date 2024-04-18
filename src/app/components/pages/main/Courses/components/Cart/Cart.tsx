@@ -9,7 +9,7 @@ export default function Cart(item: any) {
     <div className={`${style.slide}`}>
       <div className={style.slide__content}>
         <Image
-          src={`http://localhost:1337${attributes?.imgMain?.data?.attributes?.url}`}
+          src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337${attributes?.imgMain?.data?.attributes?.url}`}
           alt={'course'}
           width={160}
           height={300}
@@ -28,7 +28,7 @@ export default function Cart(item: any) {
               ))}
             </div>
             <Image
-              src={`http://localhost:1337${attributes?.imgMobile?.data?.attributes?.url}`}
+              src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337${attributes?.imgMobile?.data?.attributes?.url}`}
               alt={'course'}
               width={288}
               height={160}

@@ -39,7 +39,7 @@ export default function Cover(props: any) {
             {props.courseDescription}
           </p>
           <Image
-            src={`http://localhost:1337/${props.imgMobile?.slice(1)}`}
+            src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337/${props.imgMobile?.slice(1)}`}
             alt="img"
             width={328}
             height={184}
@@ -50,7 +50,7 @@ export default function Cover(props: any) {
           </Link>
         </div>
         <Image
-          src={`http://localhost:1337/${props.imgMain?.slice(1)}`}
+          src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337/${props.imgMain?.slice(1)}`}
           alt="img"
           width={420}
           height={640}

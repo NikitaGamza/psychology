@@ -23,7 +23,7 @@ export default function Courses() {
   const [courseList, setCourseList] = useState<any>()
   useEffect(()=>{
     async function hiData() {
-      const res = await fetch(`http://localhost:1337/api/courses?populate=*&pagination[pageSize]=3&sort=id:desc`);
+      const res = await fetch(`http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/courses?populate=*&pagination[pageSize]=3&sort=id:desc`);
       const repo = await res.json();
       setCourseList(repo.data);
     }

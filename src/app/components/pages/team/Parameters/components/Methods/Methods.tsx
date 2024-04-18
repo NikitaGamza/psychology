@@ -9,7 +9,7 @@ export default function Methods() {
   const [methods, setMethods] = useState<Array<any>>([])
   useEffect(() => {
     async function hiData() {
-      const res = await fetch(`http://localhost:1337/api/methods`);
+      const res = await fetch(`http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/methods`);
       const repo = await res.json();
       repo.data.map((item: any) => (item.isSelected = false));
       setMethods(repo.data);

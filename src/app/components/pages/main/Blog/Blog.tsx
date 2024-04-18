@@ -10,7 +10,7 @@ export default function Blog() {
   const [videoList, setVideoList] = useState<any>()
   useEffect(()=>{
       async function hiData() {
-        const res = await fetch(`http://localhost:1337/api/questions?populate=*&pagination[pageSize]=2&sort=id:desc`);
+        const res = await fetch(`http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/questions?populate=*&pagination[pageSize]=2&sort=id:desc`);
         const repo = await res.json();
         setQuestionList(repo.data);
       }
@@ -18,7 +18,7 @@ export default function Blog() {
   }, [])
   useEffect(()=>{
     async function hiData() {
-      const res = await fetch(`http://localhost:1337/api/advices?populate=*&pagination[pageSize]=3&sort=id:desc`);
+      const res = await fetch(`http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/advices?populate=*&pagination[pageSize]=3&sort=id:desc`);
       const repo = await res.json();
       setSuggestList(repo.data);
     }
@@ -26,7 +26,7 @@ export default function Blog() {
 }, [])
 useEffect(()=>{
   async function hiData() {
-    const res = await fetch(`http://localhost:1337/api/videos?populate=*&pagination[pageSize]=3&sort=id:desc`);
+    const res = await fetch(`http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/videos?populate=*&pagination[pageSize]=3&sort=id:desc`);
     const repo = await res.json();
     setVideoList(repo.data);
   }

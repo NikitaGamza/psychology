@@ -9,7 +9,7 @@ export default function Cities() {
   const [cities, setCities] = useState<any>()
   useEffect(() => {
     async function hiData() {
-      const res = await fetch(`http://localhost:1337/api/cities`);
+      const res = await fetch(`http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/cities`);
       const repo = await res.json();
       repo.data.map((item: any) => (item.isSelected = false));
       setCities(repo.data);

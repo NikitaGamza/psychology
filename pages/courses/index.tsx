@@ -10,7 +10,7 @@ export default function Courses({ posts }: any) {
   const [courseList, setCourseList] = useState<any>();
   useEffect(() => {
     async function hiData() {
-      const res = await fetch(`http://localhost:1337/api/courses?populate=*`);
+      const res = await fetch(`http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/courses?populate=*`);
       const repo = await res.json();
       await setCourseList(repo);
       console.log(courseList);
@@ -45,7 +45,7 @@ export default function Courses({ posts }: any) {
 // export async function getStaticProps() {
 //   // Call an external API endpoint to get posts.
 //   // You can use any data fetching library
-//   const res = await fetch('http://localhost:1337/api/courses?populate=*');
+//   const res = await fetch('http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/courses?populate=*');
 //   const posts = await res.json();
 
 //   return {

@@ -23,7 +23,7 @@ export default function PsychoSlider() {
   const [psychoList, setPsychoList] = useState<any>()
   useEffect(()=>{
       async function hiData() {
-        const res = await fetch(`http://localhost:1337/api/psychologists?populate=*&filters[isPopular][$eq]=true`);
+        const res = await fetch(`http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/psychologists?populate=*&filters[isPopular][$eq]=true`);
         const repo = await res.json();
         setPsychoList(repo.data);
       }

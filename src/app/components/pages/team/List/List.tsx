@@ -10,7 +10,7 @@ export default function List({ format, parameters }: any) {
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
-        `http://localhost:1337/api/psychologists?populate=*`
+        `http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/psychologists?populate=*`
       );
       const repo = await res.json();
       await setResult(repo);
@@ -20,7 +20,7 @@ export default function List({ format, parameters }: any) {
   }, []);
   return (
     <div className={style.list}>
-      {/* 'localhost:1337/url' */}
+      {/* '${process.env.NEXT_PUBLIC_SERVER}:1337/url' */}
       {result?.data.map((item: any) => (
         <Psychologist
           key={item.id}
