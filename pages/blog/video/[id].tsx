@@ -66,22 +66,22 @@ export default function VideoDetail() {
         </Link>
         <iframe
           className={style.det__video}
-          src={video?.attributes.videoLink}
+          src={detail?.attributes.videoLink}
         ></iframe>
         <div className={style.det__info}>
           <h3 className={style.det__info__head}>
-            {video?.attributes.videoName}
+            {detail?.attributes.videoName}
           </h3>
           <div className={style.det__info__themes}>
-            {video?.attributes.themes.data.map((item: any) => (
+            {detail?.attributes.themes.data.map((item: any) => (
               <span key={item.id} className={style.det__info__themes__item}>
                 {item.attributes.themeName}
               </span>
             ))}
           </div>
-        </div> */}
+        </div> 
 
-        <Slider moreList={videoList} />
+        {/* <Slider moreList={videoList} /> */}
       </div>
     </BlogLayout>
   );
