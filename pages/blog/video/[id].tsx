@@ -5,6 +5,34 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Slider from './components/Slider/Slider';
+import type {
+  InferGetStaticPropsType,
+  GetStaticProps,
+  GetStaticPaths,
+} from 'next';
+
+// export const getStaticPaths = (async () => {
+//   const res = await fetch('http://localhost:1337/api/videos?populate=*');
+//   const repo = await res.json();
+//   return {
+//     paths: [
+//       {
+//         params: {
+//           id: `${repo.data[0]}`,
+//         },
+//       }, // See the "paths" section below
+//     ],
+//     fallback: true, // false or "blocking"
+//   };
+// }) satisfies GetStaticPaths;
+
+// export const getStaticProps = (async (context) => {
+//   const res = await fetch('http://localhost:1337/api/videos?populate=*');
+//   const repo = await res.json();
+//   return { props: { repo } };
+// }) satisfies GetStaticProps<{
+//   repo: any;
+// }>;
 
 export default function VideoDetail() {
   const router = useRouter();
@@ -38,22 +66,22 @@ export default function VideoDetail() {
         </Link>
         <iframe
           className={style.det__video}
-          src={detail?.data.attributes.videoLink}
+          src={video?.attributes.videoLink}
         ></iframe>
         <div className={style.det__info}>
           <h3 className={style.det__info__head}>
-            {detail?.data.attributes.videoName}
+            {video?.attributes.videoName}
           </h3>
           <div className={style.det__info__themes}>
-            {detail?.data.attributes.themes.data.map((item: any) => (
+            {video?.attributes.themes.data.map((item: any) => (
               <span key={item.id} className={style.det__info__themes__item}>
                 {item.attributes.themeName}
               </span>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        {/* <Slider moreList={videoList} /> */}
+        <Slider moreList={videoList} />
       </div>
     </BlogLayout>
   );

@@ -7,7 +7,9 @@ export default function Speciality() {
   const [specThemes, setSpecThemes] = useState<any>(null);
   useEffect(() => {
     async function hiData() {
-      const res = await fetch(`http://77.232.128.234:1337/api/themes`);
+      const res = await fetch(
+        `http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/themes`
+      );
       const repo = await res.json();
       repo.data?.map((item: any) => (item.isSelected = false));
       setSpecThemes(repo.data);

@@ -4,7 +4,7 @@ export const initialState = {
 };
 async function hiData() {
   const res = await fetch(
-    `http://77.232.128.234:1337/api/psychologists?populate=*`
+    `http://${process.env.NEXT_PUBLIC_SERVER}:1337/api/psychologists?populate=*`
   );
   const repo = await res.json();
   // console.log([...repo.data]);
