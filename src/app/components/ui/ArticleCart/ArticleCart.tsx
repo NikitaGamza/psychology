@@ -6,7 +6,8 @@ export default function ArticleCart({ item }: any) {
     <div className={style.cart}>
       {item.attributes?.adviceImg?.data.attributes?.url && (
         <Image
-          src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337${item.attributes?.adviceImg.data.attributes?.url}`}
+          // src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337${item.attributes?.adviceImg.data.attributes?.url}`}
+          src={`http://77.232.128.234:1337${item.attributes?.adviceImg.data.attributes?.url}`}
           alt="cover"
           width={100}
           height={100}
