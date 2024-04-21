@@ -9,7 +9,7 @@ export default function Questions() {
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
-        `http://77.232.128.234:1337/api/questions?populate=*`
+        `http://77.232.128.234:1337/api/questions?populate=*&sort[0]=id:desc`
       );
       const repo = await res.json();
       setQuestionList(repo.data);
@@ -42,6 +42,15 @@ export default function Questions() {
                 <h4 className={style.grid__item__head}>
                   {item.attributes.Title}
                 </h4>
+                <p className={style.grid__item__text}>
+                  {item.attributes.questionText}
+                </p>
+                <Link
+                  className={style.grid__item__text__more}
+                  href={`/blog/questions/${item.id}`}
+                >
+                  Читать далее
+                </Link>
               </Link>
             ))}
         </div>

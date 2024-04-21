@@ -144,6 +144,18 @@
       line-height: 24px;
       margin-bottom: 24px;
     }
+    &__text {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 24px;
+      &__more {
+        color: $green;
+        font-weight: 700;
+      }
+    }
   }
 }
 
@@ -212,6 +224,7 @@
     @include link-sheer-green;
     padding: 12px 65px;
     margin: 0 auto;
+    margin-top: 60px;
   }
 }
 @media screen and (max-width: 768px) {
