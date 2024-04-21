@@ -9,14 +9,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
     formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      {
-        protocol: 'http',
-        hostname: process.env.NEXT_PUBLIC_SERVER,
-        port: '1337',
-        // pathname: "/image/upload/**",
-      },
-    ],
+    // remotePatterns: [
+    //   {
+    //     protocol: 'http',
+    //     hostname: process.env.NEXT_PUBLIC_SERVER,
+    //     port: '1337',
+    //     // pathname: "/image/upload/**",
+    //   },
+    // ],
   },
   typescript: {
     // !! WARN !!
