@@ -42,7 +42,7 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <Link href="" className={style.header__button}>
+        <Link href="/team" className={style.header__button}>
           Подобрать психолога
         </Link>
         <button
