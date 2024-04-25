@@ -18,7 +18,7 @@ export default function IntroductionPageComponent() {
             <h1 className={style.introduction__container__head}>
               Поможем найти{' '}
               <span className={style.introduction__container__head_green}>
-                твоего психолога
+                твоего психолога!
               </span>
             </h1>
             <p className={style.introduction__container__description}>
