@@ -91,14 +91,14 @@ export default function Cover(props: any) {
             </div>
             <div className={style.cover__info__params}>
               <span className={style.cover__info__params__item}>
-                Стаж {experience()} лет •{' '}
+                Стаж {experience()} лет •
               </span>
+              <span className={style.space}> </span>
               <span className={style.cover__info__params__item}>
-                {' '}
                 {age()} лет •{' '}
               </span>
+              <span className={style.space}> </span>
               <span className={style.cover__info__params__item}>
-                {' '}
                 {marriedResult}
               </span>
             </div>
