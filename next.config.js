@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  // experimental: {
-  //   images: {
-  //     unoptimized: true,
-  //   },
-  // },
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
+  // process.env.NEXT_PUBLIC_SERVER,
+  // '77.232.128.234'
   images: {
     unoptimized: true,
     formats: ['image/avif', 'image/webp'],

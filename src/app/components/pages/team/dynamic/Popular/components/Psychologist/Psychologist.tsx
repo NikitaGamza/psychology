@@ -124,8 +124,8 @@ export default function Psychologist(props: any) {
             {firstName} {lastName}
           </h5>
           <p className={style.psychologist__fields}>
-            {fields?.map((field: any) => {
-              return <span>{field.attributes.name} </span>;
+            {fields?.map((field: any, idx: number) => {
+              return <span key={idx}>{field.attributes.name} </span>;
             })}
           </p>
           {/* Изменено выше */}
