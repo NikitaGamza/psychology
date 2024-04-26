@@ -45,8 +45,10 @@ export default function AdviceDetail() {
           />
           <span className={style.det__back__text}>Назад</span>
         </Link>
+
         {(detail?.data?.id === 0 || detail?.data?.id) && (
           <>
+            <h2>{detail.data.attributes.title}</h2>
             <div className={style.det__themes}>
               {detail?.data.attributes.themes.data.map(
                 (item: any, idx: number) => (
