@@ -112,7 +112,7 @@ export default function Psychologist(props: any) {
           </div>
         </div>
       ) : (
-        <Link href={`team/${id}`} className={style.psychologist_min}>
+        <div className={style.psychologist_min}>
           <Image
             src={`http://77.232.128.234:1337${imageUrl}`}
             alt={'avatar'}
@@ -127,7 +127,7 @@ export default function Psychologist(props: any) {
             {fields?.map((field: any) => field.attributes.name)}
           </p>
           {/* Изменено выше */}
-        </Link>
+        </div>
       )}
     </>
   );

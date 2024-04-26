@@ -3,6 +3,7 @@ import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import { useState, useEffect } from 'react';
 import style from './PsychoSlider.module.scss';
+import Link from 'next/link';
 // import { psychoList } from './psychoList';
 
 function Arrow(props: {
@@ -71,7 +72,8 @@ export default function PsychoSlider() {
         <div className={`navigation-wrapper ${style.slider}`}>
           <div ref={sliderRef} className={`keen-slider ${style.slider__wrap}`}>
             {psychoList?.map((item: any, index: number) => (
-              <div
+              <Link
+                href={`/team/${item.id}`}
                 key={index}
                 className={`keen-slider__slide ${style.slidepad}`}
               >
@@ -81,7 +83,7 @@ export default function PsychoSlider() {
                   lastName={item.attributes.lastName}
                   fields={item.attributes.fields.data}
                 />
-              </div>
+              </Link>
             ))}
           </div>
           {loaded && instanceRef.current && (

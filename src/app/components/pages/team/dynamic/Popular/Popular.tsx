@@ -3,6 +3,7 @@ import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import style from './Popular.module.scss';
 import Psychologist from './components/Psychologist/Psychologist';
+import Link from 'next/link';
 
 function Arrow(props: {
   disabled: boolean;
@@ -67,7 +68,8 @@ export default function Popular() {
         <div className={`navigation-wrapper ${style.slider}`}>
           <div ref={sliderRef} className={`keen-slider ${style.slider__wrap}`}>
             {psychoList?.map((item: any, index: number) => (
-              <div
+              <Link
+                href={`/team/${item.id}`}
                 key={index}
                 className={`keen-slider__slide ${style.slider__slide}`}
               >
@@ -77,7 +79,7 @@ export default function Popular() {
                   lastName={item.attributes.lastName}
                   fields={item.attributes.fields.data}
                 />
-              </div>
+              </Link>
             ))}
           </div>
           {loaded && instanceRef.current && (
