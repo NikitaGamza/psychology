@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export",
     "release": "git push origin master && git push production master --force",
     "lint": "next lint"
   },
