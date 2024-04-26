@@ -55,6 +55,28 @@ export default function Questions() {
   const [mobileErr, setMobileErr] = useState<boolean>(false);
   const [modal, setModal] = useState<boolean>(false);
   // const [captcha, setCaptcha] = useState<string | null>();
+  const [phoneContact, setPhoneContact] = useState<string>('');
+  const [emailContact, setemailContact] = useState<string>('');
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/contacts?filters[type][$eq]=phone&sort=id:desc`
+      );
+      const repo = await res.json();
+      setPhoneContact(repo.data[0].attributes.link);
+    }
+    hiData();
+  }, []);
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/contacts?filters[type][$eq]=email&sort=id:desc`
+      );
+      const repo = await res.json();
+      setemailContact(repo.data[0].attributes.link);
+    }
+    hiData();
+  }, []);
   return (
     <div className={style.question}>
       {modal && <Modal setModal={setModal} />}
@@ -79,7 +101,7 @@ export default function Questions() {
                       style.question__content__info__contact__item__icon
                     }
                   />
-                  <p className="warning">Тут будет запрос на телефон</p>
+                  <p className="warning">{phoneContact}</p>
                 </div>
                 <div className={style.question__content__info__contact__item}>
                   <Image
@@ -91,7 +113,7 @@ export default function Questions() {
                       style.question__content__info__contact__item__icon
                     }
                   />
-                  <p className="warning">Тут будет запрос на email</p>
+                  <p className="warning">{emailContact}</p>
                 </div>
               </div>
             </div>

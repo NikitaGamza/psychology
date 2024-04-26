@@ -1,7 +1,30 @@
 import style from './Footer.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 export default function Footer() {
+  const [phone, setPhone] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/contacts?filters[type][$eq]=phone&sort=id:desc`
+      );
+      const repo = await res.json();
+      setPhone(repo.data[0].attributes.link);
+    }
+    hiData();
+  }, []);
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/contacts?filters[type][$eq]=email&sort=id:desc`
+      );
+      const repo = await res.json();
+      setEmail(repo.data[0].attributes.link);
+    }
+    hiData();
+  }, []);
   return (
     <footer className={style.footer}>
       <div className="container">
@@ -109,14 +132,14 @@ export default function Footer() {
                     style.footer__content__feedback__contacts__list__phone
                   }
                 >
-                  ТУТ ЗАПРОС
+                  {phone && phone}
                 </p>
                 <p
                   className={
                     style.footer__content__feedback__contacts__list__mail
                   }
                 >
-                  ТУТ ЗАПРОС
+                  {email && email}
                 </p>
               </div>
               <div className={style.footer__content__feedback__contacts__links}>
