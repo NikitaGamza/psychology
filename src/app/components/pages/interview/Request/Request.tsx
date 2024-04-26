@@ -13,6 +13,7 @@ import Experience from './components/Experience/Experience';
 import Work from './components/Work/Work';
 import Email from './components/Email/Email';
 import Phone from './components/Phone/Phone';
+import Text from './components/Text/Text';
 
 export default function Request() {
   return (
@@ -32,6 +33,7 @@ export default function Request() {
         <Work />
         <Email />
         <Phone />
+        <Text />
         <button className={style.req__form__send}>Оставить заявку</button>
       </div>
     </div>

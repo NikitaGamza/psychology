@@ -8,6 +8,7 @@ import Sex from '@/app/components/pages/request-psychologist/Sex/Sex';
 import Experience from '@/app/components/pages/request-psychologist/Experience/Experience';
 import Time from '@/app/components/pages/request-psychologist/Time/Time';
 import Phone from '@/app/components/pages/request-psychologist/Phone/Phone';
+import Problem from '@/app/components/pages/request-psychologist/Problem/Problem';
 export default function RequestPsychologist() {
   return (
     <div className={style.req}>
@@ -24,6 +25,7 @@ export default function RequestPsychologist() {
         <Experience />
         <Time />
         <Phone />
+        <Problem />
         <button className={style.req__container__submit}>
           Оставить заявку
         </button>
