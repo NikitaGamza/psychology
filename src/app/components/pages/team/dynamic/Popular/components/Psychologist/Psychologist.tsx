@@ -124,7 +124,9 @@ export default function Psychologist(props: any) {
             {firstName} {lastName}
           </h5>
           <p className={style.psychologist__fields}>
-            {fields?.map((field: any) => field.attributes.name)}
+            {fields?.map((field: any) => {
+              return <span>{field.attributes.name} </span>;
+            })}
           </p>
           {/* Изменено выше */}
         </div>
