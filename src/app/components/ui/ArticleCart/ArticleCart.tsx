@@ -4,7 +4,14 @@ import Link from 'next/link';
 
 export default function ArticleCart({ item }: any) {
   return (
-    <Link href={`/blog/advice/${item.id}`} className={style.cart}>
+    <Link
+      href={
+        item.attributes.videoLink
+          ? `/blog/video/${item.id}`
+          : `/blog/advice/${item.id}`
+      }
+      className={style.cart}
+    >
       {item.attributes?.adviceImg?.data.attributes?.url && (
         <Image
           // src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337${item.attributes?.adviceImg.data.attributes?.url}`}
@@ -19,6 +26,7 @@ export default function ArticleCart({ item }: any) {
         <iframe
           src={item.attributes.videoLink}
           className={style.cart__img}
+          onClick={(e) => e.preventDefault()}
         ></iframe>
       )}
       <div className={style.cart__topics}>
