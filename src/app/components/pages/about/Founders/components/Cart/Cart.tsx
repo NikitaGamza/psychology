@@ -5,7 +5,7 @@ import 'keen-slider/keen-slider.min.css';
 export default function Cart(props: any) {
   const { imgUrl, fio, job, text } = props;
   return (
-    <div className={`keen-slider__slide ${style.item}`}>
+    <div className={`${style.item}`}>
       <Image
         src={imgUrl}
         width={360}
