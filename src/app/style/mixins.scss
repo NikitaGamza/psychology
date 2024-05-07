@@ -22,10 +22,10 @@
   font-family: 'Gilroy-Bold';
   display: block;
   width: fit-content;
-  &:hover {
-    background-color: $green;
-    color: $white;
-  }
+  // &:hover {
+  //   background-color: $green;
+  //   color: $white;
+  // }
 }
 @mixin link-tg-icon {
   width: 39px;
