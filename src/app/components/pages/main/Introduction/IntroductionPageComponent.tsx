@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './IntroductionPageComponent.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function IntroductionPageComponent() {
   return (
@@ -34,11 +35,13 @@ export default function IntroductionPageComponent() {
           </div>
 
           <div className={style.introduction__container__buttons}>
-            <button className={style.btn_green}>Подобрать психолога</button>
-            <button className={style.btn_tg}>
+            <Link href={'/request-psychologist'} className={style.btn_green}>
+              Подобрать психолога
+            </Link>
+            <Link href={'https://t.me/'} className={style.btn_tg}>
               <span className={style.btn_tg__icon}></span>
               <span className={style.btn_tg__text}>Задать вопрос</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
