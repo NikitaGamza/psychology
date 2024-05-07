@@ -1,9 +1,10 @@
 import style from './ArticleCart.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ArticleCart({ item }: any) {
   return (
-    <div className={style.cart}>
+    <Link href={`/blog/advice/${item.id}`} className={style.cart}>
       {item.attributes?.adviceImg?.data.attributes?.url && (
         <Image
           // src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337${item.attributes?.adviceImg.data.attributes?.url}`}
@@ -33,6 +34,6 @@ export default function ArticleCart({ item }: any) {
       {item.attributes?.videoName && (
         <h5 className={style.cart__head}>{item.attributes?.videoName}</h5>
       )}
-    </div>
+    </Link>
   );
 }
