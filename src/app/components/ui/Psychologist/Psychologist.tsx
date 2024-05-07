@@ -45,18 +45,26 @@ export default function Psychologist(props: any) {
     <>
       {inDetail ? (
         <div className={style.psychologist_full}>
-          <Image
-            src={`http://77.232.128.234:1337/${img?.slice(1)}`}
-            // src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337/${img?.slice(1)}`}
-            alt={img}
-            width={300}
-            height={300}
-            className={style.psychologist_full__info__img}
-          />
+          <Link href={`team/${id}`}>
+            <Image
+              src={`http://77.232.128.234:1337/${img?.slice(1)}`}
+              // src={`http://${process.env.NEXT_PUBLIC_SERVER}:1337/${img?.slice(1)}`}
+              alt={img}
+              width={300}
+              height={300}
+              className={style.psychologist_full__info__img}
+            />
+          </Link>
+
           <div className={style.psychologist_full__info}>
             <div className={style.psychologist_full__info__head}>
               <h5 className={style.psychologist_full__info__head__fullname}>
-                {firstName} {lastName}
+                <Link
+                  href={`team/${id}`}
+                  className={style.psychologist_full__info__head__fullname}
+                >
+                  {firstName} {lastName}
+                </Link>
               </h5>
               <div className={style.psychologist_full__info__head__types}>
                 {formats.map((item: any) => (
