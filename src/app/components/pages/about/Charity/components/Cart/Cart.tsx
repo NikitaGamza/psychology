@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Cart(props: any) {
   const { imgUrl, head, text } = props.props;
   return (
-    <div className={`keen-slider__slide ${style.cart}`}>
+    <div className={`${style.cart}`}>
       <Image
         src={imgUrl}
         width={20}
