@@ -46,7 +46,7 @@ export default function Footer() {
               Тарифы
             </Link>
             <Link
-              href={'/about'}
+              href={'/courses'}
               className={style.footer__content__links__item}
             >
               Курсы
@@ -64,7 +64,7 @@ export default function Footer() {
               Психологам
             </Link>
             <Link
-              href={'/about'}
+              href={'/blog/questions'}
               className={style.footer__content__links__item}
             >
               Блог
