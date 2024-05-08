@@ -49,6 +49,17 @@
         color: $grey_dark;
       }
     }
+    &__work {
+      &__format {
+        border: 1px solid $green;
+        border-radius: 50px;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: left;
+        padding: 4px 16px;
+        margin-right: 8px;
+      }
+    }
     &__params {
       display: flex;
       flex-wrap: wrap;
@@ -186,6 +197,11 @@
         flex-wrap: wrap;
         gap: 5px;
         justify-content: center;
+      }
+      &__work {
+        &__format {
+          margin-right: 4px;
+        }
       }
       &__params {
         justify-content: center;

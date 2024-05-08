@@ -18,6 +18,7 @@ export default function Cover(props: any) {
     address,
     metro,
     socialLicks,
+    formats,
   } = props.props.attributes;
   const marriedResult =
     (sex && isMarried && 'Женат') ||
@@ -98,6 +99,13 @@ export default function Cover(props: any) {
                 {marriedResult}
               </span>
             </div>
+          </div>
+          <div className={style.cover__info__work}>
+            {formats.data.map((item: any, idx: number) => (
+              <span key={idx} className={style.cover__info__work__format}>
+                {item.attributes.formatName}
+              </span>
+            ))}
           </div>
           <div>
             <p className={style.cover__info__city}>
