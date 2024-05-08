@@ -17,7 +17,7 @@ export default function Cover(props: any) {
     city,
     address,
     metro,
-    links,
+    socialLicks,
   } = props.props.attributes;
   const marriedResult =
     (sex && isMarried && 'Женат') ||
@@ -51,26 +51,22 @@ export default function Cover(props: any) {
           className={style.cover__wrap__img}
         />
         <div className={style.cover__wrap__contact}>
-          {/* {links.youtube && (
-            <Link href={links.youtube}>
+          {socialLicks?.map((item: any, id: number) => (
+            <Link href={item.link} key={id}>
               <Image
-                src={'/img/pages/team/yt.svg'}
-                alt="youtube"
+                src={
+                  item.type === 'youtube'
+                    ? '/img/pages/team/yt.svg'
+                    : item.type === 'vk'
+                    ? '/img/pages/team/vk.svg'
+                    : '/img/pages/team/tg.svg'
+                }
+                alt={item.type}
                 width={32}
                 height={32}
               />
             </Link>
-          )}
-          {links.vk && (
-            <Link href={links.vk}>
-              <Image
-                src={'/img/pages/team/vk.svg'}
-                alt="youtube"
-                width={32}
-                height={32}
-              />
-            </Link>
-          )} */}
+          ))}
         </div>
       </div>
       <div className={style.cover__info}>
