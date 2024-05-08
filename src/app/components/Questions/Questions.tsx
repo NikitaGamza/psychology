@@ -198,6 +198,12 @@ export default function Questions() {
                   </p>
                 )}
               </div>
+              <textarea
+                name=""
+                id=""
+                placeholder="Комментарий"
+                className={style.question__content__form__inputs__text_com}
+              />
               <div className={style.question__content__form__inputs__checkwrap}>
                 <label
                   htmlFor="privacy"
