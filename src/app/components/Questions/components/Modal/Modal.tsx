@@ -1,8 +1,19 @@
-import React, { Dispatch, useEffect } from 'react';
+import React, { Dispatch, useEffect, useState } from 'react';
 import style from './Modal.module.scss';
 import Image from 'next/image';
 
 export default function Modal({ setModal }: any) {
+  const [phoneContact, setPhoneContact] = useState<string>('');
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/contacts?filters[type][$eq]=phone&sort=id:desc&pagination[pageSize]=1`
+      );
+      const repo = await res.json();
+      setPhoneContact(repo.data[0].attributes.link);
+    }
+    hiData();
+  }, []);
   return (
     <div
       className={style.modal}
@@ -46,7 +57,7 @@ export default function Modal({ setModal }: any) {
           Если у Вас есть вопрос, который вы хотели бы обсудить прямо сейчас, то
           позвоните нам по телефону или напишите.
         </p>
-        <p className={style.modal__block__phone}>ТУТ ЗАПРОС</p>
+        <p className={style.modal__block__phone}>{phoneContact}</p>
         <div className={style.modal__block__links}>
           <Image
             src={'/img/icons/socials/green/whataapp.svg'}
