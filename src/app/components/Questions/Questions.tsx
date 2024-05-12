@@ -5,16 +5,17 @@ import Link from 'next/link';
 import Modal from './components/Modal/Modal';
 // import ReCAPTCHA from 'react-google-recaptcha';
 
-const submitForm = (
+async function submitForm(
   e: FormEvent,
   name: string,
   mobile: string,
+  comment: string,
   checker: boolean,
   setNameErr: Dispatch<boolean>,
   setMobileErr: Dispatch<boolean>,
   setCheckErr: Dispatch<boolean>,
   setModal: Dispatch<boolean>
-) => {
+) {
   e.preventDefault();
   if (name === '') {
     setNameErr(true);
@@ -32,19 +33,26 @@ const submitForm = (
     setCheckErr(false);
   }
   if (name !== '' && mobile !== '' && checker) {
-    fetch('http://77.232.128.234:1337/api/common-questions', {
-      method: 'POST',
-      body: JSON.stringify({
-        phone: mobile,
-        name: name,
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    });
+    const yourQuest = {
+      data: { phone: mobile, name: name, comment: comment },
+    };
+    console.log(yourQuest);
+    const sendData = await fetch(
+      'http://77.232.128.234:1337/api/common-questions',
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(yourQuest),
+      }
+    );
+    const sendResponse = await sendData.json();
+    console.log(sendResponse);
     setModal(true);
   }
-};
+}
 
 export default function Questions() {
   const [checker, setChecker] = useState<boolean>(false);
@@ -53,6 +61,7 @@ export default function Questions() {
   const [nameErr, setNameErr] = useState<boolean>(false);
   const [mobile, setMobile] = useState<string>('');
   const [mobileErr, setMobileErr] = useState<boolean>(false);
+  const [comment, setComment] = useState<string>('');
   const [modal, setModal] = useState<boolean>(false);
   // const [captcha, setCaptcha] = useState<string | null>();
   const [phoneContact, setPhoneContact] = useState<string>('');
@@ -60,7 +69,7 @@ export default function Questions() {
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
-        `http://77.232.128.234:1337/api/contacts?filters[type][$eq]=phone&sort=id:desc`
+        `http://77.232.128.234:1337/api/contacts?filters[type][$eq]=phone&sort=id:desc&pagination[pageSize]=1`
       );
       const repo = await res.json();
       setPhoneContact(repo.data[0].attributes.link);
@@ -70,7 +79,7 @@ export default function Questions() {
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
-        `http://77.232.128.234:1337/api/contacts?filters[type][$eq]=email&sort=id:desc`
+        `http://77.232.128.234:1337/api/contacts?filters[type][$eq]=email&sort=id:desc&pagination[pageSize]=1`
       );
       const repo = await res.json();
       setemailContact(repo.data[0].attributes.link);
@@ -101,7 +110,13 @@ export default function Questions() {
                       style.question__content__info__contact__item__icon
                     }
                   />
-                  <p className="warning">{phoneContact}</p>
+                  <p
+                    className={
+                      style.question__content__info__contact__item__link
+                    }
+                  >
+                    {phoneContact}
+                  </p>
                 </div>
                 <div className={style.question__content__info__contact__item}>
                   <Image
@@ -113,7 +128,13 @@ export default function Questions() {
                       style.question__content__info__contact__item__icon
                     }
                   />
-                  <p className="warning">{emailContact}</p>
+                  <p
+                    className={
+                      style.question__content__info__contact__item__link
+                    }
+                  >
+                    {emailContact}
+                  </p>
                 </div>
               </div>
             </div>
@@ -150,6 +171,7 @@ export default function Questions() {
                 e,
                 name,
                 mobile,
+                comment,
                 checker,
                 setNameErr,
                 setMobileErr,
@@ -203,6 +225,9 @@ export default function Questions() {
                 id=""
                 placeholder="Комментарий"
                 className={style.question__content__form__inputs__text_com}
+                onChange={(e) => {
+                  setComment(e.target.value);
+                }}
               />
               <div className={style.question__content__form__inputs__checkwrap}>
                 <label

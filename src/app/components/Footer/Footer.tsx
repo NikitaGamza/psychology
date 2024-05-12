@@ -1,10 +1,13 @@
 import style from './Footer.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, FormEvent } from 'react';
+import Modal from './components/Modal/Modal';
 export default function Footer() {
   const [phone, setPhone] = useState<string>('');
   const [email, setEmail] = useState<string>('');
+  const [subEmail, setSubemail] = useState<string>('');
+  const [modal, setModal] = useState<boolean>(false);
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
@@ -25,8 +28,25 @@ export default function Footer() {
     }
     hiData();
   }, []);
+  async function subscribeForm(e: FormEvent, subEmail: string) {
+    e.preventDefault();
+    const subscribe = {
+      data: { email: subEmail },
+    };
+    const sendData = await fetch('http://77.232.128.234:1337/api/subscribes', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(subscribe),
+    });
+    const sendResponse = await sendData.json();
+    setModal(true);
+  }
   return (
     <footer className={style.footer}>
+      {modal && <Modal setModal={setModal} />}
       <div className="container">
         <div className={style.footer__content}>
           <div className={style.footer__content__links}>
@@ -87,11 +107,13 @@ export default function Footer() {
                   className={
                     style.footer__content__feedback__form__display__inp
                   }
+                  onChange={(e) => setSubemail(e.target.value)}
                 />
                 <button
                   className={
                     style.footer__content__feedback__form__display__send
                   }
+                  onClick={(e) => subscribeForm(e, subEmail)}
                 >
                   <Image
                     src={'/img/icons/send.svg'}
