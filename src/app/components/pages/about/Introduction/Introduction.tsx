@@ -21,7 +21,8 @@ export default function Introduction() {
           </div>
           <iframe
             className={style.intro__video}
-            src="https://youtube.com/embed/zpOULjyy-n8?rel=0"
+            src="https://www.youtube.com/embed/9aUjqpsXEwk?si=zfyu5w3pmpTJj2n3"
+            title="YouTube video player"
           ></iframe>
         </div>
       </div>

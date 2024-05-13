@@ -4,6 +4,9 @@
   border-radius: 20px;
   background-color: $blue_75;
   padding: 72px;
+  background-image: url('/img/pages/team/banner.svg');
+  background-repeat: no-repeat;
+  background-position: 95% 100%;
   &__info {
     width: 570px;
     &__head {
@@ -35,9 +38,28 @@
     }
   }
 }
+@media screen and (max-width: 1060px) {
+  .ban {
+    background-image: none;
+    // background-size: 30%;
+    &__info {
+      width: 100%;
+      &__head {
+        text-align: center;
+      }
+      &__text {
+        text-align: center;
+      }
+      &__link {
+        width: 100%;
+      }
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .ban {
     padding: 40px 20px;
+    background-image: none;
     &__info {
       width: 100%;
       &__head {
