@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import style from './Psychologist.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+import Record from './components/Record/Record';
 
 export default function Psychologist(props: any) {
   const {
@@ -40,9 +41,11 @@ export default function Psychologist(props: any) {
     const res = new Date(count);
     return res.getFullYear() - 1970;
   }
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState<boolean>(false);
+  const [record, setRecord] = useState<boolean>(false);
   return (
     <>
+      {record && <Record setRecord={setRecord} />}
       {inDetail ? (
         <div className={style.psychologist_full}>
           <Link href={`team/${id}`}>
@@ -160,12 +163,12 @@ export default function Psychologist(props: any) {
                 })}
               </div>
             )}
-            <Link
-              href={`team/${id}`}
+            <button
               className={style.psychologist_full__record}
+              onClick={() => setRecord(true)}
             >
               Записаться
-            </Link>
+            </button>
           </div>
         </div>
       ) : (
