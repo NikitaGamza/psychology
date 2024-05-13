@@ -23,6 +23,7 @@ export default function MobileLinks({ setMobileMenu, mobileMenu }: any) {
             href={item.linkTo}
             key={idx}
             className={style.mob__content__link}
+            onClick={() => setMobileMenu(!mobileMenu)}
           >
             {item.title}
           </Link>

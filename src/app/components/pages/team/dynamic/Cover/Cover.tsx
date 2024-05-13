@@ -128,6 +128,24 @@ export default function Cover(props: any) {
             </div>
           </div>
         </div>
+        <div className={style.cover__wrap__contact_mobile}>
+          {socialLicks?.map((item: any, id: number) => (
+            <Link href={item.link} key={id}>
+              <Image
+                src={
+                  item.type === 'youtube'
+                    ? '/img/pages/team/yt.svg'
+                    : item.type === 'vk'
+                    ? '/img/pages/team/vk.svg'
+                    : '/img/pages/team/tg.svg'
+                }
+                alt={item.type}
+                width={32}
+                height={32}
+              />
+            </Link>
+          ))}
+        </div>
         {/* <div className={style.cover__wrap__contact_mobile}>
           {links.youtube && (
             <Link href={links.youtube}>

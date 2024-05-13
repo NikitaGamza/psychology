@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import style from './style.module.scss';
 
-export default function Speciality() {
+export default function Speciality({ refresh }: any) {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [specThemes, setSpecThemes] = useState<any>(null);
   useEffect(() => {
@@ -14,6 +14,19 @@ export default function Speciality() {
     }
     hiData();
   }, []);
+  useEffect(() => {
+    let newList;
+    if (specThemes) {
+      newList = [...specThemes];
+    }
+    let refreshedList;
+    if (newList) {
+      refreshedList = newList.map((item: any) => (item.isSelected = false));
+    }
+    console.log(specThemes);
+    console.log(newList);
+    console.log(refreshedList);
+  }, [refresh]);
   function handleToggle(foundId: number) {
     const currentId = specThemes.findIndex((item: any) => item.id === foundId);
     const updatedItem = Object.assign({}, specThemes[currentId]);
@@ -52,7 +65,7 @@ export default function Speciality() {
             }
             onClick={() => handleToggle(item.id)}
           >
-            {item.attributes.themeName}
+            {item.attributes?.themeName}
           </button>
         ))}
       </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './MobileFilter.module.scss';
 import Sex from '../Parameters/components/Sex/Sex';
 import Speciality from '../Parameters/components/Speciality/Speciality';
@@ -9,6 +9,7 @@ import Format from '../Parameters/components/Format/Format';
 import Image from 'next/image';
 
 export default function MobileFilter({ setMobileFilt, mobileFilt }: any) {
+  const [refresh, setRefresh] = useState<boolean>(false);
   return (
     <div className={style.mob}>
       <div className={style.mob__head}>
@@ -25,10 +26,15 @@ export default function MobileFilter({ setMobileFilt, mobileFilt }: any) {
           />
           <h1 className={style.mob__head__closer__text}>Фильтры</h1>
         </div>
-        <h1 className={style.mob__head__refresh}>Сбросить всё</h1>
+        <h1
+          className={style.mob__head__refresh}
+          onClick={() => setRefresh(!refresh)}
+        >
+          Сбросить всё
+        </h1>
       </div>
       <div className={style.mob__content}>
-        <Speciality />
+        <Speciality refresh={refresh}/>
         <Methods />
         <Experience />
         <Cities />

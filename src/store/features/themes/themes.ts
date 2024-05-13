@@ -12,8 +12,12 @@ export const themesSlice = createSlice({
       state.themes.map((item: any) => (item.isSelected = false));
       state.themes[objIdx].isSelected = true;
     },
+    refresh: (state) => {
+      state.themes.map((item: any) => (item.isSelected = false));
+    },
   },
 });
 export const { toggle } = themesSlice.actions;
+export const { refresh } = themesSlice.actions;
 
 export default themesSlice.reducer;
