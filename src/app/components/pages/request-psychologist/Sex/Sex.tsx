@@ -1,7 +1,7 @@
 import style from '../style/style.module.scss';
 import { useState } from 'react';
 
-export default function Sex() {
+export default function Sex({ setSex }: any) {
   const [checker, setChecker] = useState<string>('male');
   return (
     <div className={style.wrap_radio}>
@@ -25,6 +25,7 @@ export default function Sex() {
             id="male"
             value="male"
             className={style.wrap__list__item__radio}
+            onClick={() => setSex('мужчина')}
           />
           <label htmlFor="male" className={style.wrap__list__label}>
             Мужчина
@@ -48,6 +49,7 @@ export default function Sex() {
             id="female"
             value="female"
             className={style.wrap__list__item__radio}
+            onClick={() => setSex('женщина')}
           />
           <label htmlFor="female" className={style.wrap__list__label}>
             Женщина
@@ -71,6 +73,7 @@ export default function Sex() {
             id="doesnotMatter"
             value="doesnotMatter"
             className={style.wrap__list__item__radio}
+            onClick={() => setSex('Неважно')}
           />
           <label htmlFor="doesnotMatter" className={style.wrap__list__label}>
             Неважно

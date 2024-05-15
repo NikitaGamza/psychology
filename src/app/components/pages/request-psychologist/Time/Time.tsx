@@ -1,16 +1,16 @@
 import style from '../style/style.module.scss';
 
-export default function Time() {
+export default function Time({ setData, setTime }: any) {
   return (
     <div className={style.row}>
       <div className={style.wrap_time}>
-        <p className={style.wrap__title}>предпочтительная датА сессии</p>
+        <p className={style.wrap__title}>предпочтительная дата сессии</p>
         <input
           type="date"
           name=""
           id=""
-          placeholder="Введите ваше имя"
           className={style.wrap__input}
+          onChange={(e) => setData(e.target.value)}
         />
       </div>
       <div className={style.wrap_time}>
@@ -19,8 +19,8 @@ export default function Time() {
           type="time"
           name=""
           id=""
-          placeholder="Введите ваше имя"
           className={style.wrap__input}
+          onChange={(e) => setTime(e.target.value)}
         />
       </div>
     </div>

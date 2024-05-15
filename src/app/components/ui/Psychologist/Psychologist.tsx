@@ -45,7 +45,13 @@ export default function Psychologist(props: any) {
   const [record, setRecord] = useState<boolean>(false);
   return (
     <>
-      {record && <Record setRecord={setRecord} />}
+      {record && (
+        <Record
+          setRecord={setRecord}
+          firstName={firstName}
+          lastName={lastName}
+        />
+      )}
       {inDetail ? (
         <div className={style.psychologist_full}>
           <Link href={`team/${id}`}>

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Modal from '../Modal/Modal';
 
-export default function Record({ setRecord }: any) {
+export default function Record({ setRecord, firstName, lastName }: any) {
   const [checker, setChecker] = useState<boolean>(false);
   const [checkErr, setCheckErr] = useState<boolean>(false);
   const [name, setName] = useState<string>('');
@@ -37,6 +37,8 @@ export default function Record({ setRecord }: any) {
         phone: mobile,
         comment: comment,
         promo: promoText,
+        psychologFirstName: firstName,
+        psychologLastName: lastName,
       },
     };
     const sendData = await fetch(
@@ -82,7 +84,9 @@ export default function Record({ setRecord }: any) {
               onClick={() => setRecord(false)}
             />
           </div>
-          <h2 className={style.modal__block__head}>Записаться к психологу</h2>
+          <h2 className={style.modal__block__head}>
+            Записаться к психологу {`${firstName} ${lastName}`}
+          </h2>
           <p className={style.modal__block__text}>
             Наш администратор напишет вам в Телеграм
           </p>

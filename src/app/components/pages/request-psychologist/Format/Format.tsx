@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import style from '../style/style.module.scss';
 
-export default function Format() {
+export default function Format({setFormat}:any) {
   const [checker, setChecker] = useState<string>('online');
   return (
     <div className={style.wrap_radio}>
@@ -25,6 +25,7 @@ export default function Format() {
             id="online"
             value="online"
             className={style.wrap__list__item__radio}
+            onClick={()=>setFormat('online')}
           />
           <label htmlFor="online" className={style.wrap__list__label}>
             Онлайн
@@ -48,6 +49,7 @@ export default function Format() {
             id="offline"
             value="offline"
             className={style.wrap__list__item__radio}
+            onClick={()=>setFormat('очно')}
           />
           <label htmlFor="offline" className={style.wrap__list__label}>
             Очно
@@ -71,6 +73,7 @@ export default function Format() {
             id="chat"
             value="chat"
             className={style.wrap__list__item__radio}
+            onClick={()=>setFormat('переписка')}
           />
           <label htmlFor="chat" className={style.wrap__list__label}>
             Переписка
@@ -94,6 +97,7 @@ export default function Format() {
             id="notMatter"
             value="notMatter"
             className={style.wrap__list__item__radio}
+            onClick={()=>setFormat('не важно')}
           />
           <label htmlFor="notMatter" className={style.wrap__list__label}>
             Неважно

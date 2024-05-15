@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import style from '../style/style.module.scss';
 
-export default function WhoNeed() {
+export default function WhoNeed({ setNeed }: any) {
   const [checker, setChecker] = useState<string>('me');
   return (
     <div className={style.wrap_radio}>
@@ -25,6 +25,7 @@ export default function WhoNeed() {
             id="me"
             value="me"
             className={style.wrap__list__item__radio}
+            onClick={() => setNeed('me')}
           />
           <label htmlFor="me" className={style.wrap__list__label}>
             Мне лично
@@ -48,6 +49,7 @@ export default function WhoNeed() {
             id="mePartner"
             value="mePartner"
             className={style.wrap__list__item__radio}
+            onClick={() => setNeed('mePartner')}
           />
           <label htmlFor="mePartner" className={style.wrap__list__label}>
             Нам с партнёром
@@ -71,6 +73,7 @@ export default function WhoNeed() {
             id="meKid"
             value="meKid"
             className={style.wrap__list__item__radio}
+            onClick={() => setNeed('meKid')}
           />
           <label htmlFor="meKid" className={style.wrap__list__label}>
             Нам с ребёнком
