@@ -9,6 +9,7 @@ import Experience from '@/app/components/pages/request-psychologist/Experience/E
 import Time from '@/app/components/pages/request-psychologist/Time/Time';
 import Phone from '@/app/components/pages/request-psychologist/Phone/Phone';
 import Problem from '@/app/components/pages/request-psychologist/Problem/Problem';
+import Modal from '@/app/components/pages/request-psychologist/Modal/Modal';
 import { useState, FormEvent } from 'react';
 export default function RequestPsychologist() {
   const [name, setName] = useState<string>('');
@@ -22,6 +23,7 @@ export default function RequestPsychologist() {
   const [data, setData] = useState<any>('');
   const [phone, setPhone] = useState<any>('');
   const [problem, setProblem] = useState<any>('');
+  const [modal, setModal] = useState<boolean>(false);
   async function recordPsychologist(
     e: FormEvent,
     name: string,
@@ -65,10 +67,11 @@ export default function RequestPsychologist() {
     );
     const sendResponse = await sendData.json();
     // setRecord(false);
-    // setModal(true);
+    setModal(true);
   }
   return (
     <div className={style.req}>
+      {modal && <Modal setModal={setModal} />}
       <div className={style.req__container}>
         <h1 className={style.req__container__head}>
           Заявка на подбор психолога
