@@ -3,7 +3,7 @@ import style from '../style/Components.module.scss';
 import copyStyle from './Copy.module.scss';
 import Image from 'next/image';
 
-export default function Copy() {
+export default function Copy({ setFiles }: any) {
   const [images, setImages] = useState<Array<any>>([]);
   const handleMultipleImages = (evnt: any) => {
     const selectedFIles = [...images];
@@ -12,7 +12,7 @@ export default function Copy() {
     targetFilesObject.map((file) => {
       return selectedFIles.push(URL.createObjectURL(file));
     });
-    setImages(selectedFIles);
+    setImages(targetFiles);
   };
   function handleDelete(id: number) {
     const newList: Array<any> = [];
@@ -23,6 +23,7 @@ export default function Copy() {
     });
     setImages(newList);
   }
+  useEffect(() => setFiles(images));
   useEffect(() => {
     console.log(images);
   }, [images]);

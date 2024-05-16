@@ -8,6 +8,15 @@ export default function TariffItem(tariffFilter: any) {
   const { therapyName, format } = tariffFilter.tariffFilter;
   const [tariffFormat, setTariffFormat] = useState(format[0]);
   const [modal, setModal] = useState<boolean>(false);
+  const [tariffReq, setTariffReq] = useState<any>();
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(`http://77.232.128.234:1337/api/tariffs`);
+      const repo = await res.json();
+      setTariffReq(repo.data);
+    }
+    hiData();
+  }, []);
   useEffect(() => {
     console.log(tariffFilter);
   });
@@ -47,7 +56,22 @@ export default function TariffItem(tariffFilter: any) {
         </button>
       </div>
       <div className={style.tariff__carts}>
-        {tariffList.map(
+        {tariffReq?.map(
+          (item: any, idx: number) =>
+            item.attributes.format === tariffFormat &&
+            item.attributes.community === therapyName && (
+              <Tariff
+                key={idx}
+                personal={item.attributes.community}
+                type={item.attributes.format}
+                price={item.attributes.priceFull}
+                priceOne={item.attributes.pricePerSession}
+                quantity={item.attributes.session}
+                sale={item.attributes.sale}
+              />
+            )
+        )}
+        {/* {tariffList.map(
           (item: any, idx: number) =>
             item.format === tariffFormat &&
             item.tariffPlan === therapyName && (
@@ -61,7 +85,7 @@ export default function TariffItem(tariffFilter: any) {
                 sale={item.sale}
               />
             )
-        )}
+        )} */}
       </div>
       <button
         className={style.tariff__info__req_mobile}

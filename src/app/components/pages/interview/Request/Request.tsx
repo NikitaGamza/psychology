@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent, useState } from 'react';
 import style from './Request.module.scss';
 import FirstName from './components/FirstName/FirstName';
 import LastName from './components/LastName/LastName';
@@ -16,11 +16,36 @@ import Phone from './components/Phone/Phone';
 import Text from './components/Text/Text';
 
 export default function Request() {
+  const [firstName, setFirstName] = useState<string>('');
+  const [files, setFiles] = useState<any>();
+  async function recordInterview(e: FormEvent, firstName: string, files: any) {
+    e.preventDefault();
+    const subscribe = {
+      data: {
+        firstName: firstName,
+        files: files,
+      },
+    };
+    const sendData = await fetch(
+      'http://localhost:1337/api/record-interviews',
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(subscribe),
+      }
+    );
+    const sendResponse = await sendData.json();
+    // setRecord(false);
+    // setModal(true);
+  }
   return (
     <div className={style.req}>
       <h2 className={style.req__head}>Заявка на собеседование</h2>
       <div className={style.req__form}>
-        <FirstName />
+        <FirstName setFirstName={setFirstName} />
         <LastName />
         <Institute />
         <Speciality />
@@ -28,13 +53,21 @@ export default function Request() {
         <Retraining />
         <AddEducation />
         <Degree />
-        <Copy />
+        <Copy setFiles={setFiles} />
         <Experience />
         <Work />
         <Email />
         <Phone />
         <Text />
-        <button className={style.req__form__send}>Оставить заявку</button>
+        <button
+          className={style.req__form__send}
+          onClick={(e) => {
+            console.log(files);
+            // recordInterview(e, firstName, files);
+          }}
+        >
+          Оставить заявку
+        </button>
       </div>
     </div>
   );

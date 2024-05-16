@@ -1,4 +1,4 @@
-import React, { useState, Dispatch } from 'react';
+import React, { useState, Dispatch, FormEvent } from 'react';
 import style from './Modal.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,6 +13,31 @@ export default function Modal({ setModal }: any) {
   const [mobileErr, setMobileErr] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const [emailErr, setEmailErr] = useState<boolean>(false);
+
+  async function subscribeForm(
+    e: FormEvent,
+    name: string,
+    email: string,
+    phone: string
+  ) {
+    e.preventDefault();
+    const subscribe = {
+      data: { name: name, email: email, phone: phone },
+    };
+    const sendData = await fetch(
+      'http://77.232.128.234:1337/api/record-tariffs',
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(subscribe),
+      }
+    );
+    const sendResponse = await sendData.json();
+    // setModal(false);
+  }
   return (
     <div
       className={style.modal}
@@ -133,8 +158,9 @@ export default function Modal({ setModal }: any) {
         </div>
         <button
           className={style.modal__block__send}
-          onClick={() =>
+          onClick={(e) =>
             submitForm(
+              e,
               name,
               mobile,
               email,

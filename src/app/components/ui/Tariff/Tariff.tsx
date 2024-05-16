@@ -16,7 +16,7 @@ export default function Tariff(props: any) {
         }
       `}
     >
-      {sale && (
+      {sale !== 0 && (
         <div className={style.tariff__cart__sale}>
           <span className={style.tariff__cart__sale__info}>-{sale}%</span>
         </div>
@@ -34,7 +34,7 @@ export default function Tariff(props: any) {
         {quantity}{' '}
         {quantity === 1 ? 'сессия' : quantity === 4 ? 'сессии' : 'сессий'}
       </h4>
-      {sale && (
+      {sale !== 0 && (
         <p className={style.tariff__cart__types}>{priceOne}₽ за сеанс</p>
       )}
 
