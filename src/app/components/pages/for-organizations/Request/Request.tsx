@@ -2,6 +2,7 @@ import React, { useEffect, useState, FormEvent } from 'react';
 import style from './Request.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+import Modal from './components/Modal/Modal';
 
 export default function Request() {
   const [checker, setChecker] = useState<boolean>(false);
@@ -12,6 +13,7 @@ export default function Request() {
   const [nameErr, setNameErr] = useState<boolean>(false);
   const [mobile, setMobile] = useState<string>('');
   const [mobileErr, setMobileErr] = useState<boolean>(false);
+  const [comment, setComment] = useState<string>('');
   const [modal, setModal] = useState<boolean>(false);
   const [phoneContact, setPhoneContact] = useState<string>('');
   const [emailContact, setemailContact] = useState<string>('');
@@ -40,6 +42,7 @@ export default function Request() {
     name: string,
     mobile: string,
     org: string,
+    comment: string,
     checker: boolean
   ) {
     e.preventDefault();
@@ -63,30 +66,30 @@ export default function Request() {
     } else {
       setCheckErr(false);
     }
-    // if (name !== '' && mobile !== '' && org !== '' && checker) {
-    //   const yourQuest = {
-    //     data: { phone: mobile, name: name },
-    //   };
-    //   console.log(yourQuest);
-    //   const sendData = await fetch(
-    //     'http://77.232.128.234:1337/api/common-questions',
-    //     {
-    //       method: 'POST',
-    //       headers: {
-    //         Accept: 'application/json',
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(yourQuest),
-    //     }
-    //   );
-    //   const sendResponse = await sendData.json();
-    //   console.log(sendResponse);
-    //   setModal(true);
-    // }
+    if (name !== '' && mobile !== '' && org !== '' && checker) {
+      const yourQuest = {
+        data: { companyName: org, name: name, phone: mobile, comment: comment },
+      };
+      console.log(yourQuest);
+      const sendData = await fetch(
+        'http://77.232.128.234:1337/api/record-organizations',
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(yourQuest),
+        }
+      );
+      const sendResponse = await sendData.json();
+      console.log(sendResponse);
+      setModal(true);
+    }
   }
   return (
     <div className={style.question}>
-      {/* {modal && <Modal setModal={setModal} />} */}
+      {modal && <Modal setModal={setModal} />}
       <div className="container">
         <div className={style.question__content}>
           <div className={style.question__content__info}>
@@ -164,7 +167,7 @@ export default function Request() {
           </div>
           <form
             className={style.question__content__form}
-            onSubmit={(e) => submitForm(e, name, mobile, org, checker)}
+            onSubmit={(e) => submitForm(e, name, mobile, org, comment, checker)}
           >
             <h4 className={style.question__content__form__head}>
               Оставьте заявку и мы перезвоним вам
@@ -223,6 +226,15 @@ export default function Request() {
                   </p>
                 )}
               </div>
+              <textarea
+                name=""
+                id=""
+                placeholder="Комментарий"
+                className={style.question__content__form__inputs__text_com}
+                onChange={(e) => {
+                  setComment(e.target.value);
+                }}
+              ></textarea>
               <div className={style.question__content__form__inputs__checkwrap}>
                 <label
                   htmlFor="privacy"

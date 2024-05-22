@@ -1,0 +1,99 @@
+@import '@/style/colors.scss';
+@import '@/style/mixins.scss';
+
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 11; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  padding-top: 10%;
+  &__block {
+    border-radius: 10px;
+    padding: 10px 10px 30px 10px;
+    background-color: $white;
+    width: 564px;
+    margin: 0 auto;
+    &__close {
+      display: block;
+      text-align: right;
+      &__img {
+        cursor: pointer;
+      }
+    }
+    &__img {
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+    &__head {
+      font-family: 'Gilroy-Bold';
+      font-size: 32px;
+      line-height: 36px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    &__text {
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 24px;
+      text-align: center;
+    }
+    &__hr {
+      color: $grey_line;
+      background-color: $grey_line;
+      border: 1px solid $grey_line;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    &__phone {
+      font-family: 'Gilroy-Bold';
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    &__links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .modal {
+    padding: 10px;
+    &__block {
+      width: 100%;
+      padding: 5px;
+      &__head {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      &__text {
+        line-height: 16px;
+      }
+      &__phone {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .modal {
+    &__block {
+      &__img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
