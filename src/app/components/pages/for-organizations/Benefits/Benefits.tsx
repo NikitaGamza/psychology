@@ -13,9 +13,9 @@ export default function Benefits() {
           <div className={style.ben__list__item__info}>
             <h4 className={style.ben__list__item__info__head}>
               Программа поддержки сотрудников{' '}
-              <h4 className={style.ben__list__item__info__head}>
+              <span className={style.ben__list__item__info__head}>
                 «Поддерживающая среда»
-              </h4>
+              </span>
             </h4>
             <h6 className={style.ben__list__item__info__subhead}>
               Поддержим ваших сотрудников:

@@ -4,6 +4,7 @@ import Cover from '@/app/components/pages/for-organizations/Cover/Cover';
 import Benefits from '@/app/components/pages/for-organizations/Benefits/Benefits';
 import Organizations from '@/app/components/ui/Organizations/Organizations';
 import StartWork from '@/app/components/pages/for-organizations/StartWork/StartWork';
+import Request from '@/app/components/pages/for-organizations/Request/Request';
 
 export default function ForOrganizations() {
   return (
@@ -16,6 +17,7 @@ export default function ForOrganizations() {
           <StartWork />
         </div>
       </div>
+      <Request />
     </div>
   );
 }
