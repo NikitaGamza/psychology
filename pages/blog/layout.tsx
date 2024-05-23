@@ -1,8 +1,7 @@
 import style from './BlogLayout.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useSelector, useDispatch } from 'react-redux';
-import { toggle } from '@/store/features/blogThemesSlice';
+// import { toggle } from '@/store/features/blogThemesSlice';
 export default function BlogLayout({
   children,
 }: {
@@ -23,8 +22,6 @@ export default function BlogLayout({
     },
   ];
   const router = useRouter();
-  const specThemes = useSelector((state: any) => state.specThemes.specThemes);
-  const dispatch = useDispatch();
   return (
     <div className={style.lay}>
       <div className={style.lay__header}>
@@ -60,27 +57,6 @@ export default function BlogLayout({
             {router.pathname == '/blog/questions' && 'Вопросы'}
             {router.pathname == '/blog/advice' && 'Советы'}
           </h1>
-          <div className={style.lay__order}>
-            <button className={style.lay__order__btn}>Самые читаемые</button>
-            <button className={style.lay__order__btn}>
-              По дате публикации
-            </button>
-          </div>
-          <div className={style.lay__themes}>
-            {specThemes.map((item: any, idx: number) => (
-              <button
-                key={idx}
-                className={
-                  item.isSelected
-                    ? style.lay__themes__btn_active
-                    : style.lay__themes__btn
-                }
-                onClick={() => dispatch(toggle(item.id))}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
         </div>
       )}
 

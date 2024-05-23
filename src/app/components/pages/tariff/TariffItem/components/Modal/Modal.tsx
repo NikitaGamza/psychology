@@ -1,10 +1,15 @@
-import React, { useState, Dispatch, FormEvent } from 'react';
+import React, { useState, useEffect, FormEvent } from 'react';
 import style from './Modal.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import submitForm from './functions/submitForm';
 
-export default function Modal({ setModal }: any) {
+export default function Modal({
+  setModal,
+  tariffFormat,
+  setTariffFormat,
+  therapyName,
+}: any) {
   const [checker, setChecker] = useState<boolean>(false);
   const [checkErr, setCheckErr] = useState<boolean>(false);
   const [name, setName] = useState<string>('');
@@ -13,31 +18,73 @@ export default function Modal({ setModal }: any) {
   const [mobileErr, setMobileErr] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const [emailErr, setEmailErr] = useState<boolean>(false);
+  const [community, setCommunity] = useState<any>();
+  const [format, setFormat] = useState<any>();
+  const [session, setSession] = useState<any>();
+  const [selectedCom, setSelectedCom] = useState<any>();
+  const [selectedSession, setSelectedSession] = useState<any>();
+  const [price, setPrice] = useState<any>();
+  // useEffect(() => {
+  //   async function hiData() {
+  //     const res = await fetch(
+  //       `http://77.232.128.234:1337/api/tariffs?populate=*&filters[format][formatName][$eq]=${format}&filters[format_community][name][$eq]=${community}`
+  //     );
+  //     const repo = await res.json();
+  //     setSession(repo.data);
+  //     console.log(repo.data);
+  //   }
+  //   hiData();
+  // }, [format, community]);
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/tariffs?populate=*&filters[format][formatName][$eq]=${tariffFormat}&filters[format_community][name][$eq]=${therapyName}`
+      );
+      const repo = await res.json();
+      setSession(repo.data);
+    }
+    hiData();
+  }, []);
+  // useEffect(() => {
+  //   async function hiData() {
+  //     const res = await fetch(
+  //       `http://77.232.128.234:1337/api/tariffs?populate=*&filters[format][formatName][$eq]=${format}&filters[format_community][name][$eq]=${community}&filters[session][$eq]=${selectedSession}`
+  //     );
+  //     const repo = await res.json();
+  //     setPrice(repo.data);
+  //     console.log(repo.data);
+  //   }
+  //   hiData();
+  // }, [format, community, selectedSession]);
 
-  async function subscribeForm(
-    e: FormEvent,
-    name: string,
-    email: string,
-    phone: string
-  ) {
-    e.preventDefault();
-    const subscribe = {
-      data: { name: name, email: email, phone: phone },
-    };
-    const sendData = await fetch(
-      'http://77.232.128.234:1337/api/record-tariffs',
-      {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(subscribe),
-      }
-    );
-    const sendResponse = await sendData.json();
-    // setModal(false);
-  }
+  // useEffect(() => {
+  //   async function hiData() {
+  //     const res = await fetch(
+  //       `http://77.232.128.234:1337/api/tariffs?filters[format][$eq]=${tariffFormat}`
+  //     );
+  //     const repo = await res.json();
+  //     setTariffReq(repo.data);
+  //   }
+  //   hiData();
+  // }, [tariffFormat]);
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(`http://77.232.128.234:1337/api/formats`);
+      const repo = await res.json();
+      setFormat(repo.data);
+    }
+    hiData();
+  }, []);
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/format-communities`
+      );
+      const repo = await res.json();
+      setCommunity(repo.data);
+    }
+    hiData();
+  }, []);
   return (
     <div
       className={style.modal}
@@ -68,6 +115,60 @@ export default function Modal({ setModal }: any) {
         <p className={style.modal__block__text}>
           Наш специалист свяжется с вами в WhatsApp
         </p>
+        <select
+          name=""
+          id=""
+          className={style.modal__block__inp}
+          onChange={(e) => setTariffFormat(e.target.value)}
+        >
+          {format &&
+            format.map((item: any, index: number) => (
+              <option
+                key={index}
+                value={item.attributes.formatName}
+                selected={item.attributes.formatName === tariffFormat}
+              >
+                {item.attributes.formatName}
+              </option>
+            ))}
+        </select>
+        <div className={style.modal__block__err}></div>
+        <select
+          name=""
+          id=""
+          className={style.modal__block__inp}
+          onChange={(e) => setSelectedCom(e.target.value)}
+        >
+          {community &&
+            community.map((item: any, index: number) => (
+              <option
+                key={index}
+                value=""
+                selected={item.attributes.name === therapyName}
+              >
+                {item.attributes.name}
+              </option>
+            ))}
+        </select>
+        <div className={style.modal__block__err}></div>
+        <select
+          name=""
+          id=""
+          className={style.modal__block__inp}
+          onChange={(e) => setSelectedSession(e.target.value)}
+        >
+          {session &&
+            session.map((item: any, index: number) => (
+              <option
+                key={index}
+                value={item.attributes.session}
+                selected={item.attributes.name === therapyName}
+              >
+                {item.attributes.session} сессий
+              </option>
+            ))}
+        </select>
+        <div className={style.modal__block__err}></div>
         <input
           type="text"
           name=""
@@ -107,6 +208,7 @@ export default function Modal({ setModal }: any) {
             <p className={style.modal__block__err__text}>Введите телефон</p>
           )}
         </div>
+        {/* <h3>Итоговая цена: {selectedSession}</h3> */}
         <div className={style.modal__block__wrap}>
           <span>
             <label
@@ -119,7 +221,6 @@ export default function Modal({ setModal }: any) {
               }
             ></label>
           </span>
-
           <input
             type="checkbox"
             name=""

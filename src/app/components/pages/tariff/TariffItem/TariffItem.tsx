@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import style from './Tariff.module.scss';
 import Tariff from '@/app/components/ui/Tariff/Tariff';
-import { tariffList } from './tariffList';
 import Modal from './components/Modal/Modal';
 
 export default function TariffItem(tariffFilter: any) {
@@ -11,18 +10,26 @@ export default function TariffItem(tariffFilter: any) {
   const [tariffReq, setTariffReq] = useState<any>();
   useEffect(() => {
     async function hiData() {
-      const res = await fetch(`http://77.232.128.234:1337/api/tariffs`);
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/tariffs?populate=*`
+      );
       const repo = await res.json();
       setTariffReq(repo.data);
+      console.log(repo.data);
+      console.log(tariffReq);
     }
     hiData();
   }, []);
-  useEffect(() => {
-    console.log(tariffFilter);
-  });
   return (
     <div className={style.tariff}>
-      {modal && <Modal setModal={setModal} />}
+      {modal && (
+        <Modal
+          setModal={setModal}
+          tariffFormat={tariffFormat}
+          setTariffFormat={setTariffFormat}
+          therapyName={therapyName}
+        />
+      )}
       <div className={style.tariff__info}>
         <h3 className={style.tariff__info__head}>{therapyName}</h3>
         <div className={style.tariff__info__btns}>
@@ -56,36 +63,26 @@ export default function TariffItem(tariffFilter: any) {
         </button>
       </div>
       <div className={style.tariff__carts}>
-        {tariffReq?.map(
-          (item: any, idx: number) =>
-            item.attributes.format === tariffFormat &&
-            item.attributes.community === therapyName && (
-              <Tariff
-                key={idx}
-                personal={item.attributes.community}
-                type={item.attributes.format}
-                price={item.attributes.priceFull}
-                priceOne={item.attributes.pricePerSession}
-                quantity={item.attributes.session}
-                sale={item.attributes.sale}
-              />
-            )
-        )}
-        {/* {tariffList.map(
-          (item: any, idx: number) =>
-            item.format === tariffFormat &&
-            item.tariffPlan === therapyName && (
-              <Tariff
-                key={idx}
-                personal={item.personal}
-                type={item.format}
-                price={item.price}
-                priceOne={item.priceOne}
-                quantity={item.quantity}
-                sale={item.sale}
-              />
-            )
-        )} */}
+        {tariffReq &&
+          tariffReq?.map(
+            (item: any, idx: number) =>
+              item.attributes.format.data.attributes.formatName ===
+                tariffFormat &&
+              item.attributes.format_community.data.attributes.name ===
+                therapyName && (
+                <Tariff
+                  key={idx}
+                  personal={
+                    item.attributes.format_community.data.attributes.name
+                  }
+                  type={item.attributes.format.data.attributes.formatName}
+                  price={item.attributes.priceFull}
+                  priceOne={item.attributes.pricePerSession}
+                  quantity={item.attributes.session}
+                  sale={item.attributes.sale}
+                />
+              )
+          )}
       </div>
       <button
         className={style.tariff__info__req_mobile}

@@ -6,6 +6,8 @@ import Image from 'next/image';
 
 export default function Advice() {
   const [suggestList, setSuggestList] = useState<any>();
+  const [specThemes, setSpecThemes] = useState<any>(null);
+  const [order, setOrder] = useState<string>('Читаемые');
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
@@ -16,8 +18,78 @@ export default function Advice() {
     }
     hiData();
   }, []);
+  useEffect(() => {
+    async function hiData() {
+      if (order == 'Читаемые') {
+        const res = await fetch(
+          `http://77.232.128.234:1337/api/advices?populate=*&sort[0]=readable:desc`
+        );
+        const repo = await res.json();
+        setSuggestList(repo.data);
+      } else {
+        const res = await fetch(
+          `http://77.232.128.234:1337/api/advices?populate=*&sort[0]=id:desc`
+        );
+        const repo = await res.json();
+        setSuggestList(repo.data);
+      }
+    }
+    hiData();
+  }, [order]);
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(`http://77.232.128.234:1337/api/themes`);
+      const repo = await res.json();
+      repo.data?.map((item: any) => (item.isSelected = false));
+      setSpecThemes(repo.data);
+    }
+    hiData();
+  }, []);
+  function handleToggle(foundId: number) {
+    const currentId = specThemes.findIndex((item: any) => item.id === foundId);
+    const updatedItem = Object.assign({}, specThemes[currentId]);
+    updatedItem.isSelected = !updatedItem.isSelected;
+    const newList = specThemes.slice();
+    newList[currentId] = updatedItem;
+    setSpecThemes(newList);
+  }
   return (
     <BlogLayout>
+      <div className={style.lay__order}>
+        <button
+          onClick={() => setOrder('Читаемые')}
+          className={
+            order == 'Читаемые'
+              ? style.lay__order__btn_active
+              : style.lay__order__btn
+          }
+        >
+          Самые читаемые
+        </button>
+        <button
+          onClick={() => setOrder('Новые')}
+          className={
+            order == 'Новые'
+              ? style.lay__order__btn_active
+              : style.lay__order__btn
+          }
+        >
+          По дате публикации
+        </button>
+      </div>
+      <div className={style.lay__themes}>
+        {specThemes?.map((item: any, idx: number) => (
+          <button
+            key={idx}
+            className={
+              item.isSelected ? style.lay__item_active : style.lay__item
+            }
+            onClick={() => handleToggle(item.id)}
+          >
+            {item.attributes?.themeName}
+          </button>
+        ))}
+      </div>
       <div className={style.ad}>
         <div className={style.ad__content}>
           {suggestList &&

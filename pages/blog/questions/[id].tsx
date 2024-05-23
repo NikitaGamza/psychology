@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
 import BlogLayout from '../layout';
 import style from './Answer.module.scss';
@@ -8,9 +8,10 @@ import Markdown from 'react-markdown';
 
 export default function Answer() {
   const router = useRouter();
-  const [detail, setDetail] = useState<any>();
+  const [detail, setDetail] = useState<any>(null);
   const [moreList, setMoreList] = useState<any>();
   const [open, setOpen] = useState<boolean>(false);
+  const [readNums, setReadNums] = useState<number>(0);
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
@@ -18,10 +19,41 @@ export default function Answer() {
       );
       const repo = await res.json();
       setDetail(repo);
-      console.log(repo);
     }
     hiData();
   }, [router.query.id]);
+  useEffect(() => {
+    if (
+      detail !== null &&
+      detail.data &&
+      detail.data.attributes &&
+      detail.data.attributes.readable
+    ) {
+      console.log(detail.data.attributes.readable + 1);
+      setReadNums(detail.data.attributes.readable + 1);
+      if (readNums !== 0) {
+        async function submitForm(readable: any) {
+          const yourQuest = {
+            data: { readable: readable },
+          };
+          const sendData = await fetch(
+            `http://77.232.128.234:1337/api/questions/${router.query.id}`,
+            {
+              method: 'PUT',
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(yourQuest),
+            }
+          );
+          const sendResponse = await sendData.json();
+          console.log(sendResponse);
+        }
+        submitForm(readNums);
+      }
+    }
+  }, [detail]);
   return (
     <BlogLayout>
       <div className={style.ans}>
