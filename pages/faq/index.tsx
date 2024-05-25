@@ -2,6 +2,7 @@ import React from 'react';
 import style from './style/Faq.module.scss';
 // import { faqList } from './faqList';
 import Item from '@/app/components/pages/faq/Item/Item';
+import Questions from '@/app/components/Questions/Questions';
 
 export default function Faq() {
   const faqList = [
@@ -31,6 +32,7 @@ export default function Faq() {
           ))}
         </div>
       </div>
+      <Questions />
     </div>
   );
 }

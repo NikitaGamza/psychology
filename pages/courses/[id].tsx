@@ -43,6 +43,9 @@ export default function Page() {
               weekDay={course.data.attributes.weekDay}
               time={course.data.attributes.time}
               address={course.data.attributes.address}
+              priceFull={course.data.attributes.priceFull}
+              priceMonth={course.data.attributes.priceMonth}
+              place={course.data.attributes.freePlace}
             />
             <About
               about={course.data.attributes.about}

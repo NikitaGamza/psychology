@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './Cover.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+import Modal from './Modal/Modal';
 
 interface ICover {
   imgMain: string;
@@ -19,9 +20,22 @@ interface ICover {
 }
 
 export default function Cover(props: any) {
+  const [modal, setModal] = useState<boolean>(false);
+  const { priceFull, priceMonth, startDate, place, courseName } = props;
   useEffect(() => console.log(props));
+  function recordCourse() {}
   return (
     <div className={style.cover}>
+      {modal && (
+        <Modal
+          setModal={setModal}
+          priceFull={priceFull}
+          priceMonth={priceMonth}
+          startDate={startDate}
+          place={place}
+          courseName={courseName}
+        />
+      )}
       <div className={style.cover__main}>
         <div className={style.cover__main__info}>
           <div className={style.cover__main__info__tags}>
@@ -45,9 +59,12 @@ export default function Cover(props: any) {
             height={184}
             className={style.cover__main__img_mob}
           />
-          <Link className={style.cover__main__info__link} href={'/'}>
+          <button
+            className={style.cover__main__info__link}
+            onClick={() => setModal(true)}
+          >
             Оставить заявку
-          </Link>
+          </button>
         </div>
         <Image
           src={`http://77.232.128.234:1337/${props.imgMain?.slice(1)}`}

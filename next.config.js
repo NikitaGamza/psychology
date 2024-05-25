@@ -8,6 +8,10 @@ const nextConfig = {
   },
   // process.env.NEXT_PUBLIC_SERVER,
   // '77.232.128.234'
+  // experimental: {
+  //   serverActions: true,
+  // },
+  serverActions: true,
   images: {
     unoptimized: true,
     formats: ['image/avif', 'image/webp'],

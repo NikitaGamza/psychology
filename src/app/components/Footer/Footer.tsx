@@ -3,11 +3,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState, FormEvent } from 'react';
 import Modal from './components/Modal/Modal';
+import { send } from './sender';
+
 export default function Footer() {
   const [phone, setPhone] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [subEmail, setSubemail] = useState<string>('');
   const [modal, setModal] = useState<boolean>(false);
+
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
@@ -113,7 +116,8 @@ export default function Footer() {
                   className={
                     style.footer__content__feedback__form__display__send
                   }
-                  onClick={(e) => subscribeForm(e, subEmail)}
+                  // onClick={(e) => subscribeForm(e, subEmail)}
+                  // onClick={() => send()}
                 >
                   <Image
                     src={'/img/icons/send.svg'}
