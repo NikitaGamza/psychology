@@ -7,6 +7,7 @@ export default function Questions() {
   const [questionList, setQuestionList] = useState<any>();
   const [specThemes, setSpecThemes] = useState<any>(null);
   const [order, setOrder] = useState<string>('Читаемые');
+  const [filterArr, setFilterArr] = useState<Array<any>>([]);
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
@@ -50,7 +51,21 @@ export default function Questions() {
     updatedItem.isSelected = !updatedItem.isSelected;
     const newList = specThemes.slice();
     newList[currentId] = updatedItem;
+    setFilterArr([]);
     setSpecThemes(newList);
+    const updatedList: Array<any> = [];
+    specThemes.map((item: any, id: number) => {
+      if (item.isSelected) {
+        updatedList.push(item.attributes.themeName);
+        console.log(item.attributes.themeName);
+      }
+    });
+    setFilterArr([...updatedList]);
+    let createReq: Array<any> = [];
+    filterArr.map((item: string, idx: number) => {
+      createReq.push(`filters[${idx}]`);
+    });
+    console.log(filterArr);
   }
   return (
     <BlogLayout>
