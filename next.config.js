@@ -11,7 +11,7 @@ const nextConfig = {
   // experimental: {
   //   serverActions: true,
   // },
-  serverActions: true,
+  // serverActions: true,
   images: {
     unoptimized: true,
     formats: ['image/avif', 'image/webp'],
