@@ -5,9 +5,8 @@ import Link from 'next/link';
 
 export default function Questions() {
   const [questionList, setQuestionList] = useState<any>();
-  const [specThemes, setSpecThemes] = useState<any>(null);
+  const [specThemes, setSpecThemes] = useState<Array<any>>([]);
   const [order, setOrder] = useState<string>('Читаемые');
-  const [filterArr, setFilterArr] = useState<Array<any>>([]);
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
@@ -40,8 +39,9 @@ export default function Questions() {
     async function hiData() {
       const res = await fetch(`http://77.232.128.234:1337/api/themes`);
       const repo = await res.json();
-      repo.data?.map((item: any) => (item.isSelected = false));
+      repo.data.map((item: any) => (item.isSelected = false));
       setSpecThemes(repo.data);
+      console.log(specThemes);
     }
     hiData();
   }, []);
@@ -51,22 +51,46 @@ export default function Questions() {
     updatedItem.isSelected = !updatedItem.isSelected;
     const newList = specThemes.slice();
     newList[currentId] = updatedItem;
-    setFilterArr([]);
     setSpecThemes(newList);
-    const updatedList: Array<any> = [];
-    specThemes.map((item: any, id: number) => {
-      if (item.isSelected) {
-        updatedList.push(item.attributes.themeName);
-        console.log(item.attributes.themeName);
-      }
-    });
-    setFilterArr([...updatedList]);
-    let createReq: Array<any> = [];
-    filterArr.map((item: string, idx: number) => {
-      createReq.push(`filters[${idx}]`);
-    });
-    console.log(filterArr);
   }
+  useEffect(() => {
+    async function hiData() {
+      if (order == 'Читаемые') {
+        let createReq: Array<any> = [];
+        specThemes.map((item: any, idx: number) => {
+          if (item.isSelected) {
+            createReq.push(
+              `&filters[$or][${idx}][themes][themeName][$eq]=${item.attributes.themeName}`
+            );
+          }
+        });
+        const res = await fetch(
+          `http://77.232.128.234:1337/api/questions?populate=*&sort[0]=readable:desc${createReq.join(
+            ''
+          )}`
+        );
+        const repo = await res.json();
+        setQuestionList(repo.data);
+      } else if (order == 'Новые') {
+        let createReq: Array<any> = [];
+        specThemes.map((item: any, idx: number) => {
+          if (item.isSelected) {
+            createReq.push(
+              `&filters[$or][${idx}][themes][themeName][$eq]=${item.attributes.themeName}`
+            );
+          }
+        });
+        const res = await fetch(
+          `http://77.232.128.234:1337/api/questions?populate=*&sort[0]=id:desc${createReq.join(
+            ''
+          )}`
+        );
+        const repo = await res.json();
+        setQuestionList(repo.data);
+      }
+    }
+    hiData();
+  }, [specThemes, order]);
   return (
     <BlogLayout>
       <div className={style.lay__order}>
@@ -100,7 +124,7 @@ export default function Questions() {
             }
             onClick={() => handleToggle(item.id)}
           >
-            {item.attributes?.themeName}
+            {item.attributes.themeName}
           </button>
         ))}
       </div>
@@ -145,15 +169,3 @@ export default function Questions() {
     </BlogLayout>
   );
 }
-// export async function getStaticProps() {
-//   // Call an external API endpoint to get posts.
-//   // You can use any data fetching library
-//   const res = await fetch('http://localhost:1337/api/questions');
-//   const posts = await res.json();
-
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// }

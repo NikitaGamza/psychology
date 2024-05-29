@@ -38,6 +38,44 @@ export default function Advice() {
   }, [order]);
   useEffect(() => {
     async function hiData() {
+      if (order == 'Читаемые') {
+        let createReq: Array<any> = [];
+        specThemes.map((item: any, idx: number) => {
+          if (item.isSelected) {
+            createReq.push(
+              `&filters[$or][${idx}][themes][themeName][$eq]=${item.attributes.themeName}`
+            );
+          }
+        });
+        const res = await fetch(
+          `http://77.232.128.234:1337/api/advices?populate=*&sort[0]=readable:desc${createReq.join(
+            ''
+          )}`
+        );
+        const repo = await res.json();
+        suggestList(repo.data);
+      } else if (order == 'Новые') {
+        let createReq: Array<any> = [];
+        specThemes.map((item: any, idx: number) => {
+          if (item.isSelected) {
+            createReq.push(
+              `&filters[$or][${idx}][themes][themeName][$eq]=${item.attributes.themeName}`
+            );
+          }
+        });
+        const res = await fetch(
+          `http://77.232.128.234:1337/api/advices?populate=*&sort[0]=id:desc${createReq.join(
+            ''
+          )}`
+        );
+        const repo = await res.json();
+        suggestList(repo.data);
+      }
+    }
+    hiData();
+  }, [specThemes, order]);
+  useEffect(() => {
+    async function hiData() {
       const res = await fetch(`http://77.232.128.234:1337/api/themes`);
       const repo = await res.json();
       repo.data?.map((item: any) => (item.isSelected = false));

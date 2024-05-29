@@ -44,6 +44,44 @@ export default function Video() {
     }
     hiData();
   }, []);
+  useEffect(() => {
+    async function hiData() {
+      if (order == 'Читаемые') {
+        let createReq: Array<any> = [];
+        specThemes.map((item: any, idx: number) => {
+          if (item.isSelected) {
+            createReq.push(
+              `&filters[$or][${idx}][themes][themeName][$eq]=${item.attributes.themeName}`
+            );
+          }
+        });
+        const res = await fetch(
+          `http://77.232.128.234:1337/api/videos?populate=*&sort[0]=readable:desc${createReq.join(
+            ''
+          )}`
+        );
+        const repo = await res.json();
+        videoList(repo.data);
+      } else if (order == 'Новые') {
+        let createReq: Array<any> = [];
+        specThemes.map((item: any, idx: number) => {
+          if (item.isSelected) {
+            createReq.push(
+              `&filters[$or][${idx}][themes][themeName][$eq]=${item.attributes.themeName}`
+            );
+          }
+        });
+        const res = await fetch(
+          `http://77.232.128.234:1337/api/videos?populate=*&sort[0]=id:desc${createReq.join(
+            ''
+          )}`
+        );
+        const repo = await res.json();
+        videoList(repo.data);
+      }
+    }
+    hiData();
+  }, [specThemes, order]);
   function handleToggle(foundId: number) {
     const currentId = specThemes.findIndex((item: any) => item.id === foundId);
     const updatedItem = Object.assign({}, specThemes[currentId]);
@@ -113,15 +151,3 @@ export default function Video() {
     </BlogLayout>
   );
 }
-// export async function getStaticProps() {
-//   // Call an external API endpoint to get posts.
-//   // You can use any data fetching library
-//   const res = await fetch('http://localhost:1337/api/videos?populate=*');
-//   const posts = await res.json();
-
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// }
