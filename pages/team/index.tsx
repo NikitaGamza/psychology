@@ -12,6 +12,7 @@ export default function Team() {
   const [parameters, setParameters] = useState<object>({});
   const [mobileFilt, setMobileFilt] = useState<boolean>(false);
   const [specThemes, setSpecThemes] = useState<Array<any>>([]);
+  const [methods, setMethods] = useState<Array<any>>([]);
   useEffect(() => {
     console.log(parameters);
   }, [parameters]);
@@ -39,9 +40,14 @@ export default function Team() {
               />
             </div>
             <Selectors format={format} setFormat={setFormat} />
-            <List format={format} specThemes={specThemes} />
+            <List format={format} specThemes={specThemes} methods={methods} />
           </div>
-          <Parameters specThemes={specThemes} setSpecThemes={setSpecThemes} />
+          <Parameters
+            specThemes={specThemes}
+            setSpecThemes={setSpecThemes}
+            methods={methods}
+            setMethods={setMethods}
+          />
         </div>
         <Banner />
       </div>

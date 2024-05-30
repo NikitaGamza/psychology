@@ -20,13 +20,18 @@ interface IParameter {
   name: string;
   list: Array<IRadio>;
 }
-export default function Parameters({ specThemes, setSpecThemes }: any) {
+export default function Parameters({
+  specThemes,
+  setSpecThemes,
+  methods,
+  setMethods,
+}: any) {
   return (
     <div className={style.params}>
       <h5 className={style.params__head}>Параметры</h5>
       <div className={style.params__set}>
         <Speciality specThemes={specThemes} setSpecThemes={setSpecThemes} />
-        <Methods />
+        <Methods methods={methods} setMethods={setMethods} />
         <Experience />
         <Sex />
         <Cities />

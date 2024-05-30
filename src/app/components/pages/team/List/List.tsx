@@ -2,7 +2,7 @@ import style from './List.module.scss';
 import Psychologist from '@/app/components/ui/Psychologist/Psychologist';
 import { useEffect, useState } from 'react';
 
-export default function List({ format, specThemes }: any) {
+export default function List({ format, specThemes, methods }: any) {
   const [result, setResult] = useState<any>();
   useEffect(() => {
     async function hiData() {
@@ -19,23 +19,40 @@ export default function List({ format, specThemes }: any) {
     async function hiData() {
       let createReq: Array<any> = [];
       specThemes.map((item: any, idx: number) => {
+        let i = 0;
         if (item.isSelected) {
+          i = i + 1;
           createReq.push(
-            `&filters[$or][${idx}][themes][themeName][$eq]=${item.attributes.themeName}`
+            `&filters[$or][${i}][themes][themeName]=${item.attributes.themeName}`
           );
         }
       });
+      let createMeth: Array<any> = [];
+      methods.map((item: any, idx: number) => {
+        let i = 0;
+        if (item.isSelected) {
+          i = i + 1;
+          createMeth.push(
+            `&filters[$or][${i}][methods][name]=${item.attributes.name}`
+          );
+        }
+      });
+      // alert(
+      //   `http://77.232.128.234:1337/api/psychologists?populate=*&filters[formats][formatName][$eq]=${format}${createReq.join(
+      //     ''
+      //   )}${createMeth.join('')}`
+      // );
       const res = await fetch(
         `http://77.232.128.234:1337/api/psychologists?populate=*&filters[formats][formatName][$eq]=${format}${createReq.join(
           ''
-        )}`
+        )}${createMeth.join('')}`
       );
       const repo = await res.json();
       await setResult(repo);
       console.log(result);
     }
     hiData();
-  }, [format, specThemes]);
+  }, [format, specThemes, methods]);
   return (
     <div className={style.list}>
       {result?.data?.map((item: any) => (

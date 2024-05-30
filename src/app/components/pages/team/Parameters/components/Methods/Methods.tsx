@@ -4,9 +4,9 @@ import style from './style.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/methods/methods';
 
-export default function Methods() {
+export default function Methods({ methods, setMethods }: any) {
   const [isVisible, setIsVisible] = useState<boolean>(true);
-  const [methods, setMethods] = useState<Array<any>>([]);
+  // const [methods, setMethods] = useState<Array<any>>([]);
   useEffect(() => {
     async function hiData() {
       const res = await fetch(`http://77.232.128.234:1337/api/methods`);
