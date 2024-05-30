@@ -17,16 +17,20 @@ export default function IntroductionPageComponent() {
           />
           <div>
             <h1 className={style.introduction__container__head}>
-              Поможем найти{' '}
+              В любой ситуации{' '}
+              <br className={style.introduction__container__head__br} />
               <span className={style.introduction__container__head_green}>
-                твоего психолога!
-              </span>
+                твой психолог
+              </span>{' '}
+              всегда рядом
             </h1>
             <p className={style.introduction__container__description}>
-              Мы разработали уникальную методику индивидуализированного подбора
-              на основе теории скрытых поведенческих факторов, которая поможет
-              вам найти психолога, с который вы будете “на одной волне”.
+              В какой бы сложной, жизненной ситуации вы не оказались, знайте
+              наша команда профессионалных психологов и психотерапевтов всегда
+              готовы прийти к вам на помощь - поддержать, разобрать ситуацию и
+              найти решение.
             </p>
+            <br />
             <p className={style.introduction__container__description}>
               Если в вашей жизни есть проблемы, которые мешают вам чувстововать
               счастье, полноту, радость, благодарность каждый день - возможно,

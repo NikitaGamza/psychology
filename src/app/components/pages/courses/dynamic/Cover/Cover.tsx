@@ -19,9 +19,25 @@ interface ICover {
   address?: string;
 }
 
+const monthList = [
+  'января',
+  'февраля',
+  'марта',
+  'апреля',
+  'мая',
+  'июня',
+  'июля',
+  'августа',
+  'сентября',
+  'октября',
+  'ноября',
+  'декабря',
+];
+
 export default function Cover(props: any) {
   const [modal, setModal] = useState<boolean>(false);
   const { priceFull, priceMonth, startDate, place, courseName } = props;
+  const startDay = new Date(startDate);
   useEffect(() => console.log(props));
   function recordCourse() {}
   return (
@@ -81,7 +97,9 @@ export default function Cover(props: any) {
         </span>
         <span className={style.cover__detail__item}>
           <p className={style.cover__detail__item__title}>Старт</p>
-          <p className={style.cover__detail__item__info}>с {props.startDate}</p>
+          <p className={style.cover__detail__item__info}>
+            с {startDay.getDate()} {monthList[startDay.getMonth()]}
+          </p>
           <p className={style.cover__detail__item__info}>
             {props.duralation} месяца
           </p>

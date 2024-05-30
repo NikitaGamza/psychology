@@ -15,8 +15,8 @@
       font-size: 56px;
       font-weight: 900;
       line-height: 64px;
-      width: 570px;
-      margin-bottom: 45px;
+      width: 750px;
+      margin-bottom: 40px;
       font-family: 'Gilroy-Bold';
       &_green {
         color: $green;
@@ -72,10 +72,13 @@
         border-radius: 29px;
       }
       &__head {
-        width: 270px;
+        width: 100%;
         font-size: 32px;
         line-height: 36px;
         margin-bottom: 16px;
+        &__br {
+          display: none;
+        }
       }
       &__description {
         width: auto;

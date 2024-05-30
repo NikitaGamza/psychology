@@ -89,6 +89,12 @@ export default function Payment(props: IPay) {
               id=""
               placeholder="Телефон"
             />
+            <textarea
+              name=""
+              id=""
+              placeholder="Комментарий"
+              className={style.pay__content__right__form__text}
+            />
 
             <div className={style.pay__content__right__form__agree}>
               <span>
