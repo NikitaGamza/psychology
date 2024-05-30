@@ -8,6 +8,7 @@ export default function List({
   methods,
   expert,
   selectedSex,
+  selectedCity,
 }: any) {
   const [result, setResult] = useState<any>();
   useEffect(() => {
@@ -58,19 +59,25 @@ export default function List({
       } else {
         createSex = '&filters[sex][$null]';
       }
+      let cityReq = '';
+      if (selectedCity !== null) {
+        cityReq = `&filters[city][name][$eq]=${selectedCity}`;
+      } else {
+        cityReq = '&filters[city][name][$null]';
+      }
       const res = await fetch(
         `http://77.232.128.234:1337/api/psychologists?populate=*&filters[formats][formatName][$eq]=${format}${createReq.join(
           ''
         )}${createMeth.join(
           ''
-        )}&filters[startWork][$lte]=${year}-${month}-${day}${createSex}`
+        )}&filters[startWork][$lte]=${year}-${month}-${day}${createSex}${cityReq}`
       );
       const repo = await res.json();
       await setResult(repo);
       console.log(result);
     }
     hiData();
-  }, [format, specThemes, methods, expert, selectedSex]);
+  }, [format, specThemes, methods, expert, selectedSex, selectedCity]);
   return (
     <div className={style.list}>
       {result?.data?.map((item: any) => (

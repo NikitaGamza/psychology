@@ -4,7 +4,7 @@ import style from './style.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/cities/cities';
 
-export default function Cities() {
+export default function Cities({ setSelectedCity }: any) {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [cities, setCities] = useState<any>();
   useEffect(() => {
@@ -59,7 +59,10 @@ export default function Cities() {
               type="radio"
               name="city"
               id={`cities${item.id}`}
-              onClick={() => handleToggle(item.id)}
+              onClick={() => {
+                setSelectedCity(item.attributes.name);
+                handleToggle(item.id);
+              }}
               checked={item.isSelected ? true : false}
               className={style.block__list__item__radio}
             />

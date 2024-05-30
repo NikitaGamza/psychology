@@ -14,6 +14,7 @@ export default function Team() {
   const [methods, setMethods] = useState<Array<any>>([]);
   const [expert, setExpert] = useState<number>(0);
   const [selectedSex, setSelectedSex] = useState<boolean | null>(null);
+  const [selectedCity, setSelectedCity] = useState<string | null>(null);
 
   return (
     <div className={style.team}>
@@ -45,6 +46,7 @@ export default function Team() {
               methods={methods}
               expert={expert}
               selectedSex={selectedSex}
+              selectedCity={selectedCity}
             />
           </div>
           <Parameters
@@ -54,6 +56,7 @@ export default function Team() {
             setMethods={setMethods}
             setExpert={setExpert}
             setSelectedSex={setSelectedSex}
+            setSelectedCity={setSelectedCity}
           />
         </div>
         <Banner />
