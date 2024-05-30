@@ -112,8 +112,24 @@
           align-items: center;
           gap: 12px;
           &__check {
-            width: 20px;
-            height: 20px;
+            // width: 20px;
+            // height: 20px;
+            display: none;
+            &_fake {
+              width: 24px;
+              height: 24px;
+              display: block;
+              background-image: url('/img/icons/rest/checkbox-picked.svg');
+              background-size: cover;
+              &_active {
+                width: 24px;
+                height: 24px;
+                display: block;
+                background-image: url('/img/icons/rest/checkbox-empty.svg');
+
+                background-size: cover;
+              }
+            }
           }
           &__label {
             font-size: 16px;

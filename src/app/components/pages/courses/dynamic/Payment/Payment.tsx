@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './Payment.module.scss';
 import Link from 'next/link';
 
@@ -25,6 +25,7 @@ const monthList = [
 
 export default function Payment(props: IPay) {
   const { priceFull, priceMonth, startDate, place } = props;
+  const [checker, setChecker] = useState<boolean>(false);
   const startDay = new Date(startDate);
   return (
     <div className={style.pay}>
@@ -91,11 +92,21 @@ export default function Payment(props: IPay) {
 
             <div className={style.pay__content__right__form__agree}>
               <span>
+                <label
+                  htmlFor="privacy"
+                  onClick={() => setChecker(!checker)}
+                  className={
+                    checker
+                      ? style.pay__content__right__form__agree__check_fake
+                      : style.pay__content__right__form__agree__check_fake_active
+                  }
+                ></label>
                 <input
                   className={style.pay__content__right__form__agree__check}
                   type="checkbox"
                   name=""
                   id="checkbox"
+                  checked={checker}
                 />
               </span>
 
