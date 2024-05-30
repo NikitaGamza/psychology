@@ -2,7 +2,7 @@ import style from './List.module.scss';
 import Psychologist from '@/app/components/ui/Psychologist/Psychologist';
 import { useEffect, useState } from 'react';
 
-export default function List({ format, specThemes, methods }: any) {
+export default function List({ format, specThemes, methods, expert }: any) {
   const [result, setResult] = useState<any>();
   useEffect(() => {
     async function hiData() {
@@ -17,6 +17,13 @@ export default function List({ format, specThemes, methods }: any) {
   }, []);
   useEffect(() => {
     async function hiData() {
+      const data = new Date();
+      const year = data.getFullYear() - expert;
+      let month = `${data.getMonth()}`;
+      if (month.length == 1) {
+        month = `0${month}`;
+      }
+      const day = data.getDate();
       let createReq: Array<any> = [];
       specThemes.map((item: any, idx: number) => {
         let i = 0;
@@ -37,22 +44,20 @@ export default function List({ format, specThemes, methods }: any) {
           );
         }
       });
-      // alert(
-      //   `http://77.232.128.234:1337/api/psychologists?populate=*&filters[formats][formatName][$eq]=${format}${createReq.join(
-      //     ''
-      //   )}${createMeth.join('')}`
-      // );
       const res = await fetch(
         `http://77.232.128.234:1337/api/psychologists?populate=*&filters[formats][formatName][$eq]=${format}${createReq.join(
           ''
-        )}${createMeth.join('')}`
+        )}${createMeth.join(
+          ''
+        )}&filters[startWork][$lte]=${year}-${month}-${day}`
       );
+      // alert(`0${data.getMonth()}`.length);
       const repo = await res.json();
       await setResult(repo);
       console.log(result);
     }
     hiData();
-  }, [format, specThemes, methods]);
+  }, [format, specThemes, methods, expert]);
   return (
     <div className={style.list}>
       {result?.data?.map((item: any) => (

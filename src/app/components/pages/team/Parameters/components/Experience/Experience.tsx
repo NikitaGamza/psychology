@@ -4,7 +4,7 @@ import style from './style.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/experience/experience';
 
-export default function Experience() {
+export default function Experience({ setExpert }: any) {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const experience = useSelector((state: any) => state.experience.experience);
   const dispatch = useDispatch();
@@ -31,7 +31,14 @@ export default function Experience() {
         {experience.map((item: any, idx: number) => (
           <div key={idx} className={style.block__list__item}>
             <label
-              onClick={() => dispatch(toggle(item.id))}
+              onClick={() => {
+                if (item.value) {
+                  setExpert(item.value);
+                } else {
+                  setExpert(0);
+                }
+                dispatch(toggle(item.id));
+              }}
               htmlFor={`exp${item.id}`}
               className={
                 item.isSelected
@@ -43,12 +50,26 @@ export default function Experience() {
               type="radio"
               name="experience"
               id={`exp${item.id}`}
-              onClick={() => dispatch(toggle(item.id))}
+              onClick={() => {
+                if (item.value) {
+                  setExpert(item.value);
+                } else {
+                  setExpert(0);
+                }
+                dispatch(toggle(item.id));
+              }}
               checked={item.isSelected ? true : false}
               className={style.block__list__item__radio}
             />
             <label
-              onClick={() => dispatch(toggle(item.id))}
+              onClick={() => {
+                if (item.value) {
+                  setExpert(item.value);
+                } else {
+                  setExpert(0);
+                }
+                dispatch(toggle(item.id));
+              }}
               htmlFor={`exp${item.id}`}
               className={
                 item.isSelected

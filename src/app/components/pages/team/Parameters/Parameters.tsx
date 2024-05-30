@@ -25,6 +25,7 @@ export default function Parameters({
   setSpecThemes,
   methods,
   setMethods,
+  setExpert,
 }: any) {
   return (
     <div className={style.params}>
@@ -32,7 +33,7 @@ export default function Parameters({
       <div className={style.params__set}>
         <Speciality specThemes={specThemes} setSpecThemes={setSpecThemes} />
         <Methods methods={methods} setMethods={setMethods} />
-        <Experience />
+        <Experience setExpert={setExpert} />
         <Sex />
         <Cities />
         {/* <Format /> */}
