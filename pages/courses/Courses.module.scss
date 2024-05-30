@@ -28,13 +28,21 @@
 
 .dynamic {
   padding-top: 80px;
-  background-image: url('/img/pages/courses/dynamic/leftpetal.png'), url('/img/pages/courses/dynamic/blue.png'), url('/img/pages/courses/dynamic/yellow.png'), url('/img/pages/courses/dynamic/rightpetal.png');
+  background-image: url('/img/pages/courses/dynamic/leftpetal.png'),
+    url('/img/pages/courses/dynamic/blue.png'),
+    url('/img/pages/courses/dynamic/yellow.png'),
+    url('/img/pages/courses/dynamic/rightpetal.png');
   background-position: 0 0, 100% 6%, 0 15%, 100% 30%;
   background-repeat: no-repeat;
   &__content {
     display: flex;
     flex-direction: column;
     gap: 160px;
+  }
+}
+@media screen and (max-width: 1630px) {
+  .dynamic {
+    background-image: none;
   }
 }
 @media screen and (max-width: 1170px) {
