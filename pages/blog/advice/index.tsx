@@ -69,7 +69,7 @@ export default function Advice() {
           )}`
         );
         const repo = await res.json();
-        suggestList(repo.data);
+        setSuggestList(repo.data);
       }
     }
     hiData();
