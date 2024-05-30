@@ -11,7 +11,7 @@ export default function TariffItem(tariffFilter: any) {
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
-        `http://77.232.128.234:1337/api/tariffs?populate=*`
+        `http://77.232.128.234:1337/api/tariffs?populate=*&pagination[pageSize]=28`
       );
       const repo = await res.json();
       setTariffReq(repo.data);

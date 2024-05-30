@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import style from './style/Tariff.module.scss';
 import TariffItem from '@/app/components/pages/tariff/TariffItem/TariffItem';
 import Certificate from '@/app/components/pages/tariff/Certificate/Certificate';

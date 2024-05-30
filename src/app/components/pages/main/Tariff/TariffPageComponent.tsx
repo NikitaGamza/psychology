@@ -11,6 +11,19 @@ export default function TariffPageComponent() {
   useEffect(() => {
     setFormat(tariffPlan.format[0]);
   }, [tariffPlan]);
+  const [tariffReq, setTariffReq] = useState<Array<any>>([]);
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/tariffs?populate=*&pagination[pageSize]=28`
+      );
+      const repo = await res.json();
+      setTariffReq(repo.data);
+      // console.log(repo.data);
+      // console.log(tariffReq);
+    }
+    hiData();
+  }, []);
   return (
     <section className={style.tariff}>
       <div className="container">
@@ -29,7 +42,10 @@ export default function TariffPageComponent() {
                         ? style.tariff__container__options__list__item_active
                         : style.tariff__container__options__list__item
                     }
-                    onClick={() => setTariffPlan(item)}
+                    onClick={() => {
+                      setTariffPlan(item);
+                      console.log(item);
+                    }}
                   >
                     {item.therapyName}
                   </button>
@@ -53,21 +69,26 @@ export default function TariffPageComponent() {
             </div>
           </div>
           <div className={style.tariff__list}>
-            {tariffList.map(
-              (item: any, index: number) =>
-                item.format === format &&
-                item.tariffPlan === tariffPlan.therapyName && (
-                  <Tariff
-                    key={index}
-                    personal={item.personal}
-                    type={item.format}
-                    price={item.price}
-                    priceOne={item.priceOne}
-                    quantity={item.quantity}
-                    sale={item.sale}
-                  />
-                )
-            )}
+            {tariffReq &&
+              tariffReq?.map(
+                (item: any, idx: number) =>
+                  item.attributes.format.data.attributes.formatName ===
+                    format &&
+                  item.attributes.format_community.data.attributes.name ===
+                    tariffPlan.therapyName && (
+                    <Tariff
+                      key={idx}
+                      personal={
+                        item.attributes.format_community.data.attributes.name
+                      }
+                      type={item.attributes.format.data.attributes.formatName}
+                      price={item.attributes.priceFull}
+                      priceOne={item.attributes.pricePerSession}
+                      quantity={item.attributes.session}
+                      sale={item.attributes.sale}
+                    />
+                  )
+              )}
           </div>
 
           <Link href={'/tariff'} className={style.tariff__btn}>
