@@ -26,6 +26,7 @@ export default function Parameters({
   methods,
   setMethods,
   setExpert,
+  setSelectedSex
 }: any) {
   return (
     <div className={style.params}>
@@ -34,7 +35,7 @@ export default function Parameters({
         <Speciality specThemes={specThemes} setSpecThemes={setSpecThemes} />
         <Methods methods={methods} setMethods={setMethods} />
         <Experience setExpert={setExpert} />
-        <Sex />
+        <Sex setSelectedSex={setSelectedSex} />
         <Cities />
         {/* <Format /> */}
       </div>

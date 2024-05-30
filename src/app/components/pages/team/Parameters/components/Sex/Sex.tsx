@@ -4,7 +4,7 @@ import style from './style.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@/store/features/sex/sex';
 
-export default function Sex() {
+export default function Sex({ setSelectedSex }: any) {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const sex = useSelector((state: any) => state.sex.sex);
   const dispatch = useDispatch();
@@ -31,7 +31,10 @@ export default function Sex() {
         {sex.map((item: any, idx: number) => (
           <div key={idx} className={style.block__list__item}>
             <label
-              onClick={() => dispatch(toggle(item.id))}
+              onClick={() => {
+                setSelectedSex(item.value);
+                dispatch(toggle(item.id));
+              }}
               htmlFor={`sex${item.id}`}
               className={
                 item.isSelected
@@ -43,12 +46,18 @@ export default function Sex() {
               type="radio"
               name="sex"
               id={`sex${item.id}`}
-              onClick={() => dispatch(toggle(item.id))}
+              onClick={() => {
+                setSelectedSex(item.value);
+                dispatch(toggle(item.id));
+              }}
               checked={item.isSelected ? true : false}
               className={style.block__list__item__radio}
             />
             <label
-              onClick={() => dispatch(toggle(item.id))}
+              onClick={() => {
+                setSelectedSex(item.value);
+                dispatch(toggle(item.id));
+              }}
               htmlFor={`sex${item.id}`}
               className={
                 item.isSelected

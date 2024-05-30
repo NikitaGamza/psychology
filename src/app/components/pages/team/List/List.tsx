@@ -2,7 +2,13 @@ import style from './List.module.scss';
 import Psychologist from '@/app/components/ui/Psychologist/Psychologist';
 import { useEffect, useState } from 'react';
 
-export default function List({ format, specThemes, methods, expert }: any) {
+export default function List({
+  format,
+  specThemes,
+  methods,
+  expert,
+  selectedSex,
+}: any) {
   const [result, setResult] = useState<any>();
   useEffect(() => {
     async function hiData() {
@@ -44,20 +50,27 @@ export default function List({ format, specThemes, methods, expert }: any) {
           );
         }
       });
+      let createSex = '';
+      if (selectedSex === true) {
+        createSex = '&filters[sex][$eq]=true';
+      } else if (selectedSex === false) {
+        createSex = '&filters[sex][$eq]=false';
+      } else {
+        createSex = '&filters[sex][$null]';
+      }
       const res = await fetch(
         `http://77.232.128.234:1337/api/psychologists?populate=*&filters[formats][formatName][$eq]=${format}${createReq.join(
           ''
         )}${createMeth.join(
           ''
-        )}&filters[startWork][$lte]=${year}-${month}-${day}`
+        )}&filters[startWork][$lte]=${year}-${month}-${day}${createSex}`
       );
-      // alert(`0${data.getMonth()}`.length);
       const repo = await res.json();
       await setResult(repo);
       console.log(result);
     }
     hiData();
-  }, [format, specThemes, methods, expert]);
+  }, [format, specThemes, methods, expert, selectedSex]);
   return (
     <div className={style.list}>
       {result?.data?.map((item: any) => (
