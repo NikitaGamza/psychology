@@ -1,16 +1,13 @@
 import style from './List.module.scss';
 import Psychologist from '@/app/components/ui/Psychologist/Psychologist';
-import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
-export default function List({ format, parameters }: any) {
-  const filterState = useSelector((state) => state);
-  const { specThemes, sex, methods, experience, cities }: any = filterState;
+export default function List({ format, specThemes }: any) {
   const [result, setResult] = useState<any>();
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
-        `http://77.232.128.234:1337/api/psychologists?populate=*`
+        `http://77.232.128.234:1337/api/psychologists?populate=*&filters[formats][formatName][$eq]=${format}`
       );
       const repo = await res.json();
       await setResult(repo);
@@ -18,9 +15,29 @@ export default function List({ format, parameters }: any) {
     }
     hiData();
   }, []);
+  useEffect(() => {
+    async function hiData() {
+      let createReq: Array<any> = [];
+      specThemes.map((item: any, idx: number) => {
+        if (item.isSelected) {
+          createReq.push(
+            `&filters[$or][${idx}][themes][themeName][$eq]=${item.attributes.themeName}`
+          );
+        }
+      });
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/psychologists?populate=*&filters[formats][formatName][$eq]=${format}${createReq.join(
+          ''
+        )}`
+      );
+      const repo = await res.json();
+      await setResult(repo);
+      console.log(result);
+    }
+    hiData();
+  }, [format, specThemes]);
   return (
     <div className={style.list}>
-      {/* '77.232.128.234:1337/url' */}
       {result?.data?.map((item: any) => (
         <Psychologist
           key={item.id}

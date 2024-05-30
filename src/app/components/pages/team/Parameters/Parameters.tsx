@@ -20,12 +20,12 @@ interface IParameter {
   name: string;
   list: Array<IRadio>;
 }
-export default function Parameters({ parameters, setParameters }: any) {
+export default function Parameters({ specThemes, setSpecThemes }: any) {
   return (
     <div className={style.params}>
       <h5 className={style.params__head}>Параметры</h5>
       <div className={style.params__set}>
-        <Speciality />
+        <Speciality specThemes={specThemes} setSpecThemes={setSpecThemes} />
         <Methods />
         <Experience />
         <Sex />

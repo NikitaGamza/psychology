@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import style from './style.module.scss';
 
-export default function Speciality({ refresh }: any) {
+export default function Speciality({
+  specThemes,
+  setSpecThemes,
+  refresh,
+}: any) {
   const [isVisible, setIsVisible] = useState<boolean>(true);
-  const [specThemes, setSpecThemes] = useState<any>(null);
+  // const [specThemes, setSpecThemes] = useState<Array<any>>([]);
   useEffect(() => {
     async function hiData() {
       const res = await fetch(`http://77.232.128.234:1337/api/themes`);
