@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function Advice() {
   const [suggestList, setSuggestList] = useState<any>();
-  const [specThemes, setSpecThemes] = useState<any>(null);
+  const [specThemes, setSpecThemes] = useState<Array<any>>([]);
   const [order, setOrder] = useState<string>('Читаемые');
   useEffect(() => {
     async function hiData() {
@@ -53,7 +53,7 @@ export default function Advice() {
           )}`
         );
         const repo = await res.json();
-        suggestList(repo.data);
+        setSuggestList(repo.data);
       } else if (order == 'Новые') {
         let createReq: Array<any> = [];
         specThemes.map((item: any, idx: number) => {
