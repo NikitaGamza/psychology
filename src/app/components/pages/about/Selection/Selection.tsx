@@ -1,8 +1,20 @@
 import style from './Selection.module.scss';
 import Image from 'next/image';
 import Cart from './components/Cart/Cart';
+import { useEffect, useState } from 'react';
 
 export default function Selection() {
+  const [imgList, setImgList] = useState<Array<any>>([]);
+  useEffect(() => {
+    async function hiData() {
+      const res = await fetch(
+        `http://77.232.128.234:1337/api/psychologists-covers?populate=*&pagination[pageSize]=8`
+      );
+      const repo = await res.json();
+      setImgList(repo.data);
+    }
+    hiData();
+  }, []);
   const selectList = [
     {
       head: 'Образованию',
@@ -41,13 +53,40 @@ export default function Selection() {
           </div>
         </div>
         <div className={style.pics}>
-          <Image
+          {imgList &&
+            imgList.map((item: any, idx: number) => (
+              <Image
+                src={`http://77.232.128.234:1337${item.attributes.img.data.attributes.url}`}
+                alt={`psycholog`}
+                width={100}
+                height={100}
+                key={idx}
+                className={
+                  idx === 0
+                    ? style.pics_0
+                    : idx == 1
+                    ? style.pics_1
+                    : idx == 2
+                    ? style.pics_2
+                    : idx == 3
+                    ? style.pics_3
+                    : idx == 4
+                    ? style.pics_4
+                    : idx == 5
+                    ? style.pics_5
+                    : idx == 6
+                    ? style.pics_6
+                    : style.pics_7
+                }
+              />
+            ))}
+          {/* <Image
             src={'/img/pages/about/Selection/pics/selection-team.png'}
             alt=""
             width={540}
             height={680}
             className={style.pics__desctop}
-          />
+          /> */}
           <Image
             src={'/img/pages/about/Selection/pics/selection-mob.png'}
             alt=""

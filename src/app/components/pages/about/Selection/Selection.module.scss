@@ -31,6 +31,7 @@
     display: flex;
     justify-content: space-between;
     &__info {
+      max-width: 592px;
       &__title {
         font-size: 32px;
         font-family: 'Gilroy-Bold';
@@ -47,7 +48,92 @@
   }
 }
 .pics {
-  display: flex;
+  background-image: url('/img/pages/about/Selection/pics/selection-team.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 540px;
+  height: 680px;
+  position: relative;
+  &_0 {
+    border-radius: 100px;
+    object-fit: cover;
+    position: relative;
+    border: 4px solid $green_30;
+    width: 156px;
+    height: 156px;
+    top: -11px;
+    left: 0px;
+  }
+  &_1 {
+    border-radius: 100px;
+    object-fit: cover;
+    position: relative;
+    border: 4px solid $green_30;
+    width: 120px;
+    height: 120px;
+    top: -47px;
+    left: 264px;
+  }
+  &_2 {
+    border-radius: 100px;
+    object-fit: cover;
+    position: relative;
+    border: 4px solid $yellow_30;
+    width: 168px;
+    height: 168px;
+    top: 145px;
+    left: -97px;
+  }
+  &_3 {
+    border-radius: 100px;
+    object-fit: cover;
+    position: relative;
+    border: 4px solid $blue_30;
+    width: 129px;
+    height: 129px;
+    top: 37px;
+    left: 14px;
+  }
+  &_4 {
+    border-radius: 100px;
+    object-fit: cover;
+    position: relative;
+    border: 4px solid $blue_30;
+    width: 173px;
+    height: 173px;
+    top: 65px;
+    left: 238px;
+  }
+  &_5 {
+    border-radius: 100px;
+    object-fit: cover;
+    position: relative;
+    border: 4px solid $green_30;
+    width: 193px;
+    height: 193px;
+    top: 190px;
+    left: -128px;
+  }
+  &_6 {
+    border-radius: 100px;
+    object-fit: cover;
+    position: relative;
+    border: 4px solid $blue_30;
+    width: 163px;
+    height: 163px;
+    top: 148px;
+    left: 0px;
+  }
+  &_7 {
+    border-radius: 100px;
+    object-fit: cover;
+    position: relative;
+    border: 4px solid $yellow_30;
+    width: 134px;
+    height: 134px;
+    top: 148px;
+    left: 244px;
+  }
   &__desctop {
     width: 540px;
     height: 680px;

@@ -12,9 +12,6 @@ export default function Cover() {
       );
       const repo = await res.json();
       setImgList(repo.data);
-      imgList.map((item: any) =>
-        console.log(item.attributes.img.data.attributes.url)
-      );
     }
     hiData();
   }, []);

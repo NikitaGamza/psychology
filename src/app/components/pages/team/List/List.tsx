@@ -68,10 +68,9 @@ export default function List({
       const res = await fetch(
         `http://77.232.128.234:1337/api/psychologists?populate=*&filters[formats][formatName][$eq]=${format}${createReq.join(
           ''
-        )}${createMeth.join(
-          ''
-        )}&filters[startWork][$lte]=${year}-${month}-${day}${createSex}${cityReq}`
+        )}${createMeth.join('')}${createSex}${cityReq}`
       );
+      // &filters[startWork][$lte]=${year}-${month}-${day}
       const repo = await res.json();
       await setResult(repo);
       console.log(result);
