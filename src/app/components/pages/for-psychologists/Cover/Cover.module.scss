@@ -1,5 +1,8 @@
 @import '@/style/colors.scss';
 @import '@/style/mixins.scss';
+.block {
+  display: block;
+}
 .cover {
   display: flex;
   flex-wrap: wrap;
@@ -164,8 +167,57 @@
       }
     }
     &__img {
-      width: 100%;
-      height: auto;
+      width: 320px;
+      height: 317px;
+      &_0 {
+        border: 2px solid $green_30;
+        width: 60px;
+        height: 60px;
+        top: 34px;
+        left: 33px;
+      }
+      &_1 {
+        border: 2px solid $yellow_30;
+        width: 45px;
+        height: 45px;
+        top: 125px;
+        left: -6px;
+      }
+      &_2 {
+        border: 2px solid $blue_30;
+        width: 70px;
+        height: 70px;
+        top: 206px;
+        left: -96px;
+      }
+      &_3 {
+        border: 2px solid $blue_30;
+        width: 38px;
+        height: 38px;
+        top: -27px;
+        left: 0px;
+      }
+      &_4 {
+        border: 2px solid $blue_30;
+        width: 45px;
+        height: 45px;
+        top: 35px;
+        left: 20px;
+      }
+      &_5 {
+        border: 2px solid $green_30;
+        width: 55px;
+        height: 55px;
+        top: 170px;
+        left: -75px;
+      }
+      &_6 {
+        border: 2px solid $blue_30;
+        width: 35px;
+        height: 35px;
+        top: 180px;
+        left: 138px;
+      }
     }
   }
 }

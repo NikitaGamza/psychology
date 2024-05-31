@@ -8,10 +8,13 @@ export default function Cover() {
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
-        `http://localhost:1337/api/psychologists-covers?populate=*&pagination[pageSize]=7`
+        `http://77.232.128.234:1337/api/psychologists-covers?populate=*&pagination[pageSize]=7`
       );
       const repo = await res.json();
       setImgList(repo.data);
+      imgList.map((item: any) =>
+        console.log(item.attributes.img.data.attributes.url)
+      );
     }
     hiData();
   }, []);
@@ -41,8 +44,8 @@ export default function Cover() {
         {imgList &&
           imgList.map((item: any, idx: number) => (
             <Image
-              src={`http://localhost:1337${item.attributes.img.data.attributes.url}`}
-              alt="psycholog"
+              src={`http://77.232.128.234:1337${item.attributes.img.data.attributes.url}`}
+              alt={`http://77.232.128.234:1337${item.attributes.img.data.attributes.url}`}
               width={100}
               height={100}
               key={idx}
