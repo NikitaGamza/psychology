@@ -1,9 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import style from './Cover.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import Record from '@/app/components/ui/Psychologist/components/Record/Record';
 
 export default function Cover(props: any) {
+  const [record, setRecord] = useState<boolean>(false);
   const {
     img,
     firstName,
@@ -41,6 +43,13 @@ export default function Cover(props: any) {
   }
   return (
     <div className={style.cover}>
+      {record && (
+        <Record
+          setRecord={setRecord}
+          firstName={firstName}
+          lastName={lastName}
+        />
+      )}
       <div className={style.cover__wrap}>
         <Image
           src={`http://77.232.128.234:1337/${img.data.attributes.url?.slice(
@@ -169,9 +178,12 @@ export default function Cover(props: any) {
           )}
         </div> */}
         <div className={style.cover__info__btns}>
-          <Link href={'#'} className={style.cover__info__btns__rec}>
+          <button
+            className={style.cover__info__btns__rec}
+            onClick={() => setRecord(true)}
+          >
             Записаться
-          </Link>
+          </button>
           <Link href={'#'} className={style.cover__info__btns__tg}>
             <span className={style.cover__info__btns__tg__icon}></span>
             <span className={style.cover__info__btns__tg__text}>

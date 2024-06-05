@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import style from '../style/Components.module.scss';
+import Image from 'next/image';
 
 export default function AddEducation() {
   const [edu, setEdu] = useState<Array<any>>([
@@ -12,7 +13,7 @@ export default function AddEducation() {
     <div className={style.row}>
       <div className={style.row__head_edu}>
         <p className={style.row__head}>дополнительное образование</p>
-        <button
+        {/* <button
           onClick={() => {
             // const prev = edu;
             setEdu([...edu, { id: edu.length, name: '' }]);
@@ -20,7 +21,17 @@ export default function AddEducation() {
           className={style.row__head_edu__add}
         >
           +
-        </button>
+        </button> */}
+        <Image
+          src={'/plus-green.svg'}
+          alt="add"
+          width={24}
+          height={24}
+          onClick={() => {
+            // const prev = edu;
+            setEdu([...edu, { id: edu.length, name: '' }]);
+          }}
+        />
       </div>
 
       {edu.map((item: any, idx: number) => (

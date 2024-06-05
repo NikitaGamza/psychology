@@ -44,7 +44,7 @@ export default function Copy({ setFiles }: any) {
         />
         {images.length === 0 && (
           <label htmlFor="uploader" className={style.row__uploader__fake}>
-            <span className={style.row__uploader__btn}>+</span>
+            <Image src={'/plus-green.svg'} alt="add" width={24} height={24} />
             <span className={style.row__uploader__text}>
               Прикрепить документ
             </span>

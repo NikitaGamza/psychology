@@ -68,12 +68,12 @@ export default function Footer() {
             >
               Тарифы
             </Link>
-            <Link
+            {/* <Link
               href={'/courses'}
               className={style.footer__content__links__item}
             >
               Курсы
-            </Link>
+            </Link> */}
             <Link
               href={'/for-organizations'}
               className={style.footer__content__links__item}

@@ -11,10 +11,10 @@ export const navigation = [
     title: 'Тарифы',
     linkTo: '/tariff',
   },
-  {
-    title: 'Курсы',
-    linkTo: '/courses',
-  },
+  // {
+  //   title: 'Курсы',
+  //   linkTo: '/courses',
+  // },
   {
     title: 'Организациям',
     linkTo: '/for-organizations',

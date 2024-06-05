@@ -2,7 +2,7 @@ import React from 'react';
 import style from './style/Faq.module.scss';
 // import { faqList } from './faqList';
 import Item from '@/app/components/pages/faq/Item/Item';
-import Questions from '@/app/components/Questions/Questions';
+import Link from 'next/link';
 
 export default function Faq() {
   const faqList = [
@@ -31,8 +31,19 @@ export default function Faq() {
             <Item key={idx} props={item} />
           ))}
         </div>
+        <div className={style.faq__question}>
+          <h2 className={style.faq__question__head}>Напишите нам</h2>
+          <p className={style.faq__question__text}>
+            Если у вас есть вопросы, можете смело задать их нам в телеграм. Мы
+            любим общаться и с удовольствием вам ответим.
+          </p>
+          <Link href={'https://t.me/'} className={style.btn_tg}>
+            <span className={style.btn_tg__icon}></span>
+            <span className={style.btn_tg__text}>Задать вопрос</span>
+          </Link>
+        </div>
       </div>
-      <Questions />
+      {/* <Questions /> */}
     </div>
   );
 }

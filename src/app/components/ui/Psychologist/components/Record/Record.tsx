@@ -14,6 +14,7 @@ export default function Record({ setRecord, firstName, lastName }: any) {
   const [email, setEmail] = useState<string>('');
   const [emailErr, setEmailErr] = useState<boolean>(false);
   const [edge, setEdge] = useState<string>('');
+  const [edgeErr, setEdgeErr] = useState<boolean>(false);
   const [comment, setComment] = useState<string>('');
   const [promo, setPromo] = useState<boolean>(false);
   const [promoText, setPromoText] = useState<string>('');
@@ -28,33 +29,61 @@ export default function Record({ setRecord, firstName, lastName }: any) {
     edge: string,
     promoText: string
   ) {
-    e.preventDefault();
-    const subscribe = {
-      data: {
-        name: name,
-        edge: edge,
-        email: email,
-        phone: mobile,
-        comment: comment,
-        promo: promoText,
-        psychologFirstName: firstName,
-        psychologLastName: lastName,
-      },
-    };
-    const sendData = await fetch(
-      'http://77.232.128.234:1337/api/record-psychologists',
-      {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+    if (name == '') {
+      setNameErr(true);
+    }
+    if (edge == '') {
+      setEdgeErr(true);
+    }
+    if (email == '') {
+      setEmailErr(true);
+    }
+    if (mobile == '') {
+      setMobileErr(true);
+    }
+    if (checker == false) {
+      setCheckErr(true);
+    }
+    if (
+      name !== '' &&
+      edge !== '' &&
+      email !== '' &&
+      mobile !== '' &&
+      checker
+    ) {
+      setNameErr(false);
+      setEdgeErr(false);
+      setEmailErr(false);
+      setMobileErr(false);
+      setCheckErr(false);
+      e.preventDefault();
+      const subscribe = {
+        data: {
+          name: name,
+          edge: edge,
+          email: email,
+          phone: mobile,
+          comment: comment,
+          promo: promoText,
+          psychologFirstName: firstName,
+          psychologLastName: lastName,
         },
-        body: JSON.stringify(subscribe),
-      }
-    );
-    const sendResponse = await sendData.json();
-    // setRecord(false);
-    setModal(true);
+      };
+      const sendData = await fetch(
+        'http://77.232.128.234:1337/api/record-psychologists',
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(subscribe),
+        }
+      );
+      const sendResponse = await sendData.json();
+      // setRecord(false);
+      setModal(true);
+    }
   }
   return (
     <div
@@ -112,7 +141,7 @@ export default function Record({ setRecord, firstName, lastName }: any) {
             onChange={(e) => setEdge(e.target.value)}
           />
           <div className={style.modal__block__err}>
-            {nameErr && (
+            {edgeErr && (
               <p className={style.modal__block__err__text}>Укажите возраст</p>
             )}
           </div>

@@ -1,16 +1,107 @@
 @import '@/style/colors.scss';
+@import '@/style/mixins.scss';
 .faq {
   padding-top: 140px;
-  padding-bottom: 100px;
+  // padding-bottom: 100px;
   &__head {
     font-size: 48px;
-    font-weight: 700;
     line-height: 48px;
     margin-bottom: 40px;
+    font-family: 'Gilroy-Bold';
   }
   &__list {
     display: flex;
     flex-direction: column;
     gap: 16px;
+  }
+  &__question {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-image: url('/img/pages/faq/faq-questions.svg');
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    background-color: $blue_75;
+    border-radius: 20px;
+    padding: 72px 72px 64px 72px;
+    &__head {
+      font-family: 'Gilroy-Bold';
+      font-size: 48px;
+      line-height: 56px;
+      color: $white;
+      margin-bottom: 24px;
+    }
+    &__text {
+      font-size: 24px;
+      line-height: 36px;
+      color: $white;
+      margin-bottom: 40px;
+      width: 642px;
+    }
+  }
+}
+.btn {
+  &_green {
+    @include link-green;
+  }
+  &_tg {
+    width: fit-content;
+    @include link-tg-green;
+    border: 1px solid $blue_75;
+    &:hover {
+      background-color: $white;
+      // border: 1px solid $blue_75;
+      .btn_tg__icon {
+        background-image: url('/telegram-blue.svg');
+      }
+      .btn_tg__text {
+        color: $blue_75;
+      }
+    }
+    &__icon {
+      @include link-tg-icon;
+      background-image: url('/telegram-blue.svg');
+    }
+    &__text {
+      @include link-tg-text($blue_75);
+      // color: $blue_75;
+    }
+  }
+}
+@media screen and (max-width: 1110px) {
+  .faq {
+    &__question {
+      background-image: none;
+      padding: 40px 21px;
+      margin-top: 24px;
+      margin-bottom: 60px;
+      &__head {
+        text-align: center;
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 24px;
+      }
+      &__text {
+        text-align: center;
+        width: 100%;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+  .btn {
+    &_tg {
+      margin: 0 auto;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .faq {
+    padding-top: 104px;
+    &__head {
+      font-size: 32px;
+      line-height: 32px;
+      margin-bottom: 24px;
+    }
   }
 }

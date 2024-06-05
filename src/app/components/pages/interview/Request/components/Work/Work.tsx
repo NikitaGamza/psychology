@@ -15,7 +15,7 @@ export default function Work() {
     <div className={style.row}>
       <div className={style.row__head_edu}>
         <p className={style.row__head}>Места работы</p>
-        <button
+        {/* <button
           className={style.row__head_edu__add}
           onClick={() =>
             setWork([
@@ -25,7 +25,19 @@ export default function Work() {
           }
         >
           +
-        </button>
+        </button> */}
+        <Image
+          src={'/plus-green.svg'}
+          alt="add"
+          width={24}
+          height={24}
+          onClick={() =>
+            setWork([
+              ...work,
+              { id: work.length, position: '', yearStart: null, yearEnd: null },
+            ])
+          }
+        />
       </div>
       {work.map((item: any, idx: number) => (
         <div className={style.row__work} key={idx}>
