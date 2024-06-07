@@ -22,11 +22,14 @@ export default function Cover(props: any) {
     socialLicks,
     formats,
   } = props.props.attributes;
+  const tgLink = socialLicks.filter((item: any) => item.type === 'telegram');
+  // useEffect(() => console.log(tgLink[0].link), []);
   const marriedResult =
     (sex && isMarried && 'Женат') ||
     (sex && !isMarried && 'Не женат') ||
     (!sex && isMarried && 'Замужем') ||
     'Не замужем';
+
   function experience() {
     const income: any = new Date(startWork);
     const current: any = new Date();
@@ -61,20 +64,20 @@ export default function Cover(props: any) {
           className={style.cover__wrap__img}
         />
         <div className={style.cover__wrap__contact}>
-          {socialLicks?.map((item: any, id: number) => (
+          {socialLicks.map((item: any, id: number) => (
             <Link href={item.link} key={id}>
-              <Image
-                src={
-                  item.type === 'youtube'
-                    ? '/img/pages/team/yt.svg'
-                    : item.type === 'vk'
-                    ? '/img/pages/team/vk.svg'
-                    : '/img/pages/team/tg.svg'
-                }
-                alt={item.type}
-                width={32}
-                height={32}
-              />
+              {item.type !== 'telegram' && (
+                <Image
+                  src={
+                    item.type === 'youtube'
+                      ? '/img/pages/team/yt.svg'
+                      : '/img/pages/team/vk.svg'
+                  }
+                  alt={item.type}
+                  width={32}
+                  height={32}
+                />
+              )}
             </Link>
           ))}
         </div>
@@ -138,45 +141,23 @@ export default function Cover(props: any) {
           </div>
         </div>
         <div className={style.cover__wrap__contact_mobile}>
-          {socialLicks?.map((item: any, id: number) => (
+          {socialLicks.map((item: any, id: number) => (
             <Link href={item.link} key={id}>
-              <Image
-                src={
-                  item.type === 'youtube'
-                    ? '/img/pages/team/yt.svg'
-                    : item.type === 'vk'
-                    ? '/img/pages/team/vk.svg'
-                    : '/img/pages/team/tg.svg'
-                }
-                alt={item.type}
-                width={32}
-                height={32}
-              />
+              {item.type !== 'telegram' && (
+                <Image
+                  src={
+                    item.type === 'youtube'
+                      ? '/img/pages/team/yt.svg'
+                      : '/img/pages/team/vk.svg'
+                  }
+                  alt={item.type}
+                  width={32}
+                  height={32}
+                />
+              )}
             </Link>
           ))}
         </div>
-        {/* <div className={style.cover__wrap__contact_mobile}>
-          {links.youtube && (
-            <Link href={links.youtube}>
-              <Image
-                src={'/img/pages/team/yt.svg'}
-                alt="youtube"
-                width={32}
-                height={32}
-              />
-            </Link>
-          )}
-          {links.vk && (
-            <Link href={links.vk}>
-              <Image
-                src={'/img/pages/team/vk.svg'}
-                alt="youtube"
-                width={32}
-                height={32}
-              />
-            </Link>
-          )}
-        </div> */}
         <div className={style.cover__info__btns}>
           <button
             className={style.cover__info__btns__rec}
@@ -184,7 +165,7 @@ export default function Cover(props: any) {
           >
             Записаться
           </button>
-          <Link href={'#'} className={style.cover__info__btns__tg}>
+          <Link href={tgLink[0].link} className={style.cover__info__btns__tg}>
             <span className={style.cover__info__btns__tg__icon}></span>
             <span className={style.cover__info__btns__tg__text}>
               Задать вопрос

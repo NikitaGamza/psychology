@@ -40,7 +40,7 @@ export default function Home() {
               bgColor={'blue'}
             />
             <Blog />
-            <Courses />
+            {/* <Courses /> */}
             <div className="container">
               <div className={style.main__banner}>
                 <h2 className={style.main__banner__text}>
