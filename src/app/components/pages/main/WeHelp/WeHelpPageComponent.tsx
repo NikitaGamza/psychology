@@ -27,9 +27,12 @@ export default function WeHelpPageComponent() {
       <div className="container">
         <div className="section">
           <div className="section__head">
-            <h2 className="section__head__title">Мы поможем вам</h2>
+            <h2 className="section__head__title">
+              С какими проблемами мы сможем помочь?
+            </h2>
             <p className="section__head__subtitle">
-              Мы помогаем решить многие психологические проблемы
+              В нашей команде точно найдётся специалист, с которым Вы найдете
+              решение
             </p>
           </div>
           <div className={style.help__content}>

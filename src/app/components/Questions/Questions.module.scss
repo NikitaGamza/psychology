@@ -208,6 +208,9 @@
           &__text {
             padding: 12px 16px;
             width: 100%;
+            &_com {
+              width: 100%;
+            }
           }
           &__checkwrap {
             display: flex;
@@ -249,6 +252,11 @@
               &_active {
                 margin-top: -15px;
               }
+            }
+          }
+          &__text {
+            &_com {
+              width: 100%;
             }
           }
           &__label {

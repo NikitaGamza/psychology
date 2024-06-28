@@ -12,7 +12,7 @@ export default function GuaranteePageComponent() {
             </p>
           </div>
           <div className={style.guarantee__list__item}>
-            <h3 className={style.guarantee__list__item__num_blue}>1024</h3>
+            <h3 className={style.guarantee__list__item__num_blue}>1800+</h3>
             <p className={style.guarantee__list__item__text}>
               людей изменили жизнь к лучшему с нами
             </p>

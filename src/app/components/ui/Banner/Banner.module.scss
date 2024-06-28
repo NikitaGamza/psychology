@@ -42,17 +42,16 @@ $blue_75: #6899ca;
       color: #fff;
       margin-bottom: 24px;
       font-size: 48px;
-      font-weight: 700;
       line-height: 56px; /* 116.667% */
-      width: 710px;
+      width: 770px;
 
       font-family: 'Gilroy-Bold';
     }
     &__text {
       color: #fff;
       font-size: 24px;
-      font-weight: 500;
       line-height: 36px; /* 150% */
+      width: 625px;
     }
     &__btn {
       &_green {
@@ -147,6 +146,7 @@ $blue_75: #6899ca;
         font-size: 16px;
         line-height: 24px;
         text-align: center;
+        width: 100%;
       }
       &__btn {
         &_green {

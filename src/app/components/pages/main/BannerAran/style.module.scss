@@ -1,0 +1,69 @@
+@import '@/style/colors.scss';
+.ban {
+  background-color: $blue_75;
+  border-radius: 20px;
+  padding: 72px;
+  background-image: url('/img/pages/main/Banner/Bek.png');
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  margin-bottom: 130px;
+  &__info {
+    width: 675px;
+    &__img {
+      display: none;
+    }
+    &__head {
+      font-family: 'Gilroy-Bold';
+      font-size: 48px;
+      line-height: 56px;
+      color: $white;
+      margin-bottom: 192px;
+    }
+    &__text {
+      font-family: 'Gilroy-Bold';
+      font-size: 32px;
+      line-height: 36px;
+      color: $white;
+    }
+  }
+}
+@media screen and (max-width: 1040px) {
+  .ban {
+    background-image: none;
+    // padding: 40px 21px;
+    &__info {
+      width: 100%;
+      &__img {
+        display: block;
+        width: 140px;
+        height: 140px;
+        border-radius: 200px;
+        margin: 0 auto;
+        margin-bottom: 24px;
+      }
+      &__head {
+        margin-bottom: 24px;
+        text-align: center;
+      }
+      &__text {
+        text-align: center;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .ban {
+    margin-bottom: 0px;
+    padding: 40px 21px;
+    &__info {
+      &__head {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      &__text {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}

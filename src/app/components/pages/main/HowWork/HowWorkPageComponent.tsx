@@ -11,7 +11,9 @@ export default function HowWorkPageComponent() {
       <div className="container">
         <div className="section">
           <div className="section__head">
-            <h2 className="section__head__title">Как это работает</h2>
+            <h2 className="section__head__title">
+              Как это работает | Как записаться на сессию
+            </h2>
           </div>
           <div className={style.how__options}>
             <button

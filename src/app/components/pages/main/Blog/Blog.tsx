@@ -43,9 +43,9 @@ export default function Blog() {
       <div className="container">
         <div className="section">
           <div className="section__head">
-            <h2 className="section__head__title">Блог</h2>
+            <h2 className="section__head__title">Вопрос | Ответ</h2>
             <p className="section__head__subtitle">
-              Мы помогаем вам и развиваемся сами
+              На ваши вопросы отвечают опытные психологи и психотерапевты
             </p>
           </div>
           <div className={style.blog__content}>
@@ -103,7 +103,7 @@ export default function Blog() {
                 ))}
               </div>
             </div>
-            <div className={style.blog__content__part}>
+            {/* <div className={style.blog__content__part}>
               <div className={style.blog__content__part__head}>
                 <h4 className={style.blog__content__part__head__title}>
                   Полезные видео
@@ -129,7 +129,7 @@ export default function Blog() {
                   <ArticleCart key={idx} item={item} />
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
           <Link href={'/blog/advice'} className={style.blog__all}>
             Перейти в блог

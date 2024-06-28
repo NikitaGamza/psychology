@@ -12,6 +12,7 @@ import Questions from '@/app/components/Questions/Questions';
 import Blog from '@/app/components/pages/main/Blog/Blog';
 import Courses from '@/app/components/pages/main/Courses/Courses';
 import Organizations from '@/app/components/pages/main/Organizations/Organizations';
+import BannerAran from '@/app/components/pages/main/BannerAran/BannerAran';
 export default function Home() {
   return (
     <>
@@ -20,40 +21,31 @@ export default function Home() {
           <IntroductionPageComponent />
           <div className={style.main_flex}>
             <GuaranteePageComponent />
-            <TeamPageComponent />
-            <TariffPageComponent />
-            <HowWorkPageComponent />
-            <Banner
-              head={'Не знаете как выбрать?'}
-              text={'Оставьте заявку на подбор.'}
-              text2={'Мы подберём Вам опытного специалиста по вашей проблеме'}
-              imgUrl={'/img/ui/Banner/brain.png'}
-              bgColor={'green'}
-            />
             <WeHelpPageComponent />
             <Banner
-              head={'Готовы начать менять себя и свою жизнь к лучшему с нами?'}
+              head={
+                'Цветок не соревнуется с другими цветами, он просто цветёт!'
+              }
               text={
-                'Не переживайте, отсутствие уверенности и решительности на все 100% — это нормально.'
+                'Не переживайте, отсутствие уверенности и решительности на 1-ой консультации — это нормально.'
               }
               imgUrl={'/img/ui/Banner/flover.svg'}
               bgColor={'blue'}
             />
+            <TeamPageComponent />
+            <HowWorkPageComponent />
+            <TariffPageComponent />
+            <BannerAran />
             <Blog />
+            <Banner
+              head={'Хотите получить ответ на свой вопрос? '}
+              text={
+                'Напишите нам через форму обратной связи ниже или в ТГ / ВК / WhatsApp '
+              }
+              imgUrl={'/img/ui/Banner/brain.png'}
+              bgColor={'green'}
+            />
             {/* <Courses /> */}
-            <div className="container">
-              <div className={style.main__banner}>
-                <h2 className={style.main__banner__text}>
-                  98% наших клиентов уверены, что помощь психолога помогает
-                  решить проблему{' '}
-                  <br className={style.main__banner__text__br} /> и улучшить
-                  качество жизни
-                </h2>
-                <Link href={'/courses'} className={style.main__banner__link}>
-                  Смотреть все курсы
-                </Link>
-              </div>
-            </div>
 
             <Organizations />
             <div></div>
