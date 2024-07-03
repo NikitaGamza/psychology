@@ -8,89 +8,67 @@ export default function Cart(props: any) {
   const startDay = new Date(props.startDate);
   //startDay.getMonth().toLocaleString('ru-RU')
   return (
-    <div className={style.cart}>
+    <div className={style.slide}>
       <Image
-        src={`http://77.232.128.234:1337${props.imgUrl}`}
-        alt="pic"
+        src={`http://77.232.128.234:1337${props?.imgUrl}`}
+        alt={'course'}
         width={160}
         height={300}
-        className={style.cart__img}
+        className={style.slide__img}
       />
-      <div className={style.cart__info}>
-        <div className={style.cart__info__wrap}>
-          <div className={style.cart__info__wrap__tags}>
-            <div className={style.cart__info__wrap__tags__item}>
-              {props.lessonType}
-            </div>
-            {props.specialization.map((item: any) => (
-              <div className={style.cart__info__wrap__tags__item} key={item.id}>
+      <div className={style.slide__content__info}>
+        <div className={style.slide__content__info__wrap}>
+          <div className={style.slide__content__info__topics}>
+            {props.themes.map((item: any, idx: number) => (
+              <span
+                key={idx}
+                className={style.slide__content__info__topics__item}
+              >
                 {item.attributes.themeName}
-              </div>
+              </span>
             ))}
           </div>
           <Image
-            src={props.imgUrlMobile}
-            alt="pic"
-            width={160}
-            height={300}
-            className={style.cart__info__img}
+            src={`http://77.232.128.234:1337${props?.imgUrl}`}
+            alt={'course'}
+            width={288}
+            height={160}
+            className={style.slide__content__info__img}
           />
-          <h2 className={style.cart__info__wrap__head}>{props.name}</h2>
-          <div className={style.cart__info__wrap__details}>
-            <p className={style.cart__info__wrap__details__item}>
-              c {startDay.getDate()} {monthList[startDay.getMonth()]}
+          <h5 className={style.slide__content__info__head}>
+            {props.courseName}
+          </h5>
+          <div className={style.slide__content__info__time}>
+            <p className={style.slide__content__info__time__text}>
+              {startDay.getDate()} {monthList[startDay.getMonth()]}
             </p>
             <Image
-              src={'/img/icons/bullet/bullet-green.svg'}
-              alt="bullet"
+              src={'/img/icons/rest/separator.svg'}
+              alt="separator"
               width={4}
               height={4}
+              className={style.slide__content__info__time__separator}
             />
-            <p className={style.cart__info__wrap__details__item}>
-              {props.duralation} месяца
-            </p>
-            <Image
-              src={'/img/icons/bullet/bullet-green.svg'}
-              alt="bullet"
-              width={4}
-              height={4}
-              className={style.cart__info__wrap__details__middle}
-            />
-            <p className={style.cart__info__wrap__details__item}>
-              {props.weekDay} в {props.time.slice(0, -7)}
-            </p>
-            <Image
-              src={'/img/icons/bullet/bullet-green.svg'}
-              alt="bullet"
-              width={4}
-              height={4}
-            />
-            <p className={style.cart__info__wrap__details__item}>
-              {props.format}
+            <p className={style.slide__content__info__time__text}>
+              {props?.format}
             </p>
           </div>
           {props.address && (
-            <div className={style.cart__info__wrap__address}>
-              <Image
-                src={'/img/icons/rest/location.svg'}
-                alt="loc"
-                width={18}
-                height={24}
-              />
-              <p className={style.cart__info__wrap__address__text}>
+            <div className={style.slide__content__info__location}>
+              <p className={style.slide__content__info__location__text}>
                 {props.address}
               </p>
             </div>
           )}
         </div>
-        <div className={style.cart__info__rest}>
-          <Link
-            href={`/courses/${props.id}`}
-            className={style.cart__info__rest__link}
-          >
+
+        <div className={style.slide__content__info__record}>
+          <button className={style.slide__content__info__record__btn}>
             Записаться
-          </Link>
-          <h2 className={style.cart__info__rest__price}>{props.price} ₽</h2>
+          </button>
+          <h5 className={style.slide__content__info__record__price}>
+            {props.price} ₽
+          </h5>{' '}
         </div>
       </div>
     </div>

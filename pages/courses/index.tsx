@@ -21,24 +21,10 @@ export default function Courses({ posts }: any) {
   }, []);
   return (
     <div className={style.course}>
-      {/* {mobileFilt && (
-        <MobileFilter setMobileFilt={setMobileFilt} mobileFilt={mobileFilt} />
-      )} */}
       <div className="container">
-        <h2 className={style.course__head}>Курсы</h2>
-        <div className={style.course__head_mob}>
-          <h2 className={style.course__head_mob__title}>Курсы</h2>
-          <Image
-            src={'/img/icons/rest/filt.svg'}
-            alt=""
-            width={24}
-            height={24}
-            onClick={() => setMobileFilt(!mobileFilt)}
-          />
-        </div>
+        <h2 className={style.course__head}>Лекторий «Искусство жизни»</h2>
         <div className={style.course__content}>
           <Main posts={courseList} />
-          {/* <Filters /> */}
         </div>
       </div>
     </div>

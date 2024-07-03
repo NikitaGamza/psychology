@@ -8,7 +8,6 @@ export default function List({ posts }: any) {
   return (
     <div className={style.list}>
       {posts?.data.map((item: any) => (
-        // <h1>{item.attributes.courseName}</h1>
         <Cart
           key={item.id}
           id={item.id}
@@ -24,6 +23,7 @@ export default function List({ posts }: any) {
           address={item.attributes.address}
           price={item.attributes.priceFull}
           imgUrlMobile={item.attributes.imgMobile.data.attributes.url}
+          themes={item.attributes.themes.data}
         />
       ))}
       <button className={style.list__load}>Показать еще</button>

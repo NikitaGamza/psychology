@@ -3,8 +3,10 @@
 
 .list {
   display: flex;
-  flex-direction: column;
-  gap: 60px;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 24px;
+  justify-content: space-between;
   &__load {
     @include link-sheer-green;
     margin: 0 auto;

@@ -45,18 +45,6 @@
     background-image: none;
   }
 }
-@media screen and (max-width: 1170px) {
-  .course {
-    &__head {
-      display: none;
-      &_mob {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-  }
-}
 @media screen and (max-width: 768px) {
   .course {
     padding-top: 80px;
