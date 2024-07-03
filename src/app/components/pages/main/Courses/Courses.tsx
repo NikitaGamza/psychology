@@ -107,7 +107,7 @@ export default function Courses() {
             {courseList && (
               <div className={style.desc}>
                 {courseList?.map((item: any, idx: number) => (
-                  <Cart item={item} />
+                  <Cart key={idx} item={item} />
                 ))}
               </div>
             )}
