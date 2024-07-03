@@ -13,6 +13,7 @@ import Blog from '@/app/components/pages/main/Blog/Blog';
 import Courses from '@/app/components/pages/main/Courses/Courses';
 import Organizations from '@/app/components/pages/main/Organizations/Organizations';
 import BannerAran from '@/app/components/pages/main/BannerAran/BannerAran';
+import Difference from '@/app/components/pages/main/Difference/Difference';
 export default function Home() {
   return (
     <>
@@ -32,6 +33,7 @@ export default function Home() {
               imgUrl={'/img/ui/Banner/flover.svg'}
               bgColor={'blue'}
             />
+            <Difference />
             <TeamPageComponent />
             <HowWorkPageComponent />
             <TariffPageComponent />
@@ -45,8 +47,7 @@ export default function Home() {
               imgUrl={'/img/ui/Banner/brain.png'}
               bgColor={'green'}
             />
-            {/* <Courses /> */}
-
+            <Courses />
             <Organizations />
             <div></div>
           </div>

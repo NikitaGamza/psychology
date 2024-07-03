@@ -17,6 +17,13 @@
     cursor: pointer;
   }
 }
+.desc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 24px;
+  column-gap: 20px;
+}
 .dots {
   display: none;
   &__item {
@@ -38,6 +45,7 @@
   &__slider {
     margin-top: -10px;
     position: relative;
+    display: none;
     &__wrap {
       padding-top: 5px;
       padding-bottom: 5px;
@@ -59,6 +67,16 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .desc {
+    display: none;
+  }
+  .courses {
+    &__slider {
+      display: flex;
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .courses {
     margin-bottom: 0;

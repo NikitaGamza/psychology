@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  experimental: {
-    images: {
-      unoptimized: true,
-    },
-  },
-  // process.env.NEXT_PUBLIC_SERVER,
+  // output: 'export',
+  // experimental: {
+  //   images: {
+  //     unoptimized: true,
+  //   },
+  // },
+  // // process.env.NEXT_PUBLIC_SERVER,
   // '77.232.128.234'
   // experimental: {
   //   serverActions: true,
@@ -18,8 +18,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'http',
-        // hostname: '77.232.128.234',
-        hostname: process.env.NEXT_PUBLIC_SERVER,
+        hostname: '77.232.128.234',
+        // hostname: process.env.NEXT_PUBLIC_SERVER,
         port: '1337',
         // pathname: "/image/upload/**",
       },

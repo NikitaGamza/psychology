@@ -24,7 +24,7 @@ export default function Courses() {
   useEffect(() => {
     async function hiData() {
       const res = await fetch(
-        `http://77.232.128.234:1337/api/courses?populate=*&pagination[pageSize]=3&sort=id:desc`
+        `http://77.232.128.234:1337/api/courses?populate=*&pagination[pageSize]=6&sort=id:desc`
       );
       const repo = await res.json();
       setCourseList(repo.data);
@@ -59,8 +59,11 @@ export default function Courses() {
       <div className="container">
         <div className="section">
           <div className="section__head">
-            <h2 className="section__head__title">Курсы по психологии</h2>
-            <p className="section__head__subtitle">Какой то текст сюда</p>
+            <h2 className="section__head__title">Лекторий «Искусство жизни»</h2>
+            <p className="section__head__subtitle">
+              Практические семинары и вебинары для гармоничной и счастливой
+              жизни
+            </p>
           </div>
           <>
             {courseList && (
@@ -101,6 +104,14 @@ export default function Courses() {
               </div>
             )}
 
+            {courseList && (
+              <div className={style.desc}>
+                {courseList?.map((item: any, idx: number) => (
+                  <Cart item={item} />
+                ))}
+              </div>
+            )}
+
             {loaded && instanceRef.current && (
               <div className={style.dots}>
                 {[
@@ -127,7 +138,7 @@ export default function Courses() {
             )}
           </>
           <Link href={'/courses'} className={style.courses__all}>
-            Смотреть все курсы
+            Все мероприятия
           </Link>
         </div>
       </div>

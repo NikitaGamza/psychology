@@ -1,34 +1,41 @@
 @import '@/style/colors.scss';
 @import '@/style/mixins.scss';
 .slide {
-  padding: 32px;
   box-shadow: 0px 0px 5px 0px #1d304e26;
   border-radius: 20px;
-
+  width: 395px;
+  min-height: 600px;
+  &__img {
+    width: 100%;
+    height: 280px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
   &__content {
     display: flex;
-    // justify-content: space-between;
     gap: 20px;
-    &__img {
-      border-radius: 20px;
-      object-fit: cover;
-    }
     &__info {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: 24px 32px 32px 32px;
+      height: 100%;
+      max-height: 320px;
       &__topics {
         display: flex;
         flex-wrap: wrap;
-        margin-bottom: 16px;
         gap: 8px;
+        position: relative;
+        top: -283px;
+        height: 0;
         &__item {
-          border: 1px solid $green;
+          border: none;
           border-radius: 50px;
           font-size: 12px;
           font-weight: 500;
           line-height: 22px;
           padding: 0 11px;
+          background-color: $white;
         }
       }
       &__img {
@@ -76,7 +83,7 @@
       &__record {
         display: flex;
         align-items: center;
-        gap: 24px;
+        justify-content: space-between;
         &__price {
           font-size: 24px;
           font-weight: 700;
@@ -106,26 +113,33 @@
     }
   }
 }
+@media screen and (max-width: 900px) {
+  .slide {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px) {
   .slide {
-    padding: 20px 16px 20px 16px;
+    // padding: 20px 16px 20px 16px;
     &__content {
       &__img {
         display: none;
       }
       &__info {
+        padding: 20px;
+        min-height: 300px;
         &__topics {
           &__item {
             line-height: 23px;
           }
         }
-        &__img {
-          display: block;
-          width: 100%;
-          height: auto;
-          border-radius: 20px;
-          margin-bottom: 15px;
-        }
+        // &__img {
+        //   display: block;
+        //   width: 100%;
+        //   height: auto;
+        //   border-radius: 20px;
+        //   margin-bottom: 15px;
+        // }
         &__head {
           margin-bottom: 17px;
           font-size: 16px;
